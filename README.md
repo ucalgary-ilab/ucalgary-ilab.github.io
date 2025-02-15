@@ -272,6 +272,7 @@ git clone git@github.com:ucalgary-ilab/ilab-website.git
 cd ilab-website
 npm install
 npm run build:content
+node preprocess.js
 node server.js
 ```
 
