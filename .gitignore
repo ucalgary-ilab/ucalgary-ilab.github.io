@@ -80,3 +80,5 @@ _next
 /publications/
 /seminar/
 /index.html
+
+.yarn/install-state.gz
