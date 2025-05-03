@@ -2852,7 +2852,7 @@ __metadata:
     next: "npm:^15.3.1"
     next-routes: "npm:^1.4.2"
     png-to-jpeg: "npm:^1.0.1"
-    processmd: "npm:^4.2.1"
+    processmd: "npm:^4.7.0"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
     react-markdown: "npm:^10.1.0"
@@ -5491,9 +5491,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"processmd@npm:^4.2.1":
-  version: 4.6.3
-  resolution: "processmd@npm:4.6.3"
+"processmd@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "processmd@npm:4.7.0"
   dependencies:
     globby: "npm:^10.0.1"
     highlight.js: "npm:^10.4.1"
@@ -5506,7 +5506,7 @@ __metadata:
     yargs: "npm:^14.2.0"
   bin:
     processmd: cli.js
-  checksum: 10c0/048156429b7198469b5d7fe2096a6b997934ec799a4a84c8d421f6c189a1af6907b2849ffb09f3f5989c6c77a6b3b8348ec29b7385f8f945b54037fda03c4e0f
+  checksum: 10c0/0690fb18de5ddd86468d08853e1dd146ce6b0c1fd53e9f0be55414e9049c8bba5f4d4025d698f77674a34dc0e9d53f876a91a3d9e5bd87c29bc19ca74d9c4a62
   languageName: node
   linkType: hard
 

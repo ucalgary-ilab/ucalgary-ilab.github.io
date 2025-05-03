@@ -31,6 +31,6 @@
     "sharp": "^0.34.1"
   },
   "devDependencies": {
-    "processmd": "^4.2.1"
+    "processmd": "^4.7.0"
   }
 }
