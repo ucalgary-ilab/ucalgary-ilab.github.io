@@ -2849,6 +2849,7 @@ __metadata:
     compress-images: "npm:^2.0.5"
     directory-tree: "npm:^3.5.2"
     jquery: "npm:^3.7.1"
+    lodash: "npm:^4.17.21"
     next: "npm:^15.3.1"
     next-routes: "npm:^1.4.2"
     png-to-jpeg: "npm:^1.0.1"
@@ -3710,6 +3711,13 @@ __metadata:
   version: 4.2.0
   resolution: "lodash.words@npm:4.2.0"
   checksum: 10c0/bb67bf8d9c9797794dc8254f8888eaf2e1e3bf154de736505574d4a0e3fc4489349ef9361ef7bb7288276e0fee2a22d6d81f83a3608ea41a326f5ae1ab506f40
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
   languageName: node
   linkType: hard
 
