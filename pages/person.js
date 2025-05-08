@@ -39,6 +39,9 @@ class Person extends React.Component {
       case 'github':
         icon = 'fab fa-github-alt fa-fw'
         break
+      case 'gitlab':
+        icon = 'fab fa-gitlab fa-fw'
+        break
       case 'cv':
         icon = 'far fa-file fa-fw'
         break
@@ -118,7 +121,7 @@ class Person extends React.Component {
                 </p>
               }
               <div class="ui horizontal small divided link list">
-                { ['cv', 'facebook', 'twitter', 'github', 'linkedin', 'email'].map((key) => {
+                { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
                   return this.renderLink(this.person, key)
                 }) }
               </div>
