@@ -1,9 +1,17 @@
 name: Christian Frisson
-type: alumni
-past: postdoc
-now: Society for Arts and Technology
+type: faculty
+title: Assistant Professor
+keywords:
+  - Haptics
+  - Multisensory & Multimedia
+  - Immersive Arts
+order: 4
 url: https://frisson.re
+cv: https://frisson.re
 scholar: https://scholar.google.com/citations?user=sZVn1V4AAAAJ
 twitter: https://twitter.com/TuyleriDikenli
 facebook: https://www.facebook.com/christian.frisson
 linkedin: https://www.linkedin.com/in/christianfrisson
+github: https://github.com/ChristianFrisson
+gitlab: https://gitlab.com/ChristianFrisson
+email: christian.frisson@ucalgary.ca
