@@ -1,0 +1,14 @@
+date: 2020-08
+title: "Printgets: an Open-Source Toolbox for Designing Vibrotactile Widgets with Industrial-Grade Printed Actuators and Sensors"
+authors:
+  - Christian Frisson
+  - Julien Decaudin
+  - Mario Sanz-Lopez
+  - Thomas Pietrzak
+series: HAID 2022
+doi: https://hal.archives-ouvertes.fr/hal-02901202
+keywords: haptics, vibrotactile, fabrication, piezoelectric, capacitive sensing
+pages: 7
+talk: https://www.youtube.com/watch?v=GYj5tYoQyqU
+abstract: "New technologies for printing sensors and actuators combine the flexibility of interface layouts of touchscreens with localized vibrotactile feedback, but their fabrication still requires industrial-grade facilities. Until these technologies become easily replicable, interaction designers need material for ideation.  We propose an open-source hardware and software toolbox providing maker-grade tools for iterative design of vibrotactile widgets with industrial-grade printed sensors and actuators. Our hardware toolbox provides a mechanical structure to clamp and stretch printed sheets, and electronic boards to drive sensors and actuators. Our software toolbox expands the design space of haptic interaction techniques by reusing the wide palette of available audio processing algorithms to generate real-time vibrotactile signals. We validate our toolbox with the implementation of three exemplar interface elements with tactile feedback: buttons, sliders, touchpads."
+gitlab: https://gitlab.inria.fr/Loki/happiness/libhappiness
