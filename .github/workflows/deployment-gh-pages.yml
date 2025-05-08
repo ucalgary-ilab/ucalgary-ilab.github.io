@@ -91,6 +91,8 @@ jobs:
 
   # Deployment job
   deploy:
+    # do not publish from pull requests
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
