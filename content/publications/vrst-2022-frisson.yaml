@@ -1,0 +1,15 @@
+date: 2022-11
+title: "LivePose: Democratizing Pose Detection for Multimedia Arts and Telepresence Applications on Open Edge Devices"
+authors:
+  - Christian Frisson
+  - Gabriel N. Downs
+  - Marie-Ève Dumas
+  - Farzaneh Askari
+  - Emmanuel Durand
+series: VRST 2022 Poster
+doi: https://doi.org/10.1145/3562939.3565660
+keywords: multimedia arts, telepresence, edge computing, pose detection
+pages: 2
+video: https://vimeo.com/604196712
+abstract: "We present LivePose: an open-source (GPL license) tool that democratizes pose detection for multimedia arts and telepresence applications, optimized for and distributed on open edge devices. We designed the architecture of LivePose with a 5-stage pipeline (frame capture, pose estimation, dimension mapping, filtering, output) sharing streams of data flow, distributable on networked nodes. We distribute LivePose and dependencies packages and filesystem images optimized for edge devices (NVIDIA Jetson). We showcase multimedia arts and telepresence applications enabled by LivePose."
+gitlab: https://gitlab.com/sat-mtl/tools/livepose
