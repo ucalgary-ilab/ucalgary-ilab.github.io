@@ -27,7 +27,7 @@ class Person extends React.Component {
     }
 
     let title = person[key].split('/')[3]
-    let href
+    let href = person[key]
     let icon
     switch(key) {
       case 'twitter':
@@ -44,6 +44,7 @@ class Person extends React.Component {
         break
       case 'email':
         title = person[key]
+        href = `mailto:${person[key]}`
         icon = 'far fa-envelope fa-fw'
         break
       case 'linkedin':
@@ -54,7 +55,7 @@ class Person extends React.Component {
 
     return (
       <div className="item">
-        <a href={ person[key] } target="_blank" style={{ fontSize: '1.2em' }}>
+        <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
           <i className={ icon } />
           { title }
         </a>
