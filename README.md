@@ -163,10 +163,11 @@ talk: https://vimeo.com/368703151
 abstract: "Complex data visualization design projects often entail collaboration between people with different visualization-related skills. For example, many teams include both designers who create new visualization designs and developers who implement the resulting visualization software. We identify gaps between data characterization tools, visualization design tools, and development platforms that pose challenges for designer-developer teams working to create new data visualizations. While it is common for commercial interaction design tools to support collaboration between designers and developers, creating data visualizations poses several unique challenges that are not supported by current tools. In particular, visualization designers must characterize and build an understanding of the underlying data, then specify layouts, data encodings, and other data-driven parameters that will be robust across many different data values. In larger teams, designers must also clearly communicate these mappings and their dependencies to developers, clients, and other collaborators. We report observations and reflections from five large multidisciplinary visualization design projects and highlight six data-specific visualization challenges for design specification and handoff. These challenges include adapting to changing data, anticipating edge cases in data, understanding technical challenges, articulating data-dependent interactions, communicating data mappings, and preserving the integrity of data mappings across iterations. Based on these observations, we identify opportunities for future tools for prototyping, testing, and communicating data-driven designs, which might contribute to more successful and collaborative data visualization design."
 ```
 
+### Fields
 
 The required elements are `date`, `title`, `authors` and `series`. Other fields are optional, but strongly recommended.
 
-Aavailable fields are
+Available fields are
 
 ```yaml
 date:
@@ -204,6 +205,12 @@ talk:
 
 abstract:
   Use double quotation (e.g., "abstract")
+
+github:
+  Link to github repository
+
+gitlab:
+  Link to gitlab repository
 ```
 
 You can basically all of the information from ACM Digital Library or IEEE Xplore.
