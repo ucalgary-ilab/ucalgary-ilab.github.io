@@ -1,0 +1,13 @@
+date: 2024-10
+title: "Assessing the Impact of Force Feedback in Musical Knobs on Performance and User Experience"
+authors:
+  - Ziyue Piao
+  - Christian Frisson
+  - Bavo Van Kerrebroeck
+  - Marcelo M. Wanderley
+series: MDPI Actuators 2024 (Special Issue "Actuators for Haptic and Tactile Stimulation Applications")
+doi: https://doi.org/10.3390/act13110462
+keywords: haptics, rotary force feedback, digital musical instruments, knobs, TorqueTuner
+pages: 15
+abstract: "This paper examined how rotary force feedback in knobs can enhance control over musical techniques, focusing on both performance and user experience. To support our study, we developed the Bend-aid system, a web-based sequencer with pre-designed haptic modes for pitch modulation, integrated with TorqueTuner, a rotary haptic device that controls pitch through programmable haptic effects. Then, twenty musically trained participants evaluated three haptic modes (No-force feedback (No-FF), Spring, and Detent) by performing a vibrato mimicry task, rating their experience on a Likert scale, and providing qualitative feedback in post-experiment interviews. The study assessed objective performance metrics (Pitch Error and Pitch Deviation) and subjective user experience ratings (Comfort, Ease of Control, and Helpfulness) of each haptic mode. User experience results showed that participants found force feedback helpful. Performance results showed that the Detent mode significantly improved pitch accuracy and vibrato stability compared to No-FF, while the Spring mode did not show a similar improvement. Post-experiment interviews showed that preferences for Spring and Detent modes varied, and the applicants provided suggestions for future knob designs. These findings suggest that force feedback may enhance both control and the experience of control in rotary knobs, with potential applications for more nuanced control in DMIs."
+github: https://github.com/piaoziyue/Bend-aid-Actuators-2024
