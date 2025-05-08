@@ -1,0 +1,15 @@
+date: 2020-07
+title: "TorqueTuner: A self contained module for designing rotary haptic force feedback for digital musical instruments"
+authors:
+  - Mathias Kirkegaard
+  - Mathias Bredholt
+  - Christian Frisson
+  - Marcelo M. Wanderley
+series: NIME 2020
+doi: https://doi.org/10.5281/zenodo.4813359
+keywords: digital musical instruments, haptic feedback, force-feedback interaction, sound synthesis, mapping, embedded systems, TorqueTuner
+pages: 6
+video: https://vimeo.com/404592134
+talk: https://vimeo.com/423615656
+abstract: "TorqueTuner is an embedded module that allows Digital Musical Instrument (DMI) designers to map sensors to parameters of haptic eﬀects and dynamically modify rotary force feedback in real-time. We embedded inside TorqueTuner a collection of haptic eﬀects (Wall, Magnet, Detents, Spring, Friction, Spin, Free) and a bi-directional interface through libmapper, a software library for making connections between data signals on a shared network. To increase aﬀordability and portability of force-feedback implementations in DMI design, we designed our platform to be wire-less, self-contained and built from commercially available components. To provide examples of modularity and portability, we integrated TorqueTuner into a standalone haptic knob and into an existing DMI, the T-Stick. We implemented 3 musical applications (Pitch wheel, Turntable and Exciter), by mapping sensors to sound synthesis in audio programming environment SuperCollider. While the original goal was to simulate the haptic feedback associated with turning a knob, we found that the platform allows for further expanding interaction possibilities in application scenarios where rotary control is familiar."
+github: https://github.com/idmil/torquetuner
