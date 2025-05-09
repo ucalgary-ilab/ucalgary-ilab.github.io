@@ -1,4 +1,8 @@
 Prototyping Tools:
+  - name: Prusa i3 MK3S+
+    img: prusa-mk3s
+    url: https://web.archive.org/web/20230223035146/https://www.prusa3d.com/category/original-prusa-i3-mk3s
+
   - name: Form 3
     img: form-3
     url: https://formlabs.com/3d-printers/form-3/
@@ -86,10 +90,18 @@ Power Tools:
     url: https://www.amazon.com/dp/B00C625KVE
 
 AR/VR:
+  - name: Vive Pro 2
+    img: vive-pro-2
+    url: https://www.vive.com/ca/product/vive-pro2/overview/
+
   - name: Vicon Motion Capture
     img: vicon
     url: https://www.vicon.com/
 
+  - name: Meta Quest 2
+    img: meta-quest-2
+    url: https://www.meta.com/ca/quest2/
+    
   - name: Oculus Quest
     img: oculus-quest
     url: https://www.oculus.com/quest/
@@ -107,6 +119,10 @@ AR/VR:
     url: https://azure.microsoft.com/en-us/services/kinect-dk/
 
 Robotics:
+  - name: Unitree Go2
+    img: unitree-go2
+    url: https://www.unitree.com/go2
+
   - name: Baxter Robot
     img: baxter
     url: https://www.rethinkrobotics.com/
