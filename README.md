@@ -15,65 +15,11 @@ TODO
 
 # How to Update People
 
-## How to add a new member
+iLab members are each represented by a definition file `content/people/*.yaml`.
 
-1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/content/people
+The required definition elements are `name` and `type` (plus `keywords` for `faculty`). Other fields are optional.
 
-2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file`
-
-3. **Type file name as `first-last.yaml`**. For example, `ryo-suzuki.yaml`
-
-4. Edit the file. For example
-
-Example 1 (`ryo-suzuki.yaml`)
-
-```yaml
-name: Ryo Suzuki
-type: faculty
-url: https://ryosuzuki.org
-scholar: https://scholar.google.com/citations?user=klWjaQIAAAAJ
-twitter: https://twitter.com/ryosuzk
-facebook: https://www.facebook.com/ryosuzk
-email: ryo.suzuki@ucalgary.ca
-github: https://github.com/ryosuzuki
-linkedin: https://www.linkedin.com/in/ryosuzuki/
-```
-
-Example 2 (`christopher-smith.yaml`)
-
-```yaml
-name: Christopher Smith
-type: master
-url: https://sites.google.com/cse.uiu.ac.bd/ashratuzzavinasha
-linkedin: https://www.linkedin.com/in/christopher-smith-uofc/
-```
-
-Example 3 (`david-ledo.yaml`)
-
-```yaml
-name: David Ledo
-type: alumni
-past: phd
-now: Autodesk Research
-url: https://www.davidledo.com/
-scholar: https://scholar.google.com/citations?user=V_2BZDoAAAAJ
-```
-
-Example 4 (`bon-adriel-aseniero.yaml`)
-
-```yaml
-name: Bon Adriel Aseniero
-type: phd
-url: http://bonadriel.com/
-scholar: https://scholar.google.com/citations?user=V4nRMoMAAAAJ
-twitter: https://twitter.com/HexenKoenig
-facebook: https://www.facebook.com/bonadriel
-linkedin: https://www.linkedin.com/in/bon-adriel-aseniero-47140560/
-```
-
-The required elements are `name` and `type`. Other fields are optional.
-
-For the `type`, please choose from the following options
+Membership `type` values include:
 
 ```yaml
 - faculty
@@ -85,12 +31,26 @@ For the `type`, please choose from the following options
 - alumni
 ```
 
-If the member graduates, please modify the profile to `alumni`.
-Alumni person can spedcify `past` (prevous type e.g., phd, master, etc) and `now` (current institution).
+When members leave iLab, please modify the `type` to `alumni`. Alumni files can specify `past` (previous `type` e.g., `phd`, `master`, etc) and `now` (current institution as string).
+
+## How to add a new member
+
+1. Find an existing example that best matches your membership `type`, for instance you can start we these suggestions:
+   - `faculty`: [content/people/ryo-suzuki.yaml](content/people/ryo-suzuki.yaml)
+   - `phd`: [content/people/kathryn-blair.yaml](content/people/kathryn-blair.yaml)
+   - `master`: [content/people/clara-xi.yaml](content/people/clara-xi.yaml)
+   - `undergrad`: [content/people/lychelle-pham.yaml](content/people/lychelle-pham.yaml)
+   - `postdoc`: [content/people/soren-knudsen.yaml](content/people/soren-knudsen.yaml)
+   - `visiting`: [content/people/nathalie-bressa.yaml](content/people/nathalie-bressa.yaml)
+   - `alumni`: [content/people/bon-adriel-aseniero.yaml](content/people/bon-adriel-aseniero.yaml)
+
+2. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/content/people
+
+3. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file`
+
+4. **Type file name as `first-last.yaml`**. For example, `ryo-suzuki.yaml`
 
 5. Save and commit the new file
-
-
 
 ## How to add/modify a profile picture
 
