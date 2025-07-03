@@ -18,6 +18,11 @@
   prof: Aditya Shekhar Nittala
   url: https://difflab.org
 
+  - id: health_vis
+  description: Health Data Visualization
+  prof: Fateme Rajabiyazdi
+  url: http://healthvisfutures.sce.carleton.ca
+
 - id: grouplab
   description: Research in HCI, CSCW, and UbiComp
   prof: Saul Greenberg (Emeritus)
