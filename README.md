@@ -1,6 +1,7 @@
-# ilab-website
+# iLab Website
 
-TODO
+## TODO
+
 - create a better video compilation
 - generate mini profile figure for faster loading
 - ask to add people
@@ -12,8 +13,9 @@ TODO
 - ask to add better figures
 - create lightbox to add multiple images
 
+# How to Update the Website
 
-# How to Update People
+### How to Update People
 
 iLab members are each represented by a definition file `content/people/*.yaml`.
 
@@ -33,7 +35,7 @@ Membership `type` values include:
 
 When members leave iLab, please modify the `type` to `alumni`. Alumni files can specify `past` (previous `type` e.g., `phd`, `master`, etc) and `now` (current institution as string).
 
-## How to add a new member
+#### How to add a new member
 
 1. Find an existing example that best matches your membership `type`, for instance you can start we these suggestions:
    - `faculty`: [content/people/ryo-suzuki.yaml](content/people/ryo-suzuki.yaml)
@@ -52,8 +54,7 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 5. Save and commit the new file
 
-## How to add/modify a profile picture
-
+#### How to add/modify a profile picture
 
 1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/static/images/people
 
@@ -65,12 +66,9 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 5. If you want to replace, delete the existing one and do the same process.
 
+### How to Update Publications
 
-
-
-# How to Update Publications
-
-## How to add/modify a publication
+#### How to add/modify a publication
 
 1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/content/publications
 
@@ -123,7 +121,7 @@ talk: https://vimeo.com/368703151
 abstract: "Complex data visualization design projects often entail collaboration between people with different visualization-related skills. For example, many teams include both designers who create new visualization designs and developers who implement the resulting visualization software. We identify gaps between data characterization tools, visualization design tools, and development platforms that pose challenges for designer-developer teams working to create new data visualizations. While it is common for commercial interaction design tools to support collaboration between designers and developers, creating data visualizations poses several unique challenges that are not supported by current tools. In particular, visualization designers must characterize and build an understanding of the underlying data, then specify layouts, data encodings, and other data-driven parameters that will be robust across many different data values. In larger teams, designers must also clearly communicate these mappings and their dependencies to developers, clients, and other collaborators. We report observations and reflections from five large multidisciplinary visualization design projects and highlight six data-specific visualization challenges for design specification and handoff. These challenges include adapting to changing data, anticipating edge cases in data, understanding technical challenges, articulating data-dependent interactions, communicating data mappings, and preserving the integrity of data mappings across iterations. Based on these observations, we identify opportunities for future tools for prototyping, testing, and communicating data-driven designs, which might contribute to more successful and collaborative data visualization design."
 ```
 
-### Fields
+#### Fields
 
 The required elements are `date`, `title`, `authors` and `series`. Other fields are optional, but strongly recommended.
 
@@ -181,8 +179,7 @@ You can basically all of the information from ACM Digital Library or IEEE Xplore
 
 7. Don't forget to add the PDF in `static/pdf/[conf-year-last].pdf` as well
 
-
-## How to add/modify a cover figure
+### How to add/modify a cover figure
 
 1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/static/images/publications/cover
 
@@ -194,10 +191,7 @@ You can basically all of the information from ACM Digital Library or IEEE Xplore
 
 5. If you want to replace, delete the existing one and do the same process.
 
-
-
-
-## How to add more figures
+### How to add more figures
 
 1. You can also add more figures by just drag-and-drop. (*Strongly recommended*).
 
@@ -226,9 +220,9 @@ git commit -m 'Add more figures'
 git push origin master
 ```
 
+## Development
 
-
-# How to Check by Running the Server in Local
+### How to Check by Running the Server in Local
 
 You don't need to do this process, but if you're interested, here is the process.
 
@@ -251,8 +245,7 @@ npm run watch
 
 Watch [https://youtu.be/ympcMWQHm1c](https://youtu.be/ympcMWQHm1c) for the video instruction.
 
-
-# How to Deploy and Reflect the Change in the Website
+### How to Deploy and Reflect the Change in the Website
 
 You don't need to do this process, but if you're interested, here is the process. Usually, please let me know, so that I can deploy and reflect.
 
@@ -263,10 +256,4 @@ git clone git@github.com:ucalgary-ilab/ucalgary-ilab.github.io.git ../gh-pages
 npm run deploy
 ```
 
-
 That's it.
-
-
-
-
-
