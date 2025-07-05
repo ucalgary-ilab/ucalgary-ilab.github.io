@@ -88,10 +88,6 @@ jobs:
         id: exclude-pdf-from-artifacts
         run: |
           rm -dfr ./out/static/publications
-      - name: Create .nojekyll file
-        id: create-no-jekyll-file
-        run: |
-          rtouch ./out/.nojekyll
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
