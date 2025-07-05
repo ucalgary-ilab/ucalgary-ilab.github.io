@@ -84,6 +84,10 @@ jobs:
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} next build
           ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Exclude publications PDFs from artifacts
+        id: exclude-pdf-from-artifacts
+        run: |
+          rm -dfr ./out/static/publications
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
