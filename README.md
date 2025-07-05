@@ -59,9 +59,9 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
    - `visiting`: [content/people/nathalie-bressa.yaml](content/people/nathalie-bressa.yaml)
    - `alumni`: [content/people/bon-adriel-aseniero.yaml](content/people/bon-adriel-aseniero.yaml)
 
-2. Go to your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/people`
+2. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/people`
 
-3. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file`
+3. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file` (online) or git add it (local)
 
 4. **Type file name as `first-last.yaml`**. For example, `ryo-suzuki.yaml`
 
@@ -69,11 +69,11 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 #### How to add/modify a profile picture
 
-1. Go to your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `static/images/people`
+1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `static/images/people`
 
 2. Prepare a profile image. **The image needs to be saved as `first-last.jpg`. (The same as the profile file name)**. For example, **`ryo-suzuki.jpg`**. Do not use `png` or `jpeg` or anything else. You don't need to crop or edit to the square shape. The system automatically does.
 
-3. Click `Upload files` and upload it
+3. Click `Upload files` and upload it (online) or git add it (local)
 
 4. Save and commit the new file
 
@@ -83,9 +83,9 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 #### How to add/modify a publication
 
-1. Go to your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/publications`
+1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/publications`
 
-2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file`
+2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file` (online) or git add it (local)
 
 3. **Type file name as `conference-years-lastname.yaml`**. For example, `uist-2020-suzuki.yaml`, `mobilehci-2019-hung.yaml`, `chi-ea-2020-suzuki.yaml`
 
@@ -194,11 +194,11 @@ You can basically all of the information from ACM Digital Library or IEEE Xplore
 
 ### How to add/modify a cover figure
 
-1. Go to your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `static/images/publications/cover`
+1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `static/images/publications/cover`
 
 2. Prepare a cover figure for the paper. **The image needs to be saved as `conference-year-lastname.jpg`. (The same as the publication file name).** For example, `uist-2020-suzuki.jpg`, `mobilehci-2019-hung.yaml`, `chi-ea-2020-suzuki.yaml`. Do not use `png` or `jpeg` or anything else. You don't need to crop or edit the aspect ratio. The system automatically does.
 
-2. Click `Add file` > `Upload files`
+2. Click `Add file` > `Upload files` (online) or git add it (local)
 
 4. Save and commit the new file
 
