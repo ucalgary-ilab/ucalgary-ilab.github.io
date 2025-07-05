@@ -15,6 +15,19 @@
 
 # How to Update the Website
 
+## Generic Workflow for all updates
+
+- [Create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) to document you planned changes.
+  - [Create a branch to work on the above issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) with a concise self-explanatory title describing your anticipated updates.
+  - Browse your branch by following the hyperlink generated in your issue.
+  - Update your branch files with desired changes.
+- [Create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) (optionally in draft mode if you need more updates) with a similar title as for your issue.
+  - [Link your pull request to your issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue) by referencing your issue in your pull request description.
+  - [Request a pull request review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews).
+  - Merge your pull request once approved.
+
+## Updating Specific Content
+
 ### How to Update People
 
 iLab members are each represented by a definition file `content/people/*.yaml`.
