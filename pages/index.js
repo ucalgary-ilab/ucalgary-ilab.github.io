@@ -24,12 +24,6 @@ class Index extends React.Component {
 
         <Header />
 
-        <div id="top-video-container">
-          <video id="top-video" poster="/static/posters/top.png" preload="metadata" autoPlay loop muted playsInline webkit-playsinline="">
-            <source src="/static/videos/top.mp4" type="video/mp4"></source>
-          </video>
-        </div>
-
         <div className="ui stackable grid">
           <div className="eleven wide column centered">
             <div id="header-logo">
