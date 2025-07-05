@@ -7,6 +7,11 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pull requests
   pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
   # Runs on pushes targeting the default branch
   push:
@@ -102,3 +107,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  #Ppreview Deployment job
+  deploy-preview:
+    # run only from pull requests
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./
+
