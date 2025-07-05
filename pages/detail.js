@@ -161,7 +161,7 @@ class Detail extends React.Component {
                 }
               </p>
               <p>
-                <a href={ `/static/publications/${this.publication.id}.pdf` } target="_blank">
+                <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
                   <i className="far fa-file-pdf fa-fw"></i>{ `${this.publication.id}.pdf` }
                 </a>
               </p>
