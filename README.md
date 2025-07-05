@@ -1,6 +1,7 @@
-# ilab-website
+# iLab Website
 
-TODO
+## TODO
+
 - create a better video compilation
 - generate mini profile figure for faster loading
 - ask to add people
@@ -12,8 +13,23 @@ TODO
 - ask to add better figures
 - create lightbox to add multiple images
 
+# How to Update the Website
 
-# How to Update People
+## Generic Workflow for all updates
+
+- [Create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) to document you planned changes.
+  - [Create a branch to work on the above issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) with a concise self-explanatory title describing your anticipated updates.
+  - Browse your branch by following the hyperlink generated in your issue.
+  - Update your branch files with desired changes: browse [Updating Specific Content](#updating-specific-content) for more details.
+- [Create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) (optionally in draft mode if you need more updates) with a similar title as for your issue.
+  - [Link your pull request to your issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue) by referencing your issue in your pull request description.
+  - Preview changes: continuous integration will deploy a preview for your changes, linked via a comment in your pull request (more details: https://github.com/rossjrw/pr-preview-action).
+  - [Request a pull request review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews).
+  - Merge your pull request once approved.
+
+## Updating Specific Content
+
+### How to Update People
 
 iLab members are each represented by a definition file `content/people/*.yaml`.
 
@@ -33,7 +49,7 @@ Membership `type` values include:
 
 When members leave iLab, please modify the `type` to `alumni`. Alumni files can specify `past` (previous `type` e.g., `phd`, `master`, etc) and `now` (current institution as string).
 
-## How to add a new member
+#### How to add a new member
 
 1. Find an existing example that best matches your membership `type`, for instance you can start we these suggestions:
    - `faculty`: [content/people/ryo-suzuki.yaml](content/people/ryo-suzuki.yaml)
@@ -44,37 +60,33 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
    - `visiting`: [content/people/nathalie-bressa.yaml](content/people/nathalie-bressa.yaml)
    - `alumni`: [content/people/bon-adriel-aseniero.yaml](content/people/bon-adriel-aseniero.yaml)
 
-2. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/content/people
+2. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/people`
 
-3. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file`
+3. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file` (online) or git add it (local)
 
 4. **Type file name as `first-last.yaml`**. For example, `ryo-suzuki.yaml`
 
 5. Save and commit the new file
 
-## How to add/modify a profile picture
+#### How to add/modify a profile picture
 
-
-1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/static/images/people
+1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `static/images/people`
 
 2. Prepare a profile image. **The image needs to be saved as `first-last.jpg`. (The same as the profile file name)**. For example, **`ryo-suzuki.jpg`**. Do not use `png` or `jpeg` or anything else. You don't need to crop or edit to the square shape. The system automatically does.
 
-3. Click `Upload files` and upload it
+3. Click `Upload files` and upload it (online) or git add it (local)
 
 4. Save and commit the new file
 
 5. If you want to replace, delete the existing one and do the same process.
 
+### How to Update Publications
 
+#### How to add/modify a publication
 
+1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/publications`
 
-# How to Update Publications
-
-## How to add/modify a publication
-
-1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/content/publications
-
-2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file`
+2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file` (online) or git add it (local)
 
 3. **Type file name as `conference-years-lastname.yaml`**. For example, `uist-2020-suzuki.yaml`, `mobilehci-2019-hung.yaml`, `chi-ea-2020-suzuki.yaml`
 
@@ -123,7 +135,7 @@ talk: https://vimeo.com/368703151
 abstract: "Complex data visualization design projects often entail collaboration between people with different visualization-related skills. For example, many teams include both designers who create new visualization designs and developers who implement the resulting visualization software. We identify gaps between data characterization tools, visualization design tools, and development platforms that pose challenges for designer-developer teams working to create new data visualizations. While it is common for commercial interaction design tools to support collaboration between designers and developers, creating data visualizations poses several unique challenges that are not supported by current tools. In particular, visualization designers must characterize and build an understanding of the underlying data, then specify layouts, data encodings, and other data-driven parameters that will be robust across many different data values. In larger teams, designers must also clearly communicate these mappings and their dependencies to developers, clients, and other collaborators. We report observations and reflections from five large multidisciplinary visualization design projects and highlight six data-specific visualization challenges for design specification and handoff. These challenges include adapting to changing data, anticipating edge cases in data, understanding technical challenges, articulating data-dependent interactions, communicating data mappings, and preserving the integrity of data mappings across iterations. Based on these observations, we identify opportunities for future tools for prototyping, testing, and communicating data-driven designs, which might contribute to more successful and collaborative data visualization design."
 ```
 
-### Fields
+#### Fields
 
 The required elements are `date`, `title`, `authors` and `series`. Other fields are optional, but strongly recommended.
 
@@ -181,23 +193,19 @@ You can basically all of the information from ACM Digital Library or IEEE Xplore
 
 7. Don't forget to add the PDF in `static/pdf/[conf-year-last].pdf` as well
 
+### How to add/modify a cover figure
 
-## How to add/modify a cover figure
-
-1. Go to https://github.com/ucalgary-ilab/ilab-website/tree/master/static/images/publications/cover
+1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `static/images/publications/cover`
 
 2. Prepare a cover figure for the paper. **The image needs to be saved as `conference-year-lastname.jpg`. (The same as the publication file name).** For example, `uist-2020-suzuki.jpg`, `mobilehci-2019-hung.yaml`, `chi-ea-2020-suzuki.yaml`. Do not use `png` or `jpeg` or anything else. You don't need to crop or edit the aspect ratio. The system automatically does.
 
-2. Click `Add file` > `Upload files`
+2. Click `Add file` > `Upload files` (online) or git add it (local)
 
 4. Save and commit the new file
 
 5. If you want to replace, delete the existing one and do the same process.
 
-
-
-
-## How to add more figures
+### How to add more figures
 
 1. You can also add more figures by just drag-and-drop. (*Strongly recommended*).
 
@@ -226,9 +234,9 @@ git commit -m 'Add more figures'
 git push origin master
 ```
 
+## Development
 
-
-# How to Check by Running the Server in Local
+### How to Check by Running the Server in Local
 
 You don't need to do this process, but if you're interested, here is the process.
 
@@ -251,22 +259,22 @@ npm run watch
 
 Watch [https://youtu.be/ympcMWQHm1c](https://youtu.be/ympcMWQHm1c) for the video instruction.
 
+### How to Deploy and Reflect the Change in the Website
 
-# How to Deploy and Reflect the Change in the Website
+Deployment is automated via continuous integration, as defined in [.github/workflows/deployment-gh-pages.yml](.github/workflows/deployment-gh-pages.yml), and via our [Generic Workflow for all updates](#generic-workflow-for-all-updates).
 
-You don't need to do this process, but if you're interested, here is the process. Usually, please let me know, so that I can deploy and reflect.
+When continuous integration fails, here is a workaround to deploy from a local clone:
 
-Clone the web-build repo from https://github.com/ucalgary-ilab/ucalgary-ilab.github.io in the same directory
+#### Clone
+
+Create a second clone checked out at the `gh-pages` branch (needed once):
 
 ```shell
-git clone git@github.com:ucalgary-ilab/ucalgary-ilab.github.io.git ../gh-pages
-npm run deploy
+git clone git@github.com:ucalgary-ilab/ucalgary-ilab.github.io.git -b gh-pages ../gh-pages
 ```
 
+#### Deploy
 
-That's it.
-
-
-
-
-
+```shell
+npm run deploy
+```
