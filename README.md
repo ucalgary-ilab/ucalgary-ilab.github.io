@@ -260,13 +260,20 @@ Watch [https://youtu.be/ympcMWQHm1c](https://youtu.be/ympcMWQHm1c) for the video
 
 ### How to Deploy and Reflect the Change in the Website
 
-You don't need to do this process, but if you're interested, here is the process. Usually, please let me know, so that I can deploy and reflect.
+Deployment is automated via continuous integration, as defined in [.github/workflows/deployment-gh-pages.yml](.github/workflows/deployment-gh-pages.yml), and via our [Generic Workflow for all updates](#generic-workflow-for-all-updates).
 
-Clone the web-build repo from https://github.com/ucalgary-ilab/ucalgary-ilab.github.io in the same directory
+When continuous integration fails, here is a workaround to deploy from a local clone:
+
+#### Clone
+
+Create a second clone checked out at the `gh-pages` branch (needed once):
 
 ```shell
-git clone git@github.com:ucalgary-ilab/ucalgary-ilab.github.io.git ../gh-pages
-npm run deploy
+git clone git@github.com:ucalgary-ilab/ucalgary-ilab.github.io.git -b gh-pages ../gh-pages
 ```
 
-That's it.
+#### Deploy
+
+```shell
+npm run deploy
+```
