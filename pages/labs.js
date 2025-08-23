@@ -12,10 +12,9 @@ class Labs extends React.Component {
         </h1>
         <div id="labs" className="ui three cards" style={{ textAlign: 'center', marginTop: '15px' }}>
           { labs.map((lab, i) => {
-            let profURL = '/people/'+lab.prof.split(" (")[0].split(" ").join("-").toLowerCase();
             return (
               <div className="card" key={ lab.id } style={{ padding: '15px' }}>
-                <a href={ profURL } className="ui ">
+                <a href={ lab.url } className="ui ">
                   <div className={ `img card-color-${i}`}>
                   { lab.logo !== false &&
                     <img src={ `/static/images/labs/${lab.id}.png` } alt={`${lab.id}`} />
