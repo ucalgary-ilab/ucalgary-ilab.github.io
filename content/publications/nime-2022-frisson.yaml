@@ -1,0 +1,14 @@
+date: 2022-06
+title: "ForceHost: an open-source toolchain for generating firmware embedding the authoring and rendering of audio and force-feedback haptics"
+authors:
+  - Christian Frisson
+  - Mathias Kirkegaard
+  - Thomas Pietrzak
+  - Marcelo M. Wanderley
+series: NIME 2022
+doi: https://doi.org/10.21428/92fbeb44.76cfc96e
+keywords: digital Musical Instrument, haptics, force-feedback, authoring, mapping, embedded computing, TorqueTuner
+pages: 34
+video: https://www.youtube.com/watch?v=smFpkdw-J2w
+abstract: "ForceHost is an opensource toolchain for generating firmware that hosts authoring  and rendering of force-feedback and audio signals and that communicates through I2C  with guest motor and sensor boards. With ForceHost, the stability of audio and haptic  loops is no longer delegated to and dependent on operating systems and drivers, and  devices remain discoverable beyond planned obsolescence. We modified Faust, a highlevel language and compiler for real-time audio digital signal processing, to support  haptics. Our toolchain compiles audio-haptic firmware applications with Faust and  embeds web-based UIs exposing their parameters. We validate our toolchain by  example applications and modifications of integrated development environments:  script-based programming examples of haptic firmware applications with our haptic1D  Faust library, visual programming by mapping input and output signals between audio  and haptic devices in Webmapper, visual programming with physically-inspired massinteraction models in Synth-a-Modeler Designer. We distribute the documentation and  source code of ForceHost and all of its components and forks."
+gitlab: https://gitlab.com/ForceHost

@@ -5,6 +5,14 @@
 name: Deploy Next.js site to Pages
 
 on:
+  # Runs on pull requests
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
@@ -81,19 +89,62 @@ jobs:
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} next build
           ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Exclude publications PDFs from artifacts
+        id: exclude-pdf-from-artifacts
+        run: |
+          rm -dfr ./out/static/publications
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: ./out
 
   # Deployment job
   deploy:
+    # do not publish from pull requests
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: write
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ./out
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean-exclude: pr-preview/
+          force: false
+          folder: ./out/
+
+  # Preview Deployment job
+  deploy-preview:
+    # run only from pull requests
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ./out
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./out/

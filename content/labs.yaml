@@ -1,8 +1,3 @@
-- id: utouch
-  description: Physical Interaction and Human-Robot Interaction
-  prof: Ehud Sharlin
-  url: https://utouch.cpsc.ucalgary.ca/
-
 - id: curiosity
   description: Human-Centered Design for Creativity & Curiosity
   prof: Lora Oehlberg
@@ -18,10 +13,25 @@
   prof: Aditya Shekhar Nittala
   url: https://difflab.org
 
+- id: HealthVis
+  description: Health Data Visualization
+  prof: Fateme Rajabiyazdi
+  url: http://healthvisfutures.sce.carleton.ca
+
+- id: utouch
+  description: Physical Interaction and Human-Robot Interaction
+  prof: Ehud Sharlin
+  url: https://utouch.cpsc.ucalgary.ca/
+
 - id: grouplab
   description: Research in HCI, CSCW, and UbiComp
   prof: Saul Greenberg (Emeritus)
   url: http://grouplab.cpsc.ucalgary.ca/
+
+- id: innovis
+  description: Innovations in Visualization Laboratory
+  prof: Sheelagh Carpendale (Adjunct - Simon Fraser University)
+  url: http://sheelaghcarpendale.ca/
 
 - id: 'suzuki'
   description: Programmable Reality Lab - Tangible, AR/VR, and Robotics
@@ -33,7 +43,4 @@
   prof: Anthony Tang (Adjunct - Singapore Management University)
   url: https://ricelab.github.io/
 
-- id: innovis
-  description: Innovations in Visualization Laboratory
-  prof: Sheelagh Carpendale (Adjunct - Simon Fraser University)
-  url: http://sheelaghcarpendale.ca/
+
