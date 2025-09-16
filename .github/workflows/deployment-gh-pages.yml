@@ -147,7 +147,7 @@ jobs:
       - name: Insert preview subpath in static paths and page links
         id: fix-preview-subpath
         run: |
-          find ./out/ \( -name "*.css" -or -name "*.html" -or -name "*.js*" \) -exec echo {} \; -exec sed -i -r 's#(['"'"'\(`"]+)(https://ilab.ucalgary.ca)*/(_next/)*([courses|facility|location|people publications|seminar|static]+)#\1/pr-preview/pr-${{github.event.number}}/\3\4#g' {} \;
+          find ./out/ \( -name "*.css" -or -name "*.html" -or -name "*.js*" \) -exec echo {} \; -exec sed -i -r 's#(['"'"'\(`"]+)(https://ilab.ucalgary.ca)*/(_next/)*([courses|facility|location|people|publications|seminar|static]+)#\1/pr-preview/pr-${{github.event.number}}/\3\4#g' {} \;
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
