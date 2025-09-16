@@ -147,7 +147,7 @@ jobs:
       - name: Remove leading slashes in static paths for previews
         id: remove-leading-slashes
         run: |
-          find ./out/ \( -name "*.css" -or -name "*.html" -or -name "*.js*" \) -exec echo {} \; -exec sed -i -r 's|(['"'"'\(`"]+)(https://ilab.ucalgary.ca)*/(_next/)*static|\1\3static|g' {} \;
+          find ./out/ \( -name "*.css" -or -name "*.html" -or -name "*.js*" \) -exec echo {} \; -exec sed -i -r 's#(['"'"'\(`"]+)(https://ilab.ucalgary.ca)*/(_next/)*([courses|facility|location|people publications|seminar|static]+)#\1\3\4#g' {} \;
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
