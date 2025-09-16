@@ -2,6 +2,7 @@ import React from 'react'
 
 import ReactMarkdown from 'react-markdown'
 
+import About from './about'
 import Meta from './meta'
 import Header from './header'
 import Labs from './labs'
@@ -23,7 +24,7 @@ class Index extends React.Component {
         <Meta />
 
         <Header />
-
+        <About/>
         <div className="ui stackable grid">
           <div className="eleven wide column centered">
             <div id="header-logo">
