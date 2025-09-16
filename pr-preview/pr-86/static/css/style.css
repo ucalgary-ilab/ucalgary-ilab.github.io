@@ -496,7 +496,7 @@ a:hover {
 }
 
 #video-bg {
-  background: transparent url(/static/images/pattern.png) repeat top left;
+  background: transparent url(static/images/pattern.png) repeat top left;
   position: absolute;
   top: 0;
   right: 0;
