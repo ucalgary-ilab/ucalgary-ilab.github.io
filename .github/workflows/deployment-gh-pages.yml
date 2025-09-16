@@ -144,6 +144,9 @@ jobs:
         with:
           name: github-pages
           path: ./out
+      - name: Remove leading slashes in static paths for previews
+        run: |
+          find ./out/ \( -name "*.css" -or -name "*.html" -or -name "*.js*" \) -exec echo {} \; -exec sed -i -r 's|(['"'"'\(`"]+)(https://ilab.ucalgary.ca)*/(_next/)*static|\1\3static|g' {} \;/
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
