@@ -84,6 +84,41 @@ class Detail extends React.Component {
     }
   }
 
+  // Adapted from same function in pages/person.js
+
+  renderLink(publication, key) {
+    if (!publication[key]) {
+      return ''
+    }
+
+    let title = publication[key]
+    let href = publication[key]
+    let icon
+    switch(key) {
+      case 'github':
+        icon = 'fab fa-github-alt fa-fw'
+        break
+      case 'gitlab':
+        icon = 'fab fa-gitlab fa-fw'
+        break
+    }
+
+    return (
+      <div className="item">
+        <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
+          <i className={ icon } />
+          { title }
+        </a>
+      </div>
+    )
+  }
+
+  // To update when new link types are added to renderLink()
+
+  hasMaterialLinks(publication) {
+    return publication.gitlab || publication.github
+  }
+
   render() {
     if (!this.props.publication) {
       return <div></div>
@@ -126,7 +161,7 @@ class Detail extends React.Component {
                 }
               </p>
               <p>
-                <a href={ `/static/publications/${this.publication.id}.pdf` } target="_blank">
+                <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
                   <i className="far fa-file-pdf fa-fw"></i>{ `${this.publication.id}.pdf` }
                 </a>
               </p>
@@ -179,6 +214,16 @@ class Detail extends React.Component {
             </p>
           </div>
         </div>
+        {this.hasMaterialLinks(this.publication) &&
+          <div className="block">
+            <h1>Materials</h1>
+            <div class="ui horizontal small divided link list">
+              {['github', 'gitlab'].map((key) => {
+                return this.renderLink(this.publication, key)
+              })}
+            </div>
+          </div>
+        }
         { this.publication.talkEmbed &&
           <div className="block">
             <h1>Talk</h1>

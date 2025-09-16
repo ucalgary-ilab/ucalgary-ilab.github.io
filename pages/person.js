@@ -27,7 +27,7 @@ class Person extends React.Component {
     }
 
     let title = person[key].split('/')[3]
-    let href
+    let href = person[key]
     let icon
     switch(key) {
       case 'twitter':
@@ -39,11 +39,15 @@ class Person extends React.Component {
       case 'github':
         icon = 'fab fa-github-alt fa-fw'
         break
+      case 'gitlab':
+        icon = 'fab fa-gitlab fa-fw'
+        break
       case 'cv':
         icon = 'far fa-file fa-fw'
         break
       case 'email':
         title = person[key]
+        href = `mailto:${person[key]}`
         icon = 'far fa-envelope fa-fw'
         break
       case 'linkedin':
@@ -54,7 +58,7 @@ class Person extends React.Component {
 
     return (
       <div className="item">
-        <a href={ person[key] } target="_blank" style={{ fontSize: '1.2em' }}>
+        <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
           <i className={ icon } />
           { title }
         </a>
@@ -117,7 +121,7 @@ class Person extends React.Component {
                 </p>
               }
               <div class="ui horizontal small divided link list">
-                { ['cv', 'facebook', 'twitter', 'github', 'linkedin', 'email'].map((key) => {
+                { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
                   return this.renderLink(this.person, key)
                 }) }
               </div>

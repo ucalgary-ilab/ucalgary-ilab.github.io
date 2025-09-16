@@ -14,10 +14,12 @@ class Labs extends React.Component {
           { labs.map((lab, i) => {
             return (
               <div className="card" key={ lab.id } style={{ padding: '15px' }}>
-                <a href={ lab.url } target="_blank" className="ui ">
+                <a href={ lab.url } className="ui ">
                   <div className={ `img card-color-${i}`}>
-                  { lab.id !== '' &&
-                    <img src={ `/static/images/labs/${lab.id}.png` } />
+                  { lab.logo !== false &&
+                    <img src={ `/static/images/labs/${lab.id}.png` } alt={`${lab.id}`} />
+                    || <div className='lab-name'>{`${lab.id}`}</div>
+                    
                   }
                   {
                     lab.id === '' &&

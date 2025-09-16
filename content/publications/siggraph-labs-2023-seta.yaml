@@ -1,0 +1,13 @@
+date: 2023-08
+title: "Sketching Pipelines for Ephemeral Immersive Spaces"
+authors:
+  - Michał Seta
+  - Eduardo A. L. Meneses
+  - Emmanuel Durand
+  - Christian Frisson
+series: SIGGRAPH 2023 Labs
+doi: https://doi.org/10.1145/3588029.3599740
+keywords: art, interaction, pipeline, production, ui / tools, VR/AR/MR
+pages: 2
+abstract: "This hands-on class will allow artists to use open-source tools to create interactive and immersive experiences. These tools have been created and incubated at the Society for Arts and Technology (SAT), a unique non-profit organization in Canada whose mission is to democratize technologies to enable people to experience and author multisensory immersions. During the class we invite participants to use their favorite software on platforms they are already familiar with, to interface with our tools. The toolset will include transmission protocols, video mapping tools, sound spatialization software, and gestural control using pose detection. The class will be organized in two parts: a presentation of the tools and context involving the development and applications, and a hands-on session with an ephemeral immersive space. This event is designed for art researchers, artists, designers, content creators, and other creatives interested in creating immersive spaces using research-developed tools. Participants will learn how to employ open-source tools for different artistic tasks so that they will be able to deploy their own immersive spaces after the class."
+gitlab: https://sat-mtl.gitlab.io/tools/
