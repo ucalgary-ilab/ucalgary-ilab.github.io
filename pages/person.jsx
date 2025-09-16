@@ -68,6 +68,18 @@ function renderLink(person, key) {
   )
 }
 
+/*
+export async function getStaticProps(context) {
+  const { params } = context;
+  const id = params.id;
+
+  const temp = require(`../content/output/people/${id}.json`)
+  const photos = getPhotos()
+  temp.photo = getPhoto(id, photos)
+  return { props: {person: temp} }
+}
+*/
+
 export default function Person ({}) {
 
   const router = useRouter()

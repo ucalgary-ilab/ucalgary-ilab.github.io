@@ -27,7 +27,7 @@ function getTitle(person) {
   let title = typeStringFromType(person.type)
 
   if (person.program) {
-    title = programStringFromProgram(program) + title
+    title = programStringFromProgram(person.program) + title
   }
 
   if (person.type === 'alumni') {
@@ -62,9 +62,9 @@ function People ({short}) {
 
     let types = [
       {key: 'faculty', title: 'Faculty'},
-      {key: 'postdoc', title: 'Post Docs'},
+      {key: 'postdoc', title: 'Postdocs'},
       {key: 'phd', title: 'PhD Students'},
-      {key: 'master', title: 'Masters Students'},
+      {key: 'master', title: "Master's Students"},
       {key: 'undergrad', title: 'Undergrad Students'},
       {key: 'visiting', title: 'Visiting Researchers'},
       {key: 'alumni', title: 'Alumni'}
@@ -108,17 +108,15 @@ function People ({short}) {
       </div>
       }
       { types.map((type) => {
+        const typePeople = people.filter(person => person.type === type.key)
         return (
+         (typePeople.length > 0) &&
           <div className="people-category" key={type.title}>
             { !short &&
-            <h2>{['faculty', 'postdoc'].includes(type.key) ? '' : type.title}</h2>
+            <h2>{type.title}</h2>
             }
             <div className="ui grid">
-              {people
-                .filter((person) => {
-                  return person.type === type.key
-                }) // filter
-                .map((person) => {
+              {typePeople.map((person) => {
                   person.title = getTitle(person)
                   let colNum = type.key === 'faculty' ? 'five' : 'four'
                   return (
@@ -148,7 +146,7 @@ function People ({short}) {
               }
             </div>
           </div>
-        )
+      )
       })}
     </div>
   )
