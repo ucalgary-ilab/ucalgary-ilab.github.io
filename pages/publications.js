@@ -132,7 +132,7 @@ class Publications extends React.Component {
                       }).reduce((prev, current) => [prev, ' , ', current])
                     }
                   </p>
-                  <p>
+                  <div>
                   { publication.keywords &&
                   <div className="ui large basic labels">
                     { publication.keywords.split(', ').map((keyword) => {
@@ -140,7 +140,7 @@ class Publications extends React.Component {
                     }) }
                   </div>
                   }
-                  </p>
+                  </div>
                 </div>
               </div>
             ) // publications

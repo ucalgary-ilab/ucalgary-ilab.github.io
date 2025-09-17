@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -17,20 +17,17 @@
   "author": "Ryo Suzuki <ryosuzk@googlemail.com> (http://ryosuzuki.org/)",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "compress-images": "^1.5.8",
-    "directory-tree": "^2.2.4",
-    "jquery": "^3.4.1",
-    "next": "^8.1.0",
+    "directory-tree": "^3.5.2",
+    "jquery": "^3.7.1",
+    "next": "^15.5.3",
     "next-routes": "^1.4.2",
-    "png-to-jpeg": "^1.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.8",
-    "semantic-ui-modal": "^2.4.1",
-    "sharp": "^0.30.4"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "semantic-ui-modal": "^2.5.0"
   },
   "devDependencies": {
-    "processmd": "^4.2.1"
+    "lodash": "^4.17.21",
+    "processmd": "^4.7.0"
   }
 }

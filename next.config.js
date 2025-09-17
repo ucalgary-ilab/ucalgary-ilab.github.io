@@ -1,8 +1,9 @@
 const webpack = require('webpack')
-const withCSS = require('@zeit/next-css')
 const _ = require('lodash')
 
-module.exports = withCSS({
+module.exports = {
+  trailingSlash: true,
+  output: 'export',
   exportPathMap: function () {
     const ids = [
       'publications',
@@ -64,7 +65,6 @@ module.exports = withCSS({
     }
     */
 
-    // console.log(pages)
     return Object.assign({}, pages, {
       '/': { page: '/' }
     })
@@ -81,4 +81,4 @@ module.exports = withCSS({
     return config
   }
 
-})
+}

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import React from 'react';
 
 class Meta extends React.Component {
   constructor(props) {
