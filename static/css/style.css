@@ -51,7 +51,11 @@ a {
 
 #about a {
   color: #e56f50;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+#about strong {
+  font-weight: 600;
 }
 
 #about{
