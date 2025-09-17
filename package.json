@@ -18,17 +18,14 @@
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
-    "compress-images": "^2.0.5",
     "directory-tree": "^3.5.2",
     "jquery": "^3.7.1",
     "next": "^15.3.1",
     "next-routes": "^1.4.2",
-    "png-to-jpeg": "^1.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
-    "semantic-ui-modal": "^2.5.0",
-    "sharp": "^0.34.1"
+    "semantic-ui-modal": "^2.5.0"
   },
   "devDependencies": {
     "lodash": "^4.17.21",
