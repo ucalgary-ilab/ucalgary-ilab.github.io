@@ -1,18 +1,20 @@
+'use client'
+
 import React from 'react'
 
 import ReactMarkdown from 'react-markdown'
 
 import Meta from './meta'
-import Header from './header'
+import Header from '../header/page'
 import Labs from './labs'
 import News from './news'
 import Seminar from './seminar'
-import Publications from './publications'
+import Publications from '../publications/page'
 import People from './people'
 import Courses from './courses'
 import Facility from './facility'
 import Location from './location'
-import Footer from './footer'
+import Footer from '../footer/page'
 
 class Page extends React.Component {
   static async getInitialProps(req) {

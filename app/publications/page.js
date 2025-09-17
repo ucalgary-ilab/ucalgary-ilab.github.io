@@ -1,10 +1,13 @@
+'use client'
+
 import React from 'react'
 import _ from 'lodash'
-import Detail from './detail'
-import summary from '../content/output/summary.json'
-import booktitles from '../content/output/booktitles.json'
-import files from '../content/output/files.json'
-import vimeo from '../content/output/vimeo.json'
+import Detail from '../detail/page'
+import summary from '../../content/output/summary.json'
+import booktitles from '../../content/output/booktitles.json'
+import files from '../../content/output/files.json'
+import vimeo from '../../content/output/vimeo.json'
+import Link from 'next/link'
 
 class Publications extends React.Component {
   constructor(props) {
@@ -185,9 +188,9 @@ class Publications extends React.Component {
 
         { this.props.short &&
           <div className="ui vertical segment stackable" style={{ textAlign: 'center' }}>
-            <a className="ui button" href="/publications">
+            <Link className="ui button" href="/publications">
               { `+ ${this.publications.length} more publications` }
-            </a>
+            </Link>
           </div>
         }
       </div>

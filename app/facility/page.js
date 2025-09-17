@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import facility from '../content/output/facility.json'
+import facility from '../../content/output/facility.json'
 
 const categories = Object.keys(facility).slice(0, 7)
 

@@ -1,6 +1,9 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import news from '../content/output/news.json'
+import news from '../../content/output/news.json'
+import Link from 'next/link'
 
 class News extends React.Component {
 
@@ -41,9 +44,9 @@ class News extends React.Component {
         </div>
        { this.props.short &&
           <div className="ui vertical segment stackable" style={{ textAlign: 'center' }}>
-            <a className="ui button" href="/news">
+            <Link className="ui button" href="/news">
               { `+ see more updates` }
-            </a>
+            </Link>
           </div>
        }
       </div>

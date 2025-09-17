@@ -1,5 +1,8 @@
+'use client'
+
 import React from 'react'
 import _ from 'lodash'
+import Link from 'next/link'
 
 class Detail extends React.Component {
   constructor(props) {
@@ -128,7 +131,7 @@ class Detail extends React.Component {
       <div id="publication">
         <div className="block">
           <div id="breadcrumb" className="ui breadcrumb">
-            <a className="section" href="/publications">Publications</a>
+            <Link className="section" href="/publications">Publications</Link>
             <i className="right angle icon divider"></i>
             <a className="active section">{ this.publication.series }</a>
           </div>

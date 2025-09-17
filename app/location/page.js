@@ -1,6 +1,9 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import files from '../content/output/files.json'
+import files from '../../content/output/files.json'
+import Link from 'next/link'
 
 class Location extends React.Component {
   constructor(props) {
@@ -58,9 +61,9 @@ class Location extends React.Component {
         }
         { this.props.short &&
           <div className="ui vertical segment stackable" style={{ textAlign: 'center' }}>
-            <a className="ui button" href="/location">
+            <Link className="ui button" href="/location">
               + learn more about our space
-            </a>
+            </Link>
           </div>
         }
 
