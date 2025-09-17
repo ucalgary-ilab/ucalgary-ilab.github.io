@@ -20,10 +20,10 @@
     "@zeit/next-css": "^1.0.1",
     "directory-tree": "^3.5.2",
     "jquery": "^3.7.1",
-    "next": "^15.3.1",
+    "next": "^15.5.3",
     "next-routes": "^1.4.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
     "semantic-ui-modal": "^2.5.0"
   },

@@ -1188,11 +1188,11 @@ __metadata:
     directory-tree: "npm:^3.5.2"
     jquery: "npm:^3.7.1"
     lodash: "npm:^4.17.21"
-    next: "npm:^15.3.1"
+    next: "npm:^15.5.3"
     next-routes: "npm:^1.4.2"
     processmd: "npm:^4.7.0"
-    react: "npm:^19.1.0"
-    react-dom: "npm:^19.1.0"
+    react: "npm:^19.1.1"
+    react-dom: "npm:^19.1.1"
     react-markdown: "npm:^10.1.0"
     semantic-ui-modal: "npm:^2.5.0"
   languageName: unknown
@@ -2014,7 +2014,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^15.3.1":
+"next@npm:^15.5.3":
   version: 15.5.3
   resolution: "next@npm:15.5.3"
   dependencies:
@@ -2346,7 +2346,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^19.1.0":
+"react-dom@npm:^19.1.1":
   version: 19.1.1
   resolution: "react-dom@npm:19.1.1"
   dependencies:
@@ -2379,7 +2379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^19.1.0":
+"react@npm:^19.1.1":
   version: 19.1.1
   resolution: "react@npm:19.1.1"
   checksum: 10c0/8c9769a2dfd02e603af6445058325e6c8a24b47b185d0e461f66a6454765ddcaecb3f0a90184836c68bb509f3c38248359edbc42f0d07c23eb500a5c30c87b4e
