@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const _ = require('lodash')
 
 module.exports = {
+  trailingSlash: true,
+  output: 'export',
   exportPathMap: function () {
     const ids = [
       'publications',
@@ -63,7 +65,7 @@ module.exports = {
     }
     */
 
-    // console.log(pages)
+    console.log(pages)
     return Object.assign({}, pages, {
       '/': { page: '/' }
     })
