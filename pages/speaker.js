@@ -10,11 +10,14 @@ class Speaker extends React.Component {
   constructor(props) {
     super(props)
 
+    if (!this.props.speaker) return
+
     this.props.speaker.nameId = _.lowerCase(this.props.speaker.name).replace(/ /g, '-')
     this.props.speaker.id = `${this.props.speaker.date}-${this.props.speaker.nameId}`
   }
 
   render() {
+    if (!this.props.speaker) return
     return (
       <div style={{ 'margin': '40px 0' }}>
         <p className="ui horizontal divider header">
