@@ -49,6 +49,15 @@ a {
   color: #5c472d;
 }
 
+#about a {
+  color: #e56f50;
+  font-weight: 500;
+}
+
+#about{
+  margin-bottom: 3em;
+}
+
 .color {
   color: #5c472d;
 }
