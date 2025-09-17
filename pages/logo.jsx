@@ -1,7 +1,9 @@
 export default function Logo(props) {
   return (
-    <div>
-      A logo should go here.
+    <div class="ui two column centered grid">
+      <div class="ui container">
+        <img style={{ maxWidth: '380px', margin: '30px auto' }} src="/static/images/ilab-logo-3d.jpg"  />
+      </div>
     </div>
   );
 }
