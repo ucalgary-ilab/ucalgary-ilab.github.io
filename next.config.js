@@ -65,7 +65,6 @@ module.exports = {
     }
     */
 
-    console.log(pages)
     return Object.assign({}, pages, {
       '/': { page: '/' }
     })
