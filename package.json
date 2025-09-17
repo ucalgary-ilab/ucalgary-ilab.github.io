@@ -17,7 +17,6 @@
   "author": "Ryo Suzuki <ryosuzk@googlemail.com> (http://ryosuzuki.org/)",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
     "directory-tree": "^3.5.2",
     "jquery": "^3.7.1",
     "next": "^15.5.3",
