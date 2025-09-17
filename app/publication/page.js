@@ -1,15 +1,17 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import summary from '../content/output/summary.json'
-import booktitles from '../content/output/booktitles.json'
-import files from '../content/output/files.json'
-import vimeo from '../content/output/vimeo.json'
+import summary from '../../content/output/summary.json'
+import booktitles from '../../content/output/booktitles.json'
+import files from '../../content/output/files.json'
+import vimeo from '../../content/output/vimeo.json'
 
 import Meta from './meta'
 import Head from 'next/head'
-import Header from './header'
-import Detail from './detail'
-import Footer from './footer'
+import Header from '../header/page'
+import Detail from '../detail/page'
+import Footer from '../footer/page'
 
 class Publication extends React.Component {
   static async getInitialProps(req) {

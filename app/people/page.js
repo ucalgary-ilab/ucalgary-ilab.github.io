@@ -1,8 +1,10 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import _ from 'lodash'
-import summary from '../content/output/summary.json'
-import files from '../content/output/files.json'
+import summary from '../../content/output/summary.json'
+import files from '../../content/output/files.json'
 
 class People extends React.Component {
   constructor(props) {

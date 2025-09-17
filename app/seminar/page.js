@@ -1,7 +1,9 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import seminar from '../content/output/seminar.json'
-import Speaker from './speaker.js'
+import seminar from '../../content/output/seminar.json'
+import Speaker from '../speaker/page.js'
 
 class Seminar extends React.Component {
   render() {

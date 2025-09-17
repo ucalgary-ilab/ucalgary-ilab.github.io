@@ -1,5 +1,8 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Link from 'next/link'
 
 class Footer extends React.Component {
   render() {
@@ -24,10 +27,10 @@ class Footer extends React.Component {
               </a>
             </div>
             <div className="item">
-              <a href="/cv.pdf" target="_blank" style={{ fontSize: '1.2em' }}>
+              <Link href="/cv.pdf" target="_blank" style={{ fontSize: '1.2em' }}>
                 <i className="far fa-file fa-fw" />
                 Resume/CV
-              </a>
+              </Link>
             </div>
             <div className="item">
               <a href="mailto:ryo.suzuki@colorado.edu" target="_blank" style={{ fontSize: '1.2em' }}>

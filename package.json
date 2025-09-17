@@ -27,7 +27,9 @@
     "semantic-ui-modal": "^2.5.0"
   },
   "devDependencies": {
+    "@types/react": "19.1.13",
     "lodash": "^4.17.21",
-    "processmd": "^4.7.0"
+    "processmd": "^4.7.0",
+    "typescript": "5.9.2"
   }
 }
