@@ -47,7 +47,7 @@ class Detail extends React.Component {
       this.proceeding = {}
     }
     this.proceeding.series = `${conference} '${year}`
-    if (this.publication.pages < 4) {
+    if (this.publication.pages < 4 && this.proceeding.booktitle && !this.proceeding.booktitle.toString().includes("Adjunct")) {
       this.proceeding.booktitle = 'Adjunct ' + this.proceeding.booktitle
     }
   }
