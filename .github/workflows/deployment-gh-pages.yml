@@ -53,6 +53,9 @@ jobs:
           fi
       - name: Enable corepack for yarn v4
         run: corepack enable
+      - name: Setup yarn
+        id: setup-yarn
+        run: yarn set version stable
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
