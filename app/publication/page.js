@@ -7,7 +7,7 @@ import booktitles from '../../content/output/booktitles.json'
 import files from '../../content/output/files.json'
 import vimeo from '../../content/output/vimeo.json'
 
-import Meta from './meta'
+import Meta from '../meta/page'
 import Head from 'next/head'
 import Header from '../header/page'
 import Detail from '../detail/page'
@@ -38,7 +38,7 @@ class Publication extends React.Component {
       this.namesId[person.name] = person.id
     }
 
-    this.publication = require(`../content/output/publications/${ this.props.id }.json`)
+    this.publication = require(`../../content/output/publications/${ this.props.id }.json`)
   }
 
   render() {

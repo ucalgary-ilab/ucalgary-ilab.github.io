@@ -3,7 +3,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import Meta from './meta'
+import Meta from '../meta/page'
 import Header from '../header/page'
 import Publications from '../publications/page'
 import Footer from '../footer/page'
@@ -18,7 +18,7 @@ class Person extends React.Component {
   constructor(props) {
     super(props)
 
-    this.person = require(`../content/output/people/${this.props.id}.json`)
+    this.person = require(`../../content/output/people/${this.props.id}.json`)
 
     this.getPhotos()
   }
