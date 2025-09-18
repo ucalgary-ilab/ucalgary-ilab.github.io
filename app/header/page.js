@@ -20,7 +20,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <div className="ui right vertical sidebar menu">
           <Link className="item" href="/" key="Home">Home</Link>
           { this.items.map((item) => {
@@ -31,7 +31,6 @@ class Header extends React.Component {
             )
           })}
         </div>
-
         <div className="ui stackable secondary pointing container menu" style={{ borderBottom: 'none', marginRight: '15%', fontSize: '1.1em' }}>
           <div className="left menu">
             <Link className='item' href='/'>
@@ -52,7 +51,7 @@ class Header extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }
