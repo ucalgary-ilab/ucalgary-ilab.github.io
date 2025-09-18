@@ -29,7 +29,8 @@ function Labs ({short}) {
   ]
 
     return (
-        <div id="labs"  style={{ textAlign: 'left', marginTop: '20px', marginLeft: "15%", marginRight: "15%"}}>
+      <div id="labs" className="ui two column centered grid">
+        <div className="ui text container left aligned">
           { labs.map((lab, i) => {
             if (lab.status=="current")
             {
@@ -74,6 +75,7 @@ function Labs ({short}) {
             }
           })}
         </div>
+      </div>
     )
   }
 
