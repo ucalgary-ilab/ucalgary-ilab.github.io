@@ -49,7 +49,7 @@ class Location extends React.Component {
             <div className="ui stackable four cards" style={{ marginTop: '30px' }}>
               { this.images.map((src) => {
                 return (
-                  <a className="card" href={ `/${src}` } target="_blank">
+                  <a className="card" href={ `/${src}` } target="_blank" key={ src }>
                     <div className="image">
                       <img src={ `/${src}` }/>
                     </div>

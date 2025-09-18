@@ -10,15 +10,15 @@ class Courses extends React.Component {
   render() {
     return (
       <div id="courses" className="category">
-        <h1 class="ui horizontal divider header">
-          <i class="university icon"></i>
+        <h1 className="ui horizontal divider header">
+          <i className="university icon"></i>
           Courses
         </h1>
-        <div class="ui divided items">
+        <div className="ui divided items">
           <h1>HCI Related Courses</h1>
 
           <p>There are several courses related to HCI and InfoVis.</p>
-          <table class="ui celled table">
+          <table className="ui celled table">
             <thead>
               <tr><th>Course</th>
               <th>Title</th>

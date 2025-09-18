@@ -18,6 +18,7 @@ class Seminar extends React.Component {
             return (
               <Speaker
                 speaker={ speaker }
+                key={ speaker.date }
               />
             )
           } )}

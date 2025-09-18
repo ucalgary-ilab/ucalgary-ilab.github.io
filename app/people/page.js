@@ -147,7 +147,7 @@ class People extends React.Component {
                         {type.key === 'faculty' &&
                           <div className="ui large basic labels">
                             {person.keywords.map((keyword) => {
-                              return <span
+                              return <span key={keyword}
                                 className="ui large inverted label label-brown-color">{keyword}</span>
                             })
                             }
