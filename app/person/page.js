@@ -93,49 +93,48 @@ class Person extends React.Component {
   render() {
     if(!this.props.id)return;
     return (
-      <div>
-
+      <>
         <Meta
           title={ this.person.name }
           image={ this.getPhoto(this.props.id) }
         />
-
         <Header current="People" />
-
-        <div className="ui stackable grid">
-          <div className="one wide column"></div>
-          <div className="wide column centered">
-            <div id="person" className="category" style={{ textAlign: 'center' }}>
-              <img className="ui circular image large-profile" src={ this.getPhoto(this.props.id ) } style={{ margin: 'auto' }} />
-              <h1>{ this.person.name }</h1>
-              <p>{ this.person.title }</p>
-              { this.person.url &&
-                <p>
-                  <a href={ this.person.url} target="_blank">
-                  <i className="fas fa-link fa-fw"/>{ this.person.url }
-                  </a>
-                </p>
-              }
-              { this.person.scholar &&
-                <p>
-                  <a href={ this.person.scholar} target="_blank">
-                    <i className="fas fa-graduation-cap fa-fw"/>
-                    Google Scholar
-                  </a>
-                </p>
-              }
-              <div className="ui horizontal small divided link list">
-                { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
-                  return this.renderLink(this.person, key)
-                }) }
+        <div className="pusher">
+          <div className="ui stackable grid">
+            <div className="one wide column"></div>
+            <div className="wide column centered">
+              <div id="person" className="category" style={{ textAlign: 'center' }}>
+                <img className="ui circular image large-profile" src={ this.getPhoto(this.props.id ) } style={{ margin: 'auto' }} />
+                <h1>{ this.person.name }</h1>
+                <p>{ this.person.title }</p>
+                { this.person.url &&
+                  <p>
+                    <a href={ this.person.url} target="_blank">
+                    <i className="fas fa-link fa-fw"/>{ this.person.url }
+                    </a>
+                  </p>
+                }
+                { this.person.scholar &&
+                  <p>
+                    <a href={ this.person.scholar} target="_blank">
+                      <i className="fas fa-graduation-cap fa-fw"/>
+                      Google Scholar
+                    </a>
+                  </p>
+                }
+                <div className="ui horizontal small divided link list">
+                  { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
+                    return this.renderLink(this.person, key)
+                  }) }
+                </div>
               </div>
+              <Publications author={ this.person.name } />
             </div>
-            <Publications author={ this.person.name } />
+            <div className="one wide column"></div>
           </div>
-          <div className="one wide column"></div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </>
     )
   }
 }
