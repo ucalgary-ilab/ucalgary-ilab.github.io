@@ -69,6 +69,7 @@ typings/
 # next.js build output
 .next
 _next
+next-env.d.ts
 
 # Generated files
 /content/output/
