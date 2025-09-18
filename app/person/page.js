@@ -93,13 +93,11 @@ class Person extends React.Component {
   render() {
     if(!this.props.id)return;
     return (
-      <div>
-
+      <>
         <Meta
           title={ this.person.name }
           image={ this.getPhoto(this.props.id) }
         />
-
         <Header current="People" />
 
         <div className="ui stackable grid">
@@ -129,13 +127,13 @@ class Person extends React.Component {
                   return this.renderLink(this.person, key)
                 }) }
               </div>
+              <Publications author={ this.person.name } />
             </div>
-            <Publications author={ this.person.name } />
+            <div className="one wide column"></div>
           </div>
-          <div className="one wide column"></div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </>
     )
   }
 }
