@@ -75,7 +75,7 @@ function Labs ({short}) {
                 let profProfileSrc = getProfilePhotoPath(lab.prof);
                 let colourIndex = i-2
                 return (
-                    <div className="card" key={ lab.id } style={{flex: "50%"}}>
+                    <div className="card" key={ lab.id } style={{flex: "50%", marginBottom: "3vh"}}>
                       <a href={ lab.url } className="ui ">
                         <div style={{display: "flex"}}>
                           <div style={{ background: colours[colourIndex], zIndex: "2", borderRadius: "50%", minHeight: "4.5vw", height: "4.5vw", minWidth: "4.5vw", width: "4.5vw", justifyItems: "center"}}>
@@ -92,7 +92,7 @@ function Labs ({short}) {
                                 src={profProfileSrc}/>
                           <div style={{display: "flex", alignItems: "center"}}>
                             <p> <span style={{color: `${colours[colourIndex]}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.lab} </span> 
-                              <span style={{fontSize: "0.85em"}}> (Dr. { lab.prof } - {lab.title}) {lab.description}. </span> </p>
+                              <span style={{fontSize: "0.8em"}}> (Dr. { lab.prof } - {lab.title}) {lab.description}. </span> </p>
                           </div>
                         </div>
                       </a>
