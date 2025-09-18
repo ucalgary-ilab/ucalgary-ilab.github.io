@@ -18,6 +18,7 @@ class Person extends React.Component {
   constructor(props) {
     super(props)
 
+    if(!this.props.id)return;
     this.person = require(`../../content/output/people/${this.props.id}.json`)
 
     this.getPhotos()
@@ -90,6 +91,7 @@ class Person extends React.Component {
   }
 
   render() {
+    if(!this.props.id)return;
     return (
       <div>
 
