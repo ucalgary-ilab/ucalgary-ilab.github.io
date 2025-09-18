@@ -82,6 +82,11 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Update preview base paths for pull requests
+        id: update-preview-base-path-for-pull-requests
+        if: github.event_name != 'pull_request'
+        run: |
+          sed -i -r "s|basePath: ''|basePath: '/pr-preview/pr-${{github.event.number}}'|" next.config.js
       - name: Build content
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} run build:content
