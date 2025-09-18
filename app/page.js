@@ -42,7 +42,7 @@ class Index extends React.Component {
               <div id="header-logo">
                 <div>
                   <img
-                    src="static/images/logo-5.png"
+                    src="/static/images/logo-5.png"
                     style={{ height: "200px" }}
                   />
                 </div>
