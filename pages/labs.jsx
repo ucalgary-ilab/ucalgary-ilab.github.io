@@ -16,13 +16,13 @@ function getProfilePhotoPath(name){
 function Labs ({short}) {
 
   let colours = [
+    'rgb(24, 91, 121)', 
     'rgb(32, 149, 186)',
     'rgb(87, 167, 147)',
     'rgb(163, 184, 108)',
     'rgb(223, 198, 61)',
     'rgb(236, 170, 53)',
     'rgb(237, 137, 37)',
-    'rgb(24, 91, 121)', 
     'rgb(193, 72, 36)',
     'rgb(240, 109, 36)',
     'rgb(216, 81, 40)',
@@ -51,9 +51,9 @@ function Labs ({short}) {
                         <img />
                       }
                       </div>
-                      <div style={{display: "flex", alignItems: "center"}}>
-                        <img style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: "6vw", height: "6vw", minWidth: "6vw", width: "6vw", padding: "0px"}}
+                      <img style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: "6vw", height: "6vw", minWidth: "6vw", width: "6vw", padding: "0px"}}
                             src={profProfileSrc}/>
+                      <div style={{display: "flex", alignItems: "center"}}>
                         <p style={{marginLeft: "5px"}}> <span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.lab} </span> 
                           <span style={{fontSize: "1.15em"}}> (<span style={{fontWeight: "600"}}>Prof. { lab.prof }</span>) {lab.statement} </span> </p>
                       </div>
@@ -66,14 +66,41 @@ function Labs ({short}) {
           <h2>
             Associated Research Groups
           </h2>
-          { labs.map((lab, i) => {
-            if (lab.status=="alum")
-            {
-              // return (
-                
-              // )
-            }
-          })}
+          <div className="associatedGroups" style={{display: "flex", flexWrap: "wrap", marginTop: "5vh"}}>
+            { labs.map((lab, i) => {
+              if (lab.status=="alum")
+              {
+                let labLogoSrc = `/static/images/labs/${lab.id}.png`;
+                let fallbackSrc = `/static/images/labs/emptyLabLogo.png`
+                let profProfileSrc = getProfilePhotoPath(lab.prof);
+                let colourIndex = i-2
+                return (
+                    <div className="card" key={ lab.id } style={{flex: "50%"}}>
+                      <a href={ lab.url } className="ui ">
+                        <div style={{display: "flex"}}>
+                          <div style={{ background: colours[colourIndex], zIndex: "2", borderRadius: "50%", minHeight: "4.5vw", height: "4.5vw", minWidth: "4.5vw", width: "4.5vw", justifyItems: "center"}}>
+                          { lab.logo !== false &&
+                            <img src={labLogoSrc} alt={`${lab.id}`} onError={(e)=>{e.target.onError = null; e.target.src = fallbackSrc}} style={{padding: "0px", borderRadius: "50%", minHeight: "4.5vw", height: "4.5vw", minWidth: "4.5vw", width: "4.5vw", justifyItems: "center"}}/>
+                            || <div className='lab-name'>{`${lab.id}`}</div>     
+                          }
+                          {
+                            lab.id === '' &&
+                            <img />
+                          }
+                          </div>
+                          <img style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: "4.5vw", height: "4.5vw", minWidth: "4.5vw", width: "4.5vw", padding: "0px"}}
+                                src={profProfileSrc}/>
+                          <div style={{display: "flex", alignItems: "center"}}>
+                            <p> <span style={{color: `${colours[colourIndex]}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.lab} </span> 
+                              <span style={{fontSize: "0.85em"}}> (Dr. { lab.prof } - {lab.title}) {lab.description}. </span> </p>
+                          </div>
+                        </div>
+                      </a>
+                  </div>  
+                )
+              }
+            })} 
+          </div> 
         </div>
       </div>
     )
