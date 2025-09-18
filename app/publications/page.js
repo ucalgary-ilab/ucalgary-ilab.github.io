@@ -125,10 +125,10 @@ class Publications extends React.Component {
                     { publication.authors.map((author) => {
                         return (
                           this.names.includes(author) ?
-                          <a href={ `/people/${ this.namesId[author] }` } key={ author }>
+                          <Link href={ `/people/${ this.namesId[author] }` } key={ author }>
                             <img src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
                             <span className="author-link">{author}</span>
-                          </a>
+                          </Link>
                           :
                           <span key={ author }>{author}</span>
                         )
@@ -158,9 +158,9 @@ class Publications extends React.Component {
             return (
               <div id={publication.id} className="ui large modal" key={ publication.id }>
                 <div className="header">
-                  <a href={ `/publications/${publication.id}` } target="_blank">
+                  <Link href={ `/publications/${publication.id}` } target="_blank">
                     <i className="fas fa-link fa-fw"></i>{`${publication.id}`}
-                  </a>
+                  </Link>
                   <div className="actions" style={{ float: 'right', cursor: 'pointer', color: 'grey' }}>
                     <i className="ui right cancel close icon">
                     </i>
