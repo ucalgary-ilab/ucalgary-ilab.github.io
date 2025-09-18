@@ -138,9 +138,11 @@ class Publications extends React.Component {
                   <div>
                   { publication.keywords &&
                   <div className="ui large basic labels">
-                    { publication.keywords.split(', ').map((keyword) => {
+                    { 
+                      [...new Set(publication.keywords.split(', '))].map((keyword) => {
                       return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
-                    }) }
+                    }) 
+                    }
                   </div>
                   }
                   </div>

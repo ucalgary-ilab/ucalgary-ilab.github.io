@@ -107,7 +107,7 @@ class Detail extends React.Component {
     }
 
     return (
-      <div className="item">
+      <div className="item" key={ href }>
         <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
           <i className={ icon } />
           { title }
@@ -198,7 +198,7 @@ class Detail extends React.Component {
           { this.publication.keywords &&
             <div className="ui large basic labels">
               Keywords: &nbsp;
-              { this.publication.keywords.split(', ').map((keyword) => {
+              { [...new Set(this.publication.keywords.split(', '))].map((keyword) => {
                 return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
               }) }
             </div>
@@ -220,7 +220,7 @@ class Detail extends React.Component {
         {this.hasMaterialLinks(this.publication) &&
           <div className="block">
             <h1>Materials</h1>
-            <div class="ui horizontal small divided link list">
+            <div className="ui horizontal small divided link list">
               {['github', 'gitlab'].map((key) => {
                 return this.renderLink(this.publication, key)
               })}

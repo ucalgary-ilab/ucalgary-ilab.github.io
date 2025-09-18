@@ -13,24 +13,24 @@ class Facility extends React.Component {
   render() {
     return (
       <div id="facility" className="category">
-        <h1 class="ui horizontal divider header">
-          <i class="cogs icon"></i>
+        <h1 className="ui horizontal divider header">
+          <i className="cogs icon"></i>
           Facility
         </h1>
-        <div class="ui divided items">
+        <div className="ui divided items">
           { categories.map((category, i) => {
             return (
-              <div className={ i === 0 ? '' : 'category' }>
+              <div className={ i === 0 ? '' : 'category' } key={ category }>
                 <h1>{ category }</h1>
                 <div className="ui stackable four cards" style={{ marginTop: '30px' }}>
                   { facility[category].map((item) => {
                     return (
-                      <a className="card" href={ item.url } target="_blank" >
+                      <a className="card" href={ item.url } target="_blank" key={ item.img } >
                         <div className="image">
                           <img src={ `/static/images/facility/${item.img}.jpg` } />
                         </div>
-                        <div class="content">
-                          <p class="header">{ item.name }</p>
+                        <div className="content">
+                          <p className="header">{ item.name }</p>
                         </div>
                       </a>
                     )
