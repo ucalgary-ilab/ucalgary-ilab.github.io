@@ -60,7 +60,7 @@ class Person extends React.Component {
     }
 
     return (
-      <div className="item">
+      <div className="item" key={key}>
         <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
           <i className={ icon } />
           { title }
@@ -124,7 +124,7 @@ class Person extends React.Component {
                   </a>
                 </p>
               }
-              <div class="ui horizontal small divided link list">
+              <div className="ui horizontal small divided link list">
                 { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
                   return this.renderLink(this.person, key)
                 }) }
