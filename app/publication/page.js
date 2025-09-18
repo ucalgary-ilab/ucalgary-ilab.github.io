@@ -38,10 +38,12 @@ class Publication extends React.Component {
       this.namesId[person.name] = person.id
     }
 
+    if(!this.props.id)return;
     this.publication = require(`../../content/output/publications/${ this.props.id }.json`)
   }
 
   render() {
+    if(!this.props.id)return;
     return (
       <div>
         <Meta
