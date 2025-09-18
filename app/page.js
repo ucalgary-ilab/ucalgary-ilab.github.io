@@ -33,7 +33,7 @@ class Index extends React.Component {
         </div>
 
         <div className="ui stackable grid">
-          <div className="eleven wide column centered">
+          <div className="wide column centered">
             <div id="header-logo">
               <div>
                 <img src="static/images/logo-5.png" style={{ height: '200px' }}/>

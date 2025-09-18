@@ -102,7 +102,7 @@ class Person extends React.Component {
 
         <div className="ui stackable grid">
           <div className="one wide column"></div>
-          <div className="eleven wide column centered">
+          <div className="wide column centered">
             <div id="person" className="category" style={{ textAlign: 'center' }}>
               <img className="ui circular image large-profile" src={ this.getPhoto(this.props.id ) } style={{ margin: 'auto' }} />
               <h1>{ this.person.name }</h1>
