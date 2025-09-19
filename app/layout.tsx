@@ -12,6 +12,9 @@ const openSans = Open_Sans({
   weight: ['400','700'],
 })
 
+/* semantic-ui https://react.semantic-ui.com/usage/ */
+import 'semantic-ui-css/semantic.min.css'
+
 /* global */
 import './global.css'
 
@@ -30,7 +33,6 @@ export default function RootLayout({
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="format-detection" content="telephone=no" />
 
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.css" rel="stylesheet" />
           <link href="/assets/img/favicon.ico" rel="shortcut icon" />
           {/* <link href="/static/css/style.css" rel="stylesheet" /> */}
 
@@ -51,8 +53,13 @@ export default function RootLayout({
           <script dangerouslySetInnerHTML={{
           __html: `
             $(window).ready(function() {
-              $('.ui.sidebar')
-                .sidebar('attach events', '.sidebar.icon')
+              // $('.ui.sidebar')
+              //   .sidebar('attach events', '.sidebar.icon')
+
+              $('.sidebar.icon').on('click', function(event) {
+                $('.ui.sidebar')
+                  .sidebar('toggle')
+              })
 
               $('.publication').on('click', function(event) {
                 if (event.target.className === 'author-link') return
@@ -70,7 +77,9 @@ export default function RootLayout({
           />
         </head>
         <body>
+        {/* <div className="pusher"> */}
         {children}
+        {/* </div> */}
         </body>
       </html>
     )

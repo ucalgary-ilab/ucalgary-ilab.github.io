@@ -1032,6 +1032,7 @@ __metadata:
     react: "npm:^19.1.1"
     react-dom: "npm:^19.1.1"
     react-markdown: "npm:^10.1.0"
+    semantic-ui-css: "npm:^2.5.0"
     semantic-ui-modal: "npm:^2.5.0"
     typescript: "npm:5.9.2"
   languageName: unknown
@@ -1150,7 +1151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:^3.7.1":
+"jquery@npm:^3.7.1, jquery@npm:x.*":
   version: 3.7.1
   resolution: "jquery@npm:3.7.1"
   checksum: 10c0/808cfbfb758438560224bf26e17fcd5afc7419170230c810dd11f5c1792e2263e2970cca8d659eb84fcd9acc301edb6d310096e450277d54be4f57071b0c82d9
@@ -2029,6 +2030,15 @@ __metadata:
   version: 0.26.0
   resolution: "scheduler@npm:0.26.0"
   checksum: 10c0/5b8d5bfddaae3513410eda54f2268e98a376a429931921a81b5c3a2873aab7ca4d775a8caac5498f8cbc7d0daeab947cf923dbd8e215d61671f9f4e392d34356
+  languageName: node
+  linkType: hard
+
+"semantic-ui-css@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "semantic-ui-css@npm:2.5.0"
+  dependencies:
+    jquery: "npm:x.*"
+  checksum: 10c0/e127afb9de9b40495aa412bcb973b70ea64f8146234415a3a355ff6fbfa0e034f63b6db78458755e64db7f439eb7de76309bf23ff743f550604e69fe2014b79e
   languageName: node
   linkType: hard
 
