@@ -1,17 +1,12 @@
 import React from 'react'
 
-import ReactMarkdown from 'react-markdown'
-
 import Meta from './meta'
 import Header from './header'
 import Labs from './labs'
-import News from './news'
-import Seminar from './seminar'
 import Publications from './publications'
 import People from './people'
 import Courses from './courses'
 import Facility from './facility'
-import Location from './location'
 import Footer from './footer'
 
 class Page extends React.Component {
@@ -31,12 +26,6 @@ class Page extends React.Component {
         return <Courses />
       case 'facility':
         return <Facility />
-      case 'news':
-        return <News />
-      case 'seminar':
-        return <Seminar />
-      case 'location':
-        return <Location />
     }
   }
 
