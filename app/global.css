@@ -510,6 +510,10 @@ a:hover {
   margin-right: 3px;
 }
 
+.fa-angle-right {
+  color: rgba(0, 0, 0, 0.4);
+}
+
 .ui.segment {
   font-size: 1.3rem !important;
 }

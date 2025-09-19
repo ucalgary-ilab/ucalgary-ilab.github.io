@@ -3,6 +3,12 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
 class Courses extends React.Component {
   componentDidMount() {
   }
@@ -11,7 +17,7 @@ class Courses extends React.Component {
     return (
       <div id="courses" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="university icon"></i>
+          <FontAwesomeIcon icon="fas fa-building-columns" />
           Courses
         </h1>
         <div className="ui divided items">
@@ -78,7 +84,7 @@ class Courses extends React.Component {
           </table>
           <p>Please see the course list for more details.</p>
           <a href="http://contacts.ucalgary.ca/info/cpsc/courses">
-            <i className="fas fa-link fa-fw"></i>
+            <FontAwesomeIcon icon="fas fa-link fa-fw" />
             http://contacts.ucalgary.ca/info/cpsc/courses
           </a>
 

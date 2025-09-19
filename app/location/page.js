@@ -5,6 +5,12 @@ import ReactMarkdown from 'react-markdown'
 import files from '../../content/output/files.json'
 import Link from 'next/link'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(far)
+
 class Location extends React.Component {
   constructor(props) {
     super(props)
@@ -20,7 +26,7 @@ class Location extends React.Component {
     return (
       <div id="location" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="map outline icon"></i>
+          <FontAwesomeIcon icon="far fa-map" />
           Location
         </h1>
         <div id="map" className="ui grid">
@@ -43,7 +49,7 @@ class Location extends React.Component {
         { !this.props.short &&
           <div id="space" className="category">
             <h1 className="ui horizontal divider header">
-              <i className="map outline icon"></i>
+            <FontAwesomeIcon icon="far fa-map" />
               Space
             </h1>
             <div className="ui stackable four cards" style={{ marginTop: '30px' }}>
