@@ -4,6 +4,14 @@ import React from 'react'
 import _ from 'lodash'
 import Link from 'next/link'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
+
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -109,7 +117,7 @@ class Detail extends React.Component {
     return (
       <div className="item" key={ href }>
         <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
-          <i className={ icon } />
+          <FontAwesomeIcon icon={ icon } />
           { title }
         </a>
       </div>
@@ -132,7 +140,7 @@ class Detail extends React.Component {
         <div className="block">
           <div id="breadcrumb" className="ui breadcrumb">
             <Link className="section" href="/publications">Publications</Link>
-            <i className="right angle icon divider"></i>
+            <FontAwesomeIcon icon="fas fa-angle-right" />
             <a className="active section">{ this.publication.series }</a>
           </div>
 
@@ -165,7 +173,7 @@ class Detail extends React.Component {
               </p>
               <p>
                 <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
-                  <i className="far fa-file-pdf fa-fw"></i>{ `${this.publication.id}.pdf` }
+                  <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
                 </a>
               </p>
             </div>

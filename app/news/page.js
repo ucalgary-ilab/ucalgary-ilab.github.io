@@ -5,13 +5,21 @@ import ReactMarkdown from 'react-markdown'
 import news from '../../content/output/news.json'
 import Link from 'next/link'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
+
 class News extends React.Component {
 
   render() {
     return (
       <div id="news" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="paper plane outline icon"></i>
+          <FontAwesomeIcon icon="fas fa-paper-plane" />
           News
         </h1>
         <div className="ui segment" style={{ marginTop: '50px' }}>
@@ -26,7 +34,7 @@ class News extends React.Component {
                   }
                   { item.icon &&
                     <div className="image" style={{ margin: 'auto', textAlign: 'center', fontSize: '2.2em', background: '#eee', height: '80px', paddingTop: '20px' }}>
-                      <i className={ `${item.icon} fa-fw` } />
+                      <FontAwesomeIcon icon={ `${item.icon} fa-fw` } />
                     </div>
                   }
                   <div className="content">

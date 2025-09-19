@@ -9,6 +9,14 @@ import files from '../../content/output/files.json'
 import vimeo from '../../content/output/vimeo.json'
 import Link from 'next/link'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
+
 class Publications extends React.Component {
   constructor(props) {
     super(props)
@@ -91,7 +99,7 @@ class Publications extends React.Component {
     return (
       <div id="publications" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="file alternate outline icon"></i>
+          <FontAwesomeIcon icon="far fa-file-lines" />
           { this.props.short ? 'Recent Publications' : 'Publications' }
         </h1>
         <div className="ui segment" style={{ marginTop: '50px' }}>
@@ -108,10 +116,10 @@ class Publications extends React.Component {
                     { publication.award &&
                       <span className="ui big basic pink label">
                       { publication.award === 'Honorable Mention' &&
-                        <b><i className="fas fa-award"></i> Honorable Mention</b>
+                        <b><FontAwesomeIcon icon="fas fa-award" /> Honorable Mention</b>
                       }
                       { publication.award === 'Best Paper' &&
-                        <b><i className="fas fa-trophy"></i> Best Paper</b>
+                        <b><FontAwesomeIcon icon="fas fa-trophy" /> Best Paper</b>
                       }
                       </span>
                     }
@@ -159,11 +167,10 @@ class Publications extends React.Component {
               <div id={publication.id} className="ui large modal" key={ publication.id }>
                 <div className="header">
                   <Link href={ `/publications/${publication.id}` } target="_blank">
-                    <i className="fas fa-link fa-fw"></i>{`${publication.id}`}
+                    <FontAwesomeIcon icon="fas fa-link fa-fw" />{`${publication.id}`}
                   </Link>
                   <div className="actions" style={{ float: 'right', cursor: 'pointer', color: 'grey' }}>
-                    <i className="ui right cancel close icon">
-                    </i>
+                    <FontAwesomeIcon icon="fas fa-xmark" />
                   </div>
                 </div>
                 <div className="content">

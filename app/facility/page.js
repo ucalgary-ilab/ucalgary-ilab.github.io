@@ -4,6 +4,12 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import facility from '../../content/output/facility.json'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
 const categories = Object.keys(facility).slice(0, 7)
 
 class Facility extends React.Component {
@@ -14,7 +20,7 @@ class Facility extends React.Component {
     return (
       <div id="facility" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="cogs icon"></i>
+          <FontAwesomeIcon icon="fas fa-gear" />
           Facility
         </h1>
         <div className="ui divided items">

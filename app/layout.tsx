@@ -1,4 +1,11 @@
 import { GA_TRACKING_ID } from '../lib/_analytics'
+
+/* fontawesome https://docs.fontawesome.com/web/use-with/react/use-with#nextjs */
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
+/* global */
 import './global.css'
 
 export default function RootLayout({

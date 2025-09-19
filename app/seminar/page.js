@@ -5,12 +5,18 @@ import ReactMarkdown from 'react-markdown'
 import seminar from '../../content/output/seminar.json'
 import Speaker from '../speaker/page.js'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
 class Seminar extends React.Component {
   render() {
     return (
       <div id="seminar" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="calendar alternate outline icon"></i>
+          <FontAwesomeIcon icon="fas fa-calendar-days" />
           iLab Invited Talk Series
         </h1>
         <div className="ui " style={{ marginTop: '50px' }}>

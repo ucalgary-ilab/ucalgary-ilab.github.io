@@ -9,6 +9,14 @@ import Publications from '../publications/page'
 import Footer from '../footer/page'
 import files from '../../content/output/files.json'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
+
 class Person extends React.Component {
   static async getInitialProps(req) {
     const id = req.query.id
@@ -62,7 +70,7 @@ class Person extends React.Component {
     return (
       <div className="item" key={key}>
         <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
-          <i className={ icon } />
+          <FontAwesomeIcon icon={ icon } />
           { title }
         </a>
       </div>
@@ -110,14 +118,14 @@ class Person extends React.Component {
                 { this.person.url &&
                   <p>
                     <a href={ this.person.url} target="_blank">
-                    <i className="fas fa-link fa-fw"/>{ this.person.url }
+                    <FontAwesomeIcon icon="fas fa-link fa-fw" />{ this.person.url }
                     </a>
                   </p>
                 }
                 { this.person.scholar &&
                   <p>
                     <a href={ this.person.scholar} target="_blank">
-                      <i className="fas fa-graduation-cap fa-fw"/>
+                      <FontAwesomeIcon icon="fas fa-graduation-cap fa-fw" />
                       Google Scholar
                     </a>
                   </p>

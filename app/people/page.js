@@ -7,6 +7,12 @@ import summary from '../../content/output/summary.json'
 import files from '../../content/output/files.json'
 import Link from 'next/link'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
 class People extends React.Component {
   constructor(props) {
     super(props)
@@ -118,7 +124,7 @@ class People extends React.Component {
     return (
       <div id="people" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="child icon"></i>
+          <FontAwesomeIcon icon="fas fa-child-reaching" />
           {this.title}
         </h1>
         {this.types.map((type) => {
