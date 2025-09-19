@@ -19,13 +19,10 @@ export default function RootLayout({
           <link href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.css" rel="stylesheet" />
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.0/css/lightbox.css" rel="stylesheet" />
           <link href="/assets/img/favicon.ico" rel="shortcut icon" />
           {/* <link href="/static/css/style.css" rel="stylesheet" /> */}
 
           <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.0/js/lightbox.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.0/js/lightbox-plus-jquery.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.js"></script>
 
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
