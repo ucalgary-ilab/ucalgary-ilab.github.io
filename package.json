@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -17,17 +17,25 @@
   "author": "Ryo Suzuki <ryosuzk@googlemail.com> (http://ryosuzuki.org/)",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "directory-tree": "^2.2.4",
-    "jquery": "^3.4.1",
-    "next": "^8.1.0",
+    "@fortawesome/fontawesome-svg-core": "^7.0.1",
+    "@fortawesome/free-brands-svg-icons": "^7.0.1",
+    "@fortawesome/free-regular-svg-icons": "^7.0.1",
+    "@fortawesome/free-solid-svg-icons": "^7.0.1",
+    "@fortawesome/react-fontawesome": "^3.0.2",
+    "directory-tree": "^3.5.2",
+    "jquery": "^3.7.1",
+    "next": "^15.5.3",
     "next-routes": "^1.4.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.8",
-    "semantic-ui-modal": "^2.4.1"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-markdown": "^10.1.0",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-modal": "^2.5.0"
   },
   "devDependencies": {
-    "processmd": "^4.2.1"
+    "@types/react": "19.1.13",
+    "lodash": "^4.17.21",
+    "processmd": "^4.7.0",
+    "typescript": "5.9.2"
   }
 }
