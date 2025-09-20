@@ -7,11 +7,6 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pull requests
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
 
   # Runs on pushes targeting the default branch
   push:
@@ -56,10 +51,16 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+      - name: Enable corepack for yarn v4
+        run: corepack enable
+      - name: Setup yarn
+        id: setup-yarn
+        run: yarn set version stable
       - name: Setup Node
+        id: setup-node
         uses: actions/setup-node@v4
         with:
-          node-version: "16.16.0"
+          node-version: "22.x"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -81,6 +82,11 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Update preview base paths for pull requests
+        id: update-preview-base-path-for-pull-requests
+        if: github.event_name == 'pull_request'
+        run: |
+          sed -i -r "s|basePath: ''|basePath: '/pr-preview/pr-${{github.event.number}}'|" next.config.js
       - name: Build content
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} run build:content
@@ -88,7 +94,6 @@ jobs:
       - name: Build with Next.js
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} next build
-          ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Exclude publications PDFs from artifacts
         id: exclude-pdf-from-artifacts
         run: |
