@@ -38,7 +38,7 @@ class Index extends React.Component {
             </video>
           </div>
           <div className="ui stackable grid">
-            <div className="wide column centered">
+            <div className="eleven wide column centered">
               <div id="header-logo">
                 <div>
                   <img
