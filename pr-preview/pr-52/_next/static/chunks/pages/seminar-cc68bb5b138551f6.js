@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[609],{3034:(_,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/seminar",function(){return e(918)}])}},_=>{_.O(0,[888,244,79,143,665,918,636,593,792],()=>_(_.s=3034)),_N_E=_.O()}]);
