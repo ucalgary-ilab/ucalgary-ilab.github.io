@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import _ from 'lodash'
 import summary from '../../content/output/summary.json'
 import files from '../../content/output/files.json'
+import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -139,7 +140,7 @@ class People extends React.Component {
                     person = this.getTitle(person)
                     let colNum = type.key === 'faculty' ? 'five' : 'four'
                     return (
-                      <a className={`${colNum} wide column person`} href={`/people/${person.id}`}
+                      <Link className={`${colNum} wide column person`} href={`/people/${person.id}`}
                          key={person.id}>
                         <img className="ui circular image medium-profile"
                            src={this.getPhoto(person)}/>
@@ -159,7 +160,7 @@ class People extends React.Component {
                             }
                           </div>
                         }
-                      </a>
+                      </Link>
                     ) // return
                   }) // map
                 }
@@ -169,9 +170,9 @@ class People extends React.Component {
         })}
         {this.short &&
           <div className="ui vertical segment stackable" style={{textAlign: 'center'}}>
-            <a className="ui button" href="/people">
+            <Link className="ui button" href="/people">
               + see more members
-            </a>
+            </Link>
           </div>
         }
       </div>

@@ -50,10 +50,11 @@ class Page extends React.Component {
           title={ this.props.title }
         />
         <Header current={ this.props.title } />
-
-        <div className="ui stackable grid">
-          <div className="eleven wide column centered">
-            { this.renderSwitch(this.props.id) }
+        <div className="pusher">
+          <div className="ui stackable grid">
+            <div className="eleven wide column centered">
+              { this.renderSwitch(this.props.id) }
+            </div>
           </div>
           <Footer />
         </div>

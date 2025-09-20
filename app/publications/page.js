@@ -133,10 +133,10 @@ class Publications extends React.Component {
                     { publication.authors.map((author) => {
                         return (
                           this.names.includes(author) ?
-                          <a href={ `/people/${ this.namesId[author] }` } key={ author }>
+                          <Link href={ `/people/${ this.namesId[author] }` } key={ author }>
                             <img src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
                             <span className="author-link">{author}</span>
-                          </a>
+                          </Link>
                           :
                           <span key={ author }>{author}</span>
                         )
