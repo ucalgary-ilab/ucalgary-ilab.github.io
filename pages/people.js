@@ -1,10 +1,8 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import _ from 'lodash'
-import summary from '../../content/output/summary.json'
-import files from '../../content/output/files.json'
+import summary from '../content/output/summary.json'
+import files from '../content/output/files.json'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */

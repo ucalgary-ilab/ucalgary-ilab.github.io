@@ -1,8 +1,6 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import news from '../../content/output/news.json'
+import news from '../content/output/news.json'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -14,7 +12,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, far, fab)
 
 class News extends React.Component {
-
+  
   render() {
     return (
       <div id="news" className="category">

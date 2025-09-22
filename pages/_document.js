@@ -1,33 +1,11 @@
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/_analytics'
 
-/* fontawesome https://docs.fontawesome.com/web/use-with/react/use-with#nextjs */
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
-
-/* google fonts https://nextjs.org/docs/app/getting-started/fonts#google-fonts */
-import { Open_Sans } from 'next/font/google'
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['400','700'],
-})
-
-/* semantic-ui https://react.semantic-ui.com/usage/ */
-import 'semantic-ui-css/semantic.min.css'
-
-/* global */
-import './global.css'
-
-export default function RootLayout({
-    // Layouts must accept a children prop.
-    // This will be populated with nested layouts or pages
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
+export default class MyDocument extends Document {
+  render() {
     return (
-        <html lang="en" className={openSans.className}>
-        <head>
+        <Html lang="en"> 
+        <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,12 +53,12 @@ export default function RootLayout({
             })
           `}}
           />
-        </head>
+        </Head>
         <body>
-        {/* <div className="pusher"> */}
-        {children}
-        {/* </div> */}
+        <Main />
+        <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
+}

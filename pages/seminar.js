@@ -1,9 +1,7 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import seminar from '../../content/output/seminar.json'
-import Speaker from '../speaker/page.js'
+import seminar from '../content/output/seminar.json'
+import Speaker from './speaker'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

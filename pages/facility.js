@@ -1,8 +1,6 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import facility from '../../content/output/facility.json'
+import facility from '../content/output/facility.json'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

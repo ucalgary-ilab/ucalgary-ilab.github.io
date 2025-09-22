@@ -1,13 +1,11 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import Meta from '../meta/page'
-import Header from '../header/page'
-import Publications from '../publications/page'
-import Footer from '../footer/page'
-import files from '../../content/output/files.json'
+import Meta from './meta'
+import Header from './header'
+import Publications from './publications'
+import Footer from './footer'
+import files from '../content/output/files.json'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,7 +25,7 @@ class Person extends React.Component {
     super(props)
 
     if(!this.props.id)return;
-    this.person = require(`../../content/output/people/${this.props.id}.json`)
+    this.person = require(`../content/output/people/${this.props.id}.json`)
 
     this.getPhotos()
   }

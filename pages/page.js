@@ -1,20 +1,13 @@
-'use client'
-
 import React from 'react'
 
-import ReactMarkdown from 'react-markdown'
-
-import Meta from '../meta/page'
-import Header from '../header/page'
-import Labs from '../labs/page'
-import News from '../news/page'
-import Seminar from '../seminar/page'
-import Publications from '../publications/page'
-import People from '../people/page'
-import Courses from '../courses/page'
-import Facility from '../facility/page'
-import Location from '../location/page'
-import Footer from '../footer/page'
+import Meta from './meta'
+import Header from './header'
+import Labs from './labs'
+import Publications from './publications'
+import People from './people'
+import Courses from './courses'
+import Facility from './facility'
+import Footer from './footer'
 
 class Page extends React.Component {
   static async getInitialProps(req) {
@@ -22,7 +15,7 @@ class Page extends React.Component {
     const title = id.charAt(0).toUpperCase() + id.slice(1).toLowerCase()
     return { id: id, title: title }
   }
-
+  
   renderSwitch(id) {
     switch (id) {
       case 'publications':

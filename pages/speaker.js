@@ -1,11 +1,9 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import _ from 'lodash'
-import Header from '../header/page'
-import Publications from '../publications/page'
-import Footer from '../footer/page'
+import Header from './header'
+import Publications from './publications'
+import Footer from './footer'
 
 class Speaker extends React.Component {
 

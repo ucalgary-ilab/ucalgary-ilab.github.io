@@ -1,12 +1,10 @@
-'use client'
-
 import React from 'react'
 import _ from 'lodash'
-import Detail from '../detail/page'
-import summary from '../../content/output/summary.json'
-import booktitles from '../../content/output/booktitles.json'
-import files from '../../content/output/files.json'
-import vimeo from '../../content/output/vimeo.json'
+import Detail from './detail'
+import summary from '../content/output/summary.json'
+import booktitles from '../content/output/booktitles.json'
+import files from '../content/output/files.json'
+import vimeo from '../content/output/vimeo.json'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */

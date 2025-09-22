@@ -1,8 +1,6 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import files from '../../content/output/files.json'
+import files from '../content/output/files.json'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
