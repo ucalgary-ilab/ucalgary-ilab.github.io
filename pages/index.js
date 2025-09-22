@@ -12,6 +12,13 @@ import People from './people'
 import Location from './location'
 import Footer from './footer'
 
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 class Index extends React.Component {
   componentDidMount() {}
 

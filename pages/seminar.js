@@ -9,6 +9,13 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas)
 
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 class Seminar extends React.Component {
   render() {
     return (

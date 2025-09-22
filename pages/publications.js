@@ -15,6 +15,13 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, far, fab)
 
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 class Publications extends React.Component {
   constructor(props) {
     super(props)

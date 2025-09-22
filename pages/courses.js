@@ -7,6 +7,12 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas)
 
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 class Courses extends React.Component {
   componentDidMount() {
   }

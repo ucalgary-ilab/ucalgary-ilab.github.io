@@ -9,13 +9,7 @@ import Courses from './courses'
 import Facility from './facility'
 import Footer from './footer'
 
-class Page extends React.Component {
-  static async getInitialProps(req) {
-    const id = req.query.id
-    const title = id.charAt(0).toUpperCase() + id.slice(1).toLowerCase()
-    return { id: id, title: title }
-  }
-  
+class Page extends React.Component {  
   renderSwitch(id) {
     switch (id) {
       case 'publications':

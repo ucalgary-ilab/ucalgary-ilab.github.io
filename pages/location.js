@@ -9,6 +9,12 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(far)
 
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 class Location extends React.Component {
   constructor(props) {
     super(props)

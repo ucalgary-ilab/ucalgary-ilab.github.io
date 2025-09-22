@@ -15,11 +15,15 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, far, fab)
 
-class Person extends React.Component {
-  static async getInitialProps(req) {
-    const id = req.query.id
-    return { id: id }
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
   }
+}
+
+class Person extends React.Component {
+
 
   constructor(props) {
     super(props)

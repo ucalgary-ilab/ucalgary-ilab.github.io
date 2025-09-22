@@ -11,11 +11,15 @@ import Header from './header'
 import Detail from './detail'
 import Footer from './footer'
 
-class Publication extends React.Component {
-  static async getInitialProps(req) {
-    const id = req.query.id
-    return { id: id }
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
   }
+}
+
+class Publication extends React.Component {
+
 
   constructor(props) {
     super(props)

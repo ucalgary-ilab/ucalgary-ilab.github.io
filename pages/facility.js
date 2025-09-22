@@ -10,6 +10,13 @@ library.add(fas)
 
 const categories = Object.keys(facility).slice(0, 7)
 
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 class Facility extends React.Component {
   componentDidMount() {
   }
