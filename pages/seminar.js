@@ -1,15 +1,20 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import seminar from '../../content/output/seminar.json'
-import Speaker from '../speaker/page.js'
+import seminar from '../content/output/seminar.json'
+import Speaker from './speaker'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas)
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 class Seminar extends React.Component {
   render() {

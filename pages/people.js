@@ -1,10 +1,8 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import _ from 'lodash'
-import summary from '../../content/output/summary.json'
-import files from '../../content/output/files.json'
+import summary from '../content/output/summary.json'
+import files from '../content/output/files.json'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -12,6 +10,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas)
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 class People extends React.Component {
   constructor(props) {

@@ -1,18 +1,23 @@
-'use client'
-
 import React from 'react'
 
 import ReactMarkdown from 'react-markdown'
 
-import Meta from './meta/page'
-import Header from './header/page'
-import Labs from './labs/page'
-import News from './news/page'
-import Seminar from './seminar/page'
-import Publications from './publications/page'
-import People from './people/page'
-import Location from './location/page'
-import Footer from './footer/page'
+import Meta from './meta'
+import Header from './header'
+import Labs from './labs'
+import News from './news'
+import Seminar from './seminar'
+import Publications from './publications'
+import People from './people'
+import Location from './location'
+import Footer from './footer'
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 class Index extends React.Component {
   componentDidMount() {}

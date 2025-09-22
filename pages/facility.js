@@ -1,8 +1,6 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import facility from '../../content/output/facility.json'
+import facility from '../content/output/facility.json'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,6 +9,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas)
 
 const categories = Object.keys(facility).slice(0, 7)
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 class Facility extends React.Component {
   componentDidMount() {

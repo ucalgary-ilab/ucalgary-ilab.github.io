@@ -1,13 +1,11 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import Meta from '../meta/page'
-import Header from '../header/page'
-import Publications from '../publications/page'
-import Footer from '../footer/page'
-import files from '../../content/output/files.json'
+import Meta from './meta'
+import Header from './header'
+import Publications from './publications'
+import Footer from './footer'
+import files from '../content/output/files.json'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,17 +15,21 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, far, fab)
 
-class Person extends React.Component {
-  static async getInitialProps(req) {
-    const id = req.query.id
-    return { id: id }
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
   }
+}
+
+class Person extends React.Component {
+
 
   constructor(props) {
     super(props)
 
     if(!this.props.id)return;
-    this.person = require(`../../content/output/people/${this.props.id}.json`)
+    this.person = require(`../content/output/people/${this.props.id}.json`)
 
     this.getPhotos()
   }

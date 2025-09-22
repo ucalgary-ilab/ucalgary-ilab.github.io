@@ -1,23 +1,25 @@
-'use client'
-
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import summary from '../../content/output/summary.json'
-import booktitles from '../../content/output/booktitles.json'
-import files from '../../content/output/files.json'
-import vimeo from '../../content/output/vimeo.json'
+import summary from '../content/output/summary.json'
+import booktitles from '../content/output/booktitles.json'
+import files from '../content/output/files.json'
+import vimeo from '../content/output/vimeo.json'
 
-import Meta from '../meta/page'
+import Meta from './meta'
 import Head from 'next/head'
-import Header from '../header/page'
-import Detail from '../detail/page'
-import Footer from '../footer/page'
+import Header from './header'
+import Detail from './detail'
+import Footer from './footer'
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 class Publication extends React.Component {
-  static async getInitialProps(req) {
-    const id = req.query.id
-    return { id: id }
-  }
+
 
   constructor(props) {
     super(props)
@@ -39,7 +41,7 @@ class Publication extends React.Component {
     }
 
     if(!this.props.id)return;
-    this.publication = require(`../../content/output/publications/${ this.props.id }.json`)
+    this.publication = require(`../content/output/publications/${ this.props.id }.json`)
   }
 
   render() {
