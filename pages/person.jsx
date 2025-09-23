@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import Meta from './meta'
@@ -129,7 +130,7 @@ export default function Person ({}) {
           <div className="one wide column"></div>
           <div className="eleven wide column centered">
             <div id="person" className="category" style={{ textAlign: 'center' }}>
-              <img className="ui circular image large-profile" src={ person.photo } style={{ margin: 'auto' }} />
+              <Image width={0} height={0} className="ui circular image large-profile" src={ person.photo } style={{ margin: 'auto' }} />
               <h1>{ person.name }</h1>
               <p>{ person.title }</p>
               { person.url &&

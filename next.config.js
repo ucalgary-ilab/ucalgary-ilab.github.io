@@ -4,6 +4,7 @@ const _ = require('lodash')
 module.exports = {
   trailingSlash: true,
   output: 'export',
+  images: { unoptimized: true },
   basePath: '', // do not edit - modified by .github/workflows/deployment-gh-pages.yml
   // exportPathMap: function () {
   //   const ids = [

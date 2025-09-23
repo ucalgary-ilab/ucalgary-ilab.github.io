@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import _ from 'lodash'
 import summary from '../content/output/summary.json'
 import files from '../content/output/files.json'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -136,7 +137,7 @@ function People ({short}) {
                   return (
                     <Link className={`${colNum} wide column person`} href={`/people/${person.id}`}
                         key={person.id}>
-                      <img className="ui circular image medium-profile"
+                      <Image width={0} height={0} className="ui circular image medium-profile"
                           src={person.photo}/>
                       <p><b>{person.name}</b></p>
                       <p>

@@ -5,6 +5,7 @@ import summary from '../content/output/summary.json'
 import booktitles from '../content/output/booktitles.json'
 import files from '../content/output/files.json'
 import vimeo from '../content/output/vimeo.json'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -113,7 +114,7 @@ class Publications extends React.Component {
             return (
               <div className="publication ui vertical segment stackable grid" data-id={ publication.id } key={ i }>
                 <div className="three wide column" style={{ margin: 'auto' }}>
-                  <img className="cover" src={ `/static/images/publications/cover/${publication.id}.jpg` } />
+                  <Image width={0} height={0} className="cover" src={ `/static/images/publications/cover/${publication.id}.jpg` } />
                 </div>
                 <div className="thirteen wide column">
                   <p>
@@ -139,7 +140,7 @@ class Publications extends React.Component {
                         return (
                           this.names.includes(author) ?
                           <Link href={ `/people/${ this.namesId[author] }` } key={ author }>
-                            <img src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
+                            <Image width={0} height={0} src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
                             <span className="author-link">{author}</span>
                           </Link>
                           :

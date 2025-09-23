@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import news from '../content/output/news.json'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -27,7 +28,7 @@ class News extends React.Component {
                 <div className="item" key={ item.date }>
                   { item.image &&
                     <div className="image">
-                      <img src={ `/static/images/news/${ item.image}` } style={{ padding: '5px' }} />
+                      <Image width={0} height={0} src={ `/static/images/news/${ item.image}` } style={{ padding: '5px' }} />
                     </div>
                   }
                   { item.icon &&
