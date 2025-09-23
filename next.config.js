@@ -15,9 +15,6 @@ module.exports = {
   publicRuntimeConfig: {
     basePath: basePath, // for access at runtime https://nextjs.org/docs/pages/api-reference/config/next-config-js/runtime-configuration
   },
-  experimental: {
-    cssChunking: 'strict',
-  },
   webpack: (config, options) => {
     config.plugins.push(
       new webpack.ProvidePlugin({
