@@ -65,7 +65,6 @@ function Labs ({short}) {
             Associated Research Groups
           </h2>
           <div className="associatedGroups" style={{display: "flex", flexWrap: "wrap", marginTop: "5vh"}}>
-            { console.log(labs)}
             { labs.map((lab, i) => {
               if (lab.status=="associated")
               {
