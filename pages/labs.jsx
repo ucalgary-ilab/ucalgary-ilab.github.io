@@ -3,14 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import labs from '../content/output/labs.json'
 
 function getProfilePhotoPath(name){
-  let nameList = name.split(" ");
-  let path = "/static/images/people/";
-  for (let i=0; i<nameList.length; i++) {
-    path += nameList[i];
-    if (i < nameList.length-1) path += "-"
-  }
-  path += ".jpg"
-  return path;
+  return "/static/images/people/"+name.toLowerCase().split(" (")[0].split(" ").join("-")+".jpg"
 }
 
 function Labs ({short}) {
