@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[971],{4604:(_,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/detail",function(){return e(2649)}])}},_=>{_.O(0,[900,230,723,179,851,296,308,110,636,340,792],()=>_(_.s=4604)),_N_E=_.O()}]);
