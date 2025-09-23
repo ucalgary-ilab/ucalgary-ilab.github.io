@@ -89,6 +89,22 @@ module.exports = {
         'window.jQuery': 'jquery'
       })
     )
+    // Ensure CSS ordering as declared in pages/_app.js
+    // https://github.com/vercel/next.js/issues/64921
+    // https://github.com/vercel/next.js/issues/64921#issuecomment-2621632945
+    if (!options.isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          styles: {
+            name: 'vendor-styles',
+            test: /[\\/]node_modules[\\/].*\.(css|scss|sass)$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      };
+    }
     return config
   }
 
