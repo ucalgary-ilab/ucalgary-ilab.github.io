@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[519],{8760:(_,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/person",function(){return e(1373)}])}},_=>{_.O(0,[900,230,723,179,851,95,649,373,308,110,636,340,792],()=>_(_.s=8760)),_N_E=_.O()}]);
