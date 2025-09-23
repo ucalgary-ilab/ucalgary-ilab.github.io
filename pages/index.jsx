@@ -1,23 +1,23 @@
-import React from 'react'
 
-import Logo from './logo'
-import About from './about'
-import Meta from './meta'
-import Labs from './labs'
+import Logo from '../components/logo'
+import About from '../components/about'
+import Meta from '../components/meta'
+import Labs, { getStaticProps as Labs_getStaticProps } from '../components/labs'
 import Publications from './publications'
 import People, { getStaticProps as People_getStaticProps } from './people'
-import Footer from './footer'
+import Footer from '../components/footer'
 
 
 // getStaticProps returning empty props to generate page with next build
 export async function getStaticProps() {
-  let peopleStaticProps = await People_getStaticProps()
+  const peopleStaticProps = (await People_getStaticProps()).props
+  const labsStaticProps = (await Labs_getStaticProps()).props
   return {
-    props: {peopleStaticProps: peopleStaticProps.props},
+    props: {peopleStaticProps, labsStaticProps},
   }
 }
 
-export default function Index({peopleStaticProps}) {
+export default function Index({peopleStaticProps, labsStaticProps}) {
   return (
     <div>
       <Meta />
@@ -25,7 +25,7 @@ export default function Index({peopleStaticProps}) {
         <div className="eleven wide column centered">
           <Logo />
           <About />
-          <Labs />
+          <Labs {...labsStaticProps}/>
           <People short="true" {...peopleStaticProps} />
           <Publications short="true" />
         </div>
