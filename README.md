@@ -27,6 +27,16 @@
   - Followup with [pull request reviews](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews): reviewer invitations are automated based on mappings between files and [teams](https://github.com/orgs/ucalgary-ilab/teams) defined in [CODEOWNERS](CODEOWNERS).
   - Merge your pull request once approved.
 
+## Pull requests previews
+
+The CI/CD configuration in `.github/workflows/deployment-gh-pages.yml` generates previews for each pull request to facilitate reviews without local reproduction. Pull request number `<n>` will have its preview published at `https://ilab.ucalgary.ca/pr-preview/pr-<n>/`, with the preview automatically removed when the pull request is closed. The CI/CD configuration temporarily overwrites the default value of [`basePath`](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath) declared in `next.config.js` with `/pr-preview/pr-<n>`.
+
+For the [`basePath`](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath) rewrite to be effective, the following [next.js components](https://nextjs.org/docs/pages/api-reference/components) must be used instead of HTML tags:
+- [Image](https://nextjs.org/docs/pages/api-reference/components/image) instead of HTML `<img>`.
+- [Link](https://nextjs.org/docs/pages/api-reference/components/link) instead of HTML `<a>`.
+
+Note: [Image](https://nextjs.org/docs/pages/api-reference/components/image#width-and-height) requires `width` and `height` properties to be defined (unless the image is statically imported, but that makes code less concise; or unless the image has the [`fill` property](https://nextjs.org/docs/pages/api-reference/components/image#fill), but that's not always wanted). Our workaround is to declare `<Image width={0} height={0} ... />` and declare desired size properties in [styles/global.css](styles/global.css).
+
 ## Updating Specific Content
 
 ### How to Update People
@@ -238,26 +248,25 @@ git push origin master
 
 ### How to Check by Running the Server in Local
 
-You don't need to do this process, but if you're interested, here is the process.
-
-Note: worked with Node v16, but got error with Node v18. (should be fixed in the future)
-
 ```shell
 git clone git@github.com:ucalgary-ilab/ilab-website.git
 cd ilab-website
-npm install
-npm run build:content
+yarn install
+yarn build:content
 node preprocess.js
-node server.js
+yarn dev
 ```
 
-You can also keep watching the file change by running the following command in the different terminal tab
+Then browse: http://localhost:3000
 
-```shell
-npm run watch
-```
+Notes: 
+- `yarn build:content` converts files under [content](content) from Markdown and YAML to JSON. You can monitor Markdown and YAML files changes and automate their conversion to JSON files by running the following command in another terminal tab:
+  ```shell
+  yarn watch
+  ```
+- `node preprocess.js` needs to be run every time image files are added under `static`.
 
-Watch [https://youtu.be/ympcMWQHm1c](https://youtu.be/ympcMWQHm1c) for the video instruction.
+(equivalent to `yarn build:content`)
 
 ### How to Deploy and Reflect the Change in the Website
 
@@ -276,5 +285,5 @@ git clone git@github.com:ucalgary-ilab/ucalgary-ilab.github.io.git -b gh-pages .
 #### Deploy
 
 ```shell
-npm run deploy
+yarn deploy
 ```

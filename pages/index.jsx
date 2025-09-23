@@ -8,6 +8,14 @@ import Publications from './publications'
 import People from './people'
 import Footer from './footer'
 
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 export default function Index({}) {
   return (
     <div>

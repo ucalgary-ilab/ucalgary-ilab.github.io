@@ -11,11 +11,15 @@ import Header from './header'
 import Detail from './detail'
 import Footer from './footer'
 
-class Publication extends React.Component {
-  static async getInitialProps(req) {
-    const id = req.query.id
-    return { id: id }
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
   }
+}
+
+class Publication extends React.Component {
+
 
   constructor(props) {
     super(props)
@@ -36,37 +40,39 @@ class Publication extends React.Component {
       this.namesId[person.name] = person.id
     }
 
+    if(!this.props.id)return;
     this.publication = require(`../content/output/publications/${ this.props.id }.json`)
   }
 
   render() {
+    if(!this.props.id)return;
     return (
-      <div>
+      <>
         <Meta
           title={ this.publication.title }
           description={ this.publication.abstract }
           image={ `/static/images/publications/cover/${ this.props.id }.jpg` }
           keywords={ this.publication.keywords }
         />
-
         <Header current="Publications" />
-
-        <div className="ui stackable grid">
-          <div className="one wide column"></div>
-          <div className="ten wide column centered" style={{ marginTop: '30px' }}>
-            <Detail
-              publication={ this.publication}
-              namesId={ this.namesId }
-              people={ this.people }
-              booktitles={ booktitles }
-              files={ files }
-              vimeo={ vimeo }
-            />
+          <div className="pusher">
+          <div className="ui stackable grid">
+            <div className="one wide column"></div>
+            <div className="ten wide column centered" style={{ marginTop: '30px' }}>
+              <Detail
+                publication={ this.publication}
+                namesId={ this.namesId }
+                people={ this.people }
+                booktitles={ booktitles }
+                files={ files }
+                vimeo={ vimeo }
+              />
+            </div>
+            <div className="one wide column"></div>
           </div>
-          <div className="one wide column"></div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </>
     )
   }
 }

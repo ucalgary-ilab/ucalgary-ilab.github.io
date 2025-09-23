@@ -1,11 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import Meta from './meta'
 import Header from './header'
 import Publications from './publications'
 import Footer from './footer'
 import files from '../content/output/files.json'
+
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 function getPhotos() {
   return files.children
@@ -59,11 +76,11 @@ function renderLink(person, key) {
   }
 
   return (
-    <div className="item">
-      <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
-        <i className={ icon } />
+    <div className="item" key={key}>
+      <Link href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
+        <FontAwesomeIcon icon={icon} />
         { title }
-      </a>
+      </Link>
     </div>
   )
 }
@@ -99,7 +116,7 @@ export default function Person ({}) {
   }
 
   return (
-    <div>
+    <>
 
       <Meta
         title={ person.name }
@@ -108,39 +125,41 @@ export default function Person ({}) {
 
       <Header current="People" />
 
-      <div className="ui stackable grid">
-        <div className="one wide column"></div>
-        <div className="eleven wide column centered">
-          <div id="person" className="category" style={{ textAlign: 'center' }}>
-            <img className="ui circular image large-profile" src={ person.photo } style={{ margin: 'auto' }} />
-            <h1>{ person.name }</h1>
-            <p>{ person.title }</p>
-            { person.url &&
-              <p>
-                <a href={ person.url } target="_blank">
-                <i className="fas fa-link fa-fw"/>{ person.url }
-                </a>
-              </p>
-            }
-            { person.scholar &&
-              <p>
-                <a href={ person.scholar } target="_blank">
-                  <i className="fas fa-graduation-cap fa-fw"/>
-                  Google Scholar
-                </a>
-              </p>
-            }
-            <div class="ui horizontal small divided link list">
-              { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
-                return renderLink(person, key)
-              }) }
+      <div className="pusher">
+        <div className="ui stackable grid">
+          <div className="one wide column"></div>
+          <div className="eleven wide column centered">
+            <div id="person" className="category" style={{ textAlign: 'center' }}>
+              <Image width={0} height={0} className="ui circular image large-profile" src={ person.photo } style={{ margin: 'auto' }} />
+              <h1>{ person.name }</h1>
+              <p>{ person.title }</p>
+              { person.url &&
+                <p>
+                  <Link href={ person.url } target="_blank">
+                  <FontAwesomeIcon icon="fas fa-link fa-fw" />{ person.url }
+                  </Link>
+                </p>
+              }
+              { person.scholar &&
+                <p>
+                  <Link href={ person.scholar } target="_blank">
+                    <FontAwesomeIcon icon="fas fa-graduation-cap fa-fw" />
+                    Google Scholar
+                  </Link>
+                </p>
+              }
+              <div class="ui horizontal small divided link list">
+                { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
+                  return renderLink(person, key)
+                }) }
+              </div>
             </div>
+            <Publications author={ person.name } />
           </div>
-          <Publications author={ person.name } />
+          <div className="one wide column"></div>
         </div>
-        <div className="one wide column"></div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   )
 }
