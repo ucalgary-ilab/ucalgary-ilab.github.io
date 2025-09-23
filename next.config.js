@@ -8,7 +8,6 @@ module.exports = {
   output: 'export',
   basePath: basePath,
   images: {
-    unoptimized: true,
     loader: 'custom',
     loaderFile: './image-loader.js',
   },
