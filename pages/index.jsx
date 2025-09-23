@@ -5,18 +5,19 @@ import About from './about'
 import Meta from './meta'
 import Labs from './labs'
 import Publications from './publications'
-import People from './people'
+import People, { getStaticProps as People_getStaticProps } from './people'
 import Footer from './footer'
 
 
 // getStaticProps returning empty props to generate page with next build
 export async function getStaticProps() {
+  let peopleStaticProps = await People_getStaticProps()
   return {
-    props: {},
+    props: {peopleStaticProps: peopleStaticProps.props},
   }
 }
 
-export default function Index({}) {
+export default function Index({peopleStaticProps}) {
   return (
     <div>
       <Meta />
@@ -25,7 +26,7 @@ export default function Index({}) {
           <Logo />
           <About />
           <Labs />
-          <People short="true" />
+          <People short="true" {...peopleStaticProps} />
           <Publications short="true" />
         </div>
       </div>
