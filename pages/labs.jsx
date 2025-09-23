@@ -32,7 +32,7 @@ function Labs ({short}) {
       <div id="labs" className="ui two column centered grid">
         <div className="ui text container left aligned">
           { labs.map((lab, i) => {
-            if (lab.status=="current")
+            if (lab.status!="associated")
             {
               let labLogoSrc = `/static/images/labs/${lab.id}.png`;
               let fallbackSrc = `/static/images/labs/emptyLabLogo.png`
@@ -67,8 +67,9 @@ function Labs ({short}) {
             Associated Research Groups
           </h2>
           <div className="associatedGroups" style={{display: "flex", flexWrap: "wrap", marginTop: "5vh"}}>
+            { console.log(labs)}
             { labs.map((lab, i) => {
-              if (lab.status=="alum")
+              if (lab.status=="associated")
               {
                 let labLogoSrc = `/static/images/labs/${lab.id}.png`;
                 let fallbackSrc = `/static/images/labs/emptyLabLogo.png`

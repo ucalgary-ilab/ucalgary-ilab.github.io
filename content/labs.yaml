@@ -27,20 +27,24 @@
   description: Research in HCI, CSCW, and UbiComp
   prof: Saul Greenberg (Emeritus)
   url: http://grouplab.cpsc.ucalgary.ca/
+  status: associated
 
 - id: innovis
   description: Innovations in Visualization Laboratory
   prof: Sheelagh Carpendale (Adjunct - Simon Fraser University)
   url: http://sheelaghcarpendale.ca/
+  status: associated
 
 - id: 'suzuki'
   description: Programmable Reality Lab - Tangible, AR/VR, and Robotics
   prof: Ryo Suzuki
   url: https://programmable-reality-lab.github.io/
+  status: associated
 
 - id: ricelab
   description: Rethinking Interaction, Collaboration, & Engagement
   prof: Anthony Tang (Adjunct - Singapore Management University)
   url: https://ricelab.github.io/
+  status: associated
 
 
