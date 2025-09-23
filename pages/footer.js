@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -16,9 +17,9 @@ class Footer extends React.Component {
       <footer>
         <div className="ui center aligned container">
           <div className="ui section divider"></div>
-            <img style={{ maxWidth: '180px', margin: '30px auto' }} src="/static/images/logo-6.png"  />
+            <Image width={180} height={0} style={{ maxWidth: '180px', margin: '30px auto', height: 'auto' }} src="/static/images/logo-6.png"  />
             <div className="content">
-              <img style={{ maxWidth: '200px', margin: '0px auto' }} src="/static/images/logo-4.png"  />
+              <Image width={200} height={0} style={{ maxWidth: '200px', margin: '0px auto', height: 'auto' }} src="/static/images/logo-4.png"  />
               <div className="sub header">
                 Department of Computer Science
               </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -144,7 +145,7 @@ class Detail extends React.Component {
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
             <div className="three wide column" style={{ margin: 'auto' }}>
-              <img className="cover" src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
+              <Image width={0} height={0} className="cover" src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
             </div>
             <div className="thirteen wide column">
               { this.props.short &&
@@ -160,7 +161,7 @@ class Detail extends React.Component {
                     return (
                       this.names.includes(author) ?
                       <a href={ `/people/${ this.namesId[author] }` } key={ author }>
-                        <img src={ `/static/images/people/${ this.namesId[author] }.jpg`} className="ui circular spaced image mini-profile" />
+                        <Image width={0} height={0} src={ `/static/images/people/${ this.namesId[author] }.jpg`} className="ui circular spaced image mini-profile" />
                         <strong>{author}</strong>
                       </a>
                       :
@@ -185,7 +186,7 @@ class Detail extends React.Component {
                 width="100%"
                 height="315"
                 src={`${this.publication.embed}`}
-                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.publication.embed}?autoplay=1><img src=${this.publication.embedThumbnail}><span>▶</span></a>`}
+                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.publication.embed}?autoplay=1><Image width={0} height={0} src=${this.publication.embedThumbnail}><span>▶</span></a>`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen={true}
@@ -242,7 +243,7 @@ class Detail extends React.Component {
                 width="100%"
                 height="315"
                 src={`${this.publication.talkEmbed}`}
-                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.publication.talkEmbed}?autoplay=1><img src=${this.publication.talkEmbedThumbnail}><span>▶</span></a>`}
+                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.publication.talkEmbed}?autoplay=1><Image width={0} height={0} src=${this.publication.talkEmbedThumbnail}><span>▶</span></a>`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen={true}
@@ -263,7 +264,7 @@ class Detail extends React.Component {
                   return (
                     <a className="card" href={ `/${src}` } target="_blank" >
                       <div className="image">
-                        <img src={ `/${src}` } />
+                        <Image width={0} height={0} src={ `/${src}` } />
                       </div>
                     </a>
                   )

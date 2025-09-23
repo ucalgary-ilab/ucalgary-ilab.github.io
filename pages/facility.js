@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 import facility from '../content/output/facility.json'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -38,7 +39,7 @@ class Facility extends React.Component {
                     return (
                       <a className="card" href={ item.url } target="_blank" key={ item.img } >
                         <div className="image">
-                          <img src={ `/static/images/facility/${item.img}.jpg` } />
+                          <Image width={0} height={0} src={ `/static/images/facility/${item.img}.jpg` } />
                         </div>
                         <div className="content">
                           <p className="header">{ item.name }</p>

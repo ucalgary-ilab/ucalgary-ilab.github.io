@@ -1,10 +1,20 @@
 const webpack = require('webpack')
 const _ = require('lodash')
 
+const basePath = ''; // do not edit - modified by .github/workflows/deployment-gh-pages.yml
+
 module.exports = {
   trailingSlash: true,
   output: 'export',
-  basePath: '', // do not edit - modified by .github/workflows/deployment-gh-pages.yml
+  images: { unoptimized: true },
+  basePath: basePath,
+  images: {
+    loader: 'custom',
+    loaderFile: './image-loader.js',
+  },
+  publicRuntimeConfig: {
+    basePath: basePath, // for access at runtime https://nextjs.org/docs/pages/api-reference/config/next-config-js/runtime-configuration
+  },
   // exportPathMap: function () {
   //   const ids = [
   //     'publications',

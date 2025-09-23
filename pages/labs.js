@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 import labs from '../content/output/labs.json'
 
 class Labs extends React.Component {
@@ -17,13 +18,13 @@ class Labs extends React.Component {
                 <a href={ lab.url } className="ui ">
                   <div className={ `img card-color-${i}`}>
                   { lab.logo !== false &&
-                    <img src={ `/static/images/labs/${lab.id}.png` } alt={`${lab.id}`} />
+                    <Image width={0} height={0} src={ `/static/images/labs/${lab.id}.png` } alt={`${lab.id}`} />
                     || <div className='lab-name'>{`${lab.id}`}</div>
                     
                   }
                   {
                     lab.id === '' &&
-                    <img />
+                    <Image />
                   }
                   </div>
                   <h3>{ lab.description }</h3>

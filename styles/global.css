@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
+
 header {
   margin-top: 30px !important;
 }
 
+.ui,
+.ui *,
+body,
+html {
+  font-family: 'Encode Sans','Open Sans', sans-serif !important; 
+}
+
 body {
-  background: #f9f9f9;
+  background: #fff;
   color: #303030;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.2em;
   line-height: 19px;
   padding: 0;
@@ -32,15 +40,26 @@ img {
   border: none;
 }
 
-/*
-yellow: #f1c40b;
-red: #dd2725;
-brown: #5c472d;
-pastel-red: #db847c;
-*/
+h1, h2{
+  font-weight: 900;
+  text-transform: uppercase;
+}
 
 a {
   color: #5c472d;
+}
+
+#about a {
+  color: #e56f50;
+  font-weight: 600;
+}
+
+#about strong {
+  font-weight: 600;
+}
+
+#about{
+  margin-bottom: 3em;
 }
 
 .color {
@@ -94,6 +113,7 @@ a {
   background: #f1c40b;
 }
 
+/* ILab Logo Colors */
 .card-color-0 { background: rgb(24, 91, 121); }
 .card-color-1 { background: rgb(32, 149, 186); }
 .card-color-2 { background: rgb(87, 167, 147); }
@@ -117,36 +137,11 @@ a {
 
 a:hover {
   color: brown;
-  /*color: #E03997;*/
-  /*text-decoration: underline;*/
-}
-
-/*#people a, #person a {
-  color: #269;
-}
-*/
-
-
-#top-video-container {
-  width: 100%;
-  height: 300px;
-  overflow:hidden;
-  position: absolute;
-  /*margin-top: 50px;*/
-}
-
-#top-video {
-  min-width: 100%;
-  min-height: 100%;
-  left: 50%;
-  top: 50%;
-  /*margin: 10px 0;*/
-  position: absolute;
-  transform: translate(-50%, -50%);
 }
 
 #header-logo {
   height: 300px;
+  width: auto;
   text-align: center;
   margin-top: 30px;
 }

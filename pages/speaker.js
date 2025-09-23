@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 import _ from 'lodash'
 import Header from './header'
 import Publications from './publications'
@@ -26,7 +27,7 @@ class Speaker extends React.Component {
         <div className="publication ui vertical segment grid" data-id={ this.props.speaker.id } key={ this.props.speaker.id }>
           <div className="three wide column" style={{ margin: 'auto', 'textAlign': 'center' }}>
             <a href={ this.props.speaker.url } target="_blank" >
-            <img className="photo" src={ `/static/images/seminar/${this.props.speaker.nameId}.jpg` } />
+            <Image width={0} height={0} className="photo" src={ `/static/images/seminar/${this.props.speaker.nameId}.jpg` } />
             <h1>{ this.props.speaker.name }</h1>
             <h3>
               { this.props.speaker.affiliation }

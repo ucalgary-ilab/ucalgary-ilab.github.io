@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import files from '../content/output/files.json'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
@@ -61,7 +62,7 @@ class Location extends React.Component {
                 return (
                   <a className="card" href={ `/${src}` } target="_blank" key={ src }>
                     <div className="image">
-                      <img src={ `/${src}` }/>
+                      <Image width={0} height={0} src={ `/${src}` }/>
                     </div>
                   </a>
                 )

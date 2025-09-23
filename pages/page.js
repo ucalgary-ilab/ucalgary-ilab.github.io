@@ -20,12 +20,6 @@ class Page extends React.Component {
         return <Courses />
       case 'facility':
         return <Facility />
-      case 'news':
-        return <News />
-      case 'seminar':
-        return <Seminar />
-      case 'location':
-        return <Location />
     }
   }
 
