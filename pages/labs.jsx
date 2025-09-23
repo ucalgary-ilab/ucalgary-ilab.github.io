@@ -47,7 +47,7 @@ function Labs ({short}) {
                       <img style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: "6vw", height: "6vw", minWidth: "6vw", width: "6vw", padding: "0px"}}
                             src={profProfileSrc}/>
                       <div style={{display: "flex", alignItems: "center"}}>
-                        <p style={{marginLeft: "5px"}}> <span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.lab} </span> 
+                        <p style={{marginLeft: "5px"}}> <span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span> 
                           <span style={{fontSize: "1.15em"}}> (<span style={{fontWeight: "600"}}>Prof. { lab.prof }</span>) {lab.statement} </span> </p>
                       </div>
                     </div>
@@ -85,7 +85,7 @@ function Labs ({short}) {
                           <img style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: "4.5vw", height: "4.5vw", minWidth: "4.5vw", width: "4.5vw", padding: "0px"}}
                                 src={profProfileSrc}/>
                           <div style={{display: "flex", alignItems: "center"}}>
-                            <p> <span style={{color: `${colours[colourIndex]}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.lab} </span> 
+                            <p> <span style={{color: `${colours[colourIndex]}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.name} </span> 
                               <span style={{fontSize: "0.8em"}}> (Dr. { lab.prof } - {lab.title}) {lab.description}. </span> </p>
                           </div>
                         </div>
