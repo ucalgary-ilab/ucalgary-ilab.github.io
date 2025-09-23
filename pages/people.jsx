@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import _ from 'lodash'
 import summary from '../content/output/summary.json'
 import files from '../content/output/files.json'
@@ -11,11 +10,26 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas)
 
-// getStaticProps returning empty props to generate page with next build
+
 export async function getStaticProps() {
-  return {
-    props: {},
+
+  const pictures = getPhotos()
+
+  let fileNames = Object.keys(summary.fileMap)
+  let keys = fileNames.filter(f => f.includes('people'))
+
+  let people = []
+  for (let key of keys) {
+    let id = key.split('/')[3].replace('.json', '')
+    let person = Object.assign(summary.fileMap[key], {
+      id,
+      photo: getPhoto(id, pictures)
+    })
+    people.push(person)
   }
+  people = _.sortBy(people, ['order'])
+
+  return { props: { people } }
 }
 
 
@@ -68,48 +82,21 @@ function getPhoto(id, pictures) {
   }
 }
 
-function People ({short}) {
+export default function People ({people, short=false}) {
 
-  const [types, setTypes] = useState([])
-  const [people, setPeople] = useState([])
+  let types = [
+    {key: 'faculty', title: 'Faculty'},
+    {key: 'postdoc', title: 'Postdocs'},
+    {key: 'phd', title: 'PhD Students'},
+    {key: 'master', title: "Master's Students"},
+    {key: 'undergrad', title: 'Undergrad Students'},
+    {key: 'visiting', title: 'Visiting Researchers'},
+    {key: 'alumni', title: 'Alumni'}
+  ]
 
-  useEffect(() => {
-
-    let types = [
-      {key: 'faculty', title: 'Faculty'},
-      {key: 'postdoc', title: 'Postdocs'},
-      {key: 'phd', title: 'PhD Students'},
-      {key: 'master', title: "Master's Students"},
-      {key: 'undergrad', title: 'Undergrad Students'},
-      {key: 'visiting', title: 'Visiting Researchers'},
-      {key: 'alumni', title: 'Alumni'}
-    ]
-
-    if (short) {
-      types = types.slice(2, 6)
-    }
-
-    setTypes(types);
-
-    const pictures = getPhotos()
-
-    let fileNames = Object.keys(summary.fileMap)
-    let keys = fileNames.filter(f => f.includes('people'))
-
-    let people = []
-    for (let key of keys) {
-      let id = key.split('/')[3].replace('.json', '')
-      let person = Object.assign(summary.fileMap[key], {
-        id,
-        photo: getPhoto(id, pictures)
-      })
-      people.push(person)
-    }
-    people = _.sortBy(people, ['order'])
-
-    setPeople(people)
-
-  }, [])
+  if (short) {
+    types = types.slice(2, 6)
+  }
 
   return (
     <div id="people" className="category">
@@ -166,5 +153,3 @@ function People ({short}) {
     </div>
   )
 }
-
-export default People

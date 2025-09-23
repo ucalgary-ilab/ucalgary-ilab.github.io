@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -17,11 +16,15 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, far, fab)
 
-// getStaticProps returning empty props to generate page with next build
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
+
+export async function getStaticProps({ params }) {
+  const id = params.id;
+
+  const temp = require(`../content/output/people/${id}.json`)
+  const photos = getPhotos()
+  temp.photo = getPhoto(id, photos)
+
+  return { props: { person: temp } }
 }
 
 function getPhotos() {
@@ -85,39 +88,9 @@ function renderLink(person, key) {
   )
 }
 
-/*
-export async function getStaticProps(context) {
-  const { params } = context;
-  const id = params.id;
-
-  const temp = require(`../content/output/people/${id}.json`)
-  const photos = getPhotos()
-  temp.photo = getPhoto(id, photos)
-  return { props: {person: temp} }
-}
-*/
-
-export default function Person ({}) {
-
-  const router = useRouter()
-  const {id} = router.query
-
-  const [person, setPerson] = useState(null)
-
-  useEffect(() => {
-    const temp = require(`../content/output/people/${id}.json`)
-    const photos = getPhotos()
-    temp.photo = getPhoto(id, photos)
-    setPerson(temp)
-  }, [])
-
-  if (person == null) {
-    return <div></div>
-  }
-
+export default function Person ({person}) {
   return (
     <>
-
       <Meta
         title={ person.name }
         image={ person.photo }
