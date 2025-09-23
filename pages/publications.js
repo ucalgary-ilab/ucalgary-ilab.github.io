@@ -5,6 +5,22 @@ import summary from '../content/output/summary.json'
 import booktitles from '../content/output/booktitles.json'
 import files from '../content/output/files.json'
 import vimeo from '../content/output/vimeo.json'
+import Link from 'next/link'
+
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 class Publications extends React.Component {
   constructor(props) {
@@ -88,7 +104,7 @@ class Publications extends React.Component {
     return (
       <div id="publications" className="category">
         <h1 className="ui horizontal divider header">
-          <i className="file alternate outline icon"></i>
+          <FontAwesomeIcon icon="far fa-file-lines" />
           { this.props.short ? 'Recent Publications' : 'Publications' }
         </h1>
         <div className="ui segment" style={{ marginTop: '50px' }}>
@@ -105,10 +121,10 @@ class Publications extends React.Component {
                     { publication.award &&
                       <span className="ui big basic pink label">
                       { publication.award === 'Honorable Mention' &&
-                        <b><i className="fas fa-award"></i> Honorable Mention</b>
+                        <b><FontAwesomeIcon icon="fas fa-award" /> Honorable Mention</b>
                       }
                       { publication.award === 'Best Paper' &&
-                        <b><i className="fas fa-trophy"></i> Best Paper</b>
+                        <b><FontAwesomeIcon icon="fas fa-trophy" /> Best Paper</b>
                       }
                       </span>
                     }
@@ -122,25 +138,27 @@ class Publications extends React.Component {
                     { publication.authors.map((author) => {
                         return (
                           this.names.includes(author) ?
-                          <a href={ `/people/${ this.namesId[author] }` } key={ author }>
+                          <Link href={ `/people/${ this.namesId[author] }` } key={ author }>
                             <img src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
                             <span className="author-link">{author}</span>
-                          </a>
+                          </Link>
                           :
                           <span key={ author }>{author}</span>
                         )
                       }).reduce((prev, current) => [prev, ' , ', current])
                     }
                   </p>
-                  <p>
+                  <div>
                   { publication.keywords &&
                   <div className="ui large basic labels">
-                    { publication.keywords.split(', ').map((keyword) => {
+                    { 
+                      [...new Set(publication.keywords.split(', '))].map((keyword) => {
                       return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
-                    }) }
+                    }) 
+                    }
                   </div>
                   }
-                  </p>
+                  </div>
                 </div>
               </div>
             ) // publications
@@ -153,12 +171,11 @@ class Publications extends React.Component {
             return (
               <div id={publication.id} className="ui large modal" key={ publication.id }>
                 <div className="header">
-                  <a href={ `/publications/${publication.id}` } target="_blank">
-                    <i className="fas fa-link fa-fw"></i>{`${publication.id}`}
-                  </a>
+                  <Link href={ `/publications/${publication.id}` } target="_blank">
+                    <FontAwesomeIcon icon="fas fa-link fa-fw" />{`${publication.id}`}
+                  </Link>
                   <div className="actions" style={{ float: 'right', cursor: 'pointer', color: 'grey' }}>
-                    <i className="ui right cancel close icon">
-                    </i>
+                    <FontAwesomeIcon icon="fas fa-xmark" />
                   </div>
                 </div>
                 <div className="content">
@@ -185,9 +202,9 @@ class Publications extends React.Component {
 
         { this.props.short &&
           <div className="ui vertical segment stackable" style={{ textAlign: 'center' }}>
-            <a className="ui button" href="/publications">
+            <Link className="ui button" href="/publications">
               { `+ ${this.publications.length} more publications` }
-            </a>
+            </Link>
           </div>
         }
       </div>

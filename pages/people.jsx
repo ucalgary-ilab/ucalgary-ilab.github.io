@@ -2,6 +2,20 @@ import React, { useEffect, useState } from 'react'
 import _ from 'lodash'
 import summary from '../content/output/summary.json'
 import files from '../content/output/files.json'
+import Link from 'next/link'
+
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
+// getStaticProps returning empty props to generate page with next build
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
 
 
 function typeStringFromType(type) {
@@ -99,12 +113,12 @@ function People ({short}) {
   return (
     <div id="people" className="category">
       <h1 className="ui horizontal divider header">
-        <i className="child icon"></i>
+        <FontAwesomeIcon icon="fas fa-child-reaching" />
         Researchers
       </h1>
       { short &&
       <div>
-        Students are part of the <a href="https://science.ucalgary.ca/computer-science" title="Computer Science">CS</a> or <a href="https://science.ucalgary.ca/computational-media-design" title="Computational Media Design">CMD</a> programs. <a className="ui button" href="/people">See all {people.filter(p => p.type === 'alumni').length} alumni</a>
+        Students are part of the <Link href="https://science.ucalgary.ca/computer-science" title="Computer Science">CS</Link> or <Link href="https://science.ucalgary.ca/computational-media-design" title="Computational Media Design">CMD</Link> programs. <Link className="ui button" href="/people">See all {people.filter(p => p.type === 'alumni').length} alumni</Link>
       </div>
       }
       { types.map((type) => {
@@ -120,7 +134,7 @@ function People ({short}) {
                   person.title = getTitle(person)
                   let colNum = type.key === 'faculty' ? 'five' : 'four'
                   return (
-                    <a className={`${colNum} wide column person`} href={`/people/${person.id}`}
+                    <Link className={`${colNum} wide column person`} href={`/people/${person.id}`}
                         key={person.id}>
                       <img className="ui circular image medium-profile"
                           src={person.photo}/>
@@ -134,13 +148,13 @@ function People ({short}) {
                       {type.key === 'faculty' &&
                         <div className="ui large basic labels">
                           {person.keywords.map((keyword) => {
-                            return <span
+                            return <span key={keyword}
                               className="ui large inverted label label-brown-color">{keyword}</span>
                           })
                           }
                         </div>
                       }
-                    </a>
+                    </Link>
                   ) // return
                 }) // map
               }

@@ -1,5 +1,14 @@
 import React from 'react'
 import _ from 'lodash'
+import Link from 'next/link'
+
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas, far, fab)
 
 class Detail extends React.Component {
   constructor(props) {
@@ -36,7 +45,7 @@ class Detail extends React.Component {
       this.proceeding = {}
     }
     this.proceeding.series = `${conference} '${year}`
-    if (this.publication.pages < 4) {
+    if (this.publication.pages < 4 && this.proceeding.booktitle && !this.proceeding.booktitle.toString().includes("Adjunct")) {
       this.proceeding.booktitle = 'Adjunct ' + this.proceeding.booktitle
     }
   }
@@ -104,9 +113,9 @@ class Detail extends React.Component {
     }
 
     return (
-      <div className="item">
+      <div className="item" key={ href }>
         <a href={ href } target="_blank" style={{ fontSize: '1.2em' }}>
-          <i className={ icon } />
+          <FontAwesomeIcon icon={ icon } />
           { title }
         </a>
       </div>
@@ -128,8 +137,8 @@ class Detail extends React.Component {
       <div id="publication">
         <div className="block">
           <div id="breadcrumb" className="ui breadcrumb">
-            <a className="section" href="/publications">Publications</a>
-            <i className="right angle icon divider"></i>
+            <Link className="section" href="/publications">Publications</Link>
+            <FontAwesomeIcon icon="fas fa-angle-right" />
             <a className="active section">{ this.publication.series }</a>
           </div>
 
@@ -162,7 +171,7 @@ class Detail extends React.Component {
               </p>
               <p>
                 <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
-                  <i className="far fa-file-pdf fa-fw"></i>{ `${this.publication.id}.pdf` }
+                  <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
                 </a>
               </p>
             </div>
@@ -195,7 +204,7 @@ class Detail extends React.Component {
           { this.publication.keywords &&
             <div className="ui large basic labels">
               Keywords: &nbsp;
-              { this.publication.keywords.split(', ').map((keyword) => {
+              { [...new Set(this.publication.keywords.split(', '))].map((keyword) => {
                 return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
               }) }
             </div>
@@ -217,7 +226,7 @@ class Detail extends React.Component {
         {this.hasMaterialLinks(this.publication) &&
           <div className="block">
             <h1>Materials</h1>
-            <div class="ui horizontal small divided link list">
+            <div className="ui horizontal small divided link list">
               {['github', 'gitlab'].map((key) => {
                 return this.renderLink(this.publication, key)
               })}
