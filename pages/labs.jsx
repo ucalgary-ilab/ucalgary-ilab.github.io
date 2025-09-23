@@ -50,7 +50,9 @@ function Labs ({short}) {
                       <Image width="0" height="0" style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: "6vw", height: "6vw", minWidth: "6vw", width: "6vw", padding: "0px"}}
                             src={profProfileSrc}/>
                       <div style={{display: "flex", alignItems: "center"}}>
-                        <p style={{marginLeft: "5px"}}> <span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span> 
+                        <p style={{marginLeft: "5px"}}> 
+                          <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
+                          <span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span> 
                           <span style={{fontSize: "1.15em"}}> (<span style={{fontWeight: "600"}}>Prof. { lab.prof }</span>) {lab.statement} </span> </p>
                       </div>
                     </div>
