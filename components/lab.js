@@ -159,8 +159,8 @@ export default function Lab ({lab, peopleStaticProps}) {
                 }) }
               </div>
             </div>
-            {/* <Publications author={ lab.name } /> */}
             <People lab={ lab.id } {...peopleStaticProps} />
+            <Publications lab={ lab.id } />
           </div>
           <div className="one wide column"></div>
         </div>
