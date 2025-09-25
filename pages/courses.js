@@ -1,6 +1,18 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
+/* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 class Courses extends React.Component {
   componentDidMount() {
   }
@@ -8,15 +20,15 @@ class Courses extends React.Component {
   render() {
     return (
       <div id="courses" className="category">
-        <h1 class="ui horizontal divider header">
-          <i class="university icon"></i>
+        <h1 className="ui horizontal divider header">
+          <FontAwesomeIcon icon="fas fa-building-columns" />
           Courses
         </h1>
-        <div class="ui divided items">
+        <div className="ui divided items">
           <h1>HCI Related Courses</h1>
 
           <p>There are several courses related to HCI and InfoVis.</p>
-          <table class="ui celled table">
+          <table className="ui celled table">
             <thead>
               <tr><th>Course</th>
               <th>Title</th>
@@ -76,7 +88,7 @@ class Courses extends React.Component {
           </table>
           <p>Please see the course list for more details.</p>
           <a href="http://contacts.ucalgary.ca/info/cpsc/courses">
-            <i className="fas fa-link fa-fw"></i>
+            <FontAwesomeIcon icon="fas fa-link fa-fw" />
             http://contacts.ucalgary.ca/info/cpsc/courses
           </a>
 
