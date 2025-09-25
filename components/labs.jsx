@@ -81,13 +81,13 @@ export default function Labs ({labs}) {
               return (
                 <div className="card" key={ lab.id } style={{ padding: '15px' }}>
                     <div style={{display: "flex"}}>
-                      <Link href={ lab.url }>
+                      <Link href={`/labs/${lab.id}`}>
                         <LabProf lab={lab} colour={colours[i]} size="6vw"/>
                       </Link>
                       <div style={{display: "flex", alignItems: "center"}}>
                         <p style={{marginLeft: "5px"}}>
                           <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
-                          <Link href={ lab.url }><span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
+                          <Link href={`/labs/${lab.id}`}><span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                           <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
                       </div>
                     </div>
