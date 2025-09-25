@@ -18,15 +18,14 @@ export async function getStaticProps() {
   let fileNames = Object.keys(summary.fileMap)
   let keys = fileNames.filter(f => f.includes('people'))
 
-  let people = []
-  for (let key of keys) {
+  let people = keys.map(key => {
     let id = key.split('/')[3].replace('.json', '')
-    let person = Object.assign(summary.fileMap[key], {
+    return {
+      ...summary.fileMap[key],
       id,
       photo: getPhoto(id, pictures)
-    })
-    people.push(person)
-  }
+    }
+  })
   people = _.sortBy(people, ['order'])
 
   return { props: { people } }

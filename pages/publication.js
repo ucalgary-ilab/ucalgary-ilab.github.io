@@ -5,11 +5,11 @@ import booktitles from '../content/output/booktitles.json'
 import files from '../content/output/files.json'
 import vimeo from '../content/output/vimeo.json'
 
-import Meta from './meta'
+import Meta from '../components/meta'
 import Head from 'next/head'
-import Header from './header'
+import Header from '../components/header'
 import Detail from './detail'
-import Footer from './footer'
+import Footer from '../components/footer'
 
 // getStaticProps returning empty props to generate page with next build
 export async function getStaticProps() {

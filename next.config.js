@@ -8,15 +8,11 @@ module.exports = {
   output: 'export',
   basePath: basePath,
   images: {
-    unoptimized: true,
     loader: 'custom',
     loaderFile: './image-loader.js',
   },
   publicRuntimeConfig: {
     basePath: basePath, // for access at runtime https://nextjs.org/docs/pages/api-reference/config/next-config-js/runtime-configuration
-  },
-  experimental: {
-    cssChunking: 'strict',
   },
   webpack: (config, options) => {
     config.plugins.push(
@@ -26,6 +22,22 @@ module.exports = {
         'window.jQuery': 'jquery'
       })
     )
+    // Ensure CSS ordering as declared in pages/_app.js
+    // https://github.com/vercel/next.js/issues/64921
+    // https://github.com/vercel/next.js/issues/64921#issuecomment-2621632945
+    if (!options.isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          styles: {
+            name: 'vendor-styles',
+            test: /[\\/]node_modules[\\/].*\.(css|scss|sass)$/,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      };
+    }
     return config
   }
 
