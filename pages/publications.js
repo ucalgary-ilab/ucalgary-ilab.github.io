@@ -31,7 +31,7 @@ class Publications extends React.Component {
       publication: null
     }
 
-    this.getPublications()
+    this.getPublications(this.props.lab)
     this.getPeople()
 
     if (this.props.short) {
@@ -45,7 +45,7 @@ class Publications extends React.Component {
     this.getPhotos()
   }
 
-  getPublications() {
+  getPublications(lab) {
     const fileNames = Object.keys(summary.fileMap)
     const keys = fileNames.filter((fileName) => {
       return fileName.includes('publications')
@@ -53,7 +53,10 @@ class Publications extends React.Component {
 
     this.publications = []
     for (let key of keys) {
-      this.publications.push(summary.fileMap[key])
+      const publication = summary.fileMap[key]
+      if(lab === undefined || (publication.labs !== undefined && publication.labs.includes(lab))){
+        this.publications.push(publication)
+      }
     }
     this.publications = this.publications.sort((a, b) => {
       return new Date(b.date) - new Date(a.date)
