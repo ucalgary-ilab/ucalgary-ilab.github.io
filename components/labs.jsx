@@ -21,14 +21,14 @@ export async function getStaticProps() {
   return { props: { labs } }
 }
 
-function getLabPictures() {
+export function getLabPictures() {
   return files.children
     .filter(dir => dir.name === 'images')[0].children
     .filter(dir => dir.name === 'labs')[0].children
     .map(image => image.name)
 }
 
-function getLabPicture(id, pictures) {
+export function getLabPicture(id, pictures) {
   let img = `${id}.png`
   if (pictures.includes(img)) {
     return `/static/images/labs/${ id }.png`
