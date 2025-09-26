@@ -1,6 +1,8 @@
 name: Wesley Willett
 type: faculty
 title: Associate Professor
+labs: 
+- data-experience
 keywords:
   - Data Visualization
   - Data Phyz

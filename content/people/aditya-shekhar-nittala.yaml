@@ -1,6 +1,8 @@
 name: Aditya Shekhar Nittala
 type: faculty
 title: Assistant Professor
+labs: 
+- diff
 keywords:
   - Wearable Computing
   - Fabrication

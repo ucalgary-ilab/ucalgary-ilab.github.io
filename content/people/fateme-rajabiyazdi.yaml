@@ -1,6 +1,8 @@
 name: Fateme Rajabiyazdi
 type: faculty
 title: Assistant Professor
+labs: 
+- health-vis
 keywords:
   - Data Visualization
   - Health
