@@ -15,9 +15,10 @@ import Meta from './meta'
 import Header from './header'
 import Publications from '../pages/publications'
 import Footer from './footer'
+import {getLabPictures, getLabPicture} from './labs'
 
 import files from '../content/output/files.json'
-
+import { default as labsJson } from '../content/output/labs.json'
 
 export async function getStaticProps({ params }) {
   const id = params.id;
@@ -92,6 +93,24 @@ function renderLink(person, key) {
 
 
 export default function Person ({person}) {
+  let colours = [
+    'rgb(24, 91, 121)',
+    'rgb(32, 149, 186)',
+    'rgb(87, 167, 147)',
+    'rgb(163, 184, 108)',
+    'rgb(223, 198, 61)',
+    'rgb(236, 170, 53)',
+    'rgb(237, 137, 37)',
+    'rgb(193, 72, 36)',
+    'rgb(240, 109, 36)',
+    'rgb(216, 81, 40)',
+  ]
+  const pictures = getLabPictures()
+  const labs = labsJson.map(lab => ({
+      ...lab,
+      picture: getLabPicture(lab.id, pictures)
+    })
+  )
   return (
     <>
       <Meta
@@ -129,10 +148,28 @@ export default function Person ({person}) {
                   return renderLink(person, key)
                 }) }
               </div>
+              <div className="one wide column">
+                <div className="ui horizontal small divided link list">
+                  { person.labs !== undefined &&
+                    person.labs.map((l, i) => {
+                      const lab = labs.find( (j) => j.id == l )
+                      const labId = labs.findIndex( (j) => j.id == l )
+                      const colour = colours[labId];
+                      const size = "6vw";
+                      return (
+                        <Link href={`/labs/${lab.id}`}>
+                            <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}>
+                            <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{padding: "0px", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}/>
+                            </div>
+                        </Link>
+                        )
+                      })
+                    }
+                </div>
+              </div>
             </div>
             <Publications author={ person.name } />
           </div>
-          <div className="one wide column"></div>
         </div>
         <Footer />
       </div>
