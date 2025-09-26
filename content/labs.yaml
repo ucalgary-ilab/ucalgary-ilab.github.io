@@ -31,14 +31,14 @@
   description:
   statement: crafts new tools for multisensory (haptic) and multimedia (sonic) interaction.
   prof: christian-frisson
-  url: /people/christian-frisson
+  url: https://ilab.ucalgary.ca/labs/shivers
 
 - id: prpl
   name: prpl Lab
   description:
   statement: investigates and designs non-game forms of playfulness in user interfaces.
   prof: matthew-lakier
-  url: /people/matthew-lakier
+  url: https://ilab.ucalgary.ca/labs/prpl
 
 - id: utouch
   name: uTouch
