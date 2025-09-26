@@ -20,35 +20,20 @@ import files from '../content/output/files.json'
 
 import People, { getStaticProps as People_getStaticProps } from '../pages/people'
 
+import { getLabPictures, getLabPicture } from './labs'
 
 export async function getStaticProps({ params }) {
   const {id } = params;
   const labs = require(`../content/output/labs.json`)
   const lab = labs.find((l) => l.id == id);
   lab.index = labs.findIndex((l) => l.id == id);
-  const logos = getLogos()
-  lab.logo = getLogo(id, logos)
+  const logos = getLabPictures()
+  lab.logo = getLabPicture(id, logos)
   lab.person = getPerson(lab.prof)
 
   const peopleStaticProps = (await People_getStaticProps()).props
 
   return { props: { lab,peopleStaticProps } }
-}
-
-function getLogos() {
-  return files.children
-    .filter(dir => dir.name === 'images')[0].children
-    .filter(dir => dir.name === 'labs')[0].children
-    .map(image => image.name)
-}
-
-function getLogo(id, pictures) {
-  let img = `${id}.png`
-  if (pictures.includes(img)) {
-    return `/static/images/labs/${ id }.png`
-  } else {
-    return '/static/images/labs/no-profile.jpg'
-  }
 }
 
 function renderLink(lab, key) {
