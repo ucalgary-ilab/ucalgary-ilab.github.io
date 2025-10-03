@@ -48,8 +48,8 @@ function getProfilePhotoPath(id){
 
 function LabProf({lab, colour, size}) {
   return <div style={{display: "flex"}}>
-    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}>
-    <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{padding: "0px", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}/>
+    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, display: 'flex', alignItems: 'center'}}>
+    <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{height:"auto", width:"100%", objectFit:"contain", padding:"0"}}/>
     </div>
     <Image width="0" height="0" style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, padding: "0px"}}
           src={lab.profilePhoto}/>

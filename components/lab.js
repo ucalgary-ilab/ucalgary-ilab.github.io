@@ -87,8 +87,8 @@ function getPerson(id) {
 
 function LabLogo({lab, colour, size}) {
   return <div style={{display: "flex"}}>
-    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center", margin: 'auto'}}>
-    <Image width="0" height="0" src={lab.logo} alt={lab.id} style={{padding: "0px", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}/>
+    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, margin: 'auto', display: 'flex', alignItems: 'center'}}>
+    <Image width="0" height="0" src={lab.logo} alt={lab.id} style={{height:"auto", width:"100%"}}/>
     </div>
   </div>
 }
