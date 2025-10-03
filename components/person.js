@@ -158,8 +158,8 @@ export default function Person ({person}) {
                       const size = "6vw";
                       return (
                         <Link href={`/labs/${lab.id}`}>
-                            <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}>
-                            <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{padding: "0px", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}/>
+                            <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, display: 'flex', alignItems: 'center'}}>
+                            <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{height:"auto", width:"100%"}}/>
                             </div>
                         </Link>
                         )
