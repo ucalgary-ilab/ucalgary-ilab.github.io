@@ -1,25 +1,25 @@
-- id: curiosity
+- id: curio
   name: Curio Lab
   description: Human-Centered Design for Creativity & Curiosity
   statement: examines human-centered design for creativity & curiosity.
   prof: lora-oehlberg
   url: http://pages.cpsc.ucalgary.ca/~lora.oehlberg/
 
-- id: dataexperience
+- id: data-experience
   name: Data Experience Lab
   description: Visual Data-driven Tools and Experiences
   statement: develops new data visualizations, interactions, and experiences.
   prof: wesley-willett
   url: https://dataexperience.cpsc.ucalgary.ca/
 
-- id: diff_lab
+- id: diff
   name: DIFF Lab
   description: Devices, Interaction and Fabrication for the Future
   statement: creates devices, interactions, and fabrication for the future.
   prof: aditya-shekhar-nittala
   url: https://difflab.org
 
-- id: HealthVis
+- id: health-vis
   name: Health Vis Futures
   description: Health Data Visualization
   statement: explores new visual tools for patient-engaged healthcare.
@@ -31,14 +31,14 @@
   description:
   statement: crafts new tools for multisensory (haptic) and multimedia (sonic) interaction.
   prof: christian-frisson
-  url: /people/christian-frisson
+  url: https://ilab.ucalgary.ca/labs/shivers
 
 - id: prpl
   name: prpl Lab
   description:
   statement: investigates and designs non-game forms of playfulness in user interfaces.
   prof: matthew-lakier
-  url: /people/matthew-lakier
+  url: https://ilab.ucalgary.ca/labs/prpl
 
 - id: utouch
   name: uTouch
@@ -55,13 +55,13 @@
   status: associated
 
 - id: innovis
-  name: InnovVis
+  name: InnoVis
   description: Innovations in Visualization Laboratory
   prof: sheelagh-carpendale
   url: http://sheelaghcarpendale.ca/
   status: associated
 
-- id: programmablereality
+- id: programmable-reality
   name: Programmable Reality Lab
   description: Programmable Reality Lab - Tangible, AR/VR, and Robotics
   prof: ryo-suzuki

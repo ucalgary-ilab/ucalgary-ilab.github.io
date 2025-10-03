@@ -1,6 +1,8 @@
 name: Lora Oehlberg
 type: faculty
 title: Associate Professor
+labs: 
+- curio
 keywords:
   - Tangible
   - Design Tools

@@ -21,14 +21,14 @@ export async function getStaticProps() {
   return { props: { labs } }
 }
 
-function getLabPictures() {
+export function getLabPictures() {
   return files.children
     .filter(dir => dir.name === 'images')[0].children
     .filter(dir => dir.name === 'labs')[0].children
     .map(image => image.name)
 }
 
-function getLabPicture(id, pictures) {
+export function getLabPicture(id, pictures) {
   let img = `${id}.png`
   if (pictures.includes(img)) {
     return `/static/images/labs/${ id }.png`
@@ -48,8 +48,8 @@ function getProfilePhotoPath(id){
 
 function LabProf({lab, colour, size}) {
   return <div style={{display: "flex"}}>
-    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}>
-    <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{padding: "0px", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, justifyItems: "center"}}/>
+    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, display: 'flex', alignItems: 'center'}}>
+    <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{height:"auto", width:"100%", objectFit:"contain", padding:"0"}}/>
     </div>
     <Image width="0" height="0" style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, padding: "0px"}}
           src={lab.profilePhoto}/>
@@ -81,13 +81,13 @@ export default function Labs ({labs}) {
               return (
                 <div className="card" key={ lab.id } style={{ padding: '15px' }}>
                     <div style={{display: "flex"}}>
-                      <Link href={ lab.url }>
+                      <Link href={`/labs/${lab.id}`}>
                         <LabProf lab={lab} colour={colours[i]} size="6vw"/>
                       </Link>
                       <div style={{display: "flex", alignItems: "center"}}>
                         <p style={{marginLeft: "5px"}}>
                           <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
-                          <Link href={ lab.url }><span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
+                          <Link href={`/labs/${lab.id}`}><span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                           <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
                       </div>
                     </div>

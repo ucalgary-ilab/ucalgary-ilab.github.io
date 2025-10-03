@@ -81,7 +81,7 @@ function getPhoto(id, pictures) {
   }
 }
 
-export default function People ({people, short=false}) {
+export default function People ({people, short=false, lab=undefined}) {
 
   let types = [
     {key: 'faculty', title: 'Faculty'},
@@ -109,7 +109,7 @@ export default function People ({people, short=false}) {
       </div>
       }
       { types.map((type) => {
-        const typePeople = people.filter(person => person.type === type.key)
+        const typePeople = people.filter(person => (person.type === type.key && (lab === undefined || (person.labs && person.labs.includes(lab)))))
         return (
          (typePeople.length > 0) &&
           <div className="people-category" key={type.title}>

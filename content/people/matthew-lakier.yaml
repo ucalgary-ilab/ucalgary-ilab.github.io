@@ -1,6 +1,8 @@
 name: Matthew Lakier
 type: faculty
 title: Assistant Professor
+labs: 
+- prpl
 keywords:
   - Playful Interfaces
   - Games & Play
