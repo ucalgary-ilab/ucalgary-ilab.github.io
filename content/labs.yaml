@@ -4,6 +4,7 @@
   statement: examines human-centered design for creativity & curiosity.
   prof: lora-oehlberg
   url: http://pages.cpsc.ucalgary.ca/~lora.oehlberg/
+  colour: "#2095ba"
 
 - id: data-experience
   name: Data Experience Lab
@@ -11,6 +12,7 @@
   statement: develops new data visualizations, interactions, and experiences.
   prof: wesley-willett
   url: https://dataexperience.cpsc.ucalgary.ca/
+  colour: "#c14824"
 
 - id: diff
   name: DIFF Lab
@@ -18,6 +20,7 @@
   statement: creates devices, interactions, and fabrication for the future.
   prof: aditya-shekhar-nittala
   url: https://difflab.org
+  colour: "#57a793"
 
 - id: health-vis
   name: Health Vis Futures
@@ -25,6 +28,7 @@
   statement: explores new visual tools for patient-engaged healthcare.
   prof: fateme-rajabiyazdi
   url: http://healthvisfutures.sce.carleton.ca
+  colour: "#185b79"
 
 - id: shivers
   name: SHIVERS
@@ -32,6 +36,7 @@
   statement: crafts new tools for multisensory (haptic) and multimedia (sonic) interaction.
   prof: christian-frisson
   url: https://ilab.ucalgary.ca/labs/shivers
+  colour: "#a3b86c"
 
 - id: prpl
   name: prpl Lab
@@ -39,6 +44,7 @@
   statement: investigates and designs non-game forms of playfulness in user interfaces.
   prof: matthew-lakier
   url: https://ilab.ucalgary.ca/labs/prpl
+  colour: "#a765e9"
 
 - id: utouch
   name: uTouch
@@ -46,12 +52,14 @@
   statement: explores physical and human-robot interaction and autonomy.
   prof: ehud-sharlin
   url: https://utouch.cpsc.ucalgary.ca/
+  colour: "#ecaa35"
 
 - id: grouplab
   name: GroupLab
   description: Research in HCI, CSCW, and UbiComp
   prof: saul-greenberg
   url: http://grouplab.cpsc.ucalgary.ca/
+  colour: "#57a793"
   status: associated
 
 - id: innovis
@@ -59,6 +67,7 @@
   description: Innovations in Visualization Laboratory
   prof: sheelagh-carpendale
   url: http://sheelaghcarpendale.ca/
+  colour: "#185b79"
   status: associated
 
 - id: programmable-reality
@@ -66,6 +75,7 @@
   description: Programmable Reality Lab - Tangible, AR/VR, and Robotics
   prof: ryo-suzuki
   url: https://programmable-reality-lab.github.io/
+  colour: "#a3b86c"
   status: associated
 
 - id: ricelab
@@ -73,6 +83,5 @@
   description: Rethinking Interaction, Collaboration, & Engagement
   prof: anthony-tang
   url: https://ricelab.github.io/
+  colour: "#2095ba"
   status: associated
-
-
