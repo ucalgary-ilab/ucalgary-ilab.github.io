@@ -95,19 +95,6 @@ function LabLogo({lab, colour, size}) {
 
 export default function Lab ({lab, peopleStaticProps}) {
 
-  let colours = [
-    'rgb(24, 91, 121)',
-    'rgb(32, 149, 186)',
-    'rgb(87, 167, 147)',
-    'rgb(163, 184, 108)',
-    'rgb(223, 198, 61)',
-    'rgb(236, 170, 53)',
-    'rgb(237, 137, 37)',
-    'rgb(193, 72, 36)',
-    'rgb(240, 109, 36)',
-    'rgb(216, 81, 40)',
-  ]
-
   return (
     <>
       <Meta
@@ -122,7 +109,7 @@ export default function Lab ({lab, peopleStaticProps}) {
           <div className="one wide column"></div>
           <div className="eleven wide column centered">
             <div id="lab" className="category" style={{ textAlign: 'center' }}>
-              <LabLogo lab={lab} colour={colours[lab.index]} size="150px"/>
+              <LabLogo lab={lab} colour={lab.colour} size="150px"/>
               <h1>{ lab.name }</h1>
               <p>{ lab.title }</p>
               { lab.url &&
@@ -135,7 +122,7 @@ export default function Lab ({lab, peopleStaticProps}) {
               <div style={{display: "flex", alignItems: "center"}}>
                 <p style={{marginLeft: "5px"}}>
                   <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
-                  <Link href={ lab.url }><span style={{color: `${colours[lab.index]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
+                  <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                   <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
               </div>
               <div className="ui horizontal small divided link list">

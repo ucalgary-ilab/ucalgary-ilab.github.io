@@ -93,18 +93,6 @@ function renderLink(person, key) {
 
 
 export default function Person ({person}) {
-  let colours = [
-    'rgb(24, 91, 121)',
-    'rgb(32, 149, 186)',
-    'rgb(87, 167, 147)',
-    'rgb(163, 184, 108)',
-    'rgb(223, 198, 61)',
-    'rgb(236, 170, 53)',
-    'rgb(237, 137, 37)',
-    'rgb(193, 72, 36)',
-    'rgb(240, 109, 36)',
-    'rgb(216, 81, 40)',
-  ]
   const pictures = getLabPictures()
   const labs = labsJson.map(lab => ({
       ...lab,
@@ -154,7 +142,7 @@ export default function Person ({person}) {
                     person.labs.map((l, i) => {
                       const lab = labs.find( (j) => j.id == l )
                       const labId = labs.findIndex( (j) => j.id == l )
-                      const colour = colours[labId];
+                      const colour = lab.colour;
                       const size = "6vw";
                       return (
                         <Link href={`/labs/${lab.id}`}>
