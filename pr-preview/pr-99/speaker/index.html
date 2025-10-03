@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-62643728-2"></script><link href="/assets/img/favicon.ico" rel="shortcut icon"/><link rel="preload" href="/pr-preview/pr-99/_next/static/media/e807dee2426166ad-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/pr-preview/pr-99/_next/static/css/6d9e7a9830112c75.css" as="style"/><link rel="preload" href="/pr-preview/pr-99/_next/static/css/fa1543fdff44676b.css" as="style"/><script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.js"></script><script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-62643728-2');
+          </script><script>
+            $(window).ready(function() {
+              // $('.ui.sidebar')
+              //   .sidebar('attach events', '.sidebar.icon')
+
+              $('.sidebar.icon').on('click', function(event) {
+                $('.ui.sidebar')
+                  .sidebar('toggle')
+              })
+
+              $('.publication').on('click', function(event) {
+                if (event.target.className === 'author-link') return
+                const id = this.dataset.id
+                $('#'+id).modal({
+                  onHidden: function() {
+                    const html = $(this).html()
+                    $(this).html(html)
+                  }
+                })
+                .modal('show')
+              })
+            })
+          </script><link rel="stylesheet" href="/pr-preview/pr-99/_next/static/css/6d9e7a9830112c75.css" data-n-g=""/><link rel="stylesheet" href="/pr-preview/pr-99/_next/static/css/fa1543fdff44676b.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/pr-preview/pr-99/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/pr-preview/pr-99/_next/static/chunks/webpack-f365d01970793294.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/340-70a4acb82854fa33.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/main-237fefe93cf728ed.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/vendor-styles-6190db7a8f8561e2.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/110-2c2224f87be24bba.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/pages/_app-a1a52e1bf24d014b.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/723-9071df5d30f1ec6a.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/900-3b16458dd50e4a22.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/230-149465347cb3e206.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/829-1c30adaf55f71841.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/296-4a5d5256c11fe53c.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/696-884c089d111039d5.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/chunks/pages/speaker-6849bc1dcb54609b.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/-5mA34hSgvPPCQ_3JIeXx/_buildManifest.js" defer=""></script><script src="/pr-preview/pr-99/_next/static/-5mA34hSgvPPCQ_3JIeXx/_ssgManifest.js" defer=""></script></head><body><div id="__next"><main class="__className_0af360"></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/speaker","query":{},"buildId":"-5mA34hSgvPPCQ_3JIeXx","assetPrefix":"/pr-preview/pr-99","runtimeConfig":{"basePath":"/pr-preview/pr-99"},"nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
