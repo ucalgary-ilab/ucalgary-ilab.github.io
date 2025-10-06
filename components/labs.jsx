@@ -52,7 +52,7 @@ function LabProf({lab, colour, size}) {
     <Image width="0" height="0" src={lab.picture} alt={lab.id} style={{height:"auto", width:"100%", objectFit:"contain", padding:"0"}}/>
     </div>
     <Image width="0" height="0" style={{transform: "translateX(-1vw)", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, padding: "0px"}}
-          src={lab.profilePhoto}/>
+          alt={`${lab.prof}'s photo`} src={lab.profilePhoto}/>
   </div>
 }
 

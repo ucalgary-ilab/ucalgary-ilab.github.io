@@ -117,7 +117,7 @@ class Publications extends React.Component {
             return (
               <div className="publication ui vertical segment stackable grid" data-id={ publication.id } key={ i }>
                 <div className="three wide column" style={{ margin: 'auto' }}>
-                  <Image width={0} height={0} className="cover" src={ `/static/images/publications/cover/${publication.id}.jpg` } />
+                  <Image width={0} height={0} className="cover" alt={ `${publication.id} cover` } src={ `/static/images/publications/cover/${publication.id}.jpg` } />
                 </div>
                 <div className="thirteen wide column">
                   <p>
@@ -143,7 +143,7 @@ class Publications extends React.Component {
                         return (
                           this.names.includes(author) ?
                           <Link href={ `/people/${ this.namesId[author] }` } key={ author }>
-                            <Image width={0} height={0} src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
+                            <Image width={0} height={0} alt={ `${author} picture` } src={ this.getPhoto(this.namesId[author]) } className="ui circular spaced image mini-profile" />
                             <span className="author-link">{author}</span>
                           </Link>
                           :

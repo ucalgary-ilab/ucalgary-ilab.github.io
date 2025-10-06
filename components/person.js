@@ -125,7 +125,7 @@ export default function Person ({person}) {
           <div className="one wide column"></div>
           <div className="eleven wide column centered">
             <div id="person" className="category" style={{ textAlign: 'center' }}>
-              <Image width={0} height={0} className="ui circular image large-profile" src={ person.photo } style={{ margin: 'auto' }} />
+              <Image width={0} height={0} className="ui circular image large-profile" alt={ `${person.name}'s photo` } src={ person.photo } style={{ margin: 'auto' }} />
               <h1>{ person.name }</h1>
               <p>{ person.title }</p>
               { person.url &&

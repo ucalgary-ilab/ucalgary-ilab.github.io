@@ -124,7 +124,7 @@ export default function People ({people, short=false, lab=undefined}) {
                     <Link className={`${colNum} wide column person`} href={`/people/${person.id}`}
                         key={person.id}>
                       <Image width={0} height={0} className="ui circular image medium-profile"
-                          src={person.photo}/>
+                          alt={`${person.name} photo`} src={person.photo}/>
                       <p><b>{person.name}</b></p>
                       <p>
                         {person.title}

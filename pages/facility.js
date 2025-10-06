@@ -39,7 +39,7 @@ class Facility extends React.Component {
                     return (
                       <a className="card" href={ item.url } target="_blank" key={ item.img } >
                         <div className="image">
-                          <Image width={0} height={0} src={ `/static/images/facility/${item.img}.jpg` } />
+                          <Image width={0} height={0} alt={ `${item.img} picture` } src={ `/static/images/facility/${item.img}.jpg` } />
                         </div>
                         <div className="content">
                           <p className="header">{ item.name }</p>
