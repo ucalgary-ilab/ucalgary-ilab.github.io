@@ -1,46 +1,87 @@
-- id: curiosity
+- id: curio
+  name: Curio Lab
   description: Human-Centered Design for Creativity & Curiosity
-  prof: Lora Oehlberg
+  statement: examines human-centered design for creativity & curiosity.
+  prof: lora-oehlberg
   url: http://pages.cpsc.ucalgary.ca/~lora.oehlberg/
+  colour: "#2095ba"
 
-- id: dataexperience
+- id: data-experience
+  name: Data Experience Lab
   description: Visual Data-driven Tools and Experiences
-  prof: Wesley Willett
+  statement: develops new data visualizations, interactions, and experiences.
+  prof: wesley-willett
   url: https://dataexperience.cpsc.ucalgary.ca/
+  colour: "#c14824"
 
-- id: diff_lab
+- id: diff
+  name: DIFF Lab
   description: Devices, Interaction and Fabrication for the Future
-  prof: Aditya Shekhar Nittala
+  statement: creates devices, interactions, and fabrication for the future.
+  prof: aditya-shekhar-nittala
   url: https://difflab.org
+  colour: "#57a793"
 
-- id: HealthVis
+- id: health-vis
+  name: Health Vis Futures
   description: Health Data Visualization
-  prof: Fateme Rajabiyazdi
+  statement: explores new visual tools for patient-engaged healthcare.
+  prof: fateme-rajabiyazdi
   url: http://healthvisfutures.sce.carleton.ca
+  colour: "#185b79"
+
+- id: shivers
+  name: SHIVERS
+  description:
+  statement: crafts new tools for multisensory (haptic) and multimedia (sonic) interaction.
+  prof: christian-frisson
+  url: https://ilab.ucalgary.ca/labs/shivers
+  colour: "#a3b86c"
+
+- id: prpl
+  name: prpl Lab
+  description:
+  statement: investigates and designs non-game forms of playfulness in user interfaces.
+  prof: matthew-lakier
+  url: https://ilab.ucalgary.ca/labs/prpl
+  colour: "#a765e9"
 
 - id: utouch
+  name: uTouch
   description: Physical Interaction and Human-Robot Interaction
-  prof: Ehud Sharlin
+  statement: explores physical and human-robot interaction and autonomy.
+  prof: ehud-sharlin
   url: https://utouch.cpsc.ucalgary.ca/
+  colour: "#ecaa35"
 
 - id: grouplab
+  name: GroupLab
   description: Research in HCI, CSCW, and UbiComp
-  prof: Saul Greenberg (Emeritus)
+  prof: saul-greenberg
   url: http://grouplab.cpsc.ucalgary.ca/
+  colour: "#57a793"
+  status: associated
 
 - id: innovis
+  name: InnoVis
   description: Innovations in Visualization Laboratory
-  prof: Sheelagh Carpendale (Adjunct - Simon Fraser University)
+  prof: sheelagh-carpendale
   url: http://sheelaghcarpendale.ca/
+  colour: "#185b79"
+  status: associated
 
-- id: 'suzuki'
+- id: programmable-reality
+  name: Programmable Reality Lab
   description: Programmable Reality Lab - Tangible, AR/VR, and Robotics
-  prof: Ryo Suzuki
+  prof: ryo-suzuki
   url: https://programmable-reality-lab.github.io/
+  colour: "#a3b86c"
+  status: associated
 
 - id: ricelab
+  name: RICELab
   description: Rethinking Interaction, Collaboration, & Engagement
-  prof: Anthony Tang (Adjunct - Singapore Management University)
+  prof: anthony-tang
   url: https://ricelab.github.io/
-
-
+  colour: "#2095ba"
+  status: associated

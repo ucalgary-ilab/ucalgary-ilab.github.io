@@ -1,6 +1,8 @@
 name: Ehud Sharlin
 type: faculty
 title: Professor
+labs: 
+- utouch
 keywords:
   - HRI
   - Robots

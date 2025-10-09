@@ -1,6 +1,8 @@
 name: Christian Frisson
 type: faculty
 title: Assistant Professor
+labs: 
+- shivers
 keywords:
   - Haptics
   - Multisensory & Multimedia
