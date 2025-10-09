@@ -23,7 +23,7 @@
   colour: "#57a793"
 
 - id: health-vis
-  name: Health Vis Futures
+  name: HealthVisFutures
   description: Health Data Visualization
   statement: explores new visual tools for patient-engaged healthcare.
   prof: fateme-rajabiyazdi
