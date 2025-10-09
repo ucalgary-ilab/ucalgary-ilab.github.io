@@ -82,12 +82,12 @@ export default function Labs ({labs}) {
                 <div className="card" key={ lab.id } style={{ padding: '15px' }}>
                     <div style={{display: "flex"}}>
                       <Link href={`/labs/${lab.id}`}>
-                        <LabProf lab={lab} colour={colours[i]} size="6vw"/>
+                        <LabProf lab={lab} colour={lab.colour} size="6vw"/>
                       </Link>
                       <div style={{display: "flex", alignItems: "center"}}>
                         <p style={{marginLeft: "5px"}}>
                           <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
-                          <Link href={`/labs/${lab.id}`}><span style={{color: `${colours[i]}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
+                          <Link href={`/labs/${lab.id}`}><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                           <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
                       </div>
                     </div>
@@ -103,16 +103,15 @@ export default function Labs ({labs}) {
             { labs.map((lab, i) => {
               if (lab.status === "associated")
               {
-                let colourIndex = i-2
                 return (
                     <div className="card" key={ lab.id } style={{flex: "50%", marginBottom: "3vh"}}>
 
                         <div style={{display: "flex"}}>
                           <Link href={ lab.url }>
-                            <LabProf lab={lab} colour={colours[colourIndex]} size="4.5vw"/>
+                            <LabProf lab={lab} colour={lab.colour} size="4.5vw"/>
                           </Link>
                           <div style={{display: "flex", alignItems: "center"}}>
-                            <p> <Link href={ lab.url }><span style={{color: `${colours[colourIndex]}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.name} </span></Link>
+                            <p> <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.name} </span></Link>
                               <span style={{fontSize: "0.8em"}}> (<Link href={`/people/${lab.prof}`}>Dr. { lab.person.name }</Link> - { lab.person.title }) {lab.description}. </span> </p>
                           </div>
                         </div>
