@@ -17,9 +17,9 @@ class Footer extends React.Component {
       <footer>
         <div className="ui center aligned container">
           <div className="ui section divider"></div>
-            <Image width={180} height={0} style={{ maxWidth: '180px', margin: '30px auto', height: 'auto' }} src="/static/images/logo-6.png"  />
+            <Image width={180} height={0} style={{ maxWidth: '180px', margin: '30px auto', height: 'auto' }} alt="Interactions Lab logo" src="/static/images/logo-6.png"  />
             <div className="content">
-              <Image width={200} height={0} style={{ maxWidth: '200px', margin: '0px auto', height: 'auto' }} src="/static/images/logo-4.png"  />
+              <Image width={200} height={0} style={{ maxWidth: '200px', margin: '0px auto', height: 'auto' }} alt="University of Calgary logo" src="/static/images/logo-4.png"  />
               <div className="sub header">
                 Department of Computer Science
               </div>
