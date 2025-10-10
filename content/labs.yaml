@@ -29,6 +29,7 @@
   prof: fateme-rajabiyazdi
   url: https://fatemerajabi.github.io/HealthVisFutures/
   colour: "#185b79"
+  redirect: true
 
 - id: shivers
   name: SHIVERS

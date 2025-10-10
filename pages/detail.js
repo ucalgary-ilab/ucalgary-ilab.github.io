@@ -95,7 +95,6 @@ class Detail extends React.Component {
     .filter(dir => dir.name === 'images')[0].children
     .filter(dir => dir.name === 'publications')[0].children
     .filter(dir => dir.name === 'figures')[0].children
-    console.log("F",dirs.children)
     this.figures = {}
     for (let dir of dirs) {
       let id = dir.name
