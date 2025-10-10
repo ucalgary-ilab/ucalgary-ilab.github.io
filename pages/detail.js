@@ -41,6 +41,11 @@ class Detail extends React.Component {
     if (this.covers[this.publication.id]) {
       this.showCover = true
     }
+    this.showPDF = false
+    this.getPDFs()
+    if (this.pdfs[this.publication.id]) {
+      this.showPDF = true
+    }
   }
 
   getProceedings() {
@@ -109,6 +114,17 @@ class Detail extends React.Component {
     for (let dir of dirs) {
       let id = dir.name.split(".")[0]
       this.covers[id] = dir.path
+    }
+  }
+
+  getPDFs() {
+    const dirs =
+    this.props.files.children
+    .filter(dir => dir.name === 'publications')[0].children
+    this.pdfs = {}
+    for (let dir of dirs) {
+      let id = dir.name.split(".")[0]
+      this.pdfs[id] = dir.path
     }
   }
 
@@ -190,11 +206,13 @@ class Detail extends React.Component {
                   }).reduce((prev, current) => [prev, ' , ', current])
                 }
               </p>
-              <p>
-                <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
-                  <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
-                </a>
-              </p>
+              { this.showPDF && 
+                <p>
+                  <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
+                    <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
+                  </a>
+                </p>
+              }
             </div>
           </div>
         </div>
