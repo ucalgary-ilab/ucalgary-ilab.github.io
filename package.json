@@ -10,7 +10,7 @@
     "export": "next export",
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && cp -rf out/* ../gh-pages && cd ../gh-pages && git pull origin gh-pages && git add . && git commit -m 'Manual deployment' && git push origin gh-pages && cd ../ilab-website",
     "push": "git subtree push --prefix out origin gh-pages",
-    "force": "git push origin `git subtree split --prefix out master`:gh-pages --force",
+    "force": "git push origin `git subtree split --prefix out main`:gh-pages --force",
     "build:content": "processmd \"content/**/*.{yaml,md}\" --outputDir content/output --summaryOutput content/output/summary.json",
     "watch": "processmd \"content/**/*.{yaml,md}\" --outputDir content/output --summaryOutput content/output/summary.json --watch --markdownOptions.html true"
   },
