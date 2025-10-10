@@ -133,7 +133,7 @@ class Detail extends React.Component {
     if (!this.props.publication) {
       return <div></div>
     }
-
+    
     return (
       <div id="publication">
         <div className="block">
@@ -217,10 +217,17 @@ class Detail extends React.Component {
             <p style={{ lineHeight: "160%" }}>
               { this.publication.authors.reduce((prev, current) => [prev, ', ', current]) }.&nbsp;
               <b>{ this.publication.title }</b>.&nbsp;
-              <i>{ `In ${this.proceeding.booktitle} (${ this.proceeding.series })`  }</i>.&nbsp;
+              <i>
+              { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
+              { this.publication.series && <>({ this.publication.series })</> }
+              </i>.&nbsp;
               { this.proceeding.publisher }&nbsp;
-              Page: 1-{ this.publication.pages }.&nbsp;
-              DOI: <a href={ this.publication.doi} target="_blank">{ this.publication.doi }</a>
+              { this.publication.pages &&
+                <>Page: 1-{ this.publication.pages }.&nbsp;</>
+              }
+              { this.publication.doi &&
+                <>DOI: <a href={ this.publication.doi} target="_blank">{ this.publication.doi }</a></>
+              }
             </p>
           </div>
         </div>
