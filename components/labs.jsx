@@ -78,16 +78,17 @@ export default function Labs ({labs}) {
           { labs.map((lab, i) => {
             if (lab.status !== "associated")
             {
+              const url = lab.redirect === true ? lab.url : `/labs/${lab.id}`;
               return (
                 <div className="card" key={ lab.id } style={{ padding: '15px' }}>
                     <div style={{display: "flex"}}>
-                      <Link href={`/labs/${lab.id}`}>
+                      <Link href={url}>
                         <LabProf lab={lab} colour={lab.colour} size="6vw"/>
                       </Link>
                       <div style={{display: "flex", alignItems: "center"}}>
                         <p style={{marginLeft: "5px"}}>
                           <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
-                          <Link href={`/labs/${lab.id}`}><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
+                          <Link href={url}><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                           <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
                       </div>
                     </div>
