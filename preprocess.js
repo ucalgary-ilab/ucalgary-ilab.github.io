@@ -4,7 +4,7 @@ const tree = require("directory-tree");
 /// Store list of image files
 
 const files = tree("./static", {
-  extensions: /\.(jpg|jpeg|png)$/,
+  extensions: /\.(jpg|jpeg|pdf|png)$/,
 });
 fs.writeFileSync("./content/output/files.json", JSON.stringify(files, null, 2));
 

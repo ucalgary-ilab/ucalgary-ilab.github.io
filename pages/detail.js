@@ -36,6 +36,16 @@ class Detail extends React.Component {
         this.showFigures = true
       }
     }
+    this.showCover = false
+    this.getCovers()
+    if (this.covers[this.publication.id]) {
+      this.showCover = true
+    }
+    this.showPDF = false
+    this.getPDFs()
+    if (this.pdfs[this.publication.id]) {
+      this.showPDF = true
+    }
   }
 
   getProceedings() {
@@ -85,12 +95,35 @@ class Detail extends React.Component {
     .filter(dir => dir.name === 'images')[0].children
     .filter(dir => dir.name === 'publications')[0].children
     .filter(dir => dir.name === 'figures')[0].children
-
     this.figures = {}
     for (let dir of dirs) {
       let id = dir.name
       let files = dir.children.map(file => file.path )
       this.figures[id] = files
+    }
+  }
+
+  getCovers() {
+    const dirs =
+    this.props.files.children
+    .filter(dir => dir.name === 'images')[0].children
+    .filter(dir => dir.name === 'publications')[0].children
+    .filter(dir => dir.name === 'cover')[0].children
+    this.covers = {}
+    for (let dir of dirs) {
+      let id = dir.name.split(".")[0]
+      this.covers[id] = dir.path
+    }
+  }
+
+  getPDFs() {
+    const dirs =
+    this.props.files.children
+    .filter(dir => dir.name === 'publications')[0].children
+    this.pdfs = {}
+    for (let dir of dirs) {
+      let id = dir.name.split(".")[0]
+      this.pdfs[id] = dir.path
     }
   }
 
@@ -145,7 +178,9 @@ class Detail extends React.Component {
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
             <div className="three wide column" style={{ margin: 'auto' }}>
-              <Image width={0} height={0} className="cover" alt={ `${ this.publication.id } cover` } src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
+              {this.showCover && 
+                <Image width={0} height={0} className="cover" alt={ `${ this.publication.id } cover` } src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
+              }
             </div>
             <div className="thirteen wide column">
               { this.props.short &&
@@ -170,11 +205,13 @@ class Detail extends React.Component {
                   }).reduce((prev, current) => [prev, ' , ', current])
                 }
               </p>
-              <p>
-                <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
-                  <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
-                </a>
-              </p>
+              { this.showPDF && 
+                <p>
+                  <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/master/static/publications/${this.publication.id}.pdf` } target="_blank">
+                    <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
+                  </a>
+                </p>
+              }
             </div>
           </div>
         </div>
@@ -217,10 +254,17 @@ class Detail extends React.Component {
             <p style={{ lineHeight: "160%" }}>
               { this.publication.authors.reduce((prev, current) => [prev, ', ', current]) }.&nbsp;
               <b>{ this.publication.title }</b>.&nbsp;
-              <i>{ `In ${this.proceeding.booktitle} (${ this.proceeding.series })`  }</i>.&nbsp;
+              <i>
+              { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
+              { this.publication.series && <>({ this.publication.series })</> }
+              </i>.&nbsp;
               { this.proceeding.publisher }&nbsp;
-              Page: 1-{ this.publication.pages }.&nbsp;
-              DOI: <a href={ this.publication.doi} target="_blank">{ this.publication.doi }</a>
+              { this.publication.pages &&
+                <>Page: 1-{ this.publication.pages }.&nbsp;</>
+              }
+              { this.publication.doi &&
+                <>DOI: <a href={ this.publication.doi} target="_blank">{ this.publication.doi }</a></>
+              }
             </p>
           </div>
         </div>
