@@ -241,7 +241,7 @@ mkdir static/images/publications/figures/[conf-year-last]
 ```shell
 git add .
 git commit -m 'Add more figures'
-git push origin master
+git push origin main
 ```
 
 ## Development
