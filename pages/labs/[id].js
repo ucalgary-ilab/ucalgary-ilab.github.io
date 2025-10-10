@@ -1,4 +1,6 @@
 
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Lab, { getStaticProps as Lab_getStaticProps } from '../../components/lab'
 
 import labs from '../../content/output/labs.json'
@@ -20,6 +22,14 @@ export async function getStaticPaths() {
 export { Lab_getStaticProps as getStaticProps }
 
 export default function Page(props) {
-  return <Lab {...props} />
+  if(props.lab.redirect === true){
+    const router = useRouter();
+    useEffect(() => {
+      router.replace(props.lab.url);
+    }, [router])
+  }
+  else { 
+    return <Lab {...props} />
+  }
 }
 
