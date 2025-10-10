@@ -43,6 +43,7 @@ class Publications extends React.Component {
       })
     }
     this.getPhotos()
+    this.getCovers()
   }
 
   getPublications(lab) {
@@ -104,6 +105,19 @@ class Publications extends React.Component {
     }
   }
 
+  getCovers() {
+    const dirs =
+    files.children
+    .filter(dir => dir.name === 'images')[0].children
+    .filter(dir => dir.name === 'publications')[0].children
+    .filter(dir => dir.name === 'cover')[0].children
+    this.covers = {}
+    for (let dir of dirs) {
+      let id = dir.name.split(".")[0]
+      this.covers[id] = dir.path
+    }
+  }
+
   render() {
     return (
       <div id="publications" className="category">
@@ -117,7 +131,9 @@ class Publications extends React.Component {
             return (
               <div className="publication ui vertical segment stackable grid" data-id={ publication.id } key={ i }>
                 <div className="three wide column" style={{ margin: 'auto' }}>
-                  <Image width={0} height={0} className="cover" alt={ `${publication.id} cover` } src={ `/static/images/publications/cover/${publication.id}.jpg` } />
+                  { this.covers[publication.id] &&
+                    <Image width={0} height={0} className="cover" alt={ `${publication.id} cover` } src={ `/static/images/publications/cover/${publication.id}.jpg` } />
+                  }
                 </div>
                 <div className="thirteen wide column">
                   <p>
