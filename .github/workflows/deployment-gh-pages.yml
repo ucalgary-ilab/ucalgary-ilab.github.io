@@ -7,6 +7,11 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pull requests
   pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
   # Runs on pushes targeting the default branch
   push:
@@ -30,6 +35,7 @@ concurrency:
 jobs:
   # Build job
   build:
+    if: github.event_name != 'pull_request' || contains(fromJSON('["opened", "reopened", "synchronize"]'), github.event.action)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -135,7 +141,7 @@ jobs:
   # Preview Deployment job
   deploy-preview:
     # run only from pull requests
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && contains(fromJSON('["opened", "reopened", "synchronize"]'), github.event.action) 
     runs-on: ubuntu-latest
     needs: build
     permissions:
@@ -154,3 +160,18 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./out/
+
+  # Preview Deployment job
+  remove-preview:
+    # run only from pull requests
+    if: github.event_name == 'pull_request' && contains('closed', github.event.action) 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Remove preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          action: remove
