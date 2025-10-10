@@ -36,6 +36,11 @@ class Detail extends React.Component {
         this.showFigures = true
       }
     }
+    this.showCover = false
+    this.getCovers()
+    if (this.covers[this.publication.id]) {
+      this.showCover = true
+    }
   }
 
   getProceedings() {
@@ -85,12 +90,25 @@ class Detail extends React.Component {
     .filter(dir => dir.name === 'images')[0].children
     .filter(dir => dir.name === 'publications')[0].children
     .filter(dir => dir.name === 'figures')[0].children
-
+    console.log("F",dirs.children)
     this.figures = {}
     for (let dir of dirs) {
       let id = dir.name
       let files = dir.children.map(file => file.path )
       this.figures[id] = files
+    }
+  }
+
+  getCovers() {
+    const dirs =
+    this.props.files.children
+    .filter(dir => dir.name === 'images')[0].children
+    .filter(dir => dir.name === 'publications')[0].children
+    .filter(dir => dir.name === 'cover')[0].children
+    this.covers = {}
+    for (let dir of dirs) {
+      let id = dir.name.split(".")[0]
+      this.covers[id] = dir.path
     }
   }
 
@@ -133,7 +151,7 @@ class Detail extends React.Component {
     if (!this.props.publication) {
       return <div></div>
     }
-    
+
     return (
       <div id="publication">
         <div className="block">
@@ -145,7 +163,9 @@ class Detail extends React.Component {
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
             <div className="three wide column" style={{ margin: 'auto' }}>
-              <Image width={0} height={0} className="cover" alt={ `${ this.publication.id } cover` } src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
+              {this.showCover && 
+                <Image width={0} height={0} className="cover" alt={ `${ this.publication.id } cover` } src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
+              }
             </div>
             <div className="thirteen wide column">
               { this.props.short &&
