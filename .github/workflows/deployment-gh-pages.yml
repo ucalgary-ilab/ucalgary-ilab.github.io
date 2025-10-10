@@ -138,7 +138,7 @@ jobs:
           force: false
           folder: ./out/
 
-  # Preview Deployment job
+  # Preview deployment job
   deploy-preview:
     # run only from pull requests
     if: github.event_name == 'pull_request' && contains(fromJSON('["opened", "reopened", "synchronize"]'), github.event.action) 
@@ -161,7 +161,7 @@ jobs:
         with:
           source-dir: ./out/
 
-  # Preview Deployment job
+  # Preview removal job
   remove-preview:
     # run only from pull requests
     if: github.event_name == 'pull_request' && contains('closed', github.event.action) 
@@ -171,6 +171,8 @@ jobs:
       issues: write
       pull-requests: write
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Remove preview
         uses: rossjrw/pr-preview-action@v1
         with:
