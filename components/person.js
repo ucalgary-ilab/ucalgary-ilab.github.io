@@ -106,8 +106,6 @@ export default function Person ({person}) {
         image={ person.photo }
       />
 
-      <Header current="People" />
-
       <div className="pusher">
         <div className="ui stackable grid">
           <div className="one wide column"></div>

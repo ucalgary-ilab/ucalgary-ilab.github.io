@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap');
-
 header {
   margin-top: 30px !important;
 }
 
 .ui,
 .ui *,
-body,
+body, h1, h2, h3,
 html {
   font-family: 'Encode Sans','Open Sans', sans-serif !important; 
 }

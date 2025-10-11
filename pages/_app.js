@@ -11,6 +11,14 @@ const openSans = Open_Sans({
   weight: ['400','700'],
 })
 
+import { Encode_Sans } from 'next/font/google'
+const encodeSans = Encode_Sans({
+  subsets: ['latin'],
+})
+
+import { useRouter } from 'next/router';
+import Header from '../components/Header';
+
 /* semantic-ui https://react.semantic-ui.com/usage/ */
 import 'semantic-ui-css/semantic.min.css'
 
@@ -18,8 +26,15 @@ import 'semantic-ui-css/semantic.min.css'
 import '../styles/global.css'
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  // Hide header on the main page
+  const hideHeader = router.pathname === '/';
+  
+
   return (
-    <main className={openSans.className}>
+    <main className={encodeSans.className}>
+      {!hideHeader && <Header />}
       <Component {...pageProps} />
     </main>
   )
