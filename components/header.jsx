@@ -8,7 +8,7 @@ export default function Header({}) {
     <div class="ui center aligned container">
       <div class="ui secondary huge compact menu">
         <Link href="/" class="item">
-          <Image width={0} height={0} class="ui tiny image" src="/static/images/ilab-logo-3d.jpg" />
+          <Image fill class="ui tiny image" src="/static/images/ilab-logo-3d.jpg" />
         </Link>
         <Link href="/people" class="item">People</Link>
         <Link href="/publications" class="item">Research</Link>

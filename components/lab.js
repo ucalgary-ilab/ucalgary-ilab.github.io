@@ -12,7 +12,6 @@ library.add(fas, far, fab)
 
 
 import Meta from './meta'
-import Header from './header'
 import Publications from '../pages/publications'
 import Footer from './footer'
 
@@ -101,8 +100,6 @@ export default function Lab ({lab, peopleStaticProps}) {
         title={ lab.name }
         image={ lab.logo }
       />
-
-      <Header current="Labs" />
 
       <div className="pusher">
         <div className="ui stackable grid">
