@@ -12,9 +12,7 @@ library.add(fas, far, fab)
 
 
 import Meta from './meta'
-import Header from './header'
 import Publications from '../pages/publications'
-import Footer from './footer'
 import {getLabPictures, getLabPicture} from './labs'
 
 import files from '../content/output/files.json'
@@ -157,7 +155,6 @@ export default function Person ({person}) {
             <Publications author={ person.name } />
           </div>
         </div>
-        <Footer />
       </div>
     </>
   )

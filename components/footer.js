@@ -11,70 +11,20 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, far, fab)
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <footer>
-        <div className="ui center aligned container">
-          <div className="ui section divider"></div>
-            <Image width={180} height={0} style={{ maxWidth: '180px', margin: '30px auto', height: 'auto' }} alt="Interactions Lab logo" src="/static/images/logo-6.png"  />
-            <div className="content">
+export default function Header({}) {
+  return (
+    <footer>
+      <div className="ui center aligned container">
+        <div className="ui section divider"></div>
+          <div className="content">
+            <Link href="https://ucalgary.ca">
               <Image width={200} height={0} style={{ maxWidth: '200px', margin: '0px auto', height: 'auto' }} alt="University of Calgary logo" src="/static/images/logo-4.png"  />
-              <div className="sub header">
-                Department of Computer Science
-              </div>
+            </Link>
+            <div className="sub header">
+              <Link href="https://cpsc.ucalgary.ca" class="item">Department of Computer Science</Link>
             </div>
           </div>
-          {/*
-          <div className="ui horizontal small divided link list">
-            <div className="item">
-              <a href="https://scholar.google.com/citations?user=klWjaQIAAAAJ" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="fas fa-graduation-cap fa-fw" />
-                Google Scholar
-              </a>
-            </div>
-            <div className="item">
-              <Link href="/cv.pdf" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="far fa-file fa-fw" />
-                Resume/CV
-              </Link>
-            </div>
-            <div className="item">
-              <a href="mailto:ryo.suzuki@colorado.edu" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="far fa-envelope fa-fw" />
-                ryo.suzuki@colorado.edu
-              </a>
-            </div>
-            <br/>
-            <div className="item">
-              <a href="https://www.facebook.com/ryosuzk" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="fab fa-facebook-square fa-fw" />
-                ryosuzk
-              </a>
-            </div>
-            <div className="item">
-              <a href="https://twitter.com/ryosuzk" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="fab fa-twitter fa-fw" />
-                ryosuzk
-              </a>
-            </div>
-            <div className="item">
-              <a href="https://github.com/ryosuzuki" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="fab fa-github-alt fa-fw" />
-                ryosuzuki
-              </a>
-            </div>
-            <div className="item">
-              <a href="https://www.linkedin.com/in/ryosuzuki/" target="_blank" style={{ fontSize: '1.2em' }}>
-                <FontAwesomeIcon icon="fab fa-linkedin-in fa-fw" />
-                ryosuzuki
-              </a>
-            </div>
-          </div>
-          */}
-      </footer>
-    )
-  }
+        </div>
+    </footer>
+  )
 }
-
-export default Footer

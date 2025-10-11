@@ -5,7 +5,6 @@ import Meta from '../components/meta'
 import Labs, { getStaticProps as Labs_getStaticProps } from '../components/labs'
 import Publications from './publications'
 import People, { getStaticProps as People_getStaticProps } from './people'
-import Footer from '../components/footer'
 
 
 // getStaticProps returning empty props to generate page with next build
@@ -30,7 +29,6 @@ export default function Index({peopleStaticProps, labsStaticProps}) {
           <Publications short="true" />
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

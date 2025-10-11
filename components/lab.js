@@ -13,7 +13,6 @@ library.add(fas, far, fab)
 
 import Meta from './meta'
 import Publications from '../pages/publications'
-import Footer from './footer'
 
 import files from '../content/output/files.json'
 
@@ -133,7 +132,6 @@ export default function Lab ({lab, peopleStaticProps}) {
           </div>
           <div className="one wide column"></div>
         </div>
-        <Footer />
       </div>
     </>
   )
