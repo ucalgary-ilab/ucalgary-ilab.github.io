@@ -5,12 +5,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 /* google fonts https://nextjs.org/docs/app/getting-started/fonts#google-fonts */
-import { Open_Sans } from 'next/font/google'
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['400','700'],
-})
-
 import { Encode_Sans } from 'next/font/google'
 const encodeSans = Encode_Sans({
   subsets: ['latin'],

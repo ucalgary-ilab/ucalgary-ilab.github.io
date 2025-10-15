@@ -7,9 +7,7 @@ import vimeo from '../content/output/vimeo.json'
 
 import Meta from '../components/meta'
 import Head from 'next/head'
-import Header from '../components/header'
 import Detail from './detail'
-import Footer from '../components/footer'
 
 // getStaticProps returning empty props to generate page with next build
 export async function getStaticProps() {
@@ -54,7 +52,6 @@ class Publication extends React.Component {
           image={ `/static/images/publications/cover/${ this.props.id }.jpg` }
           keywords={ this.publication.keywords }
         />
-        <Header current="Publications" />
           <div className="pusher">
           <div className="ui stackable grid">
             <div className="one wide column"></div>
@@ -70,7 +67,6 @@ class Publication extends React.Component {
             </div>
             <div className="one wide column"></div>
           </div>
-          <Footer />
         </div>
       </>
     )
