@@ -72,6 +72,7 @@ _next
 next-env.d.ts
 
 # Generated files
+/content/input/
 /content/output/
 /courses/
 /facility/
