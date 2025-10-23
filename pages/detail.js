@@ -267,7 +267,7 @@ class Detail extends React.Component {
                 <>Page: 1-{ this.publication.pages }.&nbsp;</>
               }
               { this.publication.doi &&
-                <>DOI: <a href={ this.publication.doi} target="_blank">{ this.publication.doi }</a></>
+                <>DOI: <a href={ this.publication.doi.includes("http") ? this.publication.doi : `https://doi.org/${this.publication.doi}`} target="_blank">{ this.publication.doi }</a></>
               }
             </p>
           </div>
