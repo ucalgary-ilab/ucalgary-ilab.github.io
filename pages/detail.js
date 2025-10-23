@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import Image from 'next/image'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -177,7 +178,7 @@ class Detail extends React.Component {
           <div id="breadcrumb" className="ui breadcrumb">
             <Link className="section" href="/publications">Publications</Link>
             <FontAwesomeIcon icon="fas fa-angle-right" />
-            <a className="active section">{ this.publication.series }</a>
+            <a className="active section">{ parse(this.publication.series) }</a>
           </div>
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
@@ -189,11 +190,11 @@ class Detail extends React.Component {
             <div className="thirteen wide column">
               { this.props.short &&
                 <h1>
-                  <a href={ `/publications/${this.publication.id}` } target="_blank">{ this.publication.title }</a>
+                  <a href={ `/publications/${this.publication.id}` } target="_blank">{ parse(this.publication.title) }</a>
                 </h1>
               }
               { !this.props.short &&
-                <h1>{ this.publication.title }</h1>
+                <h1>{ parse(this.publication.title) }</h1>
               }
               <p className="meta">
                 { this.publication.authors.map((author) => {
@@ -257,10 +258,10 @@ class Detail extends React.Component {
           <div className="ui segment">
             <p style={{ lineHeight: "160%" }}>
               { this.publication.authors.reduce((prev, current) => [prev, ', ', current]) }.&nbsp;
-              <b>{ this.publication.title }</b>.&nbsp;
+              <b>{ parse(this.publication.title) }</b>.&nbsp;
               <i>
               { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
-              { this.publication.series && <>({ this.publication.series })</> }
+              { this.publication.series && <>({ parse(this.publication.series) })</> }
               </i>.&nbsp;
               { this.proceeding.publisher }&nbsp;
               { this.publication.pages &&

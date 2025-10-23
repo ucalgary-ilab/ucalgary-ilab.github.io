@@ -7,6 +7,7 @@ import files from '../content/output/files.json'
 import vimeo from '../content/output/vimeo.json'
 import Image from 'next/image'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -142,7 +143,7 @@ class Publications extends React.Component {
                 </div>
                 <div className="thirteen wide column">
                   <p>
-                    <span className="ui big inverted label label-color">{ publication.series }</span>
+                    <span className="ui big inverted label label-color">{ parse(publication.series) }</span>
                     { publication.award &&
                       <span className="ui big basic pink label">
                       { publication.award === 'Honorable Mention' &&
@@ -156,7 +157,7 @@ class Publications extends React.Component {
                   </p>
                   <p className="color" style={{ fontSize: '1.3em' }}>
                       <b>
-                        { publication.title }
+                        { parse(publication.title) }
                       </b>
                   </p>
                   <p>
