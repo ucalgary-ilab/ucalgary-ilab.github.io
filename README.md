@@ -94,6 +94,19 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 #### How to add/modify a publication
 
+##### Option 1: from DBLP
+
+Run the node [fetch-publications.js](fetch-publications.js) script with the name of an author as parameter to fetch publications from [DBLP](https://dblp.org/):
+
+Example:
+```
+node fetch-publications.js "Christian Frisson"
+```
+
+Then review the new YAML files created under [content/publications/](content/publications/).
+
+##### Option 2: Manually
+
 1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/publications`
 
 2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file` (online) or git add it (local)
