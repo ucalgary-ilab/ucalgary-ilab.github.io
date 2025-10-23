@@ -15,7 +15,7 @@ else{
 }
 console.log(`Fetching publications for author ${author}`)
 
-const authorFile = author.toLowerCase().replace(" ", "-");
+const authorFile = author.toLowerCase().replaceAll(" ", "-");
 const authorFilePath = `${inputDir}/${authorFile}.json`;
 
 /// Fetch JSON data from DBLP
@@ -89,7 +89,7 @@ async function parseDBLP(){
             /// Remove publishers and stop words
             const removeWords = ['ACM','IEEE','and','&amp;','Conference on'];
             removeWords.forEach(r => {
-                venue = venue.replace(r+" ","");
+                venue = venue.replaceAll(r+" ","");
             })
             let venueWords = []
             if(venue.includes("@")){
@@ -97,7 +97,7 @@ async function parseDBLP(){
                 venue = venue.split("@").reverse().join("-")
                 venueWords = [venue];
             }else{
-                venue = venue.replace("/"," ")
+                venue = venue.replaceAll("/"," ")
                 venueWords = venue.split(" ");
             }
             if(venueWords.length === 1){
