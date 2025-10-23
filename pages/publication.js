@@ -36,6 +36,7 @@ class Publication extends React.Component {
     this.namesId = {}
     for (let person of this.people) {
       this.namesId[person.name] = person.id
+      if(person.alias !== undefined) {this.namesId[person.alias] = person.id}
     }
 
     if(!this.props.id)return;

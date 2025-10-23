@@ -39,7 +39,7 @@ class Publications extends React.Component {
     }
     if (this.props.author) {
       this.publications = this.publications.filter((publication) => {
-        return publication.authors.includes(this.props.author)
+        return publication.authors.includes(this.props.author.name) || publication.authors.includes(this.props.author.alias)
       })
     }
     this.getPhotos()
@@ -77,10 +77,15 @@ class Publications extends React.Component {
       this.people.push(person)
     }
 
-    this.names = this.people.map((person) => person.name )
+    this.names = [];
+    this.people.forEach((person) => {
+      this.names.push(person.name);
+      if(person.alias){this.names.push(person.alias)};
+    } )
     this.namesId = {}
     for (let person of this.people) {
       this.namesId[person.name] = person.id
+      if(person.alias !== undefined) {this.namesId[person.alias] = person.id}
     }
   }
 

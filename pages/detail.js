@@ -21,7 +21,11 @@ class Detail extends React.Component {
     this.people = Object.assign([], this.props.people)
     this.namesId = Object.assign({}, this.props.namesId)
 
-    this.names = this.people.map((person) => person.name )
+    this.names = [];
+    this.people.forEach((person) => {
+      this.names.push(person.name);
+      if(person.alias){this.names.push(person.alias)};
+    } )
     if (this.publication.base) {
       this.publication.id = this.publication.base.split('.json')[0]
     }
