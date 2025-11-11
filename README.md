@@ -103,7 +103,13 @@ Example:
 node fetch-publications.js "Christian Frisson"
 ```
 
-Then review the new YAML files created under [content/publications/](content/publications/).
+The script will:
+- fetch a list of publications in JSON format from DLBP and store it under [content/input](content/input) if file does not exist already (to regenerate, delete file and re-run the script),
+- create a YAML file for each publication un [content/publications](content/publications) if file does not exist already (to regenerate, delete file and re-run the script).
+
+Review the new YAML files created under [content/publications/](content/publications/).
+
+Proceed with [How to add/modify a cover figure](#how-to-addmodify-a-cover-figure).
 
 ##### Option 2: Manually
 
