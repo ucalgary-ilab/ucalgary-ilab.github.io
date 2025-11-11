@@ -7,6 +7,7 @@ import files from '../content/output/files.json'
 import vimeo from '../content/output/vimeo.json'
 import Image from 'next/image'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,7 +40,7 @@ class Publications extends React.Component {
     }
     if (this.props.author) {
       this.publications = this.publications.filter((publication) => {
-        return publication.authors.includes(this.props.author)
+        return publication.authors.includes(this.props.author.name) || publication.authors.includes(this.props.author.alias)
       })
     }
     this.getPhotos()
@@ -77,10 +78,15 @@ class Publications extends React.Component {
       this.people.push(person)
     }
 
-    this.names = this.people.map((person) => person.name )
+    this.names = [];
+    this.people.forEach((person) => {
+      this.names.push(person.name);
+      if(person.alias){this.names.push(person.alias)};
+    } )
     this.namesId = {}
     for (let person of this.people) {
       this.namesId[person.name] = person.id
+      if(person.alias !== undefined) {this.namesId[person.alias] = person.id}
     }
   }
 
@@ -137,7 +143,7 @@ class Publications extends React.Component {
                 </div>
                 <div className="thirteen wide column">
                   <p>
-                    <span className="ui big inverted label label-color">{ publication.series }</span>
+                    <span className="ui big inverted label label-color">{ parse(publication.series) }</span>
                     { publication.award &&
                       <span className="ui big basic pink label">
                       { publication.award === 'Honorable Mention' &&
@@ -151,7 +157,7 @@ class Publications extends React.Component {
                   </p>
                   <p className="color" style={{ fontSize: '1.3em' }}>
                       <b>
-                        { publication.title }
+                        { parse(publication.title) }
                       </b>
                   </p>
                   <p>
@@ -163,7 +169,7 @@ class Publications extends React.Component {
                             <span className="author-link">{author}</span>
                           </Link>
                           :
-                          <span key={ author }>{author}</span>
+                          <span key={ author }>{parse(author)}</span>
                         )
                       }).reduce((prev, current) => [prev, ' , ', current])
                     }

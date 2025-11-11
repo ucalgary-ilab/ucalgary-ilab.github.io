@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import parse from 'html-react-parser';
 import summary from '../content/output/summary.json'
 import booktitles from '../content/output/booktitles.json'
 import files from '../content/output/files.json'
@@ -36,6 +37,7 @@ class Publication extends React.Component {
     this.namesId = {}
     for (let person of this.people) {
       this.namesId[person.name] = person.id
+      if(person.alias !== undefined) {this.namesId[person.alias] = person.id}
     }
 
     if(!this.props.id)return;
@@ -47,7 +49,7 @@ class Publication extends React.Component {
     return (
       <>
         <Meta
-          title={ this.publication.title }
+          title={ parse(this.publication.title) }
           description={ this.publication.abstract }
           image={ `/static/images/publications/cover/${ this.props.id }.jpg` }
           keywords={ this.publication.keywords }
