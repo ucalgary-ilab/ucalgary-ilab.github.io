@@ -78,16 +78,36 @@ async function parseDBLP(){
         else if(venue !== undefined){
             /// Handle edge cases
             if(venue.includes("Proc. ACM Hum. Comput. Interact.")){
-                venue = "pacmhci"
+                if(hit.info.number.includes("CSCW")){
+                    venue = "CSCW"
+                }
+                else {
+                    venue = "PACMHCI"
+                }
+            }
+            else if(venue.includes("ACM Trans. Comput. Hum. Interact.")){
+                venue = "TOCHI"
             }
             else if(venue.includes("ACM Trans. Access. Comput.")){
-                venue = "taccess"
+                venue = "TACCESS"
             }
             else if(venue.includes("EAI Endorsed Trans. Pervasive Health Technol.")){
-                venue = "phat"
+                venue = "PATH"
+            }
+            else if(venue.includes("Conference on Designing Interactive Systems")){
+                venue = "DIS"
+            }
+            else if(venue.includes("IEEE Trans. Vis. Comput. Graph.")){
+                venue = "TVCG"
+            }
+            else if(venue.includes("Graphics Interface")){
+                venue = "GI"
+            }
+            else if(venue.includes("CHI Extended Abstracts")){
+                venue = "CHI EA"
             }
             /// Remove publishers and stop words
-            const removeWords = ['ACM','IEEE','and','&amp;','Conference on'];
+            const removeWords = ['ACM','IEEE','Conference on'];
             removeWords.forEach(r => {
                 venue = venue.replaceAll(r+" ","");
             })
@@ -100,33 +120,35 @@ async function parseDBLP(){
                 venue = venue.replaceAll("/"," ")
                 venueWords = venue.split(" ");
             }
+            let venueFile = '';
             if(venueWords.length === 1){
                 /// Handle venue consisting of a single acronym
-                venue = venue.toLowerCase();
+                venueFile = venue.toLowerCase();
             }
             else{
                 /// Handle venue consisting of multiple words
-                venue = '';
+                venueFile = '';
                 let acronym = false;
+                console.log("venueWords",venueWords)
                 venueWords.forEach(w => {
                     /// Handle venue starting with acronym
+                    if(acronym===true){
+                        venueFile += "-";
+                        acronym = false;
+                    }
                     if(w === w.toUpperCase() && !w.endsWith(".")){
-                        venue += w.toLowerCase();
+                        venueFile += w.toLowerCase();
                         acronym = true;
                     }
                     else{
-                        if(acronym===true){
-                            venue += "-";
-                            acronym = false;
-                        }
                         /// Append subproceedings
                         if(w[0].toLowerCase() !== w[0]){
-                            venue += w[0].toLowerCase();
+                            venueFile += w[0].toLowerCase();
                         }
                     }
                 })
             }
-            const pubFileName = `${venue}-${hit.info.year}-${firstAuthorFamily}`;
+            const pubFileName = `${venueFile}-${hit.info.year}-${firstAuthorFamily}`;
             console.log(`Parsing id ${hit["@id"]} as ${pubFileName}`)
             /// Test if file exists
             const pubFilePath = `${pubDir}/${pubFileName}.yaml`
@@ -147,7 +169,7 @@ async function parseDBLP(){
                     let author = fixAuthorName(a.text);
                     contents += `  - ${author}\n`
                 })
-                contents += `series: ${hit.info.venue} ${hit.info.year}\n`
+                contents += `series: ${venue} ${hit.info.year}\n`
                 if(hit.info.doi) {contents += `doi: ${hit.info.doi}\n`}
                 if(hit.info.pages) {contents += `pages: ${hit.info.pages}\n`}
                 if(hit.info.volume) {contents += `volume: ${hit.info.volume}\n`}
