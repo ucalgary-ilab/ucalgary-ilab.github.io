@@ -21,7 +21,7 @@ export default function Header({}) {
               <Image width={200} height={0} style={{ maxWidth: '200px', margin: '0px auto', height: 'auto' }} alt="University of Calgary logo" src="/static/images/logo-4.png"  />
             </Link>
             <div className="sub header">
-              <Link href="https://cpsc.ucalgary.ca" class="item">Department of Computer Science</Link>
+              <Link href="https://cpsc.ucalgary.ca" className="item">Department of Computer Science</Link>
             </div>
           </div>
         </div>

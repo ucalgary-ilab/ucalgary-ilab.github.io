@@ -5,13 +5,13 @@ import Image from 'next/image'
 
 export default function Header({}) {
   return (
-    <div class="ui center aligned container">
-      <div class="ui secondary huge compact menu">
-        <Link href="/" class="item">
-          <Image width={0} height={0} class="ui tiny image" src="/static/images/ilab-logo-3d.gif" />
+    <div className="ui center aligned container">
+      <div className="ui secondary huge compact menu">
+        <Link href="/" className="item">
+          <Image width={0} height={0} className="ui tiny image" src="/static/images/ilab-logo-3d.gif" />
         </Link>
-        <Link href="/people" class="item">People</Link>
-        <Link href="/publications" class="item">Research</Link>
+        <Link href="/people" className="item">People</Link>
+        <Link href="/publications" className="item">Research</Link>
       </div>
     </div>
   );
