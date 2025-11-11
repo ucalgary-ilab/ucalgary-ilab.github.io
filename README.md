@@ -94,6 +94,25 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 #### How to add/modify a publication
 
+##### Option 1: from DBLP
+
+Run the node [fetch-publications.js](fetch-publications.js) script with the name of an author as parameter to fetch publications from [DBLP](https://dblp.org/):
+
+Example:
+```
+node fetch-publications.js "Christian Frisson"
+```
+
+The script will:
+- fetch a list of publications in JSON format from DLBP and store it under [content/input](content/input) if file does not exist already (to regenerate, delete file and re-run the script),
+- create a YAML file for each publication un [content/publications](content/publications) if file does not exist already (to regenerate, delete file and re-run the script).
+
+Review the new YAML files created under [content/publications/](content/publications/).
+
+Proceed with [How to add/modify a cover figure](#how-to-addmodify-a-cover-figure).
+
+##### Option 2: Manually
+
 1. Browse (online) or checkout (local) your new branch created following [Generic Workflow for all updates](#generic-workflow-for-all-updates) and navigate under `content/publications`
 
 2. To Add: Click `Add file` > `Create new File`. To Modify: Click `Edit this file` (online) or git add it (local)

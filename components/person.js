@@ -152,7 +152,7 @@ export default function Person ({person}) {
                 </div>
               </div>
             </div>
-            <Publications author={ person.name } />
+            <Publications author={ person } />
           </div>
         </div>
       </div>
