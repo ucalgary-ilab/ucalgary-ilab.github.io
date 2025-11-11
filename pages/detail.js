@@ -205,7 +205,7 @@ class Detail extends React.Component {
                         <strong>{author}</strong>
                       </a>
                       :
-                      <span key={ author }>{author}</span>
+                      <span key={ author }>{parse(author)}</span>
                     )
                   }).reduce((prev, current) => [prev, ' , ', current])
                 }
@@ -257,10 +257,11 @@ class Detail extends React.Component {
           <h1>Reference</h1>
           <div className="ui segment">
             <p style={{ lineHeight: "160%" }}>
-              { this.publication.authors.reduce((prev, current) => [prev, ', ', current]) }.&nbsp;
+              { this.publication.authors.reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
               <b>{ parse(this.publication.title) }</b>.&nbsp;
               <i>
               { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
+              { this.proceeding.booktitle && this.publication.series && <> </> }
               { this.publication.series && <>({ parse(this.publication.series) })</> }
               </i>.&nbsp;
               { this.proceeding.publisher }&nbsp;

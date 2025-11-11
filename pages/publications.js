@@ -169,7 +169,7 @@ class Publications extends React.Component {
                             <span className="author-link">{author}</span>
                           </Link>
                           :
-                          <span key={ author }>{author}</span>
+                          <span key={ author }>{parse(author)}</span>
                         )
                       }).reduce((prev, current) => [prev, ' , ', current])
                     }
