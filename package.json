@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@types/react": "19.1.13",
+    "html-react-parser": "^5.2.7",
     "lodash": "^4.17.21",
     "processmd": "^4.7.0",
     "typescript": "5.9.2"

@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import Image from 'next/image'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,7 +22,11 @@ class Detail extends React.Component {
     this.people = Object.assign([], this.props.people)
     this.namesId = Object.assign({}, this.props.namesId)
 
-    this.names = this.people.map((person) => person.name )
+    this.names = [];
+    this.people.forEach((person) => {
+      this.names.push(person.name);
+      if(person.alias){this.names.push(person.alias)};
+    } )
     if (this.publication.base) {
       this.publication.id = this.publication.base.split('.json')[0]
     }
@@ -173,7 +178,7 @@ class Detail extends React.Component {
           <div id="breadcrumb" className="ui breadcrumb">
             <Link className="section" href="/publications">Publications</Link>
             <FontAwesomeIcon icon="fas fa-angle-right" />
-            <a className="active section">{ this.publication.series }</a>
+            <a className="active section">{ parse(this.publication.series) }</a>
           </div>
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
@@ -185,11 +190,11 @@ class Detail extends React.Component {
             <div className="thirteen wide column">
               { this.props.short &&
                 <h1>
-                  <a href={ `/publications/${this.publication.id}` } target="_blank">{ this.publication.title }</a>
+                  <a href={ `/publications/${this.publication.id}` } target="_blank">{ parse(this.publication.title) }</a>
                 </h1>
               }
               { !this.props.short &&
-                <h1>{ this.publication.title }</h1>
+                <h1>{ parse(this.publication.title) }</h1>
               }
               <p className="meta">
                 { this.publication.authors.map((author) => {
@@ -200,7 +205,7 @@ class Detail extends React.Component {
                         <strong>{author}</strong>
                       </a>
                       :
-                      <span key={ author }>{author}</span>
+                      <span key={ author }>{parse(author)}</span>
                     )
                   }).reduce((prev, current) => [prev, ' , ', current])
                 }
@@ -252,18 +257,19 @@ class Detail extends React.Component {
           <h1>Reference</h1>
           <div className="ui segment">
             <p style={{ lineHeight: "160%" }}>
-              { this.publication.authors.reduce((prev, current) => [prev, ', ', current]) }.&nbsp;
-              <b>{ this.publication.title }</b>.&nbsp;
+              { this.publication.authors.reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
+              <b>{ parse(this.publication.title) }</b>.&nbsp;
               <i>
               { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
-              { this.publication.series && <>({ this.publication.series })</> }
+              { this.proceeding.booktitle && this.publication.series && <> </> }
+              { this.publication.series && <>({ parse(this.publication.series) })</> }
               </i>.&nbsp;
               { this.proceeding.publisher }&nbsp;
               { this.publication.pages &&
                 <>Page: 1-{ this.publication.pages }.&nbsp;</>
               }
               { this.publication.doi &&
-                <>DOI: <a href={ this.publication.doi} target="_blank">{ this.publication.doi }</a></>
+                <>DOI: <a href={ this.publication.doi.includes("http") ? this.publication.doi : `https://doi.org/${this.publication.doi}`} target="_blank">{ this.publication.doi }</a></>
               }
             </p>
           </div>
