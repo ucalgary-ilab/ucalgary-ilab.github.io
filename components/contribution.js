@@ -8,7 +8,7 @@ import vimeo from '../content/output/vimeo.json'
 
 import Meta from '../components/meta'
 import Head from 'next/head'
-import Detail from '../pages/detail'
+import Detail from '../components/detail'
 
 // getStaticProps returning empty props to generate page with next build
 export async function getStaticProps() {
@@ -41,7 +41,8 @@ class Contribution extends React.Component {
 
     if(!this.props.id)return;
     if(!this.props.type)return;
-    this.plural = this.props.plural || `${ this.props.type }s`
+    this.type = this.props.type
+    this.plural = this.props.plural || `${ this.type }s`
     this.contribution = require(`../content/output/${ this.plural }/${ this.props.id }.json`)
   }
 
@@ -61,7 +62,8 @@ class Contribution extends React.Component {
             <div className="one wide column"></div>
             <div className="ten wide column centered" style={{ marginTop: '30px' }}>
               <Detail
-                publication={ this.contribution }
+                type={ this.type }
+                contribution={ this.contribution }
                 namesId={ this.namesId }
                 people={ this.people }
                 booktitles={ booktitles }

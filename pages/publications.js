@@ -1,6 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-import Detail from './detail'
+import Detail from '../components/detail'
 import summary from '../content/output/summary.json'
 import booktitles from '../content/output/booktitles.json'
 import files from '../content/output/files.json'
@@ -206,7 +206,8 @@ class Publications extends React.Component {
                 </div>
                 <div className="content">
                   <Detail
-                    publication={ publication }
+                    type="publication"
+                    contribution={ publication }
                     namesId={ this.namesId }
                     people={ this.people }
                     booktitles={ booktitles }
