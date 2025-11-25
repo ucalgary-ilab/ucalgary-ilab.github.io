@@ -8,7 +8,7 @@ import vimeo from '../content/output/vimeo.json'
 
 import Meta from '../components/meta'
 import Head from 'next/head'
-import Detail from './detail'
+import Detail from '../pages/detail'
 
 // getStaticProps returning empty props to generate page with next build
 export async function getStaticProps() {
@@ -17,8 +17,7 @@ export async function getStaticProps() {
   }
 }
 
-class Publication extends React.Component {
-
+class Contribution extends React.Component {
 
   constructor(props) {
     super(props)
@@ -41,25 +40,28 @@ class Publication extends React.Component {
     }
 
     if(!this.props.id)return;
-    this.publication = require(`../content/output/publications/${ this.props.id }.json`)
+    if(!this.props.type)return;
+    this.plural = this.props.plural || `${ this.props.type }s`
+    this.contribution = require(`../content/output/${ this.plural }/${ this.props.id }.json`)
   }
 
   render() {
     if(!this.props.id)return;
+    if(!this.props.type)return;
     return (
       <>
         <Meta
-          title={ parse(this.publication.title) }
-          description={ this.publication.abstract }
-          image={ `/static/images/publications/cover/${ this.props.id }.jpg` }
-          keywords={ this.publication.keywords }
+          title={ parse(this.contribution.title) }
+          description={ this.contribution.abstract }
+          image={ `/static/images/${ this.plural }/cover/${ this.props.id }.jpg` }
+          keywords={ this.contribution.keywords }
         />
           <div className="pusher">
           <div className="ui stackable grid">
             <div className="one wide column"></div>
             <div className="ten wide column centered" style={{ marginTop: '30px' }}>
               <Detail
-                publication={ this.publication}
+                publication={ this.contribution }
                 namesId={ this.namesId }
                 people={ this.people }
                 booktitles={ booktitles }
@@ -75,4 +77,4 @@ class Publication extends React.Component {
   }
 }
 
-export default Publication
+export default Contribution

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Publication from "../publication.js";
+import Contribution from '../../components/contribution';
 
 // https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-paths
 export async function getStaticPaths() {
@@ -38,5 +38,5 @@ export async function getStaticProps() {
 export default function Page() {
   const router = useRouter();
   const id = router.query.id;
-  return <Publication id={id} />;
+  return <Contribution type="publication" id={id}/>;
 }
