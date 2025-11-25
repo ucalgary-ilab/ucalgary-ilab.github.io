@@ -126,7 +126,7 @@ class Publications extends React.Component {
 
   render() {
     return (
-      <div id="publications" className="category">
+      <div id="publications" className="category ui container">
         <h1 className="ui horizontal divider header">
           <FontAwesomeIcon icon="far fa-file-lines" />
           { this.props.short ? 'Recent Publications' : 'Publications' }
