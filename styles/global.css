@@ -226,11 +226,13 @@ a:hover {
   object-fit: cover;
 }
 
+#projects .project,
 #publications .publication {
   transition: 0.5s;
   cursor: pointer;
 }
 
+#projects .project:hover,
 #publications .publication:hover {
   background: #efefef;
 }
