@@ -143,7 +143,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
         { contributions.map((contribution, i) => {
           contribution.id = contribution.base.split('.json')[0]
           return (
-            <div className={ `{type} ui vertical segment stackable grid` } data-id={ contribution.id } key={ i }>
+            <div className={ `${type} ui vertical segment stackable grid` } data-id={ contribution.id } key={ i }>
               <div className="three wide column" style={{ margin: 'auto' }}>
                 { covers[contribution.id] &&
                   <Image width={0} height={0} className="cover" alt={ `${contribution.id} cover` } src={ `/static/images/${plural}/cover/${contribution.id}.jpg` } />
