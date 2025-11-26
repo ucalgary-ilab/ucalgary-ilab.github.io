@@ -181,12 +181,13 @@ class Detail extends React.Component {
     if (!this.props.contribution || !this.type) {
       return <div></div>
     }
+    let title = this.type.charAt(0).toUpperCase() + this.type.slice(1).toLowerCase()
 
     return (
       <div id={this.type}>
         <div className="block">
           <div id="breadcrumb" className="ui breadcrumb">
-            <Link className="section" href={ `/${this.plural}` }>Publications</Link>
+            <Link className="section" href={ `/${this.plural}` }>${title}</Link>
             <FontAwesomeIcon icon="fas fa-angle-right" />
             <a className="active section">{ parse(this.contribution.series) }</a>
           </div>
