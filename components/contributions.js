@@ -93,12 +93,16 @@ function getPhoto(pictures,id) {
   }
 
 function getCovers(plural) {
-    const dirs =
+    let covers = {}
+    const allImages =
     files.children
     .filter(dir => dir.name === 'images')[0].children
-    .filter(dir => dir.name === plural)[0].children
+    const contribImages = allImages
+    .filter(dir => dir.name === plural);
+    if (contribImages.length === 0) return covers;
+    const dirs = contribImages[0]
+    .children
     .filter(dir => dir.name === 'cover')[0].children
-    let covers = {}
     for (let dir of dirs) {
       let id = dir.name.split(".")[0]
       covers[id] = dir.path

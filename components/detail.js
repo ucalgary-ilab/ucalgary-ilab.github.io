@@ -112,10 +112,15 @@ class Detail extends React.Component {
   }
 
   getCovers() {
-    const dirs =
+    this.covers = {}
+    const allImages =
     this.props.files.children
     .filter(dir => dir.name === 'images')[0].children
-    .filter(dir => dir.name === this.plural)[0].children
+    const contribImages = allImages
+    .filter(dir => dir.name === this.plural);
+    if (contribImages.length === 0) return;
+    const dirs = contribImages[0]
+    .children 
     .filter(dir => dir.name === 'cover')[0].children
     this.covers = {}
     for (let dir of dirs) {
@@ -125,10 +130,12 @@ class Detail extends React.Component {
   }
 
   getPDFs() {
-    const dirs =
-    this.props.files.children
-    .filter(dir => dir.name === this.plural)[0].children
     this.pdfs = {}
+    const contribPDFs =
+    this.props.files.children
+    .filter(dir => dir.name === this.plural);
+    if (contribPDFs.length === 0) return;
+    const dirs = contribPDFs[0].children
     for (let dir of dirs) {
       let id = dir.name.split(".")[0]
       this.pdfs[id] = dir.path
