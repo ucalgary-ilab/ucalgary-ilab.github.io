@@ -134,7 +134,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
 
   return (
     contributions.length > 0 && 
-    <div id={ plural } className="category">
+    <div id={ plural } className="category ui container">
       <h1 className="ui horizontal divider header">
         <FontAwesomeIcon icon="far fa-file-lines" />
         { short ? `Recent ${title}` : title }
