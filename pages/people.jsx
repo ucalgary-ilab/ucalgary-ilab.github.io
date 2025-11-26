@@ -98,7 +98,7 @@ export default function People ({people, short=false, lab=undefined}) {
   }
 
   return (
-    <div id="people" className="category">
+    <div id="people" className="category ui container">
       <h1 className="ui horizontal divider header">
         <FontAwesomeIcon icon="fas fa-child-reaching" />
         Researchers
@@ -112,7 +112,7 @@ export default function People ({people, short=false, lab=undefined}) {
         const typePeople = people.filter(person => (person.type === type.key && (lab === undefined || (person.labs && person.labs.includes(lab)))))
         return (
          (typePeople.length > 0) &&
-          <div className="people-category" key={type.title}>
+          <div className="people-category eleven wide column centered" key={type.title}>
             { !short &&
             <h2>{type.title}</h2>
             }
