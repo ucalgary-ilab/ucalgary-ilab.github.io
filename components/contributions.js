@@ -129,6 +129,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
   title = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()
 
   return (
+    contributions.length > 0 && 
     <div id={ plural } className="category">
       <h1 className="ui horizontal divider header">
         <FontAwesomeIcon icon="far fa-file-lines" />
