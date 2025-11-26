@@ -190,7 +190,7 @@ class Detail extends React.Component {
       <div id={this.type}>
         <div className="block">
           <div id="breadcrumb" className="ui breadcrumb">
-            <Link className="section" href={ `/${this.plural}` }>${title}</Link>
+            <Link className="section" href={ `/${this.plural}` }>{title}</Link>
             <FontAwesomeIcon icon="fas fa-angle-right" />
             <a className="active section">{ parse(this.contribution.series) }</a>
           </div>
