@@ -527,3 +527,7 @@ a:hover {
   position: relative;
 }
 
+.role {
+  font-size: 0.75em;
+  color: gray;
+}
