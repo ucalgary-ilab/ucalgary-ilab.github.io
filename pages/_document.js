@@ -62,6 +62,18 @@ export default class MyDocument extends Document {
                 })
                 .modal('show')
               })
+
+              $('.thesis').on('click', function(event) {
+                if (event.target.className === 'author-link') return
+                const id = this.dataset.id
+                $('#'+id).modal({
+                  onHidden: function() {
+                    const html = $(this).html()
+                    $(this).html(html)
+                  }
+                })
+                .modal('show')
+              })
             })
           `}}
           />
