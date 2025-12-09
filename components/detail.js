@@ -57,15 +57,17 @@ class Detail extends React.Component {
   }
 
   getProceedings() {
-    const conference = this.contribution.series.slice(0, -5)
-    const year = this.contribution.series.slice(-2)
-    this.proceeding = this.props.booktitles[conference]
-    if (!this.proceeding) {
-      this.proceeding = {}
-    }
-    this.proceeding.series = `${conference} '${year}`
-    if (this.contribution.pages < 4 && this.proceeding.booktitle && !this.proceeding.booktitle.toString().includes("Adjunct")) {
-      this.proceeding.booktitle = 'Adjunct ' + this.proceeding.booktitle
+    if(this.contribution.series !== undefined){
+      const year = this.contribution.series.slice(-2)
+      const conference = this.contribution.series.slice(0, -5)
+      this.proceeding = this.props.booktitles[conference]
+      if (!this.proceeding) {
+        this.proceeding = {}
+      }
+      this.proceeding.series = `${conference} '${year}`
+      if (this.contribution.pages < 4 && this.proceeding.booktitle && !this.proceeding.booktitle.toString().includes("Adjunct")) {
+        this.proceeding.booktitle = 'Adjunct ' + this.proceeding.booktitle
+      }
     }
   }
 
@@ -185,6 +187,8 @@ class Detail extends React.Component {
       return <div></div>
     }
     let title = this.type.charAt(0).toUpperCase() + this.type.slice(1).toLowerCase()
+    let authors = this.contribution.authors || [this.contribution.author, ...this.contribution.advisors, ...this.contribution.committee];
+    let series = this.contribution.series ? parse(this.contribution.series) : `${this.contribution.author.split(" ").slice(-1)} ${this.contribution.degree.split("(")[1].split(")")[0]} ${this.contribution.date.split("-")[0]}`
 
     return (
       <div id={this.type}>
@@ -192,7 +196,7 @@ class Detail extends React.Component {
           <div id="breadcrumb" className="ui breadcrumb">
             <Link className="section" href={ `/${this.plural}` }>{title}</Link>
             <FontAwesomeIcon icon="fas fa-angle-right" />
-            <a className="active section">{ parse(this.contribution.series) }</a>
+            { series && <a className="active section">{ series }</a>}
           </div>
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
@@ -211,17 +215,30 @@ class Detail extends React.Component {
                 <h1>{ parse(this.contribution.title) }</h1>
               }
               <p className="meta">
-                { this.contribution.authors.map((author) => {
+                { authors.map((author) => {
+                    let role = "";
+                    if (this.contribution.author && this.contribution.author === author){
+                      role = " (author)"
+                    }
+                    else if (this.contribution.advisors && this.contribution.advisors.includes(author)){
+                      role = " (advisor)"
+                    }
+                    else if (this.contribution.committee && this.contribution.committee.includes(author)){
+                      role = " (committee)"
+                    }
                     return (
                       this.names.includes(author) ?
+                      <>
                       <a href={ `/people/${ this.namesId[author] }` } key={ author }>
                         <Image width={0} height={0} alt={ `${ this.namesId[author] } photo` } src={ `/static/images/people/${ this.namesId[author] }.jpg`} className="ui circular spaced image mini-profile" />
                         <strong>{author}</strong>
                       </a>
+                      <span className="role">{role}</span>
+                      </>
                       :
-                      <span key={ author }>{parse(author)}</span>
+                      <span key={ author }>{parse(author)} <span className="role">{role}</span></span>
                     )
-                  }).reduce((prev, current) => [prev, ' , ', current])
+                  }).reduce((prev, current) => [prev, ', ', current])
                 }
               </p>
               { this.showPDF && 
@@ -271,19 +288,29 @@ class Detail extends React.Component {
           <h1>Reference</h1>
           <div className="ui segment">
             <p style={{ lineHeight: "160%" }}>
-              { this.contribution.authors.reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
+              { (this.contribution.authors || [this.contribution.author]).reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
               <b>{ parse(this.contribution.title) }</b>.&nbsp;
               <i>
-              { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
-              { this.proceeding.booktitle && this.contribution.series && <> </> }
+              {/* Publications */}
+              { this.proceeding && this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
+              { this.proceeding && this.proceeding.booktitle && this.contribution.series && <> </> }
               { this.contribution.series && <>({ parse(this.contribution.series) })</> }
-              </i>.&nbsp;
-              { this.proceeding.publisher }&nbsp;
+              </i>
+              {/* .&nbsp; */}
+              { this.proceeding && this.proceeding.publisher }&nbsp;
               { this.contribution.pages &&
                 <>Page: 1-{ this.contribution.pages }.&nbsp;</>
               }
+              {/* Theses */}
+              { this.contribution.institution && <>{this.contribution.institution}. </> }
+              { this.contribution.degree && <>{this.contribution.degree}. </> }
+              { !this.proceeding && this.contribution.date && <>{this.contribution.date}. </> }
+              {/* Generic */}
               { this.contribution.doi &&
                 <>DOI: <a href={ this.contribution.doi.includes("http") ? this.contribution.doi : `https://doi.org/${this.contribution.doi}`} target="_blank">{ this.contribution.doi }</a></>
+              }
+              { this.contribution.url &&
+                <>URL: <a href={ this.contribution.url } target="_blank">{ this.contribution.url }</a></>
               }
             </p>
           </div>
