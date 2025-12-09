@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-62643728-2"></script><link href="/assets/img/favicon.ico" rel="shortcut icon"/><link rel="preload" href="/pr-preview/pr-134/_next/static/media/dc84b505c4b06e35-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/pr-preview/pr-134/_next/static/css/0d5b9578ae57a1af.css" as="style"/><link rel="preload" href="/pr-preview/pr-134/_next/static/css/a1a0497113412518.css" as="style"/><script src="https://code.jquery.com/jquery-3.2.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.js"></script><script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-62643728-2');
+          </script><script>
+            $(window).ready(function() {
+              // $('.ui.sidebar')
+              //   .sidebar('attach events', '.sidebar.icon')
+
+              $('.sidebar.icon').on('click', function(event) {
+                $('.ui.sidebar')
+                  .sidebar('toggle')
+              })
+
+              $('.project').on('click', function(event) {
+                if (event.target.className === 'author-link') return
+                const id = this.dataset.id
+                $('#'+id).modal({
+                  onHidden: function() {
+                    const html = $(this).html()
+                    $(this).html(html)
+                  }
+                })
+                .modal('show')
+              })
+
+              $('.publication').on('click', function(event) {
+                if (event.target.className === 'author-link') return
+                const id = this.dataset.id
+                $('#'+id).modal({
+                  onHidden: function() {
+                    const html = $(this).html()
+                    $(this).html(html)
+                  }
+                })
+                .modal('show')
+              })
+
+              $('.thesis').on('click', function(event) {
+                if (event.target.className === 'author-link') return
+                const id = this.dataset.id
+                $('#'+id).modal({
+                  onHidden: function() {
+                    const html = $(this).html()
+                    $(this).html(html)
+                  }
+                })
+                .modal('show')
+              })
+            })
+          </script><link rel="stylesheet" href="/pr-preview/pr-134/_next/static/css/0d5b9578ae57a1af.css" data-n-g=""/><link rel="stylesheet" href="/pr-preview/pr-134/_next/static/css/a1a0497113412518.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/pr-preview/pr-134/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/pr-preview/pr-134/_next/static/chunks/webpack-2b74b38220333ed6.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/340-642ca131732656d2.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/main-237fefe93cf728ed.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/vendor-styles-342403e4c5479d33.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/505-fcabfd5164abe7a7.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/pages/_app-ef1f9bbf0259e57f.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/347-501ace96f6678428.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/590-50156f4a47cbbfdc.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/chunks/pages/speaker-93a8f75da819d94d.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/9o_HcBSBizKAuJDjxl5_g/_buildManifest.js" defer=""></script><script src="/pr-preview/pr-134/_next/static/9o_HcBSBizKAuJDjxl5_g/_ssgManifest.js" defer=""></script></head><body><div id="__next"><main class="__className_01c5fd"><div class="ui center aligned container"><div class="ui secondary huge compact menu"><a class="item" href="/pr-preview/pr-134/"><img loading="lazy" width="0" height="0" decoding="async" data-nimg="1" class="ui tiny image" style="color:transparent" srcSet="/pr-preview/pr-134/static/images/ilab-logo-3d.gif 1x" src="/pr-preview/pr-134/static/images/ilab-logo-3d.gif"/></a><a class="item" href="/pr-preview/pr-134/people/">People</a><a class="item" href="/pr-preview/pr-134/publications/">Research</a></div></div><footer><div class="ui center aligned container"><div class="ui section divider"></div><div class="content"><a href="https://ucalgary.ca"><img alt="University of Calgary logo" loading="lazy" width="200" height="0" decoding="async" data-nimg="1" style="color:transparent;max-width:200px;margin:0px auto;height:auto" srcSet="/pr-preview/pr-134/static/images/logo-4.png 1x, /pr-preview/pr-134/static/images/logo-4.png 2x" src="/pr-preview/pr-134/static/images/logo-4.png"/></a><div class="sub header"><a class="item" href="https://cpsc.ucalgary.ca">Department of Computer Science</a></div></div></div></footer></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/speaker","query":{},"buildId":"9o_HcBSBizKAuJDjxl5_g","assetPrefix":"/pr-preview/pr-134","runtimeConfig":{"basePath":"/pr-preview/pr-134"},"nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
