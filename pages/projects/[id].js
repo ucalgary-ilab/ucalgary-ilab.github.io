@@ -4,12 +4,12 @@ import Contribution from '../../components/contribution';
 // https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-paths
 export async function getStaticPaths() {
   const summary = require("../../content/output/summary.json");
-  const publications = Object.keys(summary.fileMap).filter((fileName) => {
-    return fileName.includes("publications");
+  const projects = Object.keys(summary.fileMap).filter((fileName) => {
+    return fileName.includes("projects");
   });
-  const params = publications.map((publication) => ({
+  const params = projects.map((project) => ({
     params: {
-      id: publication.split("/")[3].replace(".json", ""),
+      id: project.split("/")[3].replace(".json", ""),
     },
   }));
   return {
@@ -20,11 +20,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps() {
   const summary = require("../../content/output/summary.json");
-  const publications = Object.keys(summary.fileMap).filter((fileName) => {
-    return fileName.includes("publications");
+  const projects = Object.keys(summary.fileMap).filter((fileName) => {
+    return fileName.includes("projects");
   });
-  const ids = publications.map((publication) => ({
-    id: publication.split("/")[3].replace(".json", ""),
+  const ids = projects.map((project) => ({
+    id: project.split("/")[3].replace(".json", ""),
   }));
   return {
     props: {
@@ -38,5 +38,5 @@ export async function getStaticProps() {
 export default function Page() {
   const router = useRouter();
   const id = router.query.id;
-  return <Contribution type="publication" id={id}/>;
+  return <Contribution type="project" id={id}/>;
 }

@@ -16,9 +16,12 @@ class Detail extends React.Component {
   constructor(props) {
     super(props)
 
-    if (!this.props.publication) return
+    if (!this.props.contribution) return
+    if (!this.props.type) return
+    this.type = this.props.type
+    this.plural = this.props.plural || `${ this.type }s`
 
-    this.publication = Object.assign({}, this.props.publication)
+    this.contribution = Object.assign({}, this.props.contribution)
     this.people = Object.assign([], this.props.people)
     this.namesId = Object.assign({}, this.props.namesId)
 
@@ -27,8 +30,8 @@ class Detail extends React.Component {
       this.names.push(person.name);
       if(person.alias){this.names.push(person.alias)};
     } )
-    if (this.publication.base) {
-      this.publication.id = this.publication.base.split('.json')[0]
+    if (this.contribution.base) {
+      this.contribution.id = this.contribution.base.split('.json')[0]
     }
     this.getProceedings()
     this.getVideoEmbed()
@@ -37,70 +40,73 @@ class Detail extends React.Component {
     this.showFigures = false
     if (!this.props.short) {
       this.getFigures()
-      if (this.figures[this.publication.id]) {
+      if (this.figures[this.contribution.id]) {
         this.showFigures = true
       }
     }
     this.showCover = false
     this.getCovers()
-    if (this.covers[this.publication.id]) {
+    if (this.covers[this.contribution.id]) {
       this.showCover = true
     }
     this.showPDF = false
     this.getPDFs()
-    if (this.pdfs[this.publication.id]) {
+    if (this.pdfs[this.contribution.id]) {
       this.showPDF = true
     }
   }
 
   getProceedings() {
-    const conference = this.publication.series.slice(0, -5)
-    const year = this.publication.series.slice(-2)
+    const conference = this.contribution.series.slice(0, -5)
+    const year = this.contribution.series.slice(-2)
     this.proceeding = this.props.booktitles[conference]
     if (!this.proceeding) {
       this.proceeding = {}
     }
     this.proceeding.series = `${conference} '${year}`
-    if (this.publication.pages < 4 && this.proceeding.booktitle && !this.proceeding.booktitle.toString().includes("Adjunct")) {
+    if (this.contribution.pages < 4 && this.proceeding.booktitle && !this.proceeding.booktitle.toString().includes("Adjunct")) {
       this.proceeding.booktitle = 'Adjunct ' + this.proceeding.booktitle
     }
   }
 
   getVideoEmbed() {
-    if (this.publication.video) {
-      if (this.publication.video.includes('youtube')) {
-        this.publication.embedId = this.publication.video.split('?v=')[1]
-        this.publication.embed = `https://www.youtube.com/embed/${this.publication.embedId}`
-        this.publication.embedThumbnail = `https://img.youtube.com/vi/${this.publication.embedId}/maxresdefault.jpg`
+    if (this.contribution.video) {
+      if (this.contribution.video.includes('youtube')) {
+        this.contribution.embedId = this.contribution.video.split('?v=')[1]
+        this.contribution.embed = `https://www.youtube.com/embed/${this.contribution.embedId}`
+        this.contribution.embedThumbnail = `https://img.youtube.com/vi/${this.contribution.embedId}/maxresdefault.jpg`
       }
-      if (this.publication.video.includes('vimeo')) {
-        this.publication.embedId = this.publication.video.split('/')[3]
-        this.publication.embed = `https://player.vimeo.com/video/${this.publication.embedId}`
-        this.publication.embedThumbnail = this.props.vimeo[this.publication.embedId]
+      if (this.contribution.video.includes('vimeo')) {
+        this.contribution.embedId = this.contribution.video.split('/')[3]
+        this.contribution.embed = `https://player.vimeo.com/video/${this.contribution.embedId}`
+        this.contribution.embedThumbnail = this.props.vimeo[this.contribution.embedId]
       }
     }
 
-    if (this.publication.talk) {
-      if (this.publication.talk.includes('youtube')) {
-        this.publication.talkEmbedId = this.publication.talk.split('?v=')[1]
-        this.publication.talkEmbed = `https://www.youtube.com/embed/${this.publication.talkEmbedId}`
-        this.publication.talkEmbedThumbnail = `https://img.youtube.com/vi/${this.publication.talkEmbedId}/maxresdefault.jpg`
+    if (this.contribution.talk) {
+      if (this.contribution.talk.includes('youtube')) {
+        this.contribution.talkEmbedId = this.contribution.talk.split('?v=')[1]
+        this.contribution.talkEmbed = `https://www.youtube.com/embed/${this.contribution.talkEmbedId}`
+        this.contribution.talkEmbedThumbnail = `https://img.youtube.com/vi/${this.contribution.talkEmbedId}/maxresdefault.jpg`
       }
-      if (this.publication.talk.includes('vimeo')) {
-        this.publication.talkEmbedId = this.publication.talk.split('/')[3]
-        this.publication.talkEmbed = `https://player.vimeo.com/video/${this.publication.talkEmbedId}`
-        this.publication.talkEmbedThumbnail = this.props.vimeo[this.publication.talkEmbedId]
+      if (this.contribution.talk.includes('vimeo')) {
+        this.contribution.talkEmbedId = this.contribution.talk.split('/')[3]
+        this.contribution.talkEmbed = `https://player.vimeo.com/video/${this.contribution.talkEmbedId}`
+        this.contribution.talkEmbedThumbnail = this.props.vimeo[this.contribution.talkEmbedId]
       }
     }
   }
 
   getFigures() {
-    const dirs =
+    this.figures = {}
+    const contribImages =
     this.props.files.children
     .filter(dir => dir.name === 'images')[0].children
-    .filter(dir => dir.name === 'publications')[0].children
+    .filter(dir => dir.name === this.plural);
+    if (contribImages.length === 0) return;
+    const dirs = contribImages[0]
+    .children
     .filter(dir => dir.name === 'figures')[0].children
-    this.figures = {}
     for (let dir of dirs) {
       let id = dir.name
       let files = dir.children.map(file => file.path )
@@ -109,10 +115,15 @@ class Detail extends React.Component {
   }
 
   getCovers() {
-    const dirs =
+    this.covers = {}
+    const allImages =
     this.props.files.children
     .filter(dir => dir.name === 'images')[0].children
-    .filter(dir => dir.name === 'publications')[0].children
+    const contribImages = allImages
+    .filter(dir => dir.name === this.plural);
+    if (contribImages.length === 0) return;
+    const dirs = contribImages[0]
+    .children 
     .filter(dir => dir.name === 'cover')[0].children
     this.covers = {}
     for (let dir of dirs) {
@@ -122,10 +133,12 @@ class Detail extends React.Component {
   }
 
   getPDFs() {
-    const dirs =
-    this.props.files.children
-    .filter(dir => dir.name === 'publications')[0].children
     this.pdfs = {}
+    const contribPDFs =
+    this.props.files.children
+    .filter(dir => dir.name === this.plural);
+    if (contribPDFs.length === 0) return;
+    const dirs = contribPDFs[0].children
     for (let dir of dirs) {
       let id = dir.name.split(".")[0]
       this.pdfs[id] = dir.path
@@ -134,13 +147,13 @@ class Detail extends React.Component {
 
   // Adapted from same function in pages/person.js
 
-  renderLink(publication, key) {
-    if (!publication[key]) {
+  renderLink(contribution, key) {
+    if (!contribution[key]) {
       return ''
     }
 
-    let title = publication[key]
-    let href = publication[key]
+    let title = contribution[key]
+    let href = contribution[key]
     let icon
     switch(key) {
       case 'github':
@@ -163,41 +176,42 @@ class Detail extends React.Component {
 
   // To update when new link types are added to renderLink()
 
-  hasMaterialLinks(publication) {
-    return publication.gitlab || publication.github
+  hasMaterialLinks(contribution) {
+    return contribution.gitlab || contribution.github
   }
 
   render() {
-    if (!this.props.publication) {
+    if (!this.props.contribution || !this.type) {
       return <div></div>
     }
+    let title = this.type.charAt(0).toUpperCase() + this.type.slice(1).toLowerCase()
 
     return (
-      <div id="publication">
+      <div id={this.type}>
         <div className="block">
           <div id="breadcrumb" className="ui breadcrumb">
-            <Link className="section" href="/publications">Publications</Link>
+            <Link className="section" href={ `/${this.plural}` }>{title}</Link>
             <FontAwesomeIcon icon="fas fa-angle-right" />
-            <a className="active section">{ parse(this.publication.series) }</a>
+            <a className="active section">{ parse(this.contribution.series) }</a>
           </div>
 
           <div className="ui stackable grid" style={{ marginTop: '10px' }}>
             <div className="three wide column" style={{ margin: 'auto' }}>
               {this.showCover && 
-                <Image width={0} height={0} className="cover" alt={ `${ this.publication.id } cover` } src={ `/static/images/publications/cover/${ this.publication.id }.jpg` } />
+                <Image width={0} height={0} className="cover" alt={ `${ this.contribution.id } cover` } src={ `/static/images/${this.plural}/cover/${ this.contribution.id }.jpg` } />
               }
             </div>
             <div className="thirteen wide column">
               { this.props.short &&
                 <h1>
-                  <a href={ `/publications/${this.publication.id}` } target="_blank">{ parse(this.publication.title) }</a>
+                  <a href={ `/${this.plural}/${this.contribution.id}` } target="_blank">{ parse(this.contribution.title) }</a>
                 </h1>
               }
               { !this.props.short &&
-                <h1>{ parse(this.publication.title) }</h1>
+                <h1>{ parse(this.contribution.title) }</h1>
               }
               <p className="meta">
-                { this.publication.authors.map((author) => {
+                { this.contribution.authors.map((author) => {
                     return (
                       this.names.includes(author) ?
                       <a href={ `/people/${ this.namesId[author] }` } key={ author }>
@@ -212,23 +226,23 @@ class Detail extends React.Component {
               </p>
               { this.showPDF && 
                 <p>
-                  <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/main/static/publications/${this.publication.id}.pdf` } target="_blank">
-                    <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.publication.id}.pdf` }
+                  <a href={ `https://raw.githubusercontent.com/ucalgary-ilab/ucalgary-ilab.github.io/main/static/${this.plural}/${this.contribution.id}.pdf` } target="_blank">
+                    <FontAwesomeIcon icon="far fa-file-pdf fa-fw" />{ `${this.contribution.id}.pdf` }
                   </a>
                 </p>
               }
             </div>
           </div>
         </div>
-        { this.publication.embed &&
+        { this.contribution.embed &&
           <div className="block">
             <div className="video-container">
               <iframe
                 className="embed"
                 width="100%"
                 height="315"
-                src={`${this.publication.embed}`}
-                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.publication.embed}?autoplay=1><Image width={0} height={0} alt=${this.publication.embedThumbnail} src=${this.publication.embedThumbnail}><span>▶</span></a>`}
+                src={`${this.contribution.embed}`}
+                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.contribution.embed}?autoplay=1><Image width={0} height={0} alt=${this.contribution.embedThumbnail} src=${this.contribution.embedThumbnail}><span>▶</span></a>`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen={true}
@@ -242,12 +256,12 @@ class Detail extends React.Component {
         }
         <div className="block">
           <h1>Abstract</h1>
-          <p>{ this.publication.abstract }</p>
+          <p>{ this.contribution.abstract }</p>
 
-          { this.publication.keywords &&
+          { this.contribution.keywords &&
             <div className="ui large basic labels">
               Keywords: &nbsp;
-              { [...new Set(this.publication.keywords.split(', '))].map((keyword) => {
+              { [...new Set(this.contribution.keywords.split(', '))].map((keyword) => {
                 return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
               }) }
             </div>
@@ -257,34 +271,34 @@ class Detail extends React.Component {
           <h1>Reference</h1>
           <div className="ui segment">
             <p style={{ lineHeight: "160%" }}>
-              { this.publication.authors.reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
-              <b>{ parse(this.publication.title) }</b>.&nbsp;
+              { this.contribution.authors.reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
+              <b>{ parse(this.contribution.title) }</b>.&nbsp;
               <i>
               { this.proceeding.booktitle && <>In {this.proceeding.booktitle}</> }
-              { this.proceeding.booktitle && this.publication.series && <> </> }
-              { this.publication.series && <>({ parse(this.publication.series) })</> }
+              { this.proceeding.booktitle && this.contribution.series && <> </> }
+              { this.contribution.series && <>({ parse(this.contribution.series) })</> }
               </i>.&nbsp;
               { this.proceeding.publisher }&nbsp;
-              { this.publication.pages &&
-                <>Page: 1-{ this.publication.pages }.&nbsp;</>
+              { this.contribution.pages &&
+                <>Page: 1-{ this.contribution.pages }.&nbsp;</>
               }
-              { this.publication.doi &&
-                <>DOI: <a href={ this.publication.doi.includes("http") ? this.publication.doi : `https://doi.org/${this.publication.doi}`} target="_blank">{ this.publication.doi }</a></>
+              { this.contribution.doi &&
+                <>DOI: <a href={ this.contribution.doi.includes("http") ? this.contribution.doi : `https://doi.org/${this.contribution.doi}`} target="_blank">{ this.contribution.doi }</a></>
               }
             </p>
           </div>
         </div>
-        {this.hasMaterialLinks(this.publication) &&
+        {this.hasMaterialLinks(this.contribution) &&
           <div className="block">
             <h1>Materials</h1>
             <div className="ui horizontal small divided link list">
               {['github', 'gitlab'].map((key) => {
-                return this.renderLink(this.publication, key)
+                return this.renderLink(this.contribution, key)
               })}
             </div>
           </div>
         }
-        { this.publication.talkEmbed &&
+        { this.contribution.talkEmbed &&
           <div className="block">
             <h1>Talk</h1>
             <div className="video-container">
@@ -292,8 +306,8 @@ class Detail extends React.Component {
                 className="embed"
                 width="100%"
                 height="315"
-                src={`${this.publication.talkEmbed}`}
-                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.publication.talkEmbed}?autoplay=1><Image width={0} height={0} alt=${this.publication.talkEmbedThumbnail} src=${this.publication.talkEmbedThumbnail}><span>▶</span></a>`}
+                src={`${this.contribution.talkEmbed}`}
+                srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${this.contribution.talkEmbed}?autoplay=1><Image width={0} height={0} alt=${this.contribution.talkEmbedThumbnail} src=${this.contribution.talkEmbedThumbnail}><span>▶</span></a>`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen={true}
@@ -310,7 +324,7 @@ class Detail extends React.Component {
             <h1>Figures</h1>
             <div id="figure">
               <div className="ui stackable three cards" style={{ marginTop: '30px' }}>
-                { this.figures[this.publication.id].map((src) => {
+                { this.figures[this.contribution.id].map((src) => {
                   return (
                     <a className="card" href={ `/${src}` } target="_blank" >
                       <div className="image">
