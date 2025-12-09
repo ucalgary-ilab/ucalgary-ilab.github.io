@@ -226,11 +226,13 @@ a:hover {
   object-fit: cover;
 }
 
+#projects .project,
 #publications .publication {
   transition: 0.5s;
   cursor: pointer;
 }
 
+#projects .project:hover,
 #publications .publication:hover {
   background: #efefef;
 }
@@ -428,7 +430,7 @@ a:hover {
 }
 
 #projects .ui.header {
-  color: #269 !important;
+  /* color: #269 !important; */
 }
 
 #project .title {

@@ -8,24 +8,24 @@ const files = tree("./static", {
 });
 fs.writeFileSync("./content/output/files.json", JSON.stringify(files, null, 2));
 
-/// getPublications adapted from pages/publications.js
-function getPublications(summary) {
+/// getContributions adapted from components/contributions.js
+function getContributions(summary) {
   const fileNames = Object.keys(summary.fileMap);
   const keys = fileNames.filter((fileName) => {
-    return fileName.includes("publications");
+    return fileName.includes("projects") || fileName.includes("publications");
   });
 
-  let publications = [];
+  let contributions = [];
   for (let key of keys) {
-    publications.push(summary.fileMap[key]);
+    contributions.push(summary.fileMap[key]);
   }
-  publications = publications.sort((a, b) => {
+  contributions = contributions.sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
   });
-  return publications;
+  return contributions;
 }
 
-/// getPeople adapted from pages/publications.js
+/// getPeople adapted from components/contributions.js
 function getPeople(summary) {
   const fileNames = Object.keys(summary.fileMap);
   const keys = fileNames.filter((fileName) => {
@@ -47,14 +47,14 @@ function getPeople(summary) {
   return people;
 }
 
-/// Extend publications with affiliated labs from authors
+/// Extend contributions with affiliated labs from authors
 
 const summary = require("./content/output/summary.json");
-let publications = getPublications(summary);
+let contributions = getContributions(summary);
 const people = getPeople(summary);
-publications.forEach((publication, p) => {
+contributions.forEach((contribution, p) => {
   let labs = [];
-  publication.authors.forEach((author) => {
+  contribution.authors.forEach((author) => {
     let person = people.find((p) => p.name == author);
     if (person !== undefined && person.labs !== undefined) {
       labs = labs.concat(person.labs);
@@ -62,14 +62,14 @@ publications.forEach((publication, p) => {
     }
   });
   if (labs.length > 0) {
-    console.log(`Adding labs "${labs}" to "${publication.dir}/${publication.base}"`);
-    publication.labs = labs;
+    console.log(`Adding labs "${labs}" to "${contribution.dir}/${contribution.base}"`);
+    contribution.labs = labs;
     fs.writeFileSync(
-      "./" + publication.dir + "/" + publication.base,
-      JSON.stringify(publication, null, 2)
+      "./" + contribution.dir + "/" + contribution.base,
+      JSON.stringify(contribution, null, 2)
     );
     
-    summary["fileMap"]["${publication.dir}/${publication.base}"] = publication;
+    summary["fileMap"]["${contribution.dir}/${contribution.base}"] = contribution;
   }
 });
 fs.writeFileSync(

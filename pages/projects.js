@@ -9,8 +9,8 @@ export async function getStaticProps() {
 
 // lab short author
 
-export default function Publications(props) {
+export default function Projects(props) {
   return (
-    <Contributions type="publication" {...props} />
+    <Contributions type="project" {...props} />
   )
 }
