@@ -272,9 +272,12 @@ class Detail extends React.Component {
           </div>
         }
         <div className="block">
-          <h1>Abstract</h1>
-          <p>{ this.contribution.abstract }</p>
-
+          { this.contribution.abstract &&
+            <>
+            <h1>Abstract</h1>
+            <p>{ parse(this.contribution.abstract) }</p>
+            </>
+          }
           { this.contribution.keywords &&
             <div className="ui large basic labels">
               Keywords: &nbsp;

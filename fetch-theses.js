@@ -149,16 +149,24 @@ async function parseScholaris(){
                 result.metadata["dc.contributor.advisor"].forEach(advisor => {
                     contents += `  - ${advisor.value.split(", ").reverse().join(" ")}\n`
                 })
-                contents += `committee:\n` 
-                result.metadata["dc.contributor.committeemember"].forEach(member => {
-                    contents += `  - ${member.value.split(", ").reverse().join(" ")}\n`
-                })
+                contents += `committee:` 
+                if(result.metadata["dc.contributor.committeemember"]){
+                    contents += '\n'
+                    result.metadata["dc.contributor.committeemember"].forEach(member => {
+                        contents += `  - ${member.value.split(", ").reverse().join(" ")}\n`
+                    })
+                }
+                else{
+                    contents += ' []\n'
+                }
                 contents += `degree: "${result.metadata["thesis.degree.name"][0].value}"\n`
                 contents += `type: "${result.metadata["dc.type"][0].value}"\n`
                 let institution = result.metadata["dc.publisher.institution"] || result.metadata["thesis.degree.grantor"]
                 institution = institution[0].value
                 contents += `institution: "${institution}"\n`
-                contents += `faculty: "${result.metadata["dc.publisher.faculty"][0].value}"\n`
+                if(result.metadata["dc.publisher.faculty"]){
+                    contents += `faculty: "${result.metadata["dc.publisher.faculty"][0].value}"\n`
+                }
                 contents += `discipline: "${result.metadata["thesis.degree.discipline"][0].value}"\n`
                 result.metadata["dc.identifier.uri"].forEach(url => {
                     if(url.value.includes("hdl.handle.net")){
@@ -172,7 +180,10 @@ async function parseScholaris(){
                 if(keywords && keywords.length > 0){
                     contents += `keywords: ${keywords.map(k=>k.value).join(", ")}\n`
                 } 
-                contents += `abstract: "${result.metadata["dc.description.abstract"][0].value.replaceAll('"','\\"')}"\n`
+                if(result.metadata["dc.description.abstract"]){
+                    let abstract = result.metadata["dc.description.abstract"][0].value.replaceAll('"','\\"').replaceAll(/[\n\r]+/g,"<br/>")//.replaceAll(/[\n]+/g,"<br/>").replaceAll(/[\r]+/g,"<br/>")//.replaceAll(/\r/g,"%")
+                    contents += `abstract: "${abstract}"\n`
+                }
                 fs.writeFileSync(pubFilePath, contents);
             }
         }

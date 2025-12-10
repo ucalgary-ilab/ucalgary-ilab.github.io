@@ -53,7 +53,7 @@ class Contribution extends React.Component {
       <>
         <Meta
           title={ parse(this.contribution.title) }
-          description={ this.contribution.abstract }
+          description={ parse(this.contribution.abstract) }
           image={ `/static/images/${ this.plural }/cover/${ this.props.id }.jpg` }
           keywords={ this.contribution.keywords }
         />
