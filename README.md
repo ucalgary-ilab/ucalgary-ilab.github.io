@@ -96,11 +96,12 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 ##### Option 1: from UCalgary Scholaris
 
-Run the node [fetch-theses.js](fetch-theses.js) script with "author" or "committee" as first argument then name between quotes as second argument to fetch theses from [UCalgary Open Theses and Dissertations](https://ucalgary.scholaris.ca/collections/16fe099b-62b7-45bd-9a99-5fc465f0d04d/search):
+Run the node [fetch-theses.js](fetch-theses.js) script with "author" or "advisor" or "committee" as first argument then name between quotes as second argument to fetch theses from [UCalgary Open Theses and Dissertations](https://ucalgary.scholaris.ca/collections/16fe099b-62b7-45bd-9a99-5fc465f0d04d/search):
 
 Examples:
 - `node fetch-theses.js author "Fateme Rajabiyazdi"` will fetch theses authored by Fateme Rajabiyazdi at UCalgary.
-- `node fetch-theses.js committee "Christian Frisson"` will fetch theses for which Christian Frisson is part of advisors or committee members at UCalgary.
+- `node fetch-theses.js advisor "Wesley Willett"` will fetch theses for which Wesley Willett is part of advisors at UCalgary.
+- `node fetch-theses.js committee "Christian Frisson"` will fetch theses for which Christian Frisson is part of committee members at UCalgary.
 
 The script will:
 - fetch a list of theses in JSON format and store it under [content/input/theses](content/input/theses) if file does not exist already (to regenerate, delete file and re-run the script),
