@@ -1,11 +1,12 @@
 import fs from "fs";
 
 let type = "";
+const types = ["author","advisor","committee"]
 let name = "";
 let query = "";
 const fetchUrl = "https://ucalgary.scholaris.ca/server/api/discover/search/objects?f.itemtype=thesis,contains&";
 // - by author: https://ucalgary.scholaris.ca/server/api/discover/search/objects?f.itemtype=thesis,contains&f.author=Friedel,%20Marcus,contains (only exact matches)
-// - by committee member: https://ucalgary.scholaris.ca/server/api/discover/search/objects?f.itemtype=thesis,contains&query=Christian%20Frisson (exact matches plus more)
+// - by advisor or committee member: https://ucalgary.scholaris.ca/server/api/discover/search/objects?f.itemtype=thesis,contains&query=Christian%20Frisson (exact matches plus more)
 const inputDir = "./content/input";
 const inputThesesDir = `${inputDir}/theses`;
 const contentThesesDir = "./content/theses";
@@ -16,7 +17,7 @@ if(process.argv.length === 4){
     name = process.argv.slice(-1)[0];
 }
 else{
-    console.log(`Specify "author" or "committee" as first argument then append name between quotes as second argument.`)
+    console.log(`Specify ${types.join(" or ")} as first argument then append name between quotes as second argument.`)
     process.exit(2)
 }
 
@@ -27,16 +28,16 @@ names.pop()
 let firstNames=names
 
 /// Extend query
-if(type == "author"){
+if(type === "author"){
     query="f.author="
     query+=`${lastName},${firstNames.join("%20")},contains`
 }
-else if(type == "committee"){
+else if(type === "advisor" || type === "committee"){
     query="query="
     query+=name.split(" ").join("%20")
 }
 else {
-    console.log(`Wrong first argument, must be either "author" or "committee".`)
+    console.log(`Wrong first argument, must be either ${types.join(" or ")}.`)
     process.exit(2)
 }
 console.log(`Fetching theses for ${type} ${name} via ${fetchUrl}${query}`)
@@ -102,19 +103,21 @@ async function parseScholaris(){
                 match=true
             }
         }
-        else if(type === "committee"){
+        else if(type === "advisor"){
             advisors.forEach(advisor => {
                 if(advisor.value.includes(`${lastName}, ${firstNames[0]}`)){
                     match=true
                 }
             })
-            // if(committee !== undefined){
-            //     committee.forEach(member => {
-            //         if(member.value.includes(`${lastName}, ${firstNames[0]}`)){
-            //             match=true
-            //         }
-            //     })
-            // }
+        }
+        else if(type === "committee"){
+            if(committee !== undefined){
+                committee.forEach(member => {
+                    if(member.value.includes(`${lastName}, ${firstNames[0]}`)){
+                        match=true
+                    }
+                })
+            }
         }
         else{
             console.log(`Wrong authorship type ${type}.`)
