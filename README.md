@@ -90,6 +90,29 @@ When members leave iLab, please modify the `type` to `alumni`. Alumni files can 
 
 5. If you want to replace, delete the existing one and do the same process.
 
+### How to Add Theses
+
+#### How to add/modify a thesis
+
+##### Option 1: from UCalgary Scholaris
+
+Run the node [fetch-theses.js](fetch-theses.js) script with "author" or "advisor" or "committee" as first argument then name between quotes as second argument to fetch theses from [UCalgary Open Theses and Dissertations](https://ucalgary.scholaris.ca/collections/16fe099b-62b7-45bd-9a99-5fc465f0d04d/search):
+
+Examples:
+- `node fetch-theses.js author "Fateme Rajabiyazdi"` will fetch theses authored by Fateme Rajabiyazdi at UCalgary.
+- `node fetch-theses.js advisor "Wesley Willett"` will fetch theses for which Wesley Willett is part of advisors at UCalgary.
+- `node fetch-theses.js committee "Christian Frisson"` will fetch theses for which Christian Frisson is part of committee members at UCalgary.
+
+The script will:
+- fetch a list of theses in JSON format and store it under [content/input/theses](content/input/theses) if file does not exist already (to regenerate, delete file and re-run the script),
+- create a YAML file for each thesis un [content/theses](content/theses) if file does not exist already (to regenerate, delete file and re-run the script).
+
+Review the new YAML files created under [content/theses/](content/theses/).
+
+##### Option 2: Manually
+
+Check existing examples under [content/theses](content/theses).
+
 ### How to Update Publications
 
 #### How to add/modify a publication
@@ -104,7 +127,7 @@ node fetch-publications.js "Christian Frisson"
 ```
 
 The script will:
-- fetch a list of publications in JSON format from DLBP and store it under [content/input](content/input) if file does not exist already (to regenerate, delete file and re-run the script),
+- fetch a list of publications in JSON format from DLBP and store it under [content/input/publications](content/input/publications) if file does not exist already (to regenerate, delete file and re-run the script),
 - create a YAML file for each publication un [content/publications](content/publications) if file does not exist already (to regenerate, delete file and re-run the script).
 
 Review the new YAML files created under [content/publications/](content/publications/).
