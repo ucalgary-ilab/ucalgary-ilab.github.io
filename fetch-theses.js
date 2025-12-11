@@ -108,13 +108,13 @@ async function parseScholaris(){
                     match=true
                 }
             })
-            if(committee !== undefined){
-                committee.forEach(member => {
-                    if(member.value.includes(`${lastName}, ${firstNames[0]}`)){
-                        match=true
-                    }
-                })
-            }
+            // if(committee !== undefined){
+            //     committee.forEach(member => {
+            //         if(member.value.includes(`${lastName}, ${firstNames[0]}`)){
+            //             match=true
+            //         }
+            //     })
+            // }
         }
         else{
             console.log(`Wrong authorship type ${type}.`)
