@@ -1,0 +1,17 @@
+date: "2021-09-27"
+title: "Supporting Self-Teaching, Hobbyist Musicians: Technology Design Guidelines for Developing Musical Literacy and Perception"
+author: Michael Y-S Hung
+advisors:
+  - Lora Oehlberg
+committee:
+  - Lora Oehlberg
+  - Adam Bell
+  - Christian Jacob
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/113999
+keywords: music theory, self-directed learning, informal music learning, human-computer interactions
+abstract: "I propose a persona framework and five guidelines for designing interactive technology tools that help self-teaching, hobbyist musicians independently develop musical understanding by leveraging and augmenting their existing musical behaviour. Using perspectives from informal music education, self-directed learning, and the serious leisure perspective, I define 'self-teaching, hobbyist musicians' as self-directed, experiential learners who build musical understanding and skills in opportunistic, constructionist ways, primarily for leisure. However, self-directed music learning inevitably produces gaps in music theory understanding, affecting musical literacy and perception, which can overall increase the difficulty of picking up new musical knowledge and skills over time. Previous HCI-Music research focuses on motor skill acquisition or augmenting expressivity, while theory-teaching systems neglect practical musical behaviours, learning context, and practices in music pedagogy. To better inform this domain, I interviewed eight musicians to learn about their resources, strategies, and challenges in their idiosyncratic learning processes of music and music theory. Given my findings, this thesis contributes (1) a discussion of hobbyist musicians as technology users and a persona framework to guide design: \"The user is a {musician} who learns {music theory competency} while doing {practical musical behaviour}\"; and (2) guidelines for designing technology for self-teaching, hobbyist musicians. For each guideline, I offer and discuss speculative, concept sketches of example interactive tools. Finally, I discuss the limitations of the research presented in this thesis and opportunities for future work."

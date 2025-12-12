@@ -1,0 +1,17 @@
+date: "2025-01-27"
+title: "PASSAGE: A Computational Workflow for Architectural Material Composition"
+author: Peyman Poostchi
+advisors:
+  - Lora Oehlberg
+  - Branko Kolarevic
+committee:
+  - Jason Johnson
+  - Vera Parlac
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computational Media Design"
+url: https://hdl.handle.net/1880/120613
+doi: https://dx.doi.org/10.11575/PRISM/48222
+abstract: "Materials have long served as a cornerstone of human creativity and the evolution of our built environment. However, the limited diversity of available materials and the increasing depletion of finite resources, exacerbated by fragmented modeling, analysis, and production processes, highlight the urgent need for integrated and selective methodologies. The emergence of computational media and advanced materials introduces new possibilities, enabling architects to interactively and efficiently conceive, evaluate, and produce well-performing products and processes. This thesis introduces PASSAGE, a comprehensive computational workflow designed to digitally configure, select, and produce material compositions for architectural applications based on customized performance criteria. At the center of PASSAGE lies an interactive workflow that automates the configuration and production of architectural objects through the strategic manipulation of material compositions. This workflow supports designers by an interactive interface, allowing for generation of performance datasets to meet specific user requirements in near-real time. The research presented in this thesis encompasses the design, development, and prototyping of the workflow using existing commercial software and fabrication technologies. The work includes the parametric and simulation modeling of geometry, material properties, and fabrication processes, all of which interact dynamically with a database, the designer, and fabrication machinery to ensure comprehensive control over the design, analysis, and production of architectural object models. The effectiveness of PASSAGE is demonstrated through the development of a visual programing code and a case study focused on the creation of a freeform-heterogeneous chair. This case study, realized through the workflow and a Grasshopper code, serves to evaluate and verify the integrated process from design to production using a 3D printer. The dual goals of this research are to empower architects with an interactive, efficient, and scalable computational workflow and to establish a holistic, integrated approach to material composition of architectural products."
