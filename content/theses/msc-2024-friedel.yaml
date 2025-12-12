@@ -1,0 +1,18 @@
+date: "2024-01-17"
+title: "Large-surface Passive Haptic Interactions using Pantograph Mechanisms"
+author: Marcus Kenneth Ernst Friedel
+advisors:
+  - Ryo Suzuki
+  - Ehud Sharlin
+committee:
+  - Aditya Nittala
+  - Richard Zhao
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/118000
+doi: https://doi.org/10.11575/PRISM/42844
+keywords: Haptics, HCI, Human-Computer Interaction, Passive Haptics, Pantographs
+abstract: "Dexterous and natural haptic interaction with the environment in Virtual Reality promises a new era of embodied and intuitive computing. But among the remaining challenges stands the difficulty of natural wall interactions. Personal haptic devices for natural wall interaction in virtual reality should be portable and should provide passive, body-scale interactions. However, existing techniques fall short: Room-scale proxies lack portability, wearable robotic arms are energy-intensive and induce friction, and existing hand-scale passive interaction techniques are unsuitable for continuous large-scale renders. In this thesis, we introduce PantographHaptics, a technique which uses the scaling properties of a pantograph to passively render body-scale surfaces. A pantograph is a classical linkage mechanism which can enlarge or shrink designs by coordinating nodes to move in scaled, geometrically similar paths. To our knowledge, no prior work has applied the pantograph mechanism to large-scale immersive haptics. PantographHaptics is a novel method for passively achieving body-scale haptics which uses a pantograph to scale up a small positional constraint into an encounterable midair render. We present the conceptual foundation underpinning of PantographHaptics by describing the operation of the pantograph mechanism and detailing how we apply it for haptics. Then we verify the PantographHaptics technique through two prototypes: HapticLever, a grounded system, and Feedbackpack, a wearable device. We detail the designs, implementations, and technical evaluations of both prototypes, and we highlight the challenges and solutions involved in their development. We evaluate these prototypes with user evaluations, which contribute assessments of their interaction fidelity, investigations of their usability, comparisons of their performance against other haptic modalities, and recorded participant experiences of using the devices. By introducing and verifying PantographHaptics, we show that this novel technique is a viable and promising approach for interactions with large surfaces. By documenting the development of our prototype artifacts and reporting user experiences with the devices, we contribute a foundation for future research."

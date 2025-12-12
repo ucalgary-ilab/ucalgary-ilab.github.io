@@ -1,0 +1,17 @@
+date: "2018-12-20"
+title: "Secure Collaboration Across the Reality-Virtuality Continuum Using Reservoir Data"
+author: Stephen Cartwright
+advisors:
+  - Ehud Sharlin
+  - Mario Costa Sousa
+committee:
+  - Zhangxing Chen
+  - Naser El-Sheimy
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/109396
+keywords: Extended Reality, Collaboration, Information Security
+abstract: "Acquiring, storing, processing, synthesizing, visualizing, and interpreting data are core to scientific knowledge discovery. This data life cycle is common to many diverse fields such as medicine and petroleum engineering. A wide range of techniques may be used for interacting with and visualizing data. Immersive technologies such as augmented reality and virtual reality show great potential to enhance important workplace activities such as collaboration. To this end an immersive, collaborative tool for visualizing reservoir data is discussed. Some collaborative scenarios using these technologies are then described. It is important to carefully consider how these technologies will be incorporated into a professional setting to ensure tools based on these technologies will provide a high quality user experience while meeting the security needs of industry. In order to further this goal, some of the architectural considerations of a collaboration tool that uses a variety of technologies from the reality-virtuality continuum are explored. A prototype tool is then presented that has been developed for collaborating over petroleum reservoir scenarios involving sensitive data. This tool incorporates visual protection mechanisms to facilitate collaboration while providing enhanced control over information disclosure. A user feedback session was performed with reservoir engineering subject matter experts, and the results from this exploratory evaluation are reported."

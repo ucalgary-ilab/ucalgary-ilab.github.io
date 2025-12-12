@@ -1,0 +1,15 @@
+date: "2012-10-04"
+title: "Vuzik: Exploring a Medium for Painting Music"
+author: Aura Pon
+advisors:
+  - David Eagle
+  - Ehud Sharlin
+committee: []
+degree: "Master of Music (MMus)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Music"
+url: http://hdl.handle.net/11023/302
+keywords: Music, Music
+abstract: "What if one could paint music? Music is often shaped by the medium we use to interact with it, and thus the development of different ways to compose and experience music can open up new creative possibilities to people. This somewhat whimsical proposition of painting music, and a quest to find a new medium to create, experience, and interact with music, gave impetus and shape to the development of a musical interface known as Vuzik. Vuzik is an interface for creating and visualizing music through painting gestures on a large interactive surface. This thesis presents the vision, design and implementation of Vuzik. It then describes explorations of it as a tool for music education, and for the performance and creation of electronic music. Finally, it presents evaluation efforts of Vuzik in its performance of each of these explorations, and reflects on their implications regarding the nature and potential of Vuzik."

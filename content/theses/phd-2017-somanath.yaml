@@ -1,0 +1,19 @@
+date: "2017"
+title: "'Making' within Material, Cultural, and Emotional Constraints"
+author: Sowmya Somanath
+advisors:
+  - Ehud Sharlin
+  - Mário Costa Sousa
+committee:
+  - Lora Oehlberg
+  - Janette Hughes
+  - Vera Parlac
+  - Oscar Meruvia Pastor
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/11023/4237
+keywords: Computer Science
+abstract: "The Maker Movement aims to democratize technological practices and promises many benefits for people including improved technical literacy, a means for self-expression and agency, and an opportunity to become more than consumers of technology. As part of the Maker Movement, people build hobbyist and utilitarian projects by themselves using programmable electronics (e.g., microcontroller, sensors, actuators) and software tools. While the Maker Movement is gaining momentum globally, some people are left out. Constraints such as material limitations, educational culture restrictions, and emotional or behavioral difficulties can often limit people from taking part in the Maker Movement. We refer to the systematic investigation of how diverse people respond to making-centered activities within constraints as an exploration of making within constraints.<br/>In this dissertation, we (1) study how people respond to creating physical objects by themselves within constraints and, (2) investigate how to design technology that can help makers within constraints.  We conducted an observational study in an impoverished school in India and identified the students' challenges and their strategies for making within material and educational culture constraints. We conducted a second study with at-promise youth in Canada and identified a set of lessons learned to engage youth within emotional and behavioral constraints in making-centered activities. Leveraging our observations, we proposed Augmented Reality (AR)-mediated prototyping as a way to address material constraints. AR-mediated prototyping can help makers to build, program, interact with and iterate on physical computing projects that combine both real-world and stand-in virtual electronic components. We designed, implemented, and evaluated a technology probe, Polymorphic Cube (PMC), as an instance of our vision. Our results show that PMC helped participants prototype despite missing I/O electronic components, and highlighted how AR-mediated prototyping extends to exploring project ideas, tinkering with implementation, and making with others.<br/>Informed by our empirical and design explorations, we suggest a set of characteristics of constraints and implications for designing future technologies for makers within constraints. In the long-term, we hope that this research will inspire interaction designers to develop new tools that can help resolve constraints for making."

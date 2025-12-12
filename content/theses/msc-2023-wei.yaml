@@ -1,0 +1,18 @@
+date: "2023-01"
+title: "Design of Anthropomorphic Interfaces for Autonomous Vehicle-Pedestrian Interaction"
+author: Wei Wei
+advisors:
+  - Ehud Sharlin
+committee:
+  - Zhangxing Chen
+  - Lora Oehlberg
+  - Sowmya Somanath
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+doi: https://dx.doi.org/10.11575/PRISM/40689
+url: http://hdl.handle.net/1880/115776
+keywords: Anthropomorphism, AV-pedestrian Interaction, Immersive Analytics, VR
+abstract: "Autonomous Vehicle (AV) technology promises to revolutionize human life. The promise of AVs includes reduced highway congestion, more efficient energy usage, and cheaper goods and services. However, without careful design, removing human drivers from vehicles will eliminate the natural communication channels which enable pedestrians to navigate safely. This thesis aims to design, present, and study anthropomorphic interfaces for autonomous vehicles, with the objective of enabling AVs to communicate with pedestrians through non-verbal cues. Non-verbal human communication is vital in human relationships. People use non-verbal communication when speech is impractical, such as when interacting with vehicles. When looking into ways in which AVs can use non-verbal communication to interact with pedestrians, we were inspired by the prospect of using anthropomorphic interfaces. This concept is well explored in Human-Robot Interaction (HRI) but has not been investigated in the context of AVs. For this thesis, we explored the design of anthropomorphic interfaces for autonomous vehicles. First, we proposed three types of anthropomorphic interfaces for AVs: facial expressions, hand gestures, and humanoid torsos. We developed a design space for each category using sketches and a low-fi prototype. Then, to research the benefits and limitations of anthropomorphic AVs, we implemented our AV interfaces in a Virtual Reality (VR) environment and developed two testbeds to evaluate their feasibility and scalability. Finally, we conducted two studies using the two testbeds. We investigated the study results using immersive analytics alongside traditional methods and revealed that anthropomorphic AVs could be helpful in AV-pedestrian interaction when designed by specific guidelines. Since we studied anthropomorphic AVs in VR, we were interested in the possibilities of analyzing the data of our study in an immersive environment. We designed a VR prototype specifically to analyze the data collected from the anthropomorphic AV study. The prototype provided basic immersive analytics features for the AV study data. We conducted an expert session with two domain experts to evaluate our immersive analytics prototype. The study contributed insights into the opportunities and challenges of utilizing immersive analytics to analyze AV studies."

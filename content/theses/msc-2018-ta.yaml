@@ -1,0 +1,17 @@
+date: "2018-09-21"
+title: "Exploring Prototyping Tools for Interactive Fashion Design"
+author: Kevin Ta
+advisors:
+  - Lora A. Oehlberg
+  - Ehud Sharlin
+committee:
+  - Anthony Tony
+  - Joshua M. Taron
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/108718
+keywords: prototyping tools, electronic fashion, augmented reality
+abstract: "Interactive garments enable new forms of communication between our bodies and with other people. In electronic fashion (eFashion) design, interactive garments on high fashion runways envision how people might use interactive technologies to enhance our clothing with new sensing and output capabilities. Researchers and fashion designers have since explored new interactive textiles that enable aesthetics-driven, interactive, and new material properties to explore on clothing. While there exist physical tools to implement interactive garments and software tools to create the visual aesthetic of a garment, these tools cannot yet enable designers to use new eFashion technologies in their garments because they require engineering expertise and specialized laboratory equipment. In this thesis, I explore the use of computer-aided prototyping tools to develop interactive eFashion garments. I present case studies with makers and two experienced eFashion designers about their design practices and formulate design guidelines for prototyping tools. I then present two prototyping tools for implementation and exploration of interactive garments. Finally, I discuss future work for physical and virtual prototyping tools in eFashion."
