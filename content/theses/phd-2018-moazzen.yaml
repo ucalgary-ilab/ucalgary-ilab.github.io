@@ -1,0 +1,17 @@
+date: "2018-06-25"
+title: "Identifying the Problems of Software Re-architecting and a Knowledge Representation Framework to Address Them"
+author: Elham Moazzen
+advisors:
+  - Robert J. Walker
+  - Jörg Denzinger
+  - Lora A. Oehlberg
+committee:
+  - John Anvik
+  - Yaoping Hu
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/106828
+abstract: "Real-world software undergoes constant change: to fix bugs; to extend functionality; to interact with the changing “ecosystem” around it; and to make internal improvements. Non-trivial software must possess a software architecture: a division into smaller pieces, how those pieces are meant to interact, and how those pieces are deployed physically. As a software architecture can have a significant impact on important properties of the software, the architecture for a software system may need to change as the system itself undergoes change: this is software re-architecting. Unfortunately, software re-architecting is poorly understood: without understanding what is involved in software re-architecting and what problems people encounter in approaching it, we cannot help solve or avoid those problems. I begin this thesis by conducting a case study on a real world example of a software re-architecting, for which documentation and records of discussions were available, to find basic issues that arose during the process. I also conducted a series of interviews with software engineers centred around those issues to deepen our understanding of the process of software re-architecting and discovered the notion of discrete change steps that must be organized and coordinated. I identify a set of critical challenges that must be addressed in any concrete solution. Software engineers lacked a systematic approach to the communication and record management of change steps, suggesting a set of design guidelines for future collaboration tools tailored for re-architecting. They need collaboration tools that facilitate viewing, recording, and retrieving the change steps, and involving the communications within and between the levels of the development team. I then propose a knowledge representation framework for the change process in asynchronous collaboration. This framework is a first step toward a re-architecting collaboration tool that would help to systematize the change process without disrupting it. I developed a paper prototype of the framework and conducted a user evaluation study to determine if the new approach meets the needs of software engineers working on a software re-architecting. My study suggests that the ii approach supported by the prototype allows software engineers to better present changes to their team relative to traditional mechanisms, thereby enabling them to consider more detail. I illustrate the potential value of the framework as a platform for deeper study and further investment in tools, highlighting promising areas for future research."

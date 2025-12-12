@@ -1,0 +1,16 @@
+date: "2019-07-26"
+title: "Leveraging Neuroscience to Improve Haptic Rendering"
+author: Sandeep Zechariah George Kollannur
+advisors:
+  - Sonny Chan
+  - Lora Oehlberg
+committee:
+  - Ryan Peters
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/110675
+keywords: Haptics, Neuroscience, HCI
+abstract: "In the evolving world of virtual reality (VR), haptics plays an important role. Haptics enables individuals to feel and experience the virtual world and to immerse fully in the virtual environment. Haptics has a long history in which researchers have created various types of devices. Virtual reality brings in the need for highly portable and wearable devices which are limited in weight and grounding. Within the restrictive weight and size limitations of mobile and wearable devices limits the haptic rendering capabilities.  This thesis attempts to overcome the limitations by developing a better understanding of the biology of touch via sensorimotor neuroscience to improve touch perception in virtual textures. In this research, we explore the receptor cells that encode touch information from mechanical stimuli and send them to the brain. Sensorimotor neuroscience explores the functional role of the different type of receptor cells in the human body. We use this biological perspective to create a classification of wearable haptic devices for the fingertip and the hand. The second part of the research explores the neuroscience concept of stochastic resonance that is proved to improve light touch sensation. We create a system comprising of hardware and software to evaluate the impact of stochastic resonance in a virtual texture discrimination task. I conclude this thesis by exploring the future directions of the research presented in this thesis and summarizing the two main contributions of this thesis: first is to develop a neuroscience-based classification of wearable haptic devices for the fingertip and the hand and second is to build a platform to evaluate the effect of mechanical SR in discriminating virtual textures."

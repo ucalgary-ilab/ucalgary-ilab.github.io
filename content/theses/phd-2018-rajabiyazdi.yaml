@@ -1,0 +1,17 @@
+date: "2018-12-04"
+title: "Exploring the Design of Visualizations to Facilitate Patient-Provider Communication"
+author: Fatemeh Rajabiyazdi
+advisors:
+  - Sheelagh Carpendale
+  - Lora A. Oehlberg
+committee:
+  - Diane Gromala
+  - Charles Perin
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/109237
+keywords: Patient-Provider Communication, Technology Design, Visualization, Patient-Generated Data
+abstract: "Establishing strong patient-provider communication during clinical visits can have positive impacts on patient health outcomes. On the other hand, miscommunication between patients and healthcare providers can cause harm or in extreme cases cause death to patients. Factors such as healthcare providers' limited time, inefficient clinical environments, and patients' difficulties in communicating their concerns can be the causes of this miscommunication. In this thesis, I explore the design of visualizations to facilitate communication between healthcare providers and patients during clinical visits. In the first part (i) of this thesis, I present the results of a literature review I have conducted to expand our understanding of patients' and providers' communication challenges during in-clinic visits. In the second phase (ii) I discuss the results of interviews with healthcare providers and I contrast and compare patients' and providers' perspectives in the context of each other to unveil the roots of their communication challenges. Among the communication challenges we identified, I focus on exploring the challenges and the realities patients and healthcare providers face tracking and sharing patient-generated health data. In the third part of this dissertation (iii), I discuss the results of a series of interviews and focus groups with patients and healthcare providers I have conducted to gain a better understanding of patient-generated data communication challenges. I leverage this understanding to propose potential visualization designs representing patient-generated data collections to improve the process of reviewing and communicating these data between patients and healthcare providers. In the fourth part of this dissertation (iv), I discuss the results of the interviews with healthcare providers seeking their reflection on the proposed visualization designs. Finally, in collaboration with our healthcare provider team in Alberta Healthcare Services, I implement the prototypes of a number of carefully selected visualization designs. In the last part of this dissertation (v), I outline insights, lessons learned, and future research directions that arise from these studies and the design process. I hope this research provides more support for considering patients' and healthcare providers' individualities when designing technologies and visualizations in healthcare settings."

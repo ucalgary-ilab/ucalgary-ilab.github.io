@@ -1,0 +1,19 @@
+date: "2020-09-01"
+title: "Designing Interactive Behaviours for Smart Objects"
+author: David Ledo Maira
+advisors:
+  - Lora A. Oehlberg
+  - Saul Greenberg
+committee:
+  - Jo Vermeulen
+  - Carey L. Williamson
+  - Barry Wylant
+  - Björn D. Hartmann
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/112512
+keywords: Human–Computer Interaction, Human-Computer Interaction, HCI, Interaction Design, Prototyping, Prototyping Tools, Toolkits, Mobile Devices, Smart Objects, Interactive Behaviour, Interactive Behavior
+abstract: "In this thesis, I propose methods for repurposing existing hardware and software to enable designers to create live interactive prototypes for smart interactive objects without the need to write code or create custom circuitry. The advent of ubiquitous computing brought the promise of interactive artifacts that integrate into our everyday lives. While this has led to a myriad of “smart objects”, the problem is that it is difficult for interaction designers to devise interactive behaviours for such objects. For example, how might an interaction designer prototype behaviours for a smart speaker? How can they go beyond voice responses and, for instance, animate lights to show that the speaker is listening, or searching for an answer on the web? Designers today face three challenges: (1) needing multiple expertise of designing behaviour, form, circuitry, and programming the functionality; (2) lacking software tools to author fine-tuned dynamic behaviours; and (3) needing closer-to-product representations to physically manipulate the prototype. I overcome this gap through a method and two interactive systems. I propose a design metaphor: Soul–Body Prototyping, which suggests leveraging off-the-shelf mobile phones and watches to create smart object prototypes. By enclosing the mobile device (“soul”) into a physical enclosure (“body”), the designer can exploit the mobile device’s rich sensing, outputs, and internet connectivity. I then operationalize Soul–Body Prototyping through two proof-of-concept prototyping tools. Pineal features trigger-action behaviours which automatically generate 3D models for physical forms. These forms fit a mobile device and expose the necessary inputs and outputs. Astral is a tool where designers can mirror a portion of the desktop’s screen onto a mobile device, and create mappings that convert live mobile sensor data into mouse or keyboard events. Thus, the mobile device remote controls (and repurposes) familiar desktop applications for dynamic behaviour prototyping. Overall, my work contributes an alternative way to prototype smart interactive objects, which informs the design of future prototyping tools. Moreover, I investigate fundamental questions such as the meaning of interactive behaviour, as well as evaluation methods for prototyping tools and toolkits in HCI research."

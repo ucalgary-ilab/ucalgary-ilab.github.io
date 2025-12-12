@@ -1,0 +1,16 @@
+date: "2017"
+title: "Critiquing Physical Prototypes for a Remote Audience"
+author: Terrance Mok
+advisors:
+  - Lora Oehlberg
+committee:
+  - Tony Tang
+  - Penelope Pexman
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/11023/4248
+keywords: Computer Science
+abstract: "I present an observational study of physical prototype critique that highlights some of the challenges of communicating physical behaviors and materiality at a distance. Geographically distributed open hardware communities often conduct user feedback and peer critique sessions via video conference. However, people have difficulty using current video conferencing tools to demonstrate and critique physical designs. To examine the challenges of remote critique, I conducted an observational lab study in which participants critiqued pairs of physical prototypes (prosthetic hands) for a face-to-face or remote collaborator. In both conditions, participants’ material experiences were an important part of their critique, however their attention was divided between interacting with the prototype and finding strategies to communicate ‘invisible’ features. Based on my findings, I propose design implications for remote collaboration tools that support the sharing of material experiences and prototype critique."
