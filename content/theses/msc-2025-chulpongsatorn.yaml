@@ -1,0 +1,18 @@
+date: "2025-09-18"
+title: "Physicality and Cross-Device Interaction in Augmented Reality"
+author: Thobthai Chulpongsatorn
+advisors:
+  - Ryo Suzuki
+  - Wesley Willett
+committee:
+  - Christian Frisson
+  - Frank Maurer
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Arts"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/123003
+doi: https://dx.doi.org/10.11575/PRISM/50597
+keywords: Augemented Reality, Human Computer Interactions, Physicality, Mobile Devices, Explorable Explanations, Intearctive Paper, Augmented Textbook, Augmented Interface, Embeded Data Visualization, Tangible Interaction, Cross Device Interaction, Holographic Cross Device Interaction, Holographic Interface
+abstract: "This thesis explores novel uses of physicality and cross-device interaction with augmented reality through three different research prototypes. (1) Augmented Math leverages the physical world as a basis for generating augmentations through an AI-assisted method that allows educators to create interactive math content from static diagrams. (2) HoloTouch enables users to physically interact with holograms by repurposing personal devices like smartphones as tangible input tools. (3) HoloDevice explores how AR can transform remote collaboration by simulating co-located interactions through holographic representations of users and their devices. These systems were developed through iterative prototyping, collaborative design discussions, user studies, and interviews. Together, they demonstrates how novel interaction techniques grounded in physical and cross-device affordances can enhance usability and engagement in AR environments."

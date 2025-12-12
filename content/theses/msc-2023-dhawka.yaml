@@ -1,0 +1,18 @@
+date: "2023-07"
+title: "Demographically Diverse Anthropographics: Exploring Equitable Visual Representations of Diversity"
+author: Priyadarshinee Dhawka
+advisors:
+  - Wesley Willett
+committee:
+  - Leanne Wu
+  - Geoffrey Messier
+  - Ryan Henry
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/116824
+doi: https://dx.doi.org/10.11575/PRISM/41666
+keywords: Diverse Anthropographics, Equity, Demographic Data, Diversity, Anthropographics
+abstract: "In this thesis, we explore the design of demographically diverse anthropographics from demographic data. Anthropographics are visualizations that often use generic human-shaped symbols as abstract representations of humans. These visualizations are frequently used to convey the human importance of data related to people’s experiences, usually focusing on demographic data such as age, gender, race among others. However, most current anthropographics employ generic human shapes to represent data about distinct demographic groups, which can hide important demographic and physical differences between these groups. The use of generic human shapes in current anthropographics highlights the lack of inclusive approaches for representing human physical diversity in data visualizations. In response,we explore the creation of demographically diverse anthropographics that communicate the visible physical diversity of demographically-distinct populations. Our contributions stem from a set of critical design explorations for visualizing demographic data with a focus on representing human physical diversity and a study exploring how viewers perceive visual representations of diversity in anthropographics. We make three contributions in this work. First, we describe critical design explorations from two prototypes for representing racial demographic data as physical characteristics of diversity (such as skin tones) in diverse anthropographics. Second, we explore how viewers may perceive visual representations of demographic diversity in anthropographics through an interview study on contemporary examples of homogeneous anthropographics from popular news media and our own set of diverse anthropographics. Finally, we identify a set of social and technical challenges in the creation of anthropographics and contribute a collection of forward-looking opportunities for advancing this line of research on equitable visual representations of diversity through demographically diverse anthropographics."
