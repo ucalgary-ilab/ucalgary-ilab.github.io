@@ -1,0 +1,19 @@
+date: "2019-07-02"
+title: "Applications of Interactive Topographic Maps: Tangibility with Improved Spatial Awareness and Readability"
+author: Hao Li
+advisors:
+  - Ehud Sharlin
+  - Mario Costa Sousa
+committee:
+  - Kazuki Takashima
+  - Zhangxing Chen
+  - Pablo Figueroa
+  - Wesley J. Willett
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/110577
+keywords: human-computer interaction, tangible user interface, topographic map, augmented reality, physicalization, physical visualization, spatial awareness
+abstract: "Traditional flat topographic maps are difficult to understand due to the distortion and compromise of the 3-dimensional (3D) spatial representation when it is folded into lower-dimension media (e.g. 2D). During the process, the x-y coordinate of a location can be captured but its physical elevation must be transformed using some visualization techniques, resulting in noticeable cognitive effort in comprehending the original geometric and geographic properties of the original terrain. In this manuscript-based dissertation, I present a collection of my past publications that aim to increase the readability of topographic maps by restoring the original spatiality of the terrain - including the elevations - with a physical map representation and then superimpose additional data visualization on top of it. In this way, the entire terrain topology is kept in a scaled physical representation, allowing users to view it with natural human perceptions. Additionally, user gestures can be tracked in real-time as a sketch-based input to allow novel dynamic interaction of the map interface and data manipulation of the spatial information. Through the chapters, I present the aforementioned concept, named interactive topographic interface, along with a few applications of it in different academic and industrial environments. I also report the design and results of a user study that compares the interface with traditional flat topographic maps. In the long-term, I hope that research mentioned in this dissertation inspires future interactive physical cartography to not only improve map comprehension but also facilitate better spatial and situational awareness over the map interface, resulting in an evolved map usefulness."

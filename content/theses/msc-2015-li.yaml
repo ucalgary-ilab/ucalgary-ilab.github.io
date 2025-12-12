@@ -1,0 +1,15 @@
+date: "2015-01-28"
+title: "Two-Sided Transparent Display as a Collaborative Medium"
+author: Jiannan Li
+advisors:
+  - Ehud Sharlin
+  - Saul Greenberg
+committee: []
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/11023/2033
+keywords: Computer Science
+abstract: "Transparent displays are ‘see-through’ screens: a person can simultaneously view both the graphics on the screen and real-world content visible through the screen. Interactive transparent displays can serve as an important medium supporting face-to-face collaboration, where people interact with both sides of the display and work together. Such displays enhance workspace awareness, which smooths collaboration: when a person is working on one side of a transparent display, the person on the other side can see the other's hand gestures, gaze, and what s/he is currently manipulating on the shared screen. Even so, we argue that in order to provide effective support for collaboration, designing such transparent displays must go beyond current offerings. We propose using two-sided transparent displays, which can present different content on both sides. The displays should also accept interactive input on both sides and visually augment users’ actions when display transparency is reduced. We operationalized these design requirements with our two-sided transparent display prototype, FACINGBOARD-II, and devised a palette of supportive interaction techniques. Through empirical studies, we found that the workspace awareness provided by transparent displays is compromised with degrading display transparency, and that visually enhancing user actions can compensate for this awareness loss."
