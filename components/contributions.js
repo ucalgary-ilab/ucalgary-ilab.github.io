@@ -151,7 +151,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
       <div className="ui segment" style={{ marginTop: '50px' }}>
         { contributions.map((contribution, i) => {
           let authors = contribution.authors || [contribution.author, ...contribution.advisors, ...contribution.committee];
-          let series = contribution.series ? parse(contribution.series) : `${contribution.author.split(" ").slice(-1)} ${contribution.degree.split("(")[1].split(")")[0]} ${contribution.date.split("-")[0]}`
+          let series = contribution.series ? parse(contribution.series) : `${contribution.degree.split("(")[1].split(")")[0]} ${contribution.date.split("-")[0]}`
           contribution.id = contribution.base.split('.json')[0]
           return (
             <div className={ `${type} ui vertical segment stackable grid` } data-id={ contribution.id } key={ i }>

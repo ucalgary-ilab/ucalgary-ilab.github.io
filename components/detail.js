@@ -188,7 +188,7 @@ class Detail extends React.Component {
     }
     let title = this.type.charAt(0).toUpperCase() + this.type.slice(1).toLowerCase()
     let authors = this.contribution.authors || [this.contribution.author, ...this.contribution.advisors, ...this.contribution.committee];
-    let series = this.contribution.series ? parse(this.contribution.series) : `${this.contribution.author.split(" ").slice(-1)} ${this.contribution.degree.split("(")[1].split(")")[0]} ${this.contribution.date.split("-")[0]}`
+    let series = this.contribution.series ? parse(this.contribution.series) : `${this.contribution.degree.split("(")[1].split(")")[0]} ${this.contribution.date.split("-")[0]}`
 
     return (
       <div id={this.type}>
