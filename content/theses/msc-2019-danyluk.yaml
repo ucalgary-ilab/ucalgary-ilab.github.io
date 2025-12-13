@@ -1,0 +1,16 @@
+date: "2019-01-16"
+title: "Designing Camera Controls for Map Environments"
+author: Kurtis Danyluk
+advisors:
+  - Wesley J. Willett
+committee:
+  - Ehud Sharlin
+  - Faramarz Samavati
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/109480
+keywords: Human-Computer Interactions, Interactive Camera Control, User Interfaces, Input Devices and Stratagies
+abstract: "We present an exploration of two classes of navigation techniques designed for representations of real-world terrain. The first introduces look-from camera controls, a new style of camera control for touch devices designed with representations of real world-terrain in mind and provides an evaluation of three different implementations of this style of control. The second looks to virtual reality and compares the effectiveness of four existing and common camera control techniques within the context of a representations of real world-terrain. Effective camera controls greatly increase a user’s ability to engage with a virtual environment, and virtual map environments are no different. However, current camera controls are difficult to use within map-like environments, requiring burdensome sequences of interactions or performing poorly within ragged terrain. To examine the effectiveness of different camera controls in this space we conducted two studies in which we asked participants to perform map reading and interaction tasks. In both studies the camera control technique greatly influenced participant engagement and enjoyment within a scene. The first study highlights the effectiveness of look-from camera controls as light-weight additions to direct manipulation controls and provides design guidelines for the construction of look-from camera controls. The second study highlights which existing common navigation techniques are most appropriate within a map-like environment presented in immersive virtual reality and how combinations of these controls can combine the strengths of the controls to cover for the weaknesses of others."

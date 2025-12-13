@@ -186,7 +186,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
                         role = " (author)"
                       }
                       else if (contribution.advisors && contribution.advisors.includes(author)){
-                        role = " (advisor)"
+                        role = " (supervisor)"
                       }
                       else if (contribution.committee && contribution.committee.includes(author)){
                         role = " (committee)"

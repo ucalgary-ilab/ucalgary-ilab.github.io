@@ -1,0 +1,17 @@
+date: "2017"
+title: "Examining the Utility of Constructing Physical Representations of Data"
+author: Jennifer Payne
+advisors:
+  - Wesley Willett
+  - Jason Johnson
+committee:
+  - Ehud Sharlin
+  - Barry Wylant
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computational Media Design"
+url: http://hdl.handle.net/11023/3613
+keywords: Computer Science
+abstract: "For millennia, people have constructed physicalizations---physical representations of information---by hand. Recent studies have shown that physicalizations can be more efficient for transmitting information than on-screen visualizations. In addition, innovations like shape-changing interfaces and digital fabrication now make it possible to create physicalizations with little manual effort. Yet many physicalizations are still constructed by hand. In this thesis, we explore how manual construction of physicalizations influences the way people approach and comprehend data, through two studies.<br/>One study compares bar chart authoring through physical construction to authoring using template-based chart creation software. A second study compares participant behaviour when constructing physicalizations to that when exploring previously-built physicalizations. Through comparison of these processes, we derive implications for the design of visualization authoring tools, and for the exploration of data."

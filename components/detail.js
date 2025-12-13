@@ -221,7 +221,7 @@ class Detail extends React.Component {
                       role = " (author)"
                     }
                     else if (this.contribution.advisors && this.contribution.advisors.includes(author)){
-                      role = " (advisor)"
+                      role = " (supervisor)"
                     }
                     else if (this.contribution.committee && this.contribution.committee.includes(author)){
                       role = " (committee)"

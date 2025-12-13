@@ -1,0 +1,16 @@
+date: "2017"
+title: "Designing and Evaluating a Lightweight Video Player for Language Learning"
+author: Sathaporn Hu
+advisors:
+  - Wesley Willett
+committee:
+  - Usman Alim
+  - Parmit Chilana
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/11023/4265
+keywords: Computer Science
+abstract: "Watching foreign language videos is a popular and convenient strategy used by many people for learning a new language. However, traditional video players, such as the YouTube player, are not designed to support language learning. We created two video players to explore and to address the issues of using traditional players as a language learning tool. Our players specifically target casual language learners. After evaluating the first player, we found that a traditional player makes it difficult for learners to (1) adjust the level of difficulty, (2) recover missed information, and (3) assess learning progress. We then created the second player to address these issues. The results of the evaluation of the second player demonstrate that people found the player to be helpful for language learning. We also found common usage patterns in the results and opportunities for future improvement."

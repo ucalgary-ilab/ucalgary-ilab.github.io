@@ -1,0 +1,17 @@
+date: "2021-01-20"
+title: "Situated Self-Tracking: Ideating, Designing, and Deploying Dedicated User-driven Personal Informatics Systems"
+author: Kendra Wannamaker
+advisors:
+  - Wesley J. Willett
+committee:
+  - Tony Tang
+  - Ryo Suzuki
+  - Wesley J. Willett
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/113022
+keywords: Situated Visualization, Information Visualization, Design Workshops, Small Displays, Ideation, Sketching, Personal Data/Tracking, Ambient Devices/ Internet of Things
+abstract: "In this thesis, we examine the intersection between personal informatics and situated visualization. Personal Informatics systems aim to help people collect and utilize their own data. Situated visualizations aim to decentralize data consumption and support people in making data-driven decisions in-situ. We present I/O Bits, a prototype personal informatics system that explores the potential for situated self-tracking. With simple tactile inputs and small e-paper visualizations, I/O Bits are dedicated physical devices that allow individuals to track and visualize different kinds of personal activities in-situ. This is in contrast to most self-tracking systems, which automate data collection, centralize information displays, or integrate into multi-purpose devices like smartwatches or mobile phones. Our contributions stem from a set of situated ideation workshops, an e-paper visualization workshop, the development of I/O Bits, and a prototype deployment where participants constructed their own I/O Bits and used them to track a range of personal data. We make three contributions with this work. First, we report on methodologies from seven design workshops that used ideation and sketching activities to prototype new situated visualizations. Based on our diverse set of workshops, we identify challenges and opportunities for sketching and ideating situated visualizations and highlight promising methods for both designers and researchers. Second, we use our design workshop results to design our novel situated self-tracking system, I/O Bits. We discuss the tensions experienced during our iterative design and development process and explore the design space of small situated visualizations on e-paper displays. Finally, we examine our findings from the situated ideation workshops, e-paper visualization workshop, development process, and prototype deployment. Using sketches, photos, hardware, audio recordings, and transcripts, we distill a set of insights and opportunities for future research on situated self-tracking."
