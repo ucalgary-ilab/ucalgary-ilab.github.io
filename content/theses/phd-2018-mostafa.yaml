@@ -1,0 +1,19 @@
+date: "2018-01-22"
+title: "Mediating Experiential Learning in Interactive Immersive Environments"
+author: Ahmed Mostafa
+advisors:
+  - Ehud Sharlin
+  - Mário Costa Sousa
+committee:
+  - Sonny Chan
+  - Kazuki Takashima
+  - Pierre Boulanger
+  - Naser El-Sheimy
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/106342
+keywords: Virtual Environments, Interactive, Education, Learning, Simulation, Immersion
+abstract: "Simulation and immersive environments are gaining popularity in various contexts. Arguably, such interactive systems have the potential to benefit many users in a variety of education and training scenarios. However, some of these systems especially with the lack of skilled instructors are still faced by challenges of operational complexity, the incorporation of different technologies and features, and the limited availability of performance measures and feedback. Therefore, the design of these systems would benefit from integrating experiential aspects and essential educational aids. For example, users of such learning systems, especially the novice ones, can be better supported by a smoother learning curve, detailed guidance features, the availability of feedback and performance reporting, and the integration of engaging & reflective capabilities. In essence, we recognize a need to re-explore learning aids and how they impact design, usage, and overall learning experience in interactive immersive environments.<br/>The goal of this dissertation is to mediate experiential learning in interactive immersive environments. This includes exploring existing and novel learning aids that would facilitate learning with improved engagement and immersion, enrich learners with insightful reflections, better support novice users’ learning and training needs, and ultimately enhance the overall experience.<br/>To achieve this goal, we utilized existing learning models and simulation-based training approaches and proposed a framework of learning aids to mediate learning in interactive immersive environments. Working closely with domain expert collaborators, we designed, implemented and evaluated four new interactive immersive prototypes in an attempt to validate the practicality of our aids. The first prototype, NeuroSimVR, is a stereoscopic visualization augmented with educational aids to support how medical users learn about a common back surgery procedure. The second prototype, ReflectiveSpineVR, is an immersive virtual reality surgical simulation with innovative<br/>interaction history capabilities that aim to empower users’ memories and enable deliberate repetitive practice as needed. The third prototype, JackVR, is an interactive immersive training system, utilizing novel gamification elements, and aims to support oil-and-gas experts in the process of landing oil rigs. Our fourth prototype, RoboTeacher, involves a humanoid robot instructor for teaching people industrial assembly tasks. In our prototypes, we presented novel learning aids, visualization, and interaction techniques that are new to many of the current immersive learning tools. We conclude this dissertation with lessons learned and guidelines for designing with learning aids in future research directions that target interactive experiential environments."
