@@ -13,6 +13,7 @@ library.add(fas, far, fab)
 
 import Meta from './meta'
 import Publications from '../pages/publications'
+import Theses from '../pages/theses'
 import Projects from '../pages/projects'
 
 import files from '../content/output/files.json'
@@ -129,8 +130,9 @@ export default function Lab ({lab, peopleStaticProps}) {
               </div>
             </div>
             <People lab={ lab.id } {...peopleStaticProps} />
-            <Projects lab={ lab.id } />
             <Publications lab={ lab.id } />
+            <Theses lab={ lab.id } />
+            <Projects lab={ lab.id } />
           </div>
           <div className="one wide column"></div>
         </div>

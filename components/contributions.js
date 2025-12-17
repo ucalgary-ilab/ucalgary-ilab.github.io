@@ -121,16 +121,25 @@ export default function Contributions ({type, author=undefined, plural=undefined
   if (short) {
     contributions = contributions.slice(0, 30)
   }
+  let supervised = ""
   if (author) {
     contributions = contributions.filter((contribution) => {
-      return contribution.authors.includes(author.name) || contribution.authors.includes(author.alias)
+      let authors = contribution.authors || [contribution.author, ...contribution.advisors]//, ...contribution.committee] 
+      return authors.includes(author.name) || authors.includes(author.alias)
     })
+    let supervisedContributions = contributions.filter((contribution) => {
+      if(!contribution.advisors) return false
+      return contribution.advisors.includes(author.name) || contribution.advisors.includes(author.alias)
+    })
+    if(supervisedContributions.length>0){
+      supervised = " Supervised"
+    }
   }
   let pictures = getPhotos();
   let covers = getCovers(plural);
 
   let title = contributions.length > 1 ? plural : type;
-  title = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()
+  title = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase() + supervised
 
   return (
     contributions.length > 0 && 
@@ -141,6 +150,8 @@ export default function Contributions ({type, author=undefined, plural=undefined
       </h1>
       <div className="ui segment" style={{ marginTop: '50px' }}>
         { contributions.map((contribution, i) => {
+          let authors = contribution.authors || [contribution.author, ...contribution.advisors, ...contribution.committee];
+          let series = contribution.series ? parse(contribution.series) : `${contribution.degree.split("(")[1].split(")")[0]} ${contribution.date.split("-")[0]}`
           contribution.id = contribution.base.split('.json')[0]
           return (
             <div className={ `${type} ui vertical segment stackable grid` } data-id={ contribution.id } key={ i }>
@@ -151,7 +162,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
               </div>
               <div className="thirteen wide column">
                 <p>
-                  <span className="ui big inverted label label-color">{ parse(contribution.series) }</span>
+                  { series && <span className="ui big inverted label label-color">{ series }</span>}
                   { contribution.award &&
                     <span className="ui big basic pink label">
                     { contribution.award === 'Honorable Mention' &&
@@ -169,17 +180,32 @@ export default function Contributions ({type, author=undefined, plural=undefined
                     </b>
                 </p>
                 <p>
-                  { contribution.authors.map((author) => {
+                  { authors.map((author) => {
+                      let role = "";
+                      if (contribution.author && contribution.author === author){
+                        role = " (author)"
+                      }
+                      else if (contribution.advisors && contribution.advisors.includes(author)){
+                        role = " (supervisor)"
+                      }
+                      else if (contribution.committee && contribution.committee.includes(author)){
+                        role = " (committee)"
+                      }
                       return (
                         names.includes(author) ?
+                        <>
                         <Link href={ `/people/${ namesId[author] }` } key={ author }>
                           <Image width={0} height={0} alt={ `${author} picture` } src={ getPhoto(pictures,namesId[author]) } className="ui circular spaced image mini-profile" />
                           <span className="author-link">{author}</span>
                         </Link>
+                        <span className="role">{role}</span>
+                        </>
                         :
-                        <span key={ author }>{parse(author)}</span>
+                        <>
+                        <span key={ author }>{parse(author)}</span><span className="role">{role}</span>
+                        </>
                       )
-                    }).reduce((prev, current) => [prev, ' , ', current])
+                    }).reduce((prev, current) => [prev, ', ', current])
                   }
                 </p>
                 <div>

@@ -12,7 +12,7 @@ fs.writeFileSync("./content/output/files.json", JSON.stringify(files, null, 2));
 function getContributions(summary) {
   const fileNames = Object.keys(summary.fileMap);
   const keys = fileNames.filter((fileName) => {
-    return fileName.includes("projects") || fileName.includes("publications");
+    return fileName.includes("projects") || fileName.includes("publications") || fileName.includes("theses");
   });
 
   let contributions = [];
@@ -54,7 +54,8 @@ let contributions = getContributions(summary);
 const people = getPeople(summary);
 contributions.forEach((contribution, p) => {
   let labs = [];
-  contribution.authors.forEach((author) => {
+  let authors = contribution.authors || [contribution.author, ...contribution.advisors] // do not parse committee for lab affiliation
+  authors.forEach((author) => {
     let person = people.find((p) => p.name == author);
     if (person !== undefined && person.labs !== undefined) {
       labs = labs.concat(person.labs);
