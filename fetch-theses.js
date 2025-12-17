@@ -129,7 +129,7 @@ async function parseScholaris(){
             console.log(`Skipping id ${result.id} that does not include ${name} as ${type}`)
         }
         else{
-            const firstNameFamily = author.split(",")[0].toLowerCase();
+            const firstNameFamily = author.split(",")[0].toLowerCase().replaceAll(" ","-");
             const acroType = result.metadata["thesis.degree.name"][0].value.split("(")[1].split(")")[0].toLowerCase();
             const year = result.metadata["dc.date.issued"][0].value.split("-")[0];
             const pubFileName = `${acroType}-${year}-${firstNameFamily}`;
