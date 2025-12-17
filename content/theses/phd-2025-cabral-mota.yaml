@@ -1,0 +1,20 @@
+date: "2025-09-22"
+title: "Modeling, Designing, and Evaluating Lens Visualizations for 3D and Immersive Analytics"
+author: Roberta Cabral Mota
+advisors:
+  - Usman Alim
+  - Ehud Sharlin
+committee:
+  - Mario Costa Sousa
+  - Nivan Ferreira
+  - Fateme Rajabiyazdi
+  - Parmit K. Chilana
+degree: "Doctor of Philosophy (PhD)"
+type: "doctoral thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/122961
+doi: https://dx.doi.org/10.11575/PRISM/50555
+keywords: Focus+context visualization, Lens visualization, Virtual reality, Immersive analytics, 3D data
+abstract: "Lens visualization has been a prominent research area in the visualization community, fueled by the continuous need to mitigate visual clutter and occlusion resulting from the increasingly large datasets. Interactive lenses for 3D data, particularly, challenge visualization designers to conceive design strategies that facilitates the analysis of dense, multifaceted data with spatial referents. Given their relevance, the overarching research goal of this dissertation is to investigate how visualization lenses may support 3D data exploration and analysis—across both conventional and immersive environments. To this end, we begin with (1) modeling lenses by conducting a systematic review of existing lenses operating within spatial contexts. From this survey, we derive a design space that captures core design dimensions and choices involved in constructing spatially-embedded visualization lenses. Building upon this theoretical foundation, we proceed with (2) designing lenses, through the design, development, and evaluation of four immersive lenses tailored to support distinct forms of 3D data analysis: i) a deformable quadric lens for heterogeneous feature analysis, ii) a dual-imagery lens for multivariate, multi-geometry analysis, iii) a view-dependent lens for reservoir uncertainty analysis, and iv) a shape-conformal lens for spatiotemporal urban data analysis. Afterwards, we probe (3) evaluating lenses by complementing our prior theoretical and practical endeavors with empirical evidence from a controlled study comparing the efficacy of four lens-based designs in supporting time-varying urban data analysis. Throughout the course of our research agenda, we document domain-specific lessons learned and translate them into generalizable design guidelines intended to inform the broader visualization community. Finally, this dissertation concludes by suggesting future research directions for advancing visualization lenses in 3D data exploration and analysis—across both traditional and immersive environments. In the long term, we hope that this dissertation serve valuable reference points for visualization researchers and practitioners operating at either a theoretical, design, or empirical level."

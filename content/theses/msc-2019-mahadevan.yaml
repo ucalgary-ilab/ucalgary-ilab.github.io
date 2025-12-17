@@ -1,0 +1,15 @@
+date: "2019-09-12"
+title: "Exploring the Design of Autonomous Vehicle-Pedestrian Interaction"
+author: Karthik Mahadevan
+advisors:
+  - Ehud Sharlin
+committee:
+  - Sowmya Somanath
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/110924
+keywords: Autonomous Vehicle-Pedestrian Interaction, Human-Computer Interaction, Human-Robot Interaction, Interaction Design, Virtual Reality
+abstract: "Autonomous vehicle research today places an emphasis on developing better sensors and algorithms to enable the vehicle to localize itself in the environment, plan routes, and control its movement. Surveying the general public reveals optimism about the technology but also some skepticism about its ability to communicate with vulnerable road users such as pedestrians and cyclists. In today's interaction with vehicles at crosswalks, pedestrians rely on cues originating from the vehicle and the driver. Vehicle cues relate to its kinematics such as speed and stopping distance while driver cues are concerned with communication such as eye gaze and contact, head and body movement, and hand gestures. In autonomous vehicles, however, a driver is not expected to be on-board to provide cues to pedestrians. We attempted to tackle the problem of designing novel ways to facilitate autonomous vehicle-pedestrian interaction at crosswalks. We propose interfaces which communicate an autonomous vehicle's awareness and intent as a means of helping pedestrians make safe crossing decisions. Through our exploration, we make several contributions. First, we propose a design space for building interfaces using different cue modalities and cue locations. From an early exploration of this design space, we prototype interfaces designed to facilitate autonomous vehicle-pedestrian interaction. The interaction between vehicles and pedestrians will become more challenging during the transition period until all vehicles on the road are fully autonomous. During this period which we term mixed traffic, vehicles of varying levels of autonomy will occupy roads, some of which will have drivers, others such as semi-autonomous which may have distracted drivers, and fully autonomous vehicles which may or may not have drivers. To study this problem, we contribute a virtual reality-based pedestrian simulator. Our final contribution relates to the evaluation of interfaces in the real and virtual world where we found their inclusion helped pedestrians make safe crossing decisions."

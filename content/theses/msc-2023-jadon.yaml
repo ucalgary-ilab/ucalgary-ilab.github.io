@@ -1,0 +1,19 @@
+date: "2023-08"
+title: "Mixed Reality Interfaces for Augmented Text and Speech"
+author: Shivesh Singh Jadon
+advisors:
+  - Ryo Suzuki
+  - Wesley Willett
+committee:
+  - Frank Maurer
+  - Ruofei Du
+  - Kangsoo Kim
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/116854
+doi: https://dx.doi.org/10.11575/PRISM/41696
+keywords: augmented reality, natural language processing, speech recognition, keyword extraction, mixed reality
+abstract: "While technology plays a vital role in human communication, there still remain many significant challenges when using them in everyday life. Modern computing technologies, such as smartphones, offer convenient and swift access to information, facilitating tasks like reading documents or communicating with friends. However, these tools frequently lack adaptability, become distracting, consume excessive time, and impede interactions with people and contextual information. Furthermore, they often require numerous steps and significant time investment to gather pertinent information. We want to explore an efficient process of contextual information gathering for mixed reality (MR) interfaces that provide information directly in the user’s view. This approach allows for a seamless and flexible transition between language and subsequent contextual references, without disrupting the flow of communication. ’Augmented Language’ can be defined as the integration of language and communication with mixed reality to enhance, transform, or manipulate language-related aspects and various forms of linguistic augmentations (such as annotation/referencing, aiding social interactions, translation, localization, etc.). In this thesis, our broad objective is to explore mixed reality interfaces and their potential to enhance augmented language, particularly in the domains of speech and text. Our aim is to create interfaces that offer a more natural, generalizable, on-demand, and real-time experience of accessing contextually relevant information and providing adaptive interactions. To better address this broader objective, we systematically break it down to focus on two instances of augmented language. First, enhancing augmented conversation to support on-the-fly, co-located in-person conversations using embedded references. And second, enhancing digital and physical documents using MR to provide on-demand reading support in the form of different summarization techniques. To examine the effectiveness of these speech and text interfaces, we conducted two studies in which we asked the participants to evaluate our system prototype in different use cases. The exploratory usability study for the first exploration confirms that our system decreases distraction and friction in conversation compared to smartphone search while providing highly useful and relevant information. For the second project, we conducted an exploratory design workshop to identify categories of document enhancements. We later conducted a user study with a mixed-reality prototype to highlight five board themes to discuss the benefits of MR document enhancement."

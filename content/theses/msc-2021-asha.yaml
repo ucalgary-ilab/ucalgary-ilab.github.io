@@ -1,0 +1,17 @@
+date: "2021-09-02"
+title: "Designing Interaction with Autonomous Vehicles: External Displays and Interfaces for Vulnerable Road Users"
+author: Ashratuz Zavin Asha
+advisors:
+  - Ehud Sharlin
+committee:
+  - Michael John Jacobson Jr.
+  - Barry Wylant
+  - Patrick Finn
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/113831
+keywords: Autonomous vehicles, External automotive displays, Pedestrians with hearing aids, Pedestrians in wheelchairs, Co-design, VR simulation
+abstract: "In the near future, mixed traffic consisting of manual and autonomous vehicles (AVs) will be common. Autonomous vehicles with advanced technology offer opportunities for innovative designs and introduce communication challenges for vulnerable road users such as pedestrians and cyclists. Our goal is to explore the emerging new domain of interaction between different road users and autonomous vehicles in a future AV transportation ecosystem. This led us to conduct the thesis following these two themes: 1) understanding design opportunities for external automotive displays (EADs) of AVs; 2) exploring the design of interactions between vulnerable road users (VRUs) and AVs. In theme 1, our work extends contemporary research into visualizations and related applications for autonomous vehicles. Focusing on external car bodies as a design space we introduce a set of EADs. EADs show visualizations to share context and user-specific information and offer opportunities for interaction between users and AVs. We conducted a design study to explore design concepts for EADs to provide services to different road users: pedestrians, passengers, and drivers of other vehicles. Based on the design study, we prototyped four EADs in virtual reality (VR) to demonstrate the potential of our approach. This exploration contributes to our vision for EADs, a design critique of the prototypes, and a discussion of the possible impact and future usage of external automotive displays. In theme 2, we are interested in the ways pedestrians will interact with autonomous vehicles in the absence of non-verbal cues from the driver (such as eye movements, hand gestures, etc.). Crossing streets in these new situations could be more dangerous for VRUs without a proper communication medium. We examined a subset of this challenge with two groups of pedestrians: interaction between AVs and pedestrians with hearing aids (PHAs), and pedestrians in wheelchairs (PWs). First, we worked with hearing aid users as a preliminary exploration of this research. We conduct a co-design study with a co-designer with hearing impairment who has lived experience of wearing hearing aid enhancements. This study contributes several insights and design recommendations on how potential audio cues can be designed to enhance direct communications between PHAs and AVs. For the second part of our research, we designed interactions between pedestrians in wheelchairs and AVs. From an early exploration of potential interface designs through a design study with interaction designers, we prototyped different interfaces in VR. Then, we evaluated the implemented simulations during a co-design study with a powered wheelchair user following inclusive design practices. We identify and reflect on interface design ideas that can help PWs make safe crossing decisions at intersections and discuss design insights for implementing different inclusive interfaces."
