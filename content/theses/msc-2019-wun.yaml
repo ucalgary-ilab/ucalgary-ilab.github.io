@@ -1,0 +1,17 @@
+date: "2019-01-14"
+title: "Authoring Data Visualizations with Physical Template Tools"
+author: Tiffany Wun
+advisors:
+  - Sheelagh Carpendale
+  - Lora A. Oehlberg
+committee:
+  - Nelson Wong
+  - Joel Reardon
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: http://hdl.handle.net/1880/109475
+keywords: Information Visualization, Human Computer Interaction, Visualization Authoring Tools, Tangible Tools, Block-Printing, Physical Template Tools, Potato
+abstract: "In our data-rich society, it is increasingly important that all people are able to use and understand data. Large data sets commonly require expert knowledge to design and disseminate accessible and information-rich visualizations, resulting in visualizations that work well for experts but are less accessible for the general public. My research question addresses how we can support the use of visualization to increase data accessibility for the general public. One approach is to encourage people to self-author data representations suited to their own comprehension needs using simple techniques. However, providing data visualization authoring tools for the general public remains an ongoing challenge. My thesis explores the use of physical tools—specifically, rulers and block-printing stamps—as novel methods of authoring data visualizations, leveraging the advantages of ready-made visualization templates while providing freedom to personalize visual elements. To first explore the possibility of designing physical tools for authoring data visualizations, I present prototypes for several modifiable, computationally-fabricated ruler and stamp designs, created with the goal of allowing users to quickly create repeating visual elements when authoring visual elements on paper. From my design efforts, stamps show promise as low-effort, easy-to-create tools; I therefore conducted a workshop study to understand how people approach visualization authoring when given the ability to create their own physical template tools. In this study, participants authored visualizations on paper using hand-carved stamps made from potatoes and sponges. My results show that participants  were able to author meaningful data visualizations from their self-created stamps, as well as several unique traits and uses of block-printing stamps. I conclude the thesis by discussing issues around expressivity and effectiveness of personalizing physical authoring tools, identify implications for the design and assembly of primitives in potential visualization authoring kits, and applications for physical authoring tools in the bigger scope of data democratization."
