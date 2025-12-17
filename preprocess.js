@@ -17,7 +17,14 @@ function getContributions(summary) {
 
   let contributions = [];
   for (let key of keys) {
-    contributions.push(summary.fileMap[key]);
+    /// Test if contributions are deactivated: contributions must include a title:
+    if(Object.keys(summary.fileMap[key]).includes("title")){
+      console.log(key)
+      contributions.push(summary.fileMap[key]);
+    }
+    else{
+      delete summary.fileMap[key]
+    }
   }
   contributions = contributions.sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
@@ -49,7 +56,7 @@ function getPeople(summary) {
 
 /// Extend contributions with affiliated labs from authors
 
-const summary = require("./content/output/summary.json");
+let summary = require("./content/output/summary.json");
 let contributions = getContributions(summary);
 const people = getPeople(summary);
 contributions.forEach((contribution, p) => {

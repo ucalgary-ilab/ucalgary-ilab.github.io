@@ -109,6 +109,13 @@ The script will:
 
 Review the new YAML files created under [content/theses/](content/theses/).
 
+If you wish to exclude theses, for instance due to wrong UCalgary Scholaris PRISM data encoding, open the thesis YAML file, then:
+- comment out all its contents (prepend `# `),
+- optionally add a content at the top of the file explaining your rationale (prepend `## ` to disambiguate with commented out contents), 
+- add `{}` for compatibility with [preprocess.js](preprocess.js). 
+Then re-running `fetch-theses.js ` will not recreate the file.
+Example: [content/theses/phd-2018-moazzen.yaml](content/theses/phd-2018-moazzen.yaml).
+
 ##### Option 2: Manually
 
 Check existing examples under [content/theses](content/theses).
