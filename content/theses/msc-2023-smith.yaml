@@ -1,0 +1,21 @@
+date: "2023-08"
+title: "Expanding the User Interactions and Design Process of Haptic Experiences in Virtual Reality"
+author: Christopher Geoffrey Smith
+advisors:
+  - Ehud Sharlin
+  - Sowmya Somanath
+  - Ryo Suzuki
+committee:
+  - Ehud Sharlin
+  - Sowmya Somanath
+  - Ryo Suzuki
+  - Richard Zhao
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/116896
+doi: https://dx.doi.org/10.11575/PRISM/41738
+keywords: Virtual Reality, Haptics, Design Tool, Tactile Feedback, Design Process
+abstract: "Virtual reality can be a highly immersive experience due to its realistic visual presentation. This immersive state is useful for applications including education, training, and entertainment. To enhance the state of immersion provided by virtual reality further, devices capable of simulating touch and force have been researched to allow not only a visual and audio experience but a haptic experience as well. Such research has investigated many approaches to generating haptics for virtual reality but often does not explore how to create an immersive haptic experience using them. In this thesis, we present a discussion on four proposed areas of the virtual reality haptic experience design process using a demonstration methodology. To investigate the application of haptic devices, we designed a modular ungrounded haptic system which was used to create a general-purpose device capable of force-based feedback and used it in the three topics of exploration. The first area explored is the application of existing haptic theory for aircraft control to the field of virtual reality drone control. The second area explored is the presence of the size-weight sensory illusion within virtual reality when using a simulated haptic force.  The third area explored is how authoring within a virtual reality medium can be used by a designer to create VR haptic experiences. From these explorations, we begin a higher-level discussion of the broader process of creating a virtual reality haptic experience. Using the results of each project as a representation of our proposed design steps, we discuss not only the broader concepts the steps contribute to the process and their importance, but also draw connections between them. By doing this, we present a more holistic approach to the large-scale design of virtual reality haptic experiences and the benefits we believe it provides."
