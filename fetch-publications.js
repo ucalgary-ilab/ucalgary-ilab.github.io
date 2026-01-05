@@ -2,8 +2,8 @@ import fs from "fs";
 
 let author = "";
 const dblpUrl = "https://dblp.org/search/publ/api?h=1000&format=json&q=";
-const crossRefUrl = "https://api.crossref.org/works/";
 const inputDir = "./content/input";
+const inputPubDir = `${inputDir}/publications`;
 const pubDir = "./content/publications";
 
 if(process.argv.length === 3){
@@ -16,7 +16,7 @@ else{
 console.log(`Fetching publications for author ${author}`)
 
 const authorFile = author.toLowerCase().replaceAll(" ", "-");
-const authorFilePath = `${inputDir}/${authorFile}.json`;
+const authorFilePath = `${inputPubDir}/${authorFile}.json`;
 
 /// Fetch JSON data from DBLP
 async function fetchDBLPJSON(author) {
@@ -24,11 +24,16 @@ async function fetchDBLPJSON(author) {
   if (!fs.existsSync(authorFilePath)) {
     const query = dblpUrl + encodeURI(author);
     console.log(`Fetching ${authorFilePath} via query ${query}.`);
+    /// Note: fs-extra supports recursive `mkdir -p`
     if (!fs.existsSync(inputDir)) {
       fs.mkdirSync(inputDir);
     }
+    if (!fs.existsSync(inputPubDir)) {
+      fs.mkdirSync(inputPubDir);
+    }
     const response = await fetch(query);
     data = await response.json();
+    console.log("response", response)
     if(data.result.status.text !== "OK"){
         console.log(`Fetching ${authorFilePath} via query ${query} failed.`);
     }
@@ -54,6 +59,10 @@ function fixAuthorName(author){
 
 async function parseDBLP(){
     /// Parse each hit
+    if(!data){
+        console.log(`Failed to fetch data from DBLP.`)
+        process.exit(2)
+    }
     const nHits = data.result.hits["@total"];
     console.log(`Found ${nHits} hits.`);
     const hits = data.result.hits.hit;
