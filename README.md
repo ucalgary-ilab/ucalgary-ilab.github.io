@@ -18,7 +18,8 @@
 ## Generic Workflow for all updates
 
 - [Create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue) to document you planned changes.
-  - [Create a branch to work on the above issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) with a concise self-explanatory title describing your anticipated updates.
+  - **If you are an iLab member and need access to update the website**: please mention @ucalgary-ilab/ucalgary-ilab-website in your issue's description to get invited to join either [ucalgary-ilab-students](https://github.com/orgs/ucalgary-ilab/teams/ucalgary-ilab-students/members) (if student) or [ucalgary-ilab-faculty](https://github.com/orgs/ucalgary-ilab/teams/ucalgary-ilab-faculty/members) (if prof), wait until you receive and accept the invitation before proceeding further with the instructions.
+  - [Create a branch to work on the above issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue) **from this repository, NOT A FORK** with a concise self-explanatory title describing your anticipated updates.
   - Browse your branch by following the hyperlink generated in your issue.
   - Update your branch files with desired changes: browse [Updating Specific Content](#updating-specific-content) for more details.
 - [Create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) (optionally in draft mode if you need more updates) with a similar title as for your issue.
