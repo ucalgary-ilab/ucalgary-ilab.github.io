@@ -7,12 +7,25 @@
 # the repo. Unless a later match takes precedence,
 # @ucalgary-ilab/ucalgary-ilab-website will be requested for
 # review when someone opens a pull request.
-* @ucalgary-ilab/ucalgary-ilab-website
+# Backend files
+* @ucalgary-ilab/ucalgary-ilab-website-backend
+
+# Note: backend team needs to update the following rules (until devops lines) on newly introduced folders/files
 
 # Order is important; the last matching pattern takes the most
 # precedence. 
 
+# Documentation files
+README.md @ucalgary-ilab/ucalgary-ilab-website-backend @ucalgary-ilab/ucalgary-ilab-website-content
+
+# Content files
+/content/ @ucalgary-ilab/ucalgary-ilab-website-content
+/static/ @ucalgary-ilab/ucalgary-ilab-website-content
+
 # When someone opens a pull request that only
 # modifies ,github files, only @ucalgary-ilab/ucalgary-ilab-devops and not the global
 # owner(s) will be requested for a review.
+CNAME @ucalgary-ilab/ucalgary-ilab-devops
+CODEOWNERS @ucalgary-ilab/ucalgary-ilab-devops
+LICENSE @ucalgary-ilab/ucalgary-ilab-devops
 .github/ @ucalgary-ilab/ucalgary-ilab-devops
