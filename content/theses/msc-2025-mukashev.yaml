@@ -1,0 +1,16 @@
+date: "2025-07-04"
+title: "Electrotactile Tongue Interface for Human-Computer Interaction and Robot Teleoperation"
+author: Dinmukhammed Mukashev
+advisors:
+  - Aditya Nittala
+committee:
+  - Park Junho
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Graduate Studies"
+discipline: "Engineering – Biomedical"
+url: https://hdl.handle.net/1880/122303
+doi: https://dx.doi.org/10.11575/PRISM/49895
+keywords: haptics, robotics, sensory substitution, tongue interface, electrotactile
+abstract: "By exploiting the tongue’s exceptional density of nerve endings and low-threshold electrical response, electrotactile tongue displays provide a precise, low-power sensory-substitution pathway for teleoperated robotic systems. This approach addresses the persistent lack of effective haptic sensation in Robot Assisted Surgery (RAS) which recognized as a critical limitation. In this thesis, we introduce TactTongue, a modular electrotactile tongue-display toolkit with a simplified high-level user interface for rapid prototyping of electrotactile tongue stimulation (ETS). Building on previous works that informed the design of a flexible electrotactile tongue display, we investigate: (1) the efficacy of ETS for delivering force feedback during teleoperated manipulation tasks; (2) the design requirements and user-interface (UI) design to support rapid prototyping; (3) the potential for tongue-gesture input and applications; and (4) how tongue-based feedback can be compared to kinesthetic haptics during robot-assisted needle-insertion task. First, we evaluated ETS in an egg-lifting teleoperation task under visual-only and tongue-stimulation conditions, demonstrating potential or higher control accuracy with tongue feedback compared to vision alone. Building on these results, we refined the hardware and UI into a compact, modular TactTongue toolkit that lowers entry barriers for both researchers and practitioners. Moreover, we show a diverse set of application demonstrators—from accessibility aids with touch input and medical‐surgery overlays to extended‐reality, taste and texture rendering—highlighting the platform’s versatility beyond the force feedback. Drawing on insights from these early studies, in ongoing work, we explore integration of electrotactile tongue stimulation with kinesthetic haptic device to enhance force perception during robot assisted needle insertion in soft tissue. These findings validate TactTongue’s design, establish UI guidelines for rapid prototyping of tongue-based interfaces, and suggest a promising multimodal feedback paradigm for preciser RAS."
