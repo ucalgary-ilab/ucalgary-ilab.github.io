@@ -87,7 +87,7 @@ function getPerson(id) {
 
 function LabLogo({lab, colour, size}) {
   return <div style={{display: "flex"}}>
-    <div style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, margin: 'auto', display: 'flex', alignItems: 'center'}}>
+    <div className="lab logo" style={{ background: colour, zIndex: "2", borderRadius: "50%", minHeight: size, height: size, minWidth: size, width: size, margin: 'auto', display: 'flex', alignItems: 'center'}}>
     <Image width="0" height="0" src={lab.logo} alt={lab.id} style={{height:"auto", width:"100%"}}/>
     </div>
   </div>
@@ -118,7 +118,7 @@ export default function Lab ({lab, peopleStaticProps}) {
                 </p>
               }
               <div style={{display: "flex", alignItems: "center"}}>
-                <p style={{marginLeft: "5px"}}>
+                <p className="lab statement" style={{marginLeft: "5px"}}>
                   <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
                   <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                   <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
