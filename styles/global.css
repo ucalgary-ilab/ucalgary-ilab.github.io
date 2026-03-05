@@ -531,3 +531,57 @@ a:hover {
   font-size: 0.75em;
   color: gray;
 }
+
+/* For print and export to PDF */
+
+@media print {
+  /* Hide menus and footer */
+  .menu, footer {
+    display: none !important;
+  }
+
+  /* Fit each contribution in one page without break over next page */
+  .publication,
+  .project {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* New page for sections */
+  .divider {
+    display: block !important;
+    break-before: always;
+  }
+
+  h1 {
+    visibility: hidden !important;
+  }
+
+  /* Expand contribution width */
+  div.one.wide.column, 
+  div.eleven.wide.column.centered {
+    width: 100% !important;
+  }
+  .ui.grid {
+    padding: unset !important;
+  }
+
+  /* Use larger lab logo with original colors */
+  .lab.logo {
+    background: none !important;
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  /* Larger lab statement */
+  .lab.statement {
+    font-size: 2em !important;
+  }
+
+  /* Hide contribution segments */
+  .ui.segment {
+    box-shadow: unset !important;
+    border-left: unset !important;
+    border-right: unset !important;
+  }
+}

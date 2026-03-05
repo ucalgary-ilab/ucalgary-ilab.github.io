@@ -89,7 +89,7 @@ export default function Labs ({labs}) {
                         <p style={{marginLeft: "5px"}}>
                           <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
                           <Link href={url}><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
-                          <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
+                          <span style={{fontSize: "1.15em"}}> <span style={{whiteSpace: "nowrap"}}>(<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>)</span> {lab.statement} </span> </p>
                       </div>
                     </div>
 
@@ -113,7 +113,7 @@ export default function Labs ({labs}) {
                           </Link>
                           <div style={{display: "flex", alignItems: "center"}}>
                             <p> <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.15em"}}> {lab.name} </span></Link>
-                              <span style={{fontSize: "0.8em"}}> (<Link href={`/people/${lab.prof}`}>Dr. { lab.person.name }</Link> - { lab.person.title }) {lab.description}. </span> </p>
+                              <span style={{fontSize: "0.8em"}}> <span style={{whiteSpace: "nowrap"}}>(<Link href={`/people/${lab.prof}`}>Dr. { lab.person.name }</Link></span> &ndash; { lab.person.title }) {lab.description}. </span> </p>
                           </div>
                         </div>
 
