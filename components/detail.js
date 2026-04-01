@@ -106,9 +106,11 @@ class Detail extends React.Component {
     .filter(dir => dir.name === 'images')[0].children
     .filter(dir => dir.name === this.plural);
     if (contribImages.length === 0) return;
-    const dirs = contribImages[0]
+    let dirs = contribImages[0]
     .children
-    .filter(dir => dir.name === 'figures')[0].children
+    .filter(dir => dir.name === 'figures');
+    if (dirs.length === 0) return;
+    dirs = dirs[0].children
     for (let dir of dirs) {
       let id = dir.name
       let files = dir.children.map(file => file.path )
