@@ -220,6 +220,7 @@ a:hover {
   margin: 20px auto;
 }
 
+#projects img.cover,
 #publications img.cover {
   width: 260px;
   height: 120px;
@@ -237,6 +238,7 @@ a:hover {
   background: #efefef;
 }
 
+#projects img.cover
 #publication img.cover {
   width: 200px;
   height: 120px;
