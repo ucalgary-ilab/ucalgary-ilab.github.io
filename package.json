@@ -38,5 +38,6 @@
     "lodash": "^4.17.21",
     "processmd": "^4.7.0",
     "typescript": "5.9.2"
-  }
+  },
+  "packageManager": "yarn@4.14.1"
 }
