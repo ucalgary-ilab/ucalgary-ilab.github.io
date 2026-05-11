@@ -34,7 +34,7 @@
 - id: shivers
   name: SHIVERS
   description:
-  statement: crafts new tools for multisensory (haptic) and multimedia (sonic) interaction.
+  statement: "craft new tools <br/>for multisensory (haptic) and multimedia (sonic) interaction."
   prof: christian-frisson
   url: https://ilab.ucalgary.ca/labs/shivers
   colour: "#a3b86c"

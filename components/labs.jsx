@@ -89,7 +89,7 @@ export default function Labs ({labs}) {
                         <p style={{marginLeft: "5px"}}>
                           <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
                           <Link href={url}><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
-                          <span style={{fontSize: "1.15em"}}> <span style={{whiteSpace: "nowrap"}}>(<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>)</span> {lab.statement} </span> </p>
+                          <span style={{fontSize: "1.15em"}}> <span style={{whiteSpace: "nowrap"}}>(<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>)</span> {lab.statement.replace("<br/>","")} </span> </p>
                       </div>
                     </div>
 
