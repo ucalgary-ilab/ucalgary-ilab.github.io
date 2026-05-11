@@ -137,9 +137,9 @@ export default function Event ({event, peopleStaticProps}) {
               </div>
             </div>
             {/* <People event={ event.id } {...peopleStaticProps} /> */}
-            {/* <Publications event={ event.id } /> */}
+            <Publications selection={ event.publications } />
             {/* <Theses event={ event.id } /> */}
-            {/* <Projects event={ event.id } /> */}
+            <Projects selection={ event.projects } />
           </div>
           <div className="one wide column"></div>
         </div>
