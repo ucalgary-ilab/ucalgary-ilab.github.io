@@ -38,5 +38,9 @@
     "lodash": "^4.17.21",
     "processmd": "^4.7.0",
     "typescript": "5.9.2"
+  },
+  "volta": {
+    "node": "22.22.2",
+    "yarn": "4.14.1"
   }
 }
