@@ -25,16 +25,23 @@ export async function getStaticProps() {
 }
 
 
-function getContributions(plural,lab) {
+function getContributions(plural,lab,selection) {
     const fileNames = Object.keys(summary.fileMap)
     const keys = fileNames.filter((fileName) => {
       return fileName.includes(plural)
     })
-
     let contributions = []
     for (let key of keys) {
       const contribution = summary.fileMap[key]
-      if(lab === undefined || (contribution.labs !== undefined && contribution.labs.includes(lab))){
+      if(selection !== undefined){
+        selection.forEach(s => {
+          console.log("s",s,"key",key)
+          if(key.includes(s)){
+            contributions.push(contribution)
+          }
+        })
+      }
+      else if(lab === undefined || (contribution.labs !== undefined && contribution.labs.includes(lab))){
         contributions.push(contribution)
       }
     }
@@ -110,12 +117,12 @@ function getCovers(plural) {
   return covers;
 }
 
-export default function Contributions ({type, author=undefined, plural=undefined, short=false, lab=undefined}) {
+export default function Contributions ({type, author=undefined, plural=undefined, short=false, lab=undefined, selection=undefined}) {
 
   if(!type)return;
   plural = plural || `${ type }s`
 
-  let contributions = getContributions(plural,lab);
+  let contributions = getContributions(plural,lab,selection);
   let {people, names, namesId} = getPeople();
 
   if (short) {
@@ -146,7 +153,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
     <div id={ plural } className="category ui container">
       <h1 className="ui horizontal divider header">
         <FontAwesomeIcon icon="far fa-file-lines" />
-        { short ? `Recent ${title}` : title }
+        { short ? `Recent ${title}` : (selection ? `Selected ${title}` : title) }
       </h1>
       <div className="ui segment" style={{ marginTop: '50px' }}>
         { contributions.map((contribution, i) => {
