@@ -117,8 +117,8 @@ export default function Lab ({lab, peopleStaticProps}) {
                   </Link>
                 </p>
               }
-              <div style={{display: "flex", alignItems: "center"}}>
-                <p className="lab statement" style={{marginLeft: "5px"}}>
+              <div>
+                <p className="lab statement">
                   <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
                   <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                   <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
