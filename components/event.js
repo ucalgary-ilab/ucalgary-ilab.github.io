@@ -1,6 +1,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -107,7 +108,7 @@ export default function Event ({event, peopleStaticProps}) {
           <div className="one wide column"></div>
           <div className="eleven wide column centered">
             <div id="event" className="category" style={{ textAlign: 'center' }}>
-              <EventLogo event={event} colour={event.colour} size="150px"/>
+              {/* <EventLogo event={event} colour={event.colour} size="150px"/> */}
               <h1>{ event.name }</h1>
               <p>{ event.title }</p>
               { event.url &&
@@ -115,6 +116,11 @@ export default function Event ({event, peopleStaticProps}) {
                   <Link href={ event.url } target="_blank">
                   <FontAwesomeIcon icon="fas fa-link fa-fw" />{ event.url }
                   </Link>
+                </p>
+              }
+              { event.description &&
+                <p>
+                  {parse(event.description)}
                 </p>
               }
               <div style={{display: "flex", alignItems: "center"}}>
