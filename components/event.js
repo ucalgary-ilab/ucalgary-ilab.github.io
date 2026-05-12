@@ -111,6 +111,16 @@ export default function Event ({event, peopleStaticProps}) {
               {/* <EventLogo event={event} colour={event.colour} size="150px"/> */}
               <h1>{ event.name }</h1>
               <p>{ event.title }</p>
+              { event.date &&
+                <p>
+                  {
+                    event.date && new Date(event.date.split("-")).toDateString()
+                  }
+                  {
+                    event.start && event.end && <span> ({event.start}-{event.end})</span>
+                  }
+                </p>
+              }
               { event.url &&
                 <p>
                   <Link href={ event.url } target="_blank">
