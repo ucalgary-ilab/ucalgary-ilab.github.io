@@ -35,7 +35,6 @@ function getContributions(plural,lab,selection) {
       const contribution = summary.fileMap[key]
       if(selection !== undefined){
         selection.forEach(s => {
-          console.log("s",s,"key",key)
           if(key.includes(s)){
             contributions.push(contribution)
           }
