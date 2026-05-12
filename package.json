@@ -39,5 +39,8 @@
     "processmd": "^4.7.0",
     "typescript": "5.9.2"
   },
-  "packageManager": "yarn@4.14.1"
+  "volta": {
+    "node": "22.22.2",
+    "yarn": "4.14.1"
+  }
 }
