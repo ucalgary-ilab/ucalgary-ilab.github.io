@@ -1,5 +1,8 @@
 - id: ilab-demo-day-2026
   name: iLab Demo Day 2026
+  date: '2026-05-13'
+  start: '13:00'
+  end: '16:00'
   description: "The iLab has hosted Demo Day 2026. This event provides a once-a-year opportunity to see some of the exciting new research in data visualization, human-robot interaction, remote collaboration, digital fabrication, haptics, and creative and playful user interfaces taking place in the iLab.<br/>Demo Day features short presentations from iLab professors, as well as PhD, Masters and Undergraduate Students about their current research. Topics include health visualizations, human-robot interaction, designing for creativity, social VR, epidermal robots, performance and HCI, haptics, human-AI interaction and many more.<br/>The round of talks is followed by demonstrations that visitors will interact with in small groups along the same research themes."
   projects:
   - cpsc503-2026-pham
@@ -9,5 +12,3 @@
   - chi-2026-pearman
   - uist-2025-irudayaraj
   - uist-2025-kumar
-
-
