@@ -42,7 +42,8 @@ function renderLink(lab, key) {
       return ''
     }
 
-    let title = lab[key].split('/')[3]
+    let title = lab[key].replace(/\/$/, '').split('/').slice(-1)[0];
+    console.log(lab[key],"title",title)
     let href = lab[key]
     let icon
     switch(key) {
@@ -67,7 +68,6 @@ function renderLink(lab, key) {
         icon = 'far fa-envelope fa-fw'
         break
       case 'linkedin':
-        title = 'LinkedIn'
         icon = 'fab fa-linkedin-in fa-fw'
         break
     }
