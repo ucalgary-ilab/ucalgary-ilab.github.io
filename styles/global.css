@@ -238,7 +238,7 @@ a:hover {
   background: #efefef;
 }
 
-#projects img.cover
+#project img.cover,
 #publication img.cover {
   width: 200px;
   height: 120px;
@@ -255,12 +255,14 @@ a:hover {
   font-size: 1.3rem !important;
 }
 
+#project #figure .image,
 #publication #figure .image {
   width: 100%;
   height: 100%;
   background: white;
 }
 
+#project #figure img,
 #publication #figure img {
   width: 100%;
   height: 100%;
