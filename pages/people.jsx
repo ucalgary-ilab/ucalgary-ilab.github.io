@@ -132,7 +132,7 @@ export default function People ({people, short=false, lab=undefined}) {
                           <span><br/>{person.now}</span>
                         }
                       </p>
-                      {type.key === 'faculty' &&
+                      {person.keywords !== null && person.keywords !== undefined &&
                         <div className="ui large basic labels">
                           {person.keywords.map((keyword) => {
                             return <span key={keyword}

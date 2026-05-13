@@ -51,7 +51,7 @@ function renderLink(person, key) {
       return ''
     }
 
-    let title = person[key].split('/')[3]
+    let title = person[key].replace(/\/$/, '').split('/').slice(-1)[0];
     let href = person[key]
     let icon
     switch(key) {
@@ -76,7 +76,6 @@ function renderLink(person, key) {
         icon = 'far fa-envelope fa-fw'
         break
       case 'linkedin':
-        title = 'LinkedIn'
         icon = 'fab fa-linkedin-in fa-fw'
         break
     }
@@ -114,6 +113,15 @@ export default function Person ({person}) {
               <Image width={0} height={0} className="ui circular image large-profile" alt={ `${person.name}'s photo` } src={ person.photo } style={{ margin: 'auto' }} />
               <h1>{ person.name }</h1>
               <p>{ person.title }</p>
+              {person.keywords !== null && person.keywords !== undefined && //type.key === 'faculty' &&
+                        <div className="ui large basic labels">
+                          {person.keywords.map((keyword) => {
+                            return <span key={keyword}
+                              className="ui large inverted label label-brown-color">{keyword}</span>
+                          })
+                          }
+                        </div>
+                      }
               { person.url &&
                 <p>
                   <Link href={ person.url } target="_blank">

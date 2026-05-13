@@ -1,0 +1,12 @@
+date: 2026-07
+title: "Experiencing different 1 Degree-of-Freedom rotary actuators across iterations of TorqueTuners in musical applications"
+authors:
+  - Danilo Pešević
+  - Isaac Ng
+  - Maxwell Gentili-Morin
+  - Marcelo M. Wanderley
+  - Christian Frisson
+series: EuroHaptics 2026 Hands-On Demos
+keywords: force-feedback haptics, musical applications
+abstract: "The addition of haptic feedback in digital musical instruments (DMIs) can improve performance control and expressivity. The TorqueTuner is a family of embedded rotary force-feedback modules that enable DMI designers to map haptic effects to musical parameters, facilitating straightforward haptic integration. In this demonstration, we present 3 TorqueTuner iterations based on different motors and drivers: 1) the newly redesigned Mechaduino (forked from an obsolete open-source servo platform by Tropical Labs), 2) the Mjbots Moteus (a high-power industrial motor), and the Makerfabs MaTouch SmartKnob (a self-contained device with a display). Attendees will interact with and compare each iteration, experiencing rotary haptic effects applied to a live musical context. Ultimately, we aim for this demonstration to lead to greater and easier integration of haptics into DMIs"
+github: https://github.com/ucalgary-shivers/TorqueTuner
