@@ -243,10 +243,12 @@ class Detail extends React.Component {
                         <Image width={0} height={0} alt={ `${ this.namesId[author] } photo` } src={ `/static/images/people/${ this.namesId[author] }.jpg`} className="ui circular spaced image mini-profile" />
                         <strong>{author}</strong>
                       </a>
-                      <span className="role"> ({role})</span>
+                      {role !== "author" && <span className="role"> ({role})</span>}
                       </>
                       :
-                      <span key={ author }>{parse(author)} <span className="role"> ({role})</span></span>
+                      <span key={ author }>{parse(author)} 
+                      {role !== "author" && <span className="role"> ({role})</span>}
+                      </span>
                       );
                     }).reduce((prevA, currentA) => {if (prevA === ""){return currentA} else{return [prevA, ', ', currentA];}},"")
                   }).reduce((prevR, currentR) => {if (prevR === ""){return currentR} else{return [prevR, ', ', currentR];}},"")
