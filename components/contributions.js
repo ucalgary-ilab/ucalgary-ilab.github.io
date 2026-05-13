@@ -232,8 +232,8 @@ export default function Contributions ({type, author=undefined, plural=undefined
                         {role !== "author" && <span className="role"> ({role})</span>}
                         </>
                       );
-                      }).reduce((prevA, currentA) => [prevA, ', ', currentA],"")
-                    }).reduce((prevR, currentR) => [prevR, ', ', currentR],"")
+                      }).reduce((prevA, currentA) => {if (prevA === ""){return currentA} else{return [prevA, ', ', currentA];}},"")
+                    }).reduce((prevR, currentR) => {if (prevR === ""){return currentR} else{return [prevR, ', ', currentR];}},"")
                   }
                 </p>
                 <div>
