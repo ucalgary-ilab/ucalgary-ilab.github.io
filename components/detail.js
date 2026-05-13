@@ -248,8 +248,8 @@ class Detail extends React.Component {
                       :
                       <span key={ author }>{parse(author)} <span className="role"> ({role})</span></span>
                       );
-                    }).reduce((prevA, currentA) => [prevA, ', ', currentA])
-                  }).reduce((prevR, currentR) => [prevR, ', ', currentR])
+                    }).reduce((prevA, currentA) => [prevA, ', ', currentA],"")
+                  }).reduce((prevR, currentR) => [prevR, ', ', currentR],"")
                 }
               </p>
               { this.showPDF && 
@@ -304,8 +304,8 @@ class Detail extends React.Component {
             <p style={{ lineHeight: "160%" }}>
               { Object.keys(authors).map(role => {
                   return authors[role]
-                    .reduce((prevA, currentA) => [prevA, ', ', currentA])
-                  }).reduce((prevR, currentR) => [prevR, ', ', currentR])
+                    .reduce((prevA, currentA) => [prevA, ', ', currentA],"")
+                  }).reduce((prevR, currentR) => [prevR, ', ', currentR],"")
                 }.&nbsp;
               <b>{ parse(this.contribution.title) }</b>.&nbsp;
               <i>
