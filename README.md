@@ -294,6 +294,13 @@ git commit -m 'Add more figures'
 git push origin main
 ```
 
+### How to add a QR code
+
+Generate QR code by listing the local path to a project or publication YAML file:
+```shell
+node generate-qr-code.js content/projects/capstone-2025-haptic-floor-proxy.yaml
+```
+
 ## Development
 
 ### How to Check by Running the Server in Local
