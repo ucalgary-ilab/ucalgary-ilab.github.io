@@ -189,7 +189,24 @@ class Detail extends React.Component {
       return <div></div>
     }
     let title = this.type.charAt(0).toUpperCase() + this.type.slice(1).toLowerCase()
-    let authors = this.contribution.authors || [this.contribution.author, ...this.contribution.advisors, ...this.contribution.committee];
+    let authors = {}
+    if(this.contribution.members){
+      Object.keys(this.contribution.members).forEach(role => {
+        authors = Object.assign(authors, {[role]: this.contribution.members[role]});
+      }) 
+    }
+    if(this.contribution.author){
+      authors = Object.assign(authors, {author: [this.contribution.author]});
+    }
+    if(this.contribution.authors){
+      authors = Object.assign(authors, {author: this.contribution.authors});
+    }
+    if(this.contribution.advisors){
+      authors = Object.assign(authors, {advisor: this.contribution.advisors});
+    }
+    if(this.contribution.committee){
+      authors = Object.assign(authors, {committee: this.contribution.committee});
+    }
     let series = this.contribution.series ? parse(this.contribution.series) : `${this.contribution.degree.split("(")[1].split(")")[0]} ${this.contribution.date.split("-")[0]}`
 
     return (
@@ -217,17 +234,8 @@ class Detail extends React.Component {
                 <h1>{ parse(this.contribution.title) }</h1>
               }
               <p className="meta">
-                { authors.map((author) => {
-                    let role = "";
-                    if (this.contribution.author && this.contribution.author === author){
-                      role = " (author)"
-                    }
-                    else if (this.contribution.advisors && this.contribution.advisors.includes(author)){
-                      role = " (supervisor)"
-                    }
-                    else if (this.contribution.committee && this.contribution.committee.includes(author)){
-                      role = " (committee)"
-                    }
+                { Object.keys(authors).map(role => {
+                  return authors[role].map((author) => {
                     return (
                       this.names.includes(author) ?
                       <>
@@ -235,12 +243,13 @@ class Detail extends React.Component {
                         <Image width={0} height={0} alt={ `${ this.namesId[author] } photo` } src={ `/static/images/people/${ this.namesId[author] }.jpg`} className="ui circular spaced image mini-profile" />
                         <strong>{author}</strong>
                       </a>
-                      <span className="role">{role}</span>
+                      <span className="role"> ({role})</span>
                       </>
                       :
-                      <span key={ author }>{parse(author)} <span className="role">{role}</span></span>
-                    )
-                  }).reduce((prev, current) => [prev, ', ', current])
+                      <span key={ author }>{parse(author)} <span className="role"> ({role})</span></span>
+                      );
+                    }).reduce((prevA, currentA) => [prevA, ', ', currentA])
+                  }).reduce((prevR, currentR) => [prevR, ', ', currentR])
                 }
               </p>
               { this.showPDF && 
@@ -293,7 +302,11 @@ class Detail extends React.Component {
           <h1>Reference</h1>
           <div className="ui segment">
             <p style={{ lineHeight: "160%" }}>
-              { (this.contribution.authors || [this.contribution.author]).reduce((prev, current) => [prev, ', ', parse(current)]) }.&nbsp;
+              { Object.keys(authors).map(role => {
+                  return authors[role]
+                    .reduce((prevA, currentA) => [prevA, ', ', currentA])
+                  }).reduce((prevR, currentR) => [prevR, ', ', currentR])
+                }.&nbsp;
               <b>{ parse(this.contribution.title) }</b>.&nbsp;
               <i>
               {/* Publications */}
