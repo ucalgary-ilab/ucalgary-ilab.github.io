@@ -47,6 +47,7 @@ function programStringFromProgram(program) {
   switch (program) {
     case 'cs': return 'CS '
     case 'cmd': return 'CMD '
+    case 'visiting': return 'Visiting '
   }
   return ''
 }
