@@ -129,9 +129,9 @@ export default function Event ({event, peopleStaticProps}) {
                 </p>
               }
               { event.description &&
-                <p>
+                <div>
                   {parse(event.description)}
-                </p>
+                </div>
               }
               <div style={{display: "flex", alignItems: "center"}}>
                 <p className="event statement" style={{marginLeft: "5px"}}>
