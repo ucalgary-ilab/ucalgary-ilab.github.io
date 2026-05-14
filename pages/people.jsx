@@ -51,7 +51,7 @@ function programStringFromProgram(program) {
   return ''
 }
 
-function getTitle(person) {
+export function getTitle(person) {
   let title = typeStringFromType(person.type)
 
   if (person.program) {
