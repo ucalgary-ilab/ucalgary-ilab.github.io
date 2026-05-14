@@ -47,11 +47,12 @@ function programStringFromProgram(program) {
   switch (program) {
     case 'cs': return 'CS '
     case 'cmd': return 'CMD '
+    case 'visiting': return 'Visiting '
   }
   return ''
 }
 
-function getTitle(person) {
+export function getTitle(person) {
   let title = typeStringFromType(person.type)
 
   if (person.program) {

@@ -16,6 +16,7 @@ import Publications from '../pages/publications'
 import Theses from '../pages/theses'
 import Projects from '../pages/projects'
 import {getLabPictures, getLabPicture} from './labs'
+import {getTitle} from '../pages/people'
 
 import files from '../content/output/files.json'
 import { default as labsJson } from '../content/output/labs.json'
@@ -98,6 +99,7 @@ export default function Person ({person}) {
       picture: getLabPicture(lab.id, pictures)
     })
   )
+  const title = getTitle(person)
   return (
     <>
       <Meta
@@ -112,7 +114,13 @@ export default function Person ({person}) {
             <div id="person" className="category" style={{ textAlign: 'center' }}>
               <Image width={0} height={0} className="ui circular image large-profile" alt={ `${person.name}'s photo` } src={ person.photo } style={{ margin: 'auto' }} />
               <h1>{ person.name }</h1>
-              <p>{ person.title }</p>
+              <p>{ person.title || title }</p>
+              { person.university &&
+                <p>{ person.university }</p>
+              }
+              { person.faculty &&
+                <p>{ person.faculty }</p>
+              }
               {person.keywords !== null && person.keywords !== undefined && //type.key === 'faculty' &&
                         <div className="ui large basic labels">
                           {person.keywords.map((keyword) => {
