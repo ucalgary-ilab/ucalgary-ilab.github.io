@@ -30,7 +30,6 @@ export async function getStaticProps({ params }) {
   event.index = events.findIndex((l) => l.id == id);
   const logos = getEventPictures()
   event.logo = getEventPicture(id, logos)
-  // event.person = getPerson(event.prof)
 
   const peopleStaticProps = (await People_getStaticProps()).props
 
@@ -81,10 +80,6 @@ function renderLink(event, key) {
       </div>
     )
   }
-
-// function getPerson(id) {
-//   return require(`../content/output/people/${id}.json`)
-// }
 
 function EventLogo({event, colour, size}) {
   return <div style={{display: "flex"}}>
@@ -146,9 +141,8 @@ export default function Event ({event, peopleStaticProps}) {
                 }) }
               </div>
             </div>
-            {/* <People event={ event.id } {...peopleStaticProps} /> */}
+            <People selection={ event.people } {...peopleStaticProps} />
             <Publications selection={ event.publications } />
-            {/* <Theses event={ event.id } /> */}
             <Projects selection={ event.projects } />
           </div>
           <div className="one wide column"></div>
