@@ -1,0 +1,28 @@
+date: 2024
+title: "Waybionic: UCalgary Club Specializing in Robotic Surgery in Space"
+members:
+  president:
+  - Lina Dahou
+  electrical:
+  - Yash Dhillon
+  - Samipya Rijal
+  software:
+  - Yassin Soliman
+  - Mujtaba Zia
+  - Talha Zafar
+  mechanical:
+  - Abdul Tinwala
+  - Zayd Charanek
+  biomedical: 
+  - Abdul Karim
+  - Ahmeel Pablo
+advisors:
+  - Marie Charbonneau
+  - Christian Frisson
+series: Student Club
+keywords: electrical engineering, mechanical engineering, software engineering, biomedical engineering, robotics
+abstract: "At WayBionic, we strive to revolutionize remote surgery by developing a bionic arm inspired by the challenges of performing medical procedures in space. Our goal is to create innovative, reliable, and precise tools that empower both astronauts and doctors, whether in orbit or on Earth."
+url: https://www.waybionic.com
+linkedin: https://www.linkedin.com/company/waybionic
+github: https://github.com/waybionic
+

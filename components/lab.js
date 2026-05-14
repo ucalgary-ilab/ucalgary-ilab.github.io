@@ -1,6 +1,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 /* https://docs.fontawesome.com/web/use-with/react/add-icons#add-whole-styles */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -40,8 +41,7 @@ function renderLink(lab, key) {
     if (!lab[key]) {
       return ''
     }
-
-    let title = lab[key].split('/')[3]
+    let title = lab[key].replace(/\/$/, '').split('/').slice(-1)[0];
     let href = lab[key]
     let icon
     switch(key) {
@@ -66,7 +66,6 @@ function renderLink(lab, key) {
         icon = 'far fa-envelope fa-fw'
         break
       case 'linkedin':
-        title = 'LinkedIn'
         icon = 'fab fa-linkedin-in fa-fw'
         break
     }
@@ -117,11 +116,13 @@ export default function Lab ({lab, peopleStaticProps}) {
                   </Link>
                 </p>
               }
-              <div style={{display: "flex", alignItems: "center"}}>
-                <p className="lab statement" style={{marginLeft: "5px"}}>
+              <div>
+                <p className="lab statement">
                   <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
                   <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
-                  <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement} </span> </p>
+                  <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement && parse(lab.statement)} 
+                  </span> 
+                </p>
               </div>
               <div className="ui horizontal small divided link list">
                 { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
