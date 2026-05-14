@@ -115,7 +115,6 @@ export default function People ({people, short=false, lab=undefined, selection=u
             if(person.type === type.key){
               if(selection !== undefined){
                 selection.forEach(s => {
-                  console.log(person.name,s)
                   if(person.name === s){
                     include = true;
                   }
