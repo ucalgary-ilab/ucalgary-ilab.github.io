@@ -115,6 +115,12 @@ export default function Person ({person}) {
               <Image width={0} height={0} className="ui circular image large-profile" alt={ `${person.name}'s photo` } src={ person.photo } style={{ margin: 'auto' }} />
               <h1>{ person.name }</h1>
               <p>{ person.title || title }</p>
+              { person.university &&
+                <p>{ person.university }</p>
+              }
+              { person.faculty &&
+                <p>{ person.faculty }</p>
+              }
               {person.keywords !== null && person.keywords !== undefined && //type.key === 'faculty' &&
                         <div className="ui large basic labels">
                           {person.keywords.map((keyword) => {
