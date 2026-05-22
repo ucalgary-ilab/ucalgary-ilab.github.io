@@ -124,23 +124,23 @@ export default function Contributions ({type, author=undefined, plural=undefined
   let supervised = ""
   if (author) {
     contributions = contributions.filter((contribution) => {
-      let authors = []
+      let authors = [];
       if(contribution.members){
-        Object.keys(contribution.members).forEach(role => {
-          authors.push(contribution.members[role]);
+        Object.keys(contribution.members).forEach(role => {          
+          contribution.members[role].forEach(author => authors.push(author));
         }) 
       }
       if(contribution.author){
         authors.push(contribution.author);
       }
       if(contribution.authors){
-        authors.push(contribution.authors);
+        contribution.authors.forEach(author => authors.push(author));
       }
       if(contribution.advisors){
-        authors.push(contribution.advisors);
+        contribution.advisors.forEach(author => authors.push(author));
       }
       if(contribution.committee){
-        authors.push(contribution.committee);
+        contribution.committee.forEach(author => authors.push(author));
       }
       return authors.includes(author.name) || authors.includes(author.alias)
     })
