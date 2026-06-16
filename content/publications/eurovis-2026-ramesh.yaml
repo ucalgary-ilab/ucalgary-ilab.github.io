@@ -1,0 +1,13 @@
+date: 2026-06
+title: "Input Visualizations to Track Health Data by Older Adults with Multiple Chronic Conditions"
+authors:
+  - Shri Harini Ramesh
+  - Foroozan Daneshzand
+  - Matteo Sotelo
+  - Mahsa Sinaei
+  - Fateme Rajabiyazdi
+series: EuroVis 2026
+doi: https://doi.org/10.48550/arXiv.2604.18741
+keywords: input visualization, health, older adults
+abstract: "Older adults living with multiple chronic conditions (MCC) can considerably benefit from collecting and reflecting on their health data. Many older adults collect their health data using various approaches, such as digital tools or handwritten notebooks. However, in these approaches, the act of collecting data does not itself yield insights; sensemaking and reflection happen only if individuals later review their accumulated records. The daily process of data collection thus offers limited opportunity for individuals to actively engage with their data or find the process personally meaningful and enjoyable. Personal data input visualizations using physical tokens offer a promising solution that can help individuals recognize evolving patterns while collecting data and discover meaningful insights more serendipitously and engagingly. Yet, there is a limited understanding of whether and how older adults living with MCC might adopt physical input visualizations to collect data and reflect on their health, and how the tangible, expressive, and personalizable nature of this process supports their sensemaking and reflection. In this paper, we present the results of our interview and diary studies in which older adults living with MCC inputted health data using physical tokens over two weeks. Our findings highlight the diverse and unique needs of older adults for tracking personal health data, illustrating how they adapt strategies and personalize physical input visualizations to align with their individual needs. We demonstrate how older adults integrated input visualizations into daily routines and leveraged tangible markers to reflect on patterns and behaviors, while enjoying the process of tracking and focusing on personal expression and meaningful reflection. Finally, we provide design considerations for supporting older adults with MCC when inputting health data through physical tokens."
+
