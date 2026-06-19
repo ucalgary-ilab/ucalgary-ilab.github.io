@@ -1,0 +1,17 @@
+date: "2025-08-27"
+title: "Combining Optical and Vibrational Tactile Sensing for Pre-emptive Grip Force Modulation in Robotic Grasping"
+author: Danissa Sandykbayeva
+advisors:
+  - Aditya Shekhar Nittala
+committee:
+  - Ehud Sharlin
+  - Marie Charbonneau
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Science"
+discipline: "Computer Science"
+url: https://hdl.handle.net/1880/122656
+doi: https://dx.doi.org/10.11575/PRISM/50249
+keywords: Tactile robotics, tactile sensors, optical sensors, vibrational sensors, robotic grasping
+abstract: "The last decade marked an incredible leap not only in computer science and engineering but also by a natural extension - Human-Robot Interaction. Robots are continuously evolving to simplify day-to-day tasks and the complex computational and physical challenges. However, to confidently rely on safe and efficient interactions with robots, anywhere from personal to industrial settings, we first need to ensure the robots are well-equipped to explore these settings and interact with this shared environment. In this sense, optimizing and reverse-engineering such a seemingly simple yet incredibly sophisticated process of grasping is more essential than ever. This work explores various tactile sensing techniques and aims to combine them into an ultimately optimal grasping system. The first sensor, OptiFlux, introduced in the thesis, utilizes a simple principle of intentional light leakage within incised optical guides induced by bending or pressure. An extension of this principle is a compact and flexible optical sensor capable of sensing small changes in the applied force. The second sensing system uses vibrational waves to carry essential information about the physical properties of the object that enters the system. This object information, combined with the pressure sensitivity acquired with the optical sensor, expands into an easily scalable soft tactile sensing system, allowing the robot to safely manipulate the most fragile objects. Lastly, both systems are integrated visually and analytically into a common graphical user interface, providing substantial ground for more efficient data collection and independent system control. Corresponding experiments explore the performance of each system individually and combine and present an opportunity for a discussion of future improvements and prospects of the research. In the world of tactile robotics, considering the advantages and drawbacks of various sensing methods, multimodal sensing might bring us closer to equipping robots with sensing capabilities matching or perhaps exceeding our own, leading to safer robotics."

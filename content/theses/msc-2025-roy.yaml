@@ -1,0 +1,18 @@
+date: "2025-09-09"
+title: "Engineering and Validating Soft Sensors for Interactive and Biomedical Applications"
+author: Sutirtha Roy
+advisors:
+  - Richa Pandey
+  - Aditya Nittala
+committee:
+  - Kangsoo Kim
+  - Fateme Rajabiyazdi
+degree: "Master of Science (MSc)"
+type: "master thesis"
+institution: "University of Calgary"
+faculty: "Schulich School of Engineering"
+discipline: "Engineering – Electrical & Computer"
+url: https://hdl.handle.net/1880/122812
+doi: https://dx.doi.org/10.11575/PRISM/50406
+keywords: On-Body Interaction, Epidermal Interfaces, Wearables, Haptics, Physiological Sensing, Electrochemical Sensing, Touch Sensing, Deformation Sensing, Soft Materials
+abstract: "Soft materials such as foams and textiles offer exciting opportunities for creating interactive devices that seamlessly integrate electronics into wearable, comfortable, and deformable forms. However, imparting elec-tronic functionality into these materials while preserving their inherent softness, breathability, and flexibility remains a significant challenge, especially when aiming for precise device patterning using accessible, low-cost fabrication techniques. This thesis addresses these challenges by introducing two novel platforms, FabFoam and rGOSense, that enable multi-functional sensing and interactive applications on soft substrates. FabFoam presents a scalable stencil-printing approach to pattern highly viscous functional inks directly onto foam substrates. This technique preserves the foam’s softness and elasticity while enabling the cre-ation of precise electrode designs for deformation sensing, touch input, electrotactile haptics, and on-body biochemical sensing. FabFoam’s sensors achieved signal-to-noise ratios (SNR) of approximately 34 for touch sensing and 25 for deformation across all inks, demonstrating reliable performance for interactive applica-tions. Electrochemical characterization showed that FabFoam’s sweat glucose sensor achieved a sensitivity of 2.74 μA/μM and a detection limit of 4.67 μM, confirming its potential for non-invasive glucose monitoring in wearable formats. Complementing this, rGOSense introduces a reduced graphene oxide (rGO)-coated nonwoven polyester fabric platform that offers superhydrophilic surface properties while retaining the textile’s softness and breathability. The rGO-coated textile demonstrates surface conductivity of 1.7 × 104 Ω/sq, which is about 2–10 times lower resistivity than several previously reported graphene- or carbon-based conductive textiles, enhancing electrical performance without compromising comfort. The rGOSense platform supports diverse sensing modalities, achieving SNR values of around 34 for touch sensing and approximately 26 for deformation sensing across multiple trials. Furthermore, its sweat glucose sensors achieved a sensitivity of 0.12 μA/μM<br/>and a detection limit of 0.47 μM, highlighting improved electrochemical performance suitable for practical wearable biosensing. Collectively, this thesis establishes accessible, low-cost fabrication workflows for integrating advanced sensing capabilities into soft materials, enabling new possibilities in wearable health monitoring, ubiquitous sensing, and human-computer interaction (HCI). Through systematic materials characterization, technical evaluations, and demonstrations of interactive scenarios, this work contributes significantly to the field of soft interactive devices by bridging material science innovations with practical HCI applications."
