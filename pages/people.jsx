@@ -82,7 +82,7 @@ function getPhoto(id, pictures) {
   }
 }
 
-export default function People ({people, short=false, lab=undefined}) {
+export default function People ({people, short=false, lab=undefined, selection=undefined}) {
 
   let types = [
     {key: 'faculty', title: 'Faculty'},
@@ -110,7 +110,25 @@ export default function People ({people, short=false, lab=undefined}) {
       </div>
       }
       { types.map((type) => {
-        const typePeople = people.filter(person => (person.type === type.key && (lab === undefined || (person.labs && person.labs.includes(lab)))))
+        const typePeople = people.filter(
+          person => {
+            let include = false;
+            if(person.type === type.key){
+              if(selection !== undefined){
+                selection.forEach(s => {
+                  if(person.name === s){
+                    include = true;
+                  }
+                })
+              }
+              else if(lab === undefined || (person.labs && person.labs.includes(lab)))
+              {
+                include = true;
+              }
+            }
+            return include;
+          }
+        )
         return (
          (typePeople.length > 0) &&
           <div className="people-category eleven wide column centered" key={type.title}>
