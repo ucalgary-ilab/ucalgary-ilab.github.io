@@ -34,9 +34,12 @@
   },
   "devDependencies": {
     "@types/react": "19.1.13",
+    "canvas": "^3.2.3",
     "html-react-parser": "^5.2.7",
+    "jsdom": "^29.1.1",
     "lodash": "^4.17.21",
     "processmd": "^4.7.0",
+    "qr-code-styling": "^1.9.2",
     "typescript": "5.9.2"
   },
   "volta": {

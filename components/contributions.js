@@ -110,6 +110,28 @@ function getCovers(plural) {
   return covers;
 }
 
+function getQRcodes(plural) {
+  let qrCodes = {}
+  const allImages =
+  files.children
+  .filter(dir => dir.name === 'images')[0].children
+  const contribImages = allImages
+  .filter(dir => dir.name === plural);
+  if (contribImages.length === 0) return qrCodes;
+  let dirs = contribImages[0]
+  .children
+  .filter(dir => dir.name === 'qrcode')[0]
+  if(dirs === undefined){
+    return qrCodes;
+  }
+  dirs = dirs.children;
+  for (let dir of dirs) {
+    let id = dir.name.split(".")[0]
+    qrCodes[id] = dir.path
+  }
+return qrCodes;
+}
+
 export default function Contributions ({type, author=undefined, plural=undefined, short=false, lab=undefined}) {
 
   if(!type)return;
@@ -154,6 +176,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
   }
   let pictures = getPhotos();
   let covers = getCovers(plural);
+  let qrCodes = getQRcodes(plural);
 
   let title = contributions.length > 1 ? plural : type;
   title = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase() + supervised
@@ -194,7 +217,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
                   <Image width={0} height={0} className="cover" alt={ `${contribution.id} cover` } src={ `/static/images/${plural}/cover/${contribution.id}.jpg` } />
                 }
               </div>
-              <div className="thirteen wide column">
+              <div className={ `${qrCodes[contribution.id] ? "ten" : "thirteen"} wide column`}>
                 <p>
                   { series && <span className="ui big inverted label label-color">{ series }</span>}
                   { contribution.award &&
@@ -248,6 +271,11 @@ export default function Contributions ({type, author=undefined, plural=undefined
                 }
                 </div>
               </div>
+              { qrCodes[contribution.id] &&
+                <div className="three wide column" style={{ margin: 'auto' }}>
+                  <Image width={0} height={0} className="qrcode" alt={ `${contribution.id} QR code` } src={ `/static/images/${plural}/qrcode/${contribution.id}.png` } />
+                </div>
+              }
             </div>
           ) // contributions
         })}
