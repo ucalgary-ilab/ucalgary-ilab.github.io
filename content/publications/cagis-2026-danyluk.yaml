@@ -1,0 +1,12 @@
+date: 2026-06
+title: "Ring Maps: Simplified, Egocentric, and Topology-Preserving Views for Augmented Reality Navigation"
+authors:
+  - Kurtis Danyluk
+  - Bernhard Jenny
+  - Barrett Ens
+  - Wesley Willett
+series: CaGIS 2026
+doi: https://doi.org/10.1080/15230406.2026.2679159
+keywords: mixed reality, augmented reality, landmarks, navigation
+abstract: "We introduce ring maps, a new augmented reality (AR) map paradigm that supports pedestrian navigation in urban environments while balancing map complexity, environmental occlusion and spatial awareness. Ring maps position landmark symbols in a circular layout around the viewer based on direction and distance. We situate ring maps alongside other AR map types in a design space that considers cartographic generalization, anchoring, and planimetric accuracy. To understand the trade-offs of ring maps, we created prototype ring maps and validated them in two studies. Our first study, conducted in virtual reality (VR), used navigation tasks to evaluate spatial reasoning along with an attention task to evaluate cognitive load. The second study, conducted using an AR headset in a range of outdoor and indoor environments, examined the experience of using ring maps for real-world navigation. We find that ring maps and three-dimensional maps perform comparably for point-to-point navigation tasks, but also complement one another. Participants commented that three-dimensional maps support planning and decision making, while ring maps support active navigation with clearer distance and angle estimation. Finally, we identify use cases for ring maps, and the potential for improving and combining ring maps with other augmented reality map types."
+
