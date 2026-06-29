@@ -1,0 +1,10 @@
+date: 2026-06-09
+title: "WHAT: Web-Based Haptic Authoring Tool for Multi-Point Interactions"
+authors:
+  - Talha Zafar
+  - Duc Le
+  - Isaac Ng
+  - Christian Frisson
+series: GI 2026 Posters
+keywords: haptics, multi-point haptics, authoring tools, CHAI3D, web-based interfaces, automated kinematics
+abstract: "Building multi-point haptic devices remains difficult because it requires expertise in programming, kinematics, hardware integration, and mechanical design. This creates a barrier for novice hapticians who want to prototype richer physical interactions but lack the multidisciplinary background needed to implement them. Existing frameworks such as CHAI3D provide strong runtime support for haptic rendering, but still require low-level C++ implementation. Existing authoring tools reduce programming effort for scene-level haptic content, but they generally assume the physical device already exists. This project explores a web-based authoring interface for modular multi-point haptic devices. The current prototype demonstrates a browser-based 3D environment for importing, arranging, inspecting, and viewing haptic components. While it is currently a visual proof of concept, it establishes the interface direction for future automated kinematics and CHAI3D-compatible code generation. This work introduces a web-based authoring workflow for modular multi-point haptic devices, moving early device design from low-level programming toward visual assembly and future automated kinematics."
