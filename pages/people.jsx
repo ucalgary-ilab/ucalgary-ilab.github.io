@@ -39,6 +39,7 @@ function typeStringFromType(type) {
     case 'master': return 'MSc'
     case 'undergrad': return 'Ugrad'
     case 'visiting': return 'Visiting'
+    case 'staff': return 'Staff'
   }
   return ''
 }
@@ -91,11 +92,12 @@ export default function People ({people, short=false, lab=undefined}) {
     {key: 'master', title: "Master's Students"},
     {key: 'undergrad', title: 'Undergrad Students'},
     {key: 'visiting', title: 'Visiting Researchers'},
+    {key: 'staff', title: 'Staff'},
     {key: 'alumni', title: 'Alumni'}
   ]
 
   if (short) {
-    types = types.slice(2, 6)
+    types = types.slice(2, 7)
   }
 
   return (
