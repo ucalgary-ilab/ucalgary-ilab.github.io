@@ -84,3 +84,4 @@ next-env.d.ts
 /index.html
 
 .yarn/install-state.gz
+.claude/launch.json

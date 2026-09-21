@@ -117,31 +117,21 @@ export default function People ({people, short=false, lab=undefined}) {
             { !short &&
             <h2>{type.title}</h2>
             }
-            <div className="ui grid">
+            <div className="people-grid">
               {typePeople.map((person) => {
                   person.title = getTitle(person)
-                  let colNum = type.key === 'faculty' ? 'five' : 'four'
                   return (
-                    <Link className={`${colNum} wide column person`} href={`/people/${person.id}`}
+                    <Link className="person" href={`/people/${person.id}`}
                         key={person.id}>
-                      <Image width={0} height={0} className="ui circular image medium-profile"
+                      <Image width={0} height={0} className="ui circular image person-photo"
                           alt={`${person.name} photo`} src={person.photo}/>
-                      <p><b>{person.name}</b></p>
-                      <p>
+                      <p className="person-name"><b>{person.name}</b></p>
+                      <p className="person-title">
                         {person.title}
                         {person.now &&
                           <span><br/>{person.now}</span>
                         }
                       </p>
-                      {person.keywords !== null && person.keywords !== undefined &&
-                        <div className="ui large basic labels">
-                          {person.keywords.map((keyword) => {
-                            return <span key={keyword}
-                              className="ui large inverted label label-brown-color">{keyword}</span>
-                          })
-                          }
-                        </div>
-                      }
                     </Link>
                   ) // return
                 }) // map
