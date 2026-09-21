@@ -84,3 +84,6 @@ next-env.d.ts
 /index.html
 
 .yarn/install-state.gz
+
+# Local dev-preview config
+.claude/
