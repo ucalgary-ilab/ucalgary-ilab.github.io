@@ -63,6 +63,10 @@ export function getTitle(person) {
     title = `Alumni (${typeStringFromType(person.past)})`
   }
 
+  if (person.title){
+    title = person.title
+  }
+    
   return title
 }
 

@@ -223,8 +223,8 @@ a:hover {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: 10%;
-  min-width: 96px;
+  width: 11.11%;
+  min-width: 104px;
   padding: 4px 2px;
   text-align: center;
   text-decoration: none;
@@ -232,8 +232,8 @@ a:hover {
 }
 
 .people-grid .person-photo {
-  width: 84px !important;
-  height: 84px !important;
+  width: 92px !important;
+  height: 92px !important;
   object-fit: cover;
   margin: 0 0 3px !important;
 }
