@@ -220,22 +220,105 @@ a:hover {
   margin: 20px auto;
 }
 
-#projects img.cover,
-#publications img.cover {
-  width: 260px;
-  height: 120px;
+.contributions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 24px;
+}
+
+@media only screen and (max-width: 991px) {
+  .contributions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contributions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contribution-card {
+  position: relative;
+  height: 320px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contribution-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.contribution-card .cover-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
+}
+
+.contribution-card .cover-wrap img.cover {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-#projects .project,
-#publications .publication {
-  transition: 0.5s;
-  cursor: pointer;
+.contribution-card .cover-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 66%;
+  background: linear-gradient(to top, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
-#projects .project:hover,
-#publications .publication:hover {
-  background: #efefef;
+.contribution-card .card-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.contribution-card .card-content,
+.contribution-card .card-content * {
+  font-family: var(--font-encode-condensed), 'Encode Sans', sans-serif !important;
+}
+
+.contribution-card .card-venue {
+  margin-bottom: 4px;
+}
+
+.contribution-card .card-title {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.contribution-card .card-title b {
+  font-weight: 700;
+}
+
+.contribution-card .card-authors {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.contribution-card .card-content .ui.big.inverted.label.label-color,
+.contribution-card .card-content .ui.big.basic.pink.label {
+  font-size: 0.7em;
+  font-weight: 600;
+  border-radius: 999px;
 }
 
 #project img.cover,
@@ -546,9 +629,32 @@ a:hover {
 
   /* Fit each contribution in one page without break over next page */
   .publication,
-  .project {
+  .project,
+  .thesis {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* Cards rely on absolute positioning for the compact on-screen grid;
+     flatten them back into normal flow so printing doesn't clip content */
+  .contributions-grid {
+    display: block !important;
+  }
+  .contribution-card {
+    height: auto !important;
+    position: static !important;
+    box-shadow: none !important;
+    margin-bottom: 20px;
+  }
+  .contribution-card .cover-wrap {
+    position: static !important;
+    height: auto !important;
+  }
+  .contribution-card .cover-wrap::after {
+    display: none;
+  }
+  .contribution-card .card-content {
+    position: static !important;
   }
 
   /* New page for sections */

@@ -5,9 +5,14 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 /* google fonts https://nextjs.org/docs/app/getting-started/fonts#google-fonts */
-import { Encode_Sans } from 'next/font/google'
+import { Encode_Sans, Encode_Sans_Condensed } from 'next/font/google'
 const encodeSans = Encode_Sans({
   subsets: ['latin'],
+})
+const encodeSansCondensed = Encode_Sans_Condensed({
+  subsets: ['latin'],
+  weight: ['300', '600', '700'],
+  variable: '--font-encode-condensed',
 })
 
 import { useRouter } from 'next/router';
@@ -28,7 +33,7 @@ export default function App({ Component, pageProps }) {
   
 
   return (
-    <main className={encodeSans.className}>
+    <main className={`${encodeSans.className} ${encodeSansCondensed.variable}`}>
       {!hideHeader && <Header />}
       <Component {...pageProps} />
       <Footer />
