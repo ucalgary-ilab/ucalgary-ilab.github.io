@@ -1,0 +1,9 @@
+date: 2026-11
+title: "1d5v (1 Dataset, 5 Visualizations): A Scalable Peer-Critique Model for Teaching Visualization Design"
+authors:
+  - Wesley Willett
+  - Karly Ross
+series: EduVis Workshop at IEEE VIS 2026
+doi: https://hdl.handle.net/1880/126184
+keywords: visualization teaching, peer critique, scalable assessment
+abstract: "We share \"1 Dataset, 5 Visualizations\" (1d5v), a peer-oriented assignment model developed and deployed across two increasingly large offerings of an undergraduate visualization course (57 and 94 students). Each week, students individually author at least five distinct visualizations of a shared dataset using an assigned tool, then engage in structured peer ranking, written critique, and in-person small-group discussion that culminates in an instructor-led debrief. This format seeks to address converging pressures faced by data visualization courses—which are often seeing growing enrollments just as generative AI tools have unsettled traditional take-home assignments and assessment practices. Our 1d5v model couples high-volume design authoring with a deliberate progression of tools—from hand sketching and physical construction through GUI charting tools to code-based libraries—and rotating, randomized teams. We describe the model's design rationale and weekly structure, and reflect on our experience from two course iterations. Specifically, we highlight how 1d5v assignments can enable greater practical engagement with design and critique and how combining manual and GUI-based authoring with in-person critique can support more transparent and generative assessment. We close by identifying concrete opportunities for purpose-built tooling, particularly to support ranking and presentation of large numbers of student visualizations, that current learning management systems don't address."

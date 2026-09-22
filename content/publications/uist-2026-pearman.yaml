@@ -1,0 +1,12 @@
+date: 2026-11
+title: "The Rock Can Talk: Spatial AI and XR for Rock Climbing Navigation"
+authors:
+  - Ben Pearman
+  - Matthew Newton
+  - Landon Odishaw-Dyck
+  - Wesley Willett
+series: ACM UIST 2026
+doi: https://dx.doi.org/10.11575/PRISM/52058
+keywords: Rock Climbing, Navigation, AR, VR, XR
+video: https://www.youtube.com/watch?v=n66Am0qpTQU
+abstract: "We present RockXR, a mixed reality prototype that examines the potential for approaches like Worlds-in-Miniature (WiM), spatial route annotations, and conversational assistants to provide navigation cues and guidance during rock climbs. These three techniques mirror the combination of overview maps, situated overlays, and conversational turn-by-turn instructions that are increasingly common for pedestrian and car navigation. They also illustrate the growing potential for mixed reality visualization and guidance across technical sports and activities. RockXR uses annotated digital models of climbing routes to render navigation information directly on the wall via a mixed-reality headset, while also providing persistent WiM overviews of the entire route. We also demonstrate how live 3rd person imagery generated from those digital models can support conversational interactions with route descriptions, allowing climbers to ``talk to the rock'' for guidance and feedback while climbing. To probe the potential of these approaches and gauge climbers' receptiveness to them, we evaluated RockXR with 16 climbers in a controlled indoor study and complemented this with a field test on an outdoor multi-pitch climb. Our findings highlight the value of flexible guidance interfaces that span multiple reference frames and interaction modalities, and suggest that XR can meaningfully augment how climbers plan, interpret, and move through complex, high-risk terrain."
