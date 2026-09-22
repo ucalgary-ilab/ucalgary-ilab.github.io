@@ -117,6 +117,7 @@ export default function Contributions ({type, author=undefined, plural=undefined
   let contributions = getContributions(plural,lab);
   let {people, names, namesId} = getPeople();
 
+  let remainingCount = contributions.length - 30
   if (short) {
     contributions = contributions.slice(0, 30)
   }
@@ -219,10 +220,10 @@ export default function Contributions ({type, author=undefined, plural=undefined
       </div>
 
 
-      { short &&
+      { short && remainingCount > 0 &&
         <div className="ui vertical segment stackable" style={{ textAlign: 'center' }}>
           <Link className="ui button" href={`/${plural}`}>
-            { `+ ${contributions.length} more ${plural}` }
+            { `+ ${remainingCount} more ${plural}` }
           </Link>
         </div>
       }
