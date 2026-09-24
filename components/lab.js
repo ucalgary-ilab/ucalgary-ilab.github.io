@@ -130,7 +130,7 @@ export default function Lab ({lab, peopleStaticProps}) {
                 }) }
               </div>
             </div>
-            <People lab={ lab.id } {...peopleStaticProps} />
+            <People lab={ lab.id } keywords={ lab.keywords } {...peopleStaticProps} />
             <Publications lab={ lab.id } />
             <Theses lab={ lab.id } />
             <Projects lab={ lab.id } />
