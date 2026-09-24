@@ -4,6 +4,7 @@ import About from '../components/about'
 import Meta from '../components/meta'
 import Labs, { getStaticProps as Labs_getStaticProps } from '../components/labs'
 import Publications from './publications'
+import PublicationsCarousel from '../components/publications-carousel'
 import People, { getStaticProps as People_getStaticProps } from './people'
 
 
@@ -22,7 +23,10 @@ export default function Index({peopleStaticProps, labsStaticProps}) {
       <Meta />
       <div className="ui stackable grid">
         <div className="eleven wide column centered">
-          <Logo />
+          <div className="hero-row">
+            <Logo />
+            <PublicationsCarousel />
+          </div>
           <About />
           <Labs {...labsStaticProps}/>
           <People short="true" {...peopleStaticProps} />
