@@ -87,7 +87,7 @@ function getPhoto(id, pictures) {
   }
 }
 
-export default function People ({people, short=false, lab=undefined}) {
+export default function People ({people, short=false, lab=undefined, keywords=false}) {
 
   let types = [
     {key: 'faculty', title: 'Faculty'},
@@ -138,6 +138,15 @@ export default function People ({people, short=false, lab=undefined}) {
                           <span><br/>{person.now}</span>
                         }
                       </p>
+                      {lab !== undefined && keywords == true && person.keywords !== null && person.keywords !== undefined &&
+                        <div className="ui large basic labels keywords">
+                          {person.keywords.map((keyword) => {
+                            return <span key={keyword}
+                              className="ui large inverted label label-brown-color keyword">{keyword}</span>
+                          })
+                          }
+                        </div>
+                      }
                     </Link>
                   ) // return
                 }) // map
