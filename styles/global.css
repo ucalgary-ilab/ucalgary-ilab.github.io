@@ -589,3 +589,17 @@ a:hover {
     border-right: unset !important;
   }
 }
+
+#projects img.qrcode,
+#publications img.qrcode {
+  width: 260px;
+  height: 120px;
+  object-fit: contain;
+}
+
+#project img.qrcode,
+#publication img.qrcode {
+  width: 200px;
+  height: 120px;
+  object-fit: contain;
+}
