@@ -165,13 +165,13 @@ export default function Contributions ({type, author=undefined, plural=undefined
         <FontAwesomeIcon icon="far fa-file-lines" />
         { short ? `Recent ${title}` : title }
       </h1>
-      <div className="ui segment" style={{ marginTop: '50px' }}>
+      <div className="contributions-grid" style={{ marginTop: '50px' }}>
         { contributions.map((contribution, i) => {
           let authors = {}
           if(contribution.members){
             Object.keys(contribution.members).forEach(role => {
               authors = Object.assign(authors, {[role]: contribution.members[role]});
-            }) 
+            })
           }
           if(contribution.author){
             authors = Object.assign(authors, {author: [contribution.author]});
@@ -187,15 +187,16 @@ export default function Contributions ({type, author=undefined, plural=undefined
           }
           let series = contribution.series ? parse(contribution.series) : `${contribution.degree.split("(")[1].split(")")[0]} ${contribution.date.split("-")[0]}`
           contribution.id = contribution.base.split('.json')[0]
+          let hasCover = !!covers[contribution.id]
           return (
-            <div className={ `${type} ui vertical segment stackable grid` } data-id={ contribution.id } key={ i }>
-              <div className="three wide column" style={{ margin: 'auto' }}>
-                { covers[contribution.id] &&
+            <div className={ `${type} contribution-card` } data-id={ contribution.id } key={ i }>
+              <div className={ hasCover ? 'cover-wrap' : `cover-wrap no-cover card-color-${ i % 10 }` }>
+                { hasCover &&
                   <Image width={0} height={0} className="cover" alt={ `${contribution.id} cover` } src={ `/static/images/${plural}/cover/${contribution.id}.jpg` } />
                 }
               </div>
-              <div className="thirteen wide column">
-                <p>
+              <div className="card-content">
+                <p className="card-venue">
                   { series && <span className="ui big inverted label label-color">{ series }</span>}
                   { contribution.award &&
                     <span className="ui big basic pink label">
@@ -208,13 +209,13 @@ export default function Contributions ({type, author=undefined, plural=undefined
                     </span>
                   }
                 </p>
-                <p className="color" style={{ fontSize: '1.3em' }}>
+                <p className="color card-title">
                     <b>
                       { parse(contribution.title) }
                     </b>
                 </p>
-                <p>
-                  { 
+                <p className="card-authors">
+                  {
                     Object.keys(authors).map(role => {
                     return authors[role].map((author) => {
                       return (
@@ -236,17 +237,6 @@ export default function Contributions ({type, author=undefined, plural=undefined
                     }).reduce((prevR, currentR) => {if (prevR === ""){return currentR} else{return [prevR, ', ', currentR];}},"")
                   }
                 </p>
-                <div>
-                { contribution.keywords &&
-                <div className="ui large basic labels">
-                  { 
-                    [...new Set(contribution.keywords.split(', '))].map((keyword) => {
-                    return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
-                  }) 
-                  }
-                </div>
-                }
-                </div>
               </div>
             </div>
           ) // contributions
