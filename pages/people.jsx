@@ -104,53 +104,59 @@ export default function People ({people, short=false, lab=undefined, keywords=fa
     types = types.slice(1, 7)
   }
 
+  const matchesLab = person => lab === undefined || (person.labs && person.labs.includes(lab))
+
+  const renderPerson = (person) => {
+    person.title = getTitle(person)
+    return (
+      <Link className="person" href={`/people/${person.id}`}
+          key={person.id}>
+        <Image width={0} height={0} className="ui circular image person-photo"
+            alt={`${person.name} photo`} src={person.photo}/>
+        <p className="person-name"><b>{person.name}</b></p>
+        <p className="person-title">
+          {person.title}
+          {person.now &&
+            <span><br/>{person.now}</span>
+          }
+        </p>
+        {lab !== undefined && keywords == true && person.keywords !== null && person.keywords !== undefined &&
+          <div className="ui large basic labels keywords">
+            {person.keywords.map((keyword) => {
+              return <span key={keyword}
+                className="ui large inverted label label-brown-color keyword">{keyword}</span>
+            })
+            }
+          </div>
+        }
+      </Link>
+    )
+  }
+
   return (
     <div id="people" className="category ui container">
       <h1 className="ui horizontal divider header">
         <FontAwesomeIcon icon="fas fa-child-reaching" />
         Researchers
       </h1>
-      { short &&
-      <div>
-        Students are part of the <Link href="https://science.ucalgary.ca/computer-science" title="Computer Science">CS</Link> or <Link href="https://science.ucalgary.ca/computational-media-design" title="Computational Media Design">CMD</Link> programs. <Link className="ui button" href="/people">See all {people.filter(p => p.type === 'alumni').length} alumni</Link>
-      </div>
-      }
-      { types.map((type) => {
-        const typePeople = people.filter(person => (person.type === type.key && (lab === undefined || (person.labs && person.labs.includes(lab)))))
+      { short ? (
+        <div className="people-category eleven wide column centered">
+          <div className="people-grid">
+            {types.flatMap(type => people.filter(person => person.type === type.key && matchesLab(person)))
+              .map(renderPerson)}
+          </div>
+          <div className="ui vertical segment stackable" style={{ textAlign: 'center' }}>
+            <Link className="ui button" href="/people">See all {people.filter(p => p.type === 'alumni').length} alumni</Link>
+          </div>
+        </div>
+      ) :types.map((type) => {
+        const typePeople = people.filter(person => person.type === type.key && matchesLab(person))
         return (
          (typePeople.length > 0) &&
           <div className="people-category eleven wide column centered" key={type.title}>
-            { !short &&
             <h2>{type.title}</h2>
-            }
             <div className="people-grid">
-              {typePeople.map((person) => {
-                  person.title = getTitle(person)
-                  return (
-                    <Link className="person" href={`/people/${person.id}`}
-                        key={person.id}>
-                      <Image width={0} height={0} className="ui circular image person-photo"
-                          alt={`${person.name} photo`} src={person.photo}/>
-                      <p className="person-name"><b>{person.name}</b></p>
-                      <p className="person-title">
-                        {person.title}
-                        {person.now &&
-                          <span><br/>{person.now}</span>
-                        }
-                      </p>
-                      {lab !== undefined && keywords == true && person.keywords !== null && person.keywords !== undefined &&
-                        <div className="ui large basic labels keywords">
-                          {person.keywords.map((keyword) => {
-                            return <span key={keyword}
-                              className="ui large inverted label label-brown-color keyword">{keyword}</span>
-                          })
-                          }
-                        </div>
-                      }
-                    </Link>
-                  ) // return
-                }) // map
-              }
+              {typePeople.map(renderPerson)}
             </div>
           </div>
       )
