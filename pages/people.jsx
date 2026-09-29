@@ -124,7 +124,7 @@ export default function People ({people, short=false, lab=undefined, keywords=fa
           <div className="ui large basic labels keywords">
             {person.keywords.map((keyword) => {
               return <span key={keyword}
-                className="ui large inverted label label-brown-color keyword">{keyword}</span>
+                className="ui large inverted label label-brown-color keyword keyword-chip">{keyword}</span>
             })
             }
           </div>

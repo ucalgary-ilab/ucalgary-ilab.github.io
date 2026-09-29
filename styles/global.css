@@ -760,3 +760,14 @@ a:hover {
     border-right: unset !important;
   }
 }
+
+/* Pill-shaped buttons and keyword labels */
+.ui.button,
+.ui.label.keyword-chip {
+  border-radius: 999px;
+}
+
+.ui.label.keyword-chip {
+  padding-left: 1em;
+  padding-right: 1em;
+}
