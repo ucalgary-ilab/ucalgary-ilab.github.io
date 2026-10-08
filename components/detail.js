@@ -295,7 +295,7 @@ class Detail extends React.Component {
             <div className="ui large basic labels">
               Keywords: &nbsp;
               { [...new Set(this.contribution.keywords.split(', '))].map((keyword) => {
-                return <span className="ui brown basic label" key={ keyword }>{ _.startCase(keyword) }</span>
+                return <span className="ui brown basic label keyword-chip" key={ keyword }>{ _.startCase(keyword) }</span>
               }) }
             </div>
           }
