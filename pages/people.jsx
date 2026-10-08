@@ -101,7 +101,7 @@ export default function People ({people, short=false, lab=undefined, keywords=fa
   ]
 
   if (short) {
-    types = types.slice(2, 7)
+    types = types.slice(1, 7)
   }
 
   return (
