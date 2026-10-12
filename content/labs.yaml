@@ -1,18 +1,21 @@
-- id: curio
-  name: Curio Lab
-  description: Human-Centered Design for Creativity & Curiosity
-  statement: examines human-centered design for creativity & curiosity.
-  prof: lora-oehlberg
-  url: http://pages.cpsc.ucalgary.ca/~lora.oehlberg/
-  colour: "#2095ba"
+- id: prpl
+  name: prpl Lab
+  description:
+  statement: investigates and designs non-game forms of playfulness in user interfaces.
+  prof: matthew-lakier
+  url: https://ilab.ucalgary.ca/labs/prpl
+  colour: "#a765e9"
 
-- id: data-experience
-  name: Data Experience Lab
-  description: Visual Data-driven Tools and Experiences
-  statement: develops new data visualizations, interactions, and experiences.
-  prof: wesley-willett
-  url: https://ilab.ucalgary.ca/labs/data-experience/
-  colour: "#c14824"
+- id: shivers
+  name: SHIVERS
+  description:
+  statement: "craft new tools <br/>for multisensory (haptic) and multimedia (sonic) interaction."
+  prof: christian-frisson
+  url: https://ilab.ucalgary.ca/labs/shivers
+  colour: "#a3b86c"
+  github: https://github.com/ucalgary-shivers
+  linkedin: https://www.linkedin.com/company/ucalgary-shivers
+  keywords: true
 
 - id: diff
   name: DIFF Lab
@@ -31,24 +34,21 @@
   colour: "#185b79"
   redirect: true
 
-- id: shivers
-  name: SHIVERS
-  description:
-  statement: "craft new tools <br/>for multisensory (haptic) and multimedia (sonic) interaction."
-  prof: christian-frisson
-  url: https://ilab.ucalgary.ca/labs/shivers
-  colour: "#a3b86c"
-  github: https://github.com/ucalgary-shivers
-  linkedin: https://www.linkedin.com/company/ucalgary-shivers
-  keywords: true
+- id: curio
+  name: Curio Lab
+  description: Human-Centered Design for Creativity & Curiosity
+  statement: examines human-centered design for creativity & curiosity.
+  prof: lora-oehlberg
+  url: http://pages.cpsc.ucalgary.ca/~lora.oehlberg/
+  colour: "#2095ba"
 
-- id: prpl
-  name: prpl Lab
-  description:
-  statement: investigates and designs non-game forms of playfulness in user interfaces.
-  prof: matthew-lakier
-  url: https://ilab.ucalgary.ca/labs/prpl
-  colour: "#a765e9"
+- id: data-experience
+  name: Data Experience Lab
+  description: Visual Data-driven Tools and Experiences
+  statement: develops new data visualizations, interactions, and experiences.
+  prof: wesley-willett
+  url: https://ilab.ucalgary.ca/labs/data-experience/
+  colour: "#c14824"
 
 - id: utouch
   name: uTouch
