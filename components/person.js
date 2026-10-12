@@ -125,7 +125,7 @@ export default function Person ({person}) {
                         <div className="ui large basic labels">
                           {person.keywords.map((keyword) => {
                             return <span key={keyword}
-                              className="ui large inverted label label-brown-color">{keyword}</span>
+                              className="ui large inverted label label-brown-color keyword-chip">{keyword}</span>
                           })
                           }
                         </div>
