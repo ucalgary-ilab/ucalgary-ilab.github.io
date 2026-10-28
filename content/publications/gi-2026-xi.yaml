@@ -1,0 +1,10 @@
+date: 2026-06
+title: "Rules for Robots: Co-Designing Privacy-Conscious Social Robots with Older Adults"
+authors:
+  - Clara Y. Xi
+  - Lora Oehlberg
+series: GI 2026
+doi: https://doi.org/10.1145/3831423.3831465
+keywords: social robots, older adults, privacy, access control, co-design
+pages: 16
+abstract: "While researchers project that social robots may one day be prevalent in the lives of older adults, privacy issues remain underexamined. Social robots can present unique and significant threats to their users’ privacy, especially within scenarios involving interpersonal communication. We conducted two exploratory co-design sessions with six older adults to investigate the design of rule-based access control systems for social robots, involving tasks such as ‘narrative prototyping.’ We analyzed participants’ artefacts and discussions from these sessions to identify themes pertaining to: (1) their desire to be active users of robot privacy mechanisms; (2) challenges and opportunities for ‘translating’ privacy desires into rule-based robot policies; and (3) normative concerns regarding the integration of a robot within the shifting and interpersonal privacy dynamics of old age. We outline high-level design implications following from our analysis; our findings contribute to a growing, relational understanding of what it means to design privacy-conscious social robots for older adults."
