@@ -197,7 +197,7 @@ a:hover {
   margin: 0.5em auto 0;
   text-align: left;
   font-size: 0.9em;
-  background: color-mix(in srgb, var(--lab-colour, #2185d0) 8%, white);
+  background: color-mix(in srgb, var(--lab-colour, #2185d0) 3%, white);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--lab-colour, #2185d0) 35%, white) inset;
   border-left: 4px solid var(--lab-colour, #2185d0);
 }
