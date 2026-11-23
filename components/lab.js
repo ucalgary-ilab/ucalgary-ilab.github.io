@@ -37,6 +37,8 @@ export async function getStaticProps({ params }) {
   return { props: { lab,peopleStaticProps } }
 }
 
+const linkKeys = ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email']
+
 function renderLink(lab, key) {
     if (!lab[key]) {
       return ''
@@ -121,14 +123,24 @@ export default function Lab ({lab, peopleStaticProps}) {
                   <span style={{fontSize: "1.15em"}}>{lab.name.endsWith(" Lab") ? "The " : ""}</span>
                   <Link href={ lab.url }><span style={{color: `${lab.colour}`, fontWeight: "700", fontSize: "1.7em"}}> {lab.name} </span></Link>
                   <span style={{fontSize: "1.15em"}}> (<Link href={`/people/${lab.prof}`}><span style={{fontWeight: "600"}}>Prof. { lab.person.name }</span></Link>) {lab.statement && parse(lab.statement)} 
-                  </span> 
+                  </span>
                 </p>
+                { lab.about &&
+                  <p className="lab about">{ lab.about }</p>
+                }
               </div>
-              <div className="ui horizontal small divided link list">
-                { ['cv', 'facebook', 'twitter', 'github', 'gitlab', 'linkedin', 'email'].map((key) => {
-                  return renderLink(lab, key)
-                }) }
-              </div>
+              { linkKeys.some((key) => lab[key]) &&
+                <div className="ui horizontal small divided link list">
+                  { linkKeys.map((key) => {
+                    return renderLink(lab, key)
+                  }) }
+                </div>
+              }
+              { lab.announcements &&
+                <div className="ui message lab announcements" style={{ '--lab-colour': lab.colour }}>
+                  { parse(lab.announcements) }
+                </div>
+              }
             </div>
             <People lab={ lab.id } keywords={ lab.keywords } {...peopleStaticProps} />
             <Publications lab={ lab.id } />
