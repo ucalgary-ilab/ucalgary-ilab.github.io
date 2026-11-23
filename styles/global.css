@@ -182,6 +182,40 @@ a:hover {
   opacity: 0.6;
 }
 
+/* Optional lab page "about" text: narrower and smaller than the statement */
+.lab.about {
+  max-width: 40em;
+  margin: 0 auto 1em;
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Optional lab page announcements box, tinted with the lab colour */
+.ui.message.lab.announcements {
+  max-width: 48em;
+  margin: 0.5em auto 0;
+  text-align: left;
+  font-size: 0.9em;
+  background: color-mix(in srgb, var(--lab-colour, #2185d0) 8%, white);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--lab-colour, #2185d0) 35%, white) inset;
+  border-left: 4px solid var(--lab-colour, #2185d0);
+}
+
+/* Less space between the announcements box and the People section below */
+#lab:has(> .lab.announcements) {
+  margin-bottom: 40px;
+}
+
+#lab:has(> .lab.announcements) + .category {
+  margin-top: 40px;
+}
+
+.ui.message.lab.announcements p:last-child,
+.ui.message.lab.announcements ul:last-child {
+  margin-bottom: 0;
+}
+
 .large-profile {
   width: 150px !important;
   height: 150px !important;
