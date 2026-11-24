@@ -1,0 +1,21 @@
+date: 2026-09
+title: "An open-source toolbox with a web-based user interface and hardware modules to facilitate the design of soft deformable robotics and haptics."
+members:
+  student:
+  - Aditya Prasad
+  - Jorrell Templeton
+  - Kosisochukwu Onyejem
+  - Raisa Rafi
+  - Samuel Davis
+  academic advisor:
+  - Alejandro Ramirez-Serrano
+  collaborator at Compliance Robotics:
+  - Hanaë Rateau
+  collaborator at the SOFA Consortium:
+  - Hugo Talbot
+  sponsor:
+  - Isaac Ng
+  - Utku Cerit
+  - Christian Frisson
+series: ENGG 501+502 Capstone Fall 2026 + Winter 2027
+keywords: haptics, deformable, web-based, toolbox
