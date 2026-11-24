@@ -61,7 +61,26 @@ let contributions = getContributions(summary);
 const people = getPeople(summary);
 contributions.forEach((contribution, p) => {
   let labs = [];
-  let authors = contribution.authors || [contribution.author, ...contribution.advisors] // do not parse committee for lab affiliation
+  let authors = [];
+  // let authors = contribution.authors || [contribution.author, ...contribution.advisors] 
+  if(contribution.members){
+    Object.keys(contribution.members).forEach(role => {          
+      contribution.members[role].forEach(author => authors.push(author));
+    }) 
+  }
+  if(contribution.author){
+    authors.push(contribution.author);
+  }
+  if(contribution.authors){
+    contribution.authors.forEach(author => authors.push(author));
+  }
+  if(contribution.advisors){
+    contribution.advisors.forEach(author => authors.push(author));
+  }
+  // do not parse committee for lab affiliation
+  // if(contribution.committee){
+  //   contribution.committee.forEach(author => authors.push(author));
+  // }
   authors.forEach((author) => {
     let person = people.find((p) => p.name == author);
     if (person !== undefined && person.labs !== undefined) {
