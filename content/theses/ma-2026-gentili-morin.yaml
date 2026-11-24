@@ -1,0 +1,15 @@
+date: "2026-08"
+title: "Improving the TorqueTuner for Musical Applications"
+author: Maxwell Gentili-Morin
+advisors:
+  - Marcelo M. Wanderley
+  - Christian Frisson
+committee:
+  - Gabriel Vigliensoni
+degree: "Master of Arts (MA)"
+type: "master thesis"
+institution: "McGill University"
+faculty: "Schulich School of Music"
+discipline: "Music Technology"
+keywords: haptics, music, force-feedback, digital musical instruments
+abstract: "Low cost, reliability, and responsiveness are key factors for Digital Musical Instrument (DMI) adoption by musicians. As such, the haptic response in a DMI should follow the same requirements. To address these requirements, this thesis proposes updating the hardware and software of the TorqueTuner (TT) v2, a one-degree-of-freedom (1-DoF) haptic device that is affordable, open-source, and available. The TT v2 is built with an ESP-32 microcontroller and the Moteus controller, which is meant to operate brushless direct current motors. The TT exposes predefined haptic effects, such as a spring and a click, that can be used directly in DMI designs. Although practical, the TT v2 suffers from reliability issues, as the motor self-oscillates and unpredictably enters an uncontrollable spin until its power is removed. Additionally, the low computational power offered by the ESP-32 chip and the use of a Proportional-Integral-Derivative (PID) on the ESP-32 instead of the Moteus Controller result in poor responsiveness, as each calculation step of the PID is limited to the update rate of the Inter-Integrated Circuit (I²C) communication protocol used between the microcontroller and the Moteus Controller. To address these issues, I review concepts and examples of developing reliable haptic devices from the literature, with a focus on haptic force-feedback devices in Music Technology. I examine the TT v2 using the Workshop, Crank, and R-FF library case studies to highlight the potential hardware/software improvements and applications in musical practice. I then created the TorqueTuner v3 by updating its hardware using the Moteus controller's PID, a Raspberry Pi 4 for greater computational power, and the haptic authoring tool Feelix to ameliorate the TT v2's reliability and usability for musical applications. The updated hardware increases the system's responsiveness, haptic fidelity, and computational bandwidth. By using the Moteus PID, the TT v3 can access an already tuned PID with a closed-loop control rate of 30 kHz between the controller and the motor, ensuring maximal responsiveness, optimal motor fidelity, and minimal self-oscillations. Next, I refine the software's rendering of effects to provide a more generalized and customizable environment for crafting haptic effects, reflecting changes in the software architecture and increased computational power. I also extend TT's use cases with additional data streams, such as audio. I analyze the TT v3's latency, haptic response, and haptic stability to evaluate the changes made to the system. Finally, I summarize the results of the revision and compare v3 with previous versions of TorqueTuner, highlighting future work."
